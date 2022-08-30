@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { eLearning, advertising } from "data/playlist";
-import { Playlist } from "components/playlist";
+import { Head, Playlist } from "components";
 import styles from "styles/home.module.scss";
 
 export default function Home() {
@@ -13,6 +13,7 @@ export default function Home() {
 
   return (
     <div>
+      <Head />
       <div>active: {active.title}</div>
       <div className={styles.flex}>
         <Playlist src={eLearning} {...playlistProps} />

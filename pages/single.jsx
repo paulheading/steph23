@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { eLearning } from "data/playlist";
-import { Playlist } from "components/playlist";
+import { Head, Playlist } from "components";
 
 export default function Single() {
   const [active, setActive] = useState(eLearning.main);
@@ -12,6 +12,7 @@ export default function Single() {
 
   return (
     <div>
+      <Head />
       <div>active: {active.title}</div>
       <div>
         <Playlist src={eLearning} {...playlistProps} />

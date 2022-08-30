@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { intro } from "data/playlist";
-import { Player } from "components/player";
+import { Head, Player } from "components";
 import styles from "styles/home.module.scss";
 
 export default function Players() {
@@ -13,6 +13,7 @@ export default function Players() {
 
   return (
     <div>
+      <Head />
       <div>active: {active.title}</div>
       <div className={styles.flex}>
         {intro.map((track, index) => (
