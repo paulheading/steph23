@@ -1,10 +1,8 @@
-import { eLearning, advertising } from "data/playlist";
+import { eLearning, advertising, gaming } from 'data/playlist'
+import { mapIndexIDs } from 'data/playlist/setup'
 
-let intro = [eLearning.main, advertising.main];
+let intro = [{ ...eLearning.main }, { ...advertising.main }, { ...gaming.main }]
 
-intro = intro.map((track, index) => {
-  track.id = index;
-  return track;
-});
+intro = mapIndexIDs(intro)
 
-export default intro;
+export default intro

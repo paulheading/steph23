@@ -1,0 +1,52 @@
+@import 'styles/mixins';
+
+@mixin button {
+  border: 1px solid currentColor;
+  background-color: transparent;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: inherit;
+  display: flex;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+
+  @include brand using($color, $variant) {
+    color: get-color($color);
+  }
+}
+
+.author_container {
+  justify-content: center;
+  margin-bottom: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  color: inherit;
+  display: flex;
+  gap: 1rem;
+}
+
+.author {
+  @include crete-round;
+  font-size: 1.25rem;
+}
+
+.track_container {
+  justify-content: center;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.prev_button {
+  @include button;
+}
+
+.next_button {
+  @include button;
+}

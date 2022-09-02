@@ -1,0 +1,36 @@
+@import 'styles/mixins';
+
+.container {
+  background-color: $c-red-dark;
+  justify-content: center;
+  padding: 2rem;
+  display: grid;
+}
+
+.buttons {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.button {
+  border: 1px solid currentColor;
+  border-radius: 2.8125rem;
+  padding: 0.5rem 0.75rem;
+  margin: $tab-margin;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+
+  @include brand using($color, $variant) {
+    color: get-color($color);
+    background-color: get-color($color, dark);
+  }
+
+  &.open {
+    @include brand using($color, $variant) {
+      background-color: get-color($color);
+      border-color: get-color($color);
+      color: get-color($color, dark);
+    }
+  }
+}

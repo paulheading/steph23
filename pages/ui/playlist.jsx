@@ -1,23 +1,21 @@
 import { useState } from 'react'
-import { eLearning, advertising } from 'data/playlist'
+import { eLearning } from 'data/playlist'
 import { Head, Playlist } from 'components'
-import styles from 'styles/ui.module.scss'
 
-export default function Home() {
+export default function UI_Playlist() {
   const [active, setActive] = useState(eLearning.main)
   const handleSetActive = (track) => setActive(track)
   const playlistProps = {
+    data: eLearning,
     handleSetActive,
+    variant: 'red',
     active,
   }
 
   return (
     <div>
       <Head />
-      <div className={styles.grid}>
-        <Playlist data={eLearning} {...playlistProps} />
-        <Playlist data={advertising} {...playlistProps} />
-      </div>
+      <Playlist {...playlistProps} />
     </div>
   )
 }

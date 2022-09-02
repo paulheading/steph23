@@ -1,0 +1,188 @@
+@import 'styles/variables';
+@import 'styles/mixins/media';
+
+@mixin montserrat {
+  font-family: montserrat, sans-serif;
+  font-weight: normal;
+}
+
+@mixin crete-round {
+  font-family: crete-round, serif;
+  font-weight: normal;
+}
+
+@mixin inset {
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+@mixin absolute-center {
+  @include inset;
+  position: absolute;
+  margin: auto;
+}
+
+@mixin nav-link {
+  @include crete-round;
+  font-size: 1.25rem;
+}
+
+@mixin section-title {
+  @include crete-round;
+  font-size: 2.125rem;
+}
+
+@mixin focus-visible {
+  &[data-focus-visible-added] {
+    @content;
+  }
+}
+
+@mixin focus {
+  @include focus-visible {
+    @content;
+  }
+
+  &:focus,
+  &:hover {
+    @content;
+  }
+}
+
+@mixin focus-nav-link($bg: $c-green-dark, $col: white) {
+  background-color: $bg;
+  color: $col;
+
+  svg {
+    fill: $col;
+  }
+}
+
+@mixin section($big: true, $top: false) {
+  text-align: center;
+  padding: 6rem 1rem;
+
+  @if $big {
+    align-items: center;
+    min-height: 40rem;
+    display: grid;
+  }
+
+  @if $top {
+    padding-top: 9rem;
+  }
+}
+
+@mixin wrap($max: 50rem) {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: $max;
+  width: 100%;
+}
+
+@mixin reset-title($val) {
+  margin-bottom: 0;
+  margin-top: 0;
+
+  @if $val {
+    &:not(:last-child) {
+      margin-bottom: $val;
+    }
+  }
+}
+
+@mixin reset-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin data($data) {
+  &[data-#{$data}='true'] {
+    @content;
+  }
+}
+
+@mixin not-data($data) {
+  &:not([data-#{$data}='true']) {
+    @content;
+  }
+}
+
+@function get-color($color, $variant: base) {
+  @return map-get(map-get($colors, $color), $variant);
+}
+
+@mixin theme($color: green) {
+  background-color: get-color($color);
+  color: get-color($color, dark);
+  svg {
+    fill: currentColor;
+  }
+}
+
+@mixin theme-dark($color: green) {
+  background-color: get-color($color, dark);
+  color: get-color($color);
+  svg {
+    fill: currentColor;
+  }
+}
+
+@mixin progressBar {
+  height: $height-bar;
+  position: relative;
+  outline: none;
+  width: 12rem;
+  margin: 0;
+
+  &.mini {
+    width: 6rem;
+  }
+
+  &.main {
+    width: 100%;
+  }
+}
+
+@mixin preProgress {
+  height: $height-bar;
+}
+
+@mixin knobby {
+  height: $height-bar;
+  width: $height-bar;
+  position: relative;
+  cursor: pointer;
+  z-index: 3;
+}
+
+@mixin brand {
+  @each $color, $variant in $colors {
+    &.#{$color} {
+      @content ($color, $variant);
+    }
+  }
+}
+
+@mixin playlist {
+  border: 2px solid currentColor;
+  border-radius: 1rem;
+  overflow: hidden;
+  max-width: 320px;
+  width: 100%;
+
+  @include brand using ($color, $variant) {
+    background-color: get-color($color, light);
+    color: get-color($color, dark);
+  }
+
+  &.invert {
+    @include brand using ($color, $variant) {
+      background-color: get-color($color, dark);
+      color: get-color($color);
+    }
+  }
+}

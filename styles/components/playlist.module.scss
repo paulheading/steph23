@@ -1,12 +1,5 @@
-.bar {
-  background-color: gray;
-  border: none;
-  width: 100%;
-  padding: 0;
-}
+@import 'styles/mixins';
 
-.progress {
-  background-color: black;
-  height: 8px;
-  width: 0;
+.container {
+  @include playlist;
 }

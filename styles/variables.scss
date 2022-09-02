@@ -1,0 +1,87 @@
+$tab-margin: 0.25rem;
+$button: 1.5rem;
+$clip: 12.5rem;
+
+$border-radius-nav: 1.25rem;
+$padding-nav-hz: 0.75rem;
+$padding-nav-end-hz: 1rem;
+$height-bar: 0.375rem;
+$size-play: 2.125rem;
+
+$c-green-light: #a1e8dd;
+$c-green: #47d1bd;
+$c-green-progress: #35aa99;
+$c-green-bar: #406660;
+$c-green-dark: #00332b;
+$c-green-dark--hover: #406660;
+
+$c-red-light: #fde0dd;
+$c-red: #f77b6e;
+$c-red-progress: #c66259;
+$c-red-bar: #65312e;
+$c-red-dark: #341919;
+$c-red-dark--hover: #675252;
+
+$c-yellow-light: #a1e8dd;
+$c-yellow: #ffb866;
+$c-yellow-progress: #cc9053;
+$c-yellow-bar: #67412c;
+$c-yellow-dark: $c-red-dark;
+$c-yellow-dark--hover: #406660;
+
+$c-cream-light: #ffffff;
+$c-cream: #f6ebe4;
+$c-cream-progress: #c6b7b1;
+$c-cream-bar: #654d4c;
+$c-cream-dark: $c-red-dark;
+$c-cream-dark--hover: $c-red-dark--hover;
+
+$c-sky-light: #a1e8dd;
+$c-sky: #e3e8e7;
+$c-sky-progress: #b3b6b7;
+$c-sky-bar: #515356;
+$c-sky-dark: #212126;
+$c-sky-dark--hover: #406660;
+
+$colors: (
+  green: (
+    light: $c-green-light,
+    base: $c-green,
+    progress: $c-green-progress,
+    bar: $c-green-bar,
+    dark: $c-green-dark,
+    hover: $c-green-dark--hover,
+  ),
+  red: (
+    light: $c-red-light,
+    base: $c-red,
+    progress: $c-red-progress,
+    bar: $c-red-bar,
+    dark: $c-red-dark,
+    hover: $c-red-dark--hover,
+  ),
+  yellow: (
+    light: $c-yellow-light,
+    base: $c-yellow,
+    progress: $c-yellow-progress,
+    bar: $c-yellow-bar,
+    dark: $c-yellow-dark,
+    hover: $c-yellow-dark--hover,
+  ),
+  cream: (
+    light: $c-cream-light,
+    base: $c-cream,
+    progress: $c-cream-progress,
+    bar: $c-cream-bar,
+    dark: $c-cream-dark,
+    hover: $c-cream-dark--hover,
+  ),
+  sky: (
+    light: $c-sky-light,
+    base: $c-sky,
+    progress: $c-sky-progress,
+    bar: $c-sky-bar,
+    dark: $c-sky-dark,
+    hover: $c-sky-dark--hover,
+  ),
+);

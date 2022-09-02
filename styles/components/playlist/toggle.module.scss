@@ -1,0 +1,24 @@
+@import 'styles/mixins';
+
+.container {
+  @include crete-round;
+  justify-content: space-between;
+  background-color: transparent;
+  border-radius: 1rem;
+  align-items: center;
+  font-size: 1.25rem;
+  padding: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  border: none;
+  width: 100%;
+}
+
+.MdClose {
+  transition: transform 300ms;
+  transform: rotate(225deg);
+}
+
+.MdClose.open {
+  transform: rotate(0deg);
+}

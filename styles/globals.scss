@@ -1,0 +1,39 @@
+
+@import "styles/mixins";
+
+html,
+body {
+  @include montserrat;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  @include reset-title(0.25em);
+}
+
+h2 {
+  @include reset-title(1.25rem);
+}
+
+h3 {
+  @include reset-title(0.5em);
+}
+
+h4 {
+  @include reset-title(0.5em);
+}
+
+p {
+  @include reset-title(1em);
+}

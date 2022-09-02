@@ -1,0 +1,10 @@
+@import 'styles/mixins';
+
+.container {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.container[data='toggle-closed'] {
+  display: none;
+}
