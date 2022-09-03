@@ -1,5 +1,5 @@
 import { Container, Wrap } from 'components'
-// import styles from 'styles/components/testimonials.module.scss'
+// import styles from 'styles/components/page/testimonials.module.scss'
 
 export function Testimonials() {
   const containerProps = {

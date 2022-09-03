@@ -104,15 +104,9 @@
   }
 }
 
-@mixin reset-title($val) {
+@mixin reset-title {
   margin-bottom: 0;
   margin-top: 0;
-
-  @if $val {
-    &:not(:last-child) {
-      margin-bottom: $val;
-    }
-  }
 }
 
 @mixin reset-list {

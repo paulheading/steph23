@@ -1,5 +1,4 @@
-
-@import "styles/mixins";
+@import 'styles/mixins';
 
 html,
 body {
@@ -19,21 +18,21 @@ a {
 }
 
 h1 {
-  @include reset-title(0.25em);
+  @include reset-title;
 }
 
 h2 {
-  @include reset-title(1.25rem);
+  @include reset-title;
 }
 
 h3 {
-  @include reset-title(0.5em);
+  @include reset-title;
 }
 
 h4 {
-  @include reset-title(0.5em);
+  @include reset-title;
 }
 
 p {
-  @include reset-title(1em);
+  @include reset-title;
 }

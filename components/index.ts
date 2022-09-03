@@ -5,6 +5,7 @@ export * from 'components/sample'
 export * from 'components/wrap'
 export * from 'components/container'
 export * from 'components/title'
+export * from 'components/menu'
 
 export * from 'components/page'
 export * from 'components/page/hero'

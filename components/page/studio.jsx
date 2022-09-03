@@ -1,6 +1,6 @@
 import { intro } from 'data/playlist'
 import { Container, Wrap, Player, Title } from 'components'
-import styles from 'styles/components/studio.module.scss'
+import styles from 'styles/components/page/studio.module.scss'
 import Image from 'next/image'
 
 export function Studio({ active, setActive }) {

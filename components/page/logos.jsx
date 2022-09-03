@@ -1,7 +1,7 @@
 import { Container, Wrap, Title } from 'components'
 import styles from 'styles/components/page/logos.module.scss'
 
-export function Logos({ title }) {
+export function Logos({ title, children }) {
   const containerProps = {
     className: styles.container,
     variant: 'cream',
@@ -9,7 +9,8 @@ export function Logos({ title }) {
   return (
     <Container {...containerProps}>
       <Wrap>
-        <Title>{title}</Title>
+        <Title className={styles.title}>{title}</Title>
+        <div className={styles.children}>{children}</div>
       </Wrap>
     </Container>
   )

@@ -1,5 +1,5 @@
 import { Container, Wrap } from 'components'
-import styles from 'styles/components/footer.module.scss'
+import styles from 'styles/components/page/footer.module.scss'
 
 export function Footer({ variant }) {
   const containerProps = {
@@ -30,8 +30,8 @@ export function Footer({ variant }) {
             </svg>
           </div>
           <div className={styles.contact}>
-            {/* <Email />
-          <Telephone /> */}
+            <a href="mailto:steph@sparkthecannon.com">steph@sparkthecannon.com</a>
+            <a href="tel:+447547795849">+44 7547 795849</a>
           </div>
         </Wrap>
       </Container>

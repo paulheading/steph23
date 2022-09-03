@@ -1,6 +1,6 @@
 import { intro } from 'data/playlist'
 import { Container, Wrap, Player, Title } from 'components'
-import styles from 'styles/components/intro.module.scss'
+import styles from 'styles/components/page/intro.module.scss'
 
 export function Intro({ active, setActive }) {
   const handleSetActive = (track) => setActive(track)
