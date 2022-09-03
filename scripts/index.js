@@ -1,5 +1,4 @@
-
-export function attachVariant(variant: string | undefined, styles: any) {
+export function attachVariant(variant, styles) {
   switch (variant) {
     case 'red':
       return styles.red

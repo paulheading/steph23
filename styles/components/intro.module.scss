@@ -1,0 +1,20 @@
+@import 'styles/mixins';
+
+.wrap {
+  grid-auto-flow: column;
+  display: grid;
+  gap: 3.75rem;
+}
+
+.message {
+  text-align: left;
+}
+
+.players {
+  display: grid;
+  gap: 1rem;
+}
+
+.title {
+  margin-bottom: 1rem;
+}

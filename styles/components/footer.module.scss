@@ -1,0 +1,21 @@
+@import 'styles/mixins';
+
+@mixin contact {
+  align-items: center;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.wrap {
+  @include flex-separate;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.contact {
+  @include contact;
+}
+
+.socials {
+  @include contact;
+}

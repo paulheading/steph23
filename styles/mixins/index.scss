@@ -24,6 +24,35 @@
   margin: auto;
 }
 
+@mixin wrap($max: 50rem) {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: $max;
+  width: 100%;
+}
+
+@function get-color($color, $variant: base) {
+  @return map-get(map-get($colors, $color), $variant);
+}
+
+@mixin theme($color: green) {
+  background-color: get-color($color);
+  color: get-color($color, dark);
+
+  svg {
+    fill: currentColor;
+  }
+}
+
+@mixin theme-dark($color: green) {
+  background-color: get-color($color, dark);
+  color: get-color($color);
+
+  svg {
+    fill: currentColor;
+  }
+}
+
 @mixin nav-link {
   @include crete-round;
   font-size: 1.25rem;
@@ -75,13 +104,6 @@
   }
 }
 
-@mixin wrap($max: 50rem) {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: $max;
-  width: 100%;
-}
-
 @mixin reset-title($val) {
   margin-bottom: 0;
   margin-top: 0;
@@ -108,26 +130,6 @@
 @mixin not-data($data) {
   &:not([data-#{$data}='true']) {
     @content;
-  }
-}
-
-@function get-color($color, $variant: base) {
-  @return map-get(map-get($colors, $color), $variant);
-}
-
-@mixin theme($color: green) {
-  background-color: get-color($color);
-  color: get-color($color, dark);
-  svg {
-    fill: currentColor;
-  }
-}
-
-@mixin theme-dark($color: green) {
-  background-color: get-color($color, dark);
-  color: get-color($color);
-  svg {
-    fill: currentColor;
   }
 }
 
@@ -185,4 +187,10 @@
       color: get-color($color);
     }
   }
+}
+
+@mixin flex-separate {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
 }

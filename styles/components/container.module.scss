@@ -1,0 +1,29 @@
+@import 'styles/mixins';
+
+.container {
+  svg {
+    fill: currentColor;
+  }
+
+  @include brand using ($color, $variant) {
+    background-color: get-color($color);
+    color: get-color($color, dark);
+  }
+}
+
+.container.padding {
+  padding: 6rem 1rem;
+}
+
+.container.section {
+  align-items: center;
+  min-height: 40rem;
+  display: grid;
+}
+
+.container.dark {
+  @include brand using ($color, $variant) {
+    background-color: get-color($color, dark);
+    color: get-color($color);
+  }
+}

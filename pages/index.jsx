@@ -1,23 +1,30 @@
+import { intro } from 'data/playlist'
 import { useState } from 'react'
-import { eLearning, advertising } from 'data/playlist'
-import { Head, Playlist } from 'components'
-import styles from 'styles/ui.module.scss'
+import { Page, Hero, Intro, Studio, Testimonials, Logos } from 'components'
+import { home } from 'scripts/head'
 
 export default function Home() {
-  const [active, setActive] = useState(eLearning.main)
-  const handleSetActive = (track) => setActive(track)
-  const playlistProps = {
-    handleSetActive,
-    active,
+  const [active, setActive] = useState(intro[0])
+  const pageProps = {
+    head: home,
+    menu: 'green',
+    footer: 'cream',
   }
-
+  const introProps = {
+    active,
+    setActive,
+  }
+  const studioProps = {
+    active,
+    setActive,
+  }
   return (
-    <div>
-      <Head />
-      <div className={styles.grid}>
-        <Playlist data={eLearning} {...playlistProps} />
-        <Playlist data={advertising} {...playlistProps} />
-      </div>
-    </div>
+    <Page {...pageProps}>
+      <Hero />
+      <Intro {...introProps} />
+      <Studio {...studioProps} />
+      <Testimonials />
+      <Logos title="Clients"></Logos>
+    </Page>
   )
 }
