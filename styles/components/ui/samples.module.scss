@@ -1,0 +1,44 @@
+@import 'styles/mixins';
+
+.buttons {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.button {
+  border: 1px solid currentColor;
+  border-radius: 2.8125rem;
+  padding: 0.5rem 0.75rem;
+  margin: $tab-margin;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+
+  @include brand using($color, $variant) {
+    background-color: get-color($color);
+    color: get-color($color, dark);
+  }
+
+  &.open {
+    @include brand using($color, $variant) {
+      background-color: get-color($color, dark);
+      border-color: get-color($color, dark);
+      color: get-color($color);
+    }
+  }
+}
+
+.button.dark {
+  @include brand using($color, $variant) {
+    background-color: get-color($color, dark);
+    color: get-color($color);
+  }
+
+  &.open {
+    @include brand using($color, $variant) {
+      background-color: get-color($color);
+      border-color: get-color($color);
+      color: get-color($color, dark);
+    }
+  }
+}

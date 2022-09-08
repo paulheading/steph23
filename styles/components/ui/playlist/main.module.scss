@@ -1,0 +1,79 @@
+@import 'styles/mixins';
+
+.container {
+  text-align: left;
+  padding: 0.75rem;
+  color: white;
+
+  svg {
+    fill: currentColor;
+  }
+
+  @include brand using ($color, $variant) {
+    background-color: get-color($color, dark);
+
+    .bar {
+      background-color: get-color($color, bar);
+    }
+  }
+}
+
+.container.standalone {
+  @include brand using ($color, $variant) {
+    color: get-color($color);
+
+    .progress {
+      background-color: get-color($color);
+    }
+  }
+}
+
+.container.dark {
+  @include brand using ($color, $variant) {
+    background-color: get-color($color);
+    color: get-color($color, dark);
+
+    .bar {
+      background-color: get-color($color, progress);
+    }
+
+    .progress {
+      background-color: get-color($color, dark);
+    }
+  }
+}
+
+.wrap {
+  grid-template-columns: 30fr 280fr 30fr;
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+}
+
+.title {
+  @include nav-link;
+  line-height: normal;
+}
+
+.bar {
+  background-color: gray;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  padding: 0;
+}
+
+.progress {
+  background-color: white;
+  height: 0.25rem;
+  width: 0;
+}
+
+.download {
+  height: 2rem;
+  width: 2rem;
+}
+
+.container[data='toggle-closed'] {
+  display: none;
+}

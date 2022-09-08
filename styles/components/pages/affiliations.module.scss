@@ -1,0 +1,18 @@
+.list {
+  justify-content: center;
+  list-style: inside;
+  font-weight: bold;
+  flex-wrap: wrap;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+}
+
+.list li:first-child {
+  list-style: none;
+}
+
+.list a {
+  text-decoration: underline;
+}

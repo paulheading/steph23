@@ -31,7 +31,7 @@ export default function UI_Players() {
     }
   }
 
-  function setInvert(key) {
+  function setDark(key) {
     switch (key) {
       case 2:
         return true
@@ -45,7 +45,7 @@ export default function UI_Players() {
       <Head />
       <div className={styles.grid}>
         {intro.map((track, index) => (
-          <Player key={`player${index}`} data={track} {...playerProps} standalone={setStandalone(index)} variant={setVariant(index)} invert={setInvert(index)} />
+          <Player key={`player${index}`} data={track} {...playerProps} standalone={setStandalone(index)} variant={setVariant(index)} dark={setDark(index)} />
         ))}
       </div>
     </div>

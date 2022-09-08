@@ -58,11 +58,6 @@
   font-size: 1.25rem;
 }
 
-@mixin section-title {
-  @include crete-round;
-  font-size: 2.125rem;
-}
-
 @mixin focus-visible {
   &[data-focus-visible-added] {
     @content;
@@ -74,7 +69,7 @@
     @content;
   }
 
-  &:focus,
+  &:active,
   &:hover {
     @content;
   }
@@ -175,7 +170,7 @@
     color: get-color($color, dark);
   }
 
-  &.invert {
+  &.dark {
     @include brand using ($color, $variant) {
       background-color: get-color($color, dark);
       color: get-color($color);

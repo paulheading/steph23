@@ -35,4 +35,12 @@ h4 {
 
 p {
   @include reset-title;
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+.text-align-center {
+  text-align: center;
 }

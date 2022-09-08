@@ -10,16 +10,17 @@
   },
   "dependencies": {
     "gsap": "file:libraries/gsap-bonus.tgz",
-    "react-icons": "^4.4.0",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.4.0",
     "sass": "^1.54.6"
   },
   "devDependencies": {
     "@types/node": "^18.7.14",
     "@types/react": "^18.0.17",
     "eslint": "8.23.0",
-    "eslint-config-next": "12.2.5"
+    "eslint-config-next": "12.2.5",
+    "focus-visible": "^5.2.0"
   }
 }

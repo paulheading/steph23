@@ -1,0 +1,44 @@
+@import 'styles/mixins';
+
+.button {
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: $size-play;
+  width: $size-play;
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  border: none;
+  padding: 0;
+
+  @include brand using ($color, $variant) {
+    background-color: get-color($color);
+    color: get-color($color, dark);
+
+    &.playlist {
+      background-color: white;
+    }
+  }
+}
+
+.button.dark {
+  @include brand using ($color, $variant) {
+    background-color: get-color($color, dark);
+    color: get-color($color);
+
+    &.playlist {
+      background-color: white;
+    }
+  }
+}
+
+.fa_play {
+  position: relative;
+  width: 0.75rem;
+  left: 1px;
+}
+
+.fa_pause {
+  width: 0.75rem;
+}

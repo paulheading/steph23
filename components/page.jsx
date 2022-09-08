@@ -1,5 +1,6 @@
 import { Fragment } from 'react'
-import { Head, Menu, Footer } from 'components'
+import { Head, Footer } from 'components'
+import { Menu } from 'components/ui'
 
 export function Page({ head, children, menu, footer }) {
   return (

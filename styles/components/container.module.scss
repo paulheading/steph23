@@ -1,5 +1,8 @@
 @import 'styles/mixins';
 
+$padding-container-vt: 6rem;
+$padding-container-hz: 1rem;
+
 .container {
   svg {
     fill: currentColor;
@@ -12,7 +15,11 @@
 }
 
 .container.padding {
-  padding: 6rem 1rem;
+  padding: $padding-container-vt $padding-container-hz;
+}
+
+.container.top {
+  padding-top: $padding-container-vt * 2;
 }
 
 .container.section {
@@ -25,5 +32,12 @@
   @include brand using ($color, $variant) {
     background-color: get-color($color, dark);
     color: get-color($color);
+  }
+}
+
+.container.footer {
+  color: get-color('cream');
+  @include brand using ($color, $variant) {
+    background-color: get-color($color, dark);
   }
 }

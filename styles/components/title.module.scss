@@ -1,5 +1,7 @@
 @import 'styles/mixins';
 
 .container {
-  @include section-title;
+  @include crete-round;
+  font-size: 2.125rem;
+  margin-bottom: 2rem;
 }
