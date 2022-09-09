@@ -1,5 +1,5 @@
 import { Container, Wrap, Title } from 'components'
-import styles from 'styles/components/pages/portfolio.module.scss'
+import styles from 'styles/components/sections/portfolio.module.scss'
 import portfolio from 'data/portfolio'
 import { attachVariant } from 'scripts'
 import { useState } from 'react'
@@ -30,6 +30,7 @@ export function Portfolio() {
   const moreItems = portfolio.length > items
 
   const containerProps = {
+    id: 'portfolio',
     variant: 'red',
   }
   const buttonProps = {

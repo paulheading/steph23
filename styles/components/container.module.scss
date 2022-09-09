@@ -19,12 +19,15 @@ $padding-container-hz: 1rem;
 }
 
 .container.top {
-  padding-top: $padding-container-vt * 2;
+  padding-top: $padding-container-vt * 1.66;
 }
 
 .container.section {
-  align-items: center;
   min-height: 40rem;
+}
+
+.container.center {
+  align-items: center;
   display: grid;
 }
 

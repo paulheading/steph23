@@ -1,4 +1,4 @@
-import styles from 'styles/components/pages/affiliations.module.scss'
+import styles from 'styles/components/sections/affiliations.module.scss'
 import { Content, Title } from 'components'
 
 export function Affiliations() {

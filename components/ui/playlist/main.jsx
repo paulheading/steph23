@@ -7,8 +7,9 @@ import { Button } from 'components/ui/playlist/button'
 export function Main({ activePlaylist, playerRef, active, handleSetActive, main, variant, toggleData, playlist = false, dark = false }) {
   const barRef = useRef(null)
   const progressRef = useRef(null)
+  const playlistClass = playlist ? styles.playlist : ''
   const darkClass = dark ? styles.dark : ''
-  const containerClasses = `${styles.container} ${attachVariant(variant, styles)} ${darkClass}`
+  const containerClasses = `${styles.container} ${attachVariant(variant, styles)} ${playlistClass} ${darkClass}`
 
   function togglePlay() {
     if (activePlaylist) handleSetActive({ ...active, playing: !active.playing })

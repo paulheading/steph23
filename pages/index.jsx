@@ -1,7 +1,7 @@
 import { intro } from 'data/playlist'
 import { useState } from 'react'
 import { Page, Logos } from 'components'
-import { Hero, Intro, Studio, Testimonials } from 'components/pages'
+import { Hero, Intro, Studio, Testimonials } from 'components/sections'
 import { Adobe, Pixar, Aljazeera, Disney, Sega, Unity, Microsoft, Sony, Audible, BBC, LucasFilm, TwentyFour, Cambridge, Yoto } from 'logos'
 import { home } from 'scripts/head'
 

@@ -1,11 +1,7 @@
 @import 'styles/mixins';
 
 .container {
-  justify-content: center;
-  min-height: 22.25rem;
-  align-items: center;
-  flex-wrap: wrap;
-  display: flex;
+  min-height: 21.25rem;
 }
 
 .container[data='toggle-closed'] {

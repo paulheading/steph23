@@ -21,6 +21,7 @@ $border-radius-menu: $line-height-menu * 0.5;
   padding-top: 3rem;
   display: flex;
   width: 100%;
+  z-index: 3;
 }
 
 .list {

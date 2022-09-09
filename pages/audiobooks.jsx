@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { eLearning, advertising, gaming, series } from 'data/playlist'
 import { Harper, AngryRobot, Penguin, ChatterBox, Hodder, Yoto, Audible, Bookotoure, RNIB, Storytel, Hachette, Ladbroke, Orion, Dreamscape, Bloomsbury, Tonies } from 'logos'
 import { Page, Logos } from 'components'
-import { Audiobooks as Intro, Affiliations, Accents, Portfolio, Samples } from 'components/pages'
+import { Audiobooks as Intro, Affiliations, Accents, Portfolio, Samples } from 'components/sections'
 import { audiobooks } from 'scripts/head'
 
 export default function Audiobooks() {

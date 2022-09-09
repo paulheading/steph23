@@ -6,6 +6,10 @@
   gap: 1.25rem;
 }
 
+.container {
+  padding: 1rem;
+}
+
 .wrap {
   @include flex-separate;
   padding-bottom: 0.5rem;

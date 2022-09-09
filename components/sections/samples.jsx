@@ -1,11 +1,12 @@
 import { Content, Title } from 'components'
 import { Samples as SamplesUI } from 'components/ui'
-import styles from 'styles/components/pages/samples.module.scss'
+import styles from 'styles/components/sections/samples.module.scss'
 
 export function Samples({ data, variant, dark = false, active, setActive }) {
   const contentProps = {
     className: styles.content,
     section: true,
+    id: 'samples',
     variant,
     dark,
   }

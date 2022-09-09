@@ -1,0 +1,14 @@
+.grid {
+  grid-template-columns: repeat(2, 20rem);
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.column {
+  align-items: flex-start;
+  display: grid;
+  gap: 1rem;
+}

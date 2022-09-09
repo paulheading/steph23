@@ -1,0 +1,10 @@
+@import 'styles/mixins';
+
+.grid {
+  @include split-layout;
+}
+
+.image {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}

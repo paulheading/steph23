@@ -5,16 +5,26 @@ import { Dropdown } from 'components/ui/menu/dropdown'
 import { Anchor } from 'components/ui/menu/anchor'
 import menu from 'data/menu'
 
+function checkRoute(href) {
+  const { route } = useRouter()
+  if (href === route) return true
+  const parent = {
+    route: route.split('/')[1],
+    href: href.split('/')[1],
+  }
+  if (parent.href === parent.route) return true
+  return false
+}
+
 export function Menu({ variant }) {
   const [openDropDownID, setDropDownID] = useState(null)
-  const { route } = useRouter()
   return (
     <div className={styles.container}>
       <nav>
         <ul className={styles.list}>
           {menu.map((item, index) => {
             const props = {
-              active: item.href === route,
+              active: checkRoute(item.href),
               openDropDownID,
               setDropDownID,
               variant,

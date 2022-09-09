@@ -183,3 +183,11 @@
   align-items: center;
   display: flex;
 }
+
+@mixin split-layout {
+  grid-template-columns: repeat(2, 20rem);
+  justify-content: center;
+  align-items: flex-start;
+  display: grid;
+  gap: 4rem;
+}

@@ -27,7 +27,7 @@ $c-yellow: #ffb866;
 $c-yellow-progress: #cc9053;
 $c-yellow-bar: #67412c;
 $c-yellow-dark: $c-red-dark;
-$c-yellow-dark--hover: #406660;
+$c-yellow-dark--hover: $c-red-dark--hover;
 
 $c-cream-light: #ffffff;
 $c-cream: #f6ebe4;
@@ -41,7 +41,7 @@ $c-sky: #e3e8e7;
 $c-sky-progress: #b3b6b7;
 $c-sky-bar: #515356;
 $c-sky-dark: #212126;
-$c-sky-dark--hover: #406660;
+$c-sky-dark--hover: $c-green-dark--hover;
 
 $colors: (
   green: (

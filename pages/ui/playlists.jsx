@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { eLearning, advertising, gaming } from 'data/playlist'
-import { Head, Playlist } from 'components'
+import { Head } from 'components'
+import { Playlist } from 'components/ui'
 import styles from 'styles/ui.module.scss'
 
 export default function UI_Playlists() {

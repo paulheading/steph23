@@ -3,6 +3,7 @@ import styles from 'styles/components/footer.module.scss'
 
 export function Footer({ variant }) {
   const containerProps = {
+    className: styles.container,
     section: false,
     padding: false,
     footer: true,

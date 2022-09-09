@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 import styles from 'styles/components/ui/sample.module.scss'
-import { attachVariant } from 'scripts'
 import { Track } from 'components/ui/sample/track'
 import { Group } from 'components/ui/sample/group'
 
@@ -9,7 +8,7 @@ export function Sample({ data, active, handleSetActive, variant, openID, series,
   const playerRef = useRef(null)
   const isOpen = openID === playlist.id
   const activePlaylist = playlist.id === active.playlist_id
-  const containerClasses = `${styles.container} ${attachVariant(variant, styles)}`
+  const containerClasses = `${styles.container}`
   const toggleData = () => (!isOpen ? 'toggle-closed' : 'toggle-open')
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import accents from 'data/accents'
 import { Content, Title } from 'components'
-import styles from 'styles/components/pages/accents.module.scss'
+import styles from 'styles/components/sections/accents.module.scss'
 
 function Place(place, index) {
   const props = {
@@ -40,8 +40,13 @@ function Region({ region, areas }, index) {
 }
 
 export function Accents() {
+  const props = {
+    className: 'text-align-center',
+    id: 'accents',
+    dark: true,
+  }
   return (
-    <Content className="text-align-center" dark>
+    <Content {...props}>
       <Title>Accents</Title>
       <p>I've got a great ear and passion for accents.</p>
       <p>
