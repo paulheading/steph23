@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Page, Content } from 'components'
 import { Playlist } from 'components/ui'
-import { demos } from 'scripts/head'
+import { demos } from 'data/seo'
 import styles from 'styles/components/templates/demos.module.scss'
 
 export function Template({ data, children }) {

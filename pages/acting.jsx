@@ -1,5 +1,5 @@
 import { Page, Content, Title } from 'components'
-import { acting } from 'scripts/head'
+import { acting } from 'data/seo'
 import styles from 'styles/pages/acting.module.scss'
 import Image from 'next/image'
 

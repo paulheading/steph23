@@ -1,7 +1,7 @@
 import { advertising } from 'data/playlist'
 import { Title } from 'components'
 import { Template } from 'components/templates/demos'
-import { demos } from 'scripts/head'
+import { demos } from 'data/seo'
 
 export default function Advertising() {
   const props = {

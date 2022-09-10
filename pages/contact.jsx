@@ -1,5 +1,5 @@
 import { Page, Content } from 'components'
-import { contact } from 'scripts/head'
+import { contact } from 'data/seo'
 import { useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 

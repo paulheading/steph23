@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { eLearning, advertising, gaming } from 'data/playlist'
 import { Page, Content, Title } from 'components'
 import { Playlist } from 'components/ui'
-import { demos } from 'scripts/head'
+import { demos } from 'data/seo'
 import styles from 'styles/pages/demos.module.scss'
 
 const playlists = [eLearning, advertising, gaming]
@@ -16,7 +16,7 @@ export default function Demos() {
     setOpenID(id)
   }
   const pageProps = {
-    head: demos,
+    head: demos.index,
     menu: 'red',
     footer: 'cream',
   }

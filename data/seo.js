@@ -23,9 +23,11 @@ export const demos = {
 }
 
 export const audiobooks = {
-  title: 'Audiobooks',
-  keywords: 'Audiobooks',
-  desc: 'Audiobooks',
+  index: {
+    title: 'Audiobooks',
+    keywords: 'Audiobooks',
+    desc: 'Audiobooks',
+  },
 }
 
 export const contact = {
