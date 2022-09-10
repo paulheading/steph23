@@ -32,4 +32,4 @@ yarn-error.log*
 .vercel
 
 # dont publish these
-pages/ui
+/pages/ui/
