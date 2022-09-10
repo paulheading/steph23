@@ -39,13 +39,12 @@ export function Intro({ active, setActive }) {
           {intro.map((track, index) => {
             const props = {
               variant: setVariant(index),
-              key: `palyer${index}`,
               dark: setDark(index),
               standalone: true,
               ...playerProps,
               data: track,
             }
-            return <Player {...props} />
+            return <Player key={'players' + index} {...props} />
           })}
         </div>
         <div className={styles.message}>

@@ -14,7 +14,7 @@ export function Sample({ data, active, handleSetActive, variant, openID, series,
   useEffect(() => {
     if (!activePlaylist) return
     active.playing ? playerRef.current.play() : playerRef.current.pause()
-  }, [active])
+  }, [active, activePlaylist])
 
   function updateProgress() {
     if (!playerRef.current) return
@@ -51,11 +51,10 @@ export function Sample({ data, active, handleSetActive, variant, openID, series,
   const mapTracks = (tracks) =>
     tracks.map((track, index) => {
       const props = {
-        key: `track${index}`,
         ...trackProps,
         track,
       }
-      return <Track {...props} />
+      return <Track key={'track' + index} {...props} />
     })
 
   const groupProps = {

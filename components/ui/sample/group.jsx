@@ -42,13 +42,12 @@ export function Group({ groups, trackProps }) {
       <div className={styles.track_container}>
         {group.tracks.map((track, index) => {
           const props = {
-            key: `track${index}`,
             ...trackProps,
             variant,
             track,
             dark,
           }
-          return <Track {...props} />
+          return <Track key={'track' + index} {...props} />
         })}
       </div>
     </div>

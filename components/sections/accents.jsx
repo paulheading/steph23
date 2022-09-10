@@ -48,10 +48,10 @@ export function Accents() {
   return (
     <Content {...props}>
       <Title>Accents</Title>
-      <p>I've got a great ear and passion for accents.</p>
+      <p>I&apos;ve got a great ear and passion for accents.</p>
       <p>
-        Born in Alaska, my native accent is Standard American or West Coast. Having lived in London half my life, I also speak with a neutral Transatlantic accent. I've been fortunate to live all over the world from Mexico to Sydney and in that time have collected a lot of brilliant accents. Here's
-        a selection of accents I perform regularly. If you don't see the one you're after, let's talk! I love an excuse for research and full immersion!
+        Born in Alaska, my native accent is Standard American or West Coast. Having lived in London half my life, I also speak with a neutral Transatlantic accent. I&apos;ve been fortunate to live all over the world from Mexico to Sydney and in that time have collected a lot of brilliant accents.
+        Here&apos;s a selection of accents I perform regularly. If you don&apos;t see the one you&apos;re after, let&apos;s talk! I love an excuse for research and full immersion!
       </p>
       {accents.map(Region)}
     </Content>

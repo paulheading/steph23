@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { eLearning } from 'data/playlist'
-import { Head, Playlist } from 'components'
+import { Head } from 'components'
+import { Playlist } from 'components/ui'
 
 export default function UI_Playlist() {
   const [active, setActive] = useState(eLearning.main)

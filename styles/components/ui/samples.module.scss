@@ -1,8 +1,11 @@
 @import 'styles/mixins';
 
+.container {
+  text-align: center;
+}
+
 .buttons {
   margin-bottom: 1rem;
-  text-align: center;
 }
 
 .button {

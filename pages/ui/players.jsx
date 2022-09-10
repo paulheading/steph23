@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { intro } from 'data/playlist'
-import { Head, Player } from 'components'
+import { Head } from 'components'
+import { Player } from 'components/ui'
 import styles from 'styles/ui.module.scss'
 
 export default function UI_Players() {

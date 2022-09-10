@@ -40,7 +40,7 @@ export function Testimonials() {
         </Button>
         {data.map((testimonial, index) => {
           if (quoteID !== index) return
-          return <Testimonial {...testimonial} />
+          return <Testimonial key={'testimonial' + index} {...testimonial} />
         })}
         <Button {...nextButtonProps}>
           <HiOutlineArrowRight />

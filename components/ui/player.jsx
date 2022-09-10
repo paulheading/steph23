@@ -14,7 +14,7 @@ export function Player({ data, active, handleSetActive, variant, standalone, dar
   useEffect(() => {
     if (!activePlaylist) return
     active.playing ? playerRef.current.play() : playerRef.current.pause()
-  }, [active])
+  }, [active, activePlaylist])
 
   function updateProgress() {
     if (!playerRef.current) return

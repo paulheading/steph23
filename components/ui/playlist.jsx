@@ -20,7 +20,7 @@ export function Playlist({ data, active, handleSetActive, variant, toggle, openI
   useEffect(() => {
     if (!activePlaylist) return
     active.playing ? playerRef.current.play() : playerRef.current.pause()
-  }, [active])
+  }, [active, activePlaylist])
 
   function updateProgress() {
     if (!playerRef.current) return
@@ -74,11 +74,10 @@ export function Playlist({ data, active, handleSetActive, variant, toggle, openI
       <Main {...mainProps} />
       {playlist.tracks.map((track, index) => {
         const props = {
-          key: `track${index}`,
           ...trackProps,
           track,
         }
-        return <Track {...props} />
+        return <Track key={'track' + index} {...props} />
       })}
       <Track />
     </div>

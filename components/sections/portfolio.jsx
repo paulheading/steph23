@@ -37,12 +37,11 @@ export function Portfolio() {
         <div className={styles.wrap}>
           {portfolio.map((link, index) => {
             const props = {
-              key: `link${index}`,
               index,
               items,
               link,
             }
-            return <Links {...props} />
+            return <Links key={'links' + index} {...props} />
           })}
         </div>
         {moreItems && <Button {...buttonProps}>More</Button>}

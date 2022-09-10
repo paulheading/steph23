@@ -22,7 +22,7 @@ export function Samples({ data, variant, dark = false, active, setActive }) {
   }
 
   return (
-    <Fragment>
+    <div className={styles.container}>
       {needsButtons && (
         <div className={styles.buttons}>
           {samples.map(({ title, id }, index) => {
@@ -31,25 +31,27 @@ export function Samples({ data, variant, dark = false, active, setActive }) {
             const classes = `${styles.button} ${attachVariant(variant, styles)} ${openClass} ${darkClass}`
             const props = {
               onClick: () => handleSetOpenID(id),
-              key: `button${index}`,
               className: classes,
             }
 
-            return <button {...props}>{title}</button>
+            return (
+              <button key={'button' + index} {...props}>
+                {title}
+              </button>
+            )
           })}
         </div>
       )}
       {data.map((playlist, index) => {
         const sampleProps = {
           series: playlist.groups,
-          key: `sample${index}`,
           ...playlistProps,
           data: playlist,
           variant,
           dark,
         }
-        return <Sample {...sampleProps} />
+        return <Sample key={'sample' + index} {...sampleProps} />
       })}
-    </Fragment>
+    </div>
   )
 }

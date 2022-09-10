@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { intro } from 'data/playlist'
-import { Head, Player } from 'components'
+import { Head } from 'components'
+import { Player } from 'components/ui'
 
 export default function UI_Player() {
   const [active, setActive] = useState(intro[0])

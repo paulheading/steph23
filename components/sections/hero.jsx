@@ -16,13 +16,11 @@ export function Hero() {
   const sparkProps = {
     src: '/spark.png',
     priority: true,
-    alt: 'spark',
     height: 702,
     width: 702,
   }
   const stephProps = {
     src: '/steph.png',
-    alt: 'steph',
     height: 410,
     width: 520,
   }
@@ -46,10 +44,10 @@ export function Hero() {
         </div>
         <div className={styles.animation}>
           <div className={styles.steph}>
-            <Image {...stephProps} />
+            <Image {...stephProps} alt="steph" />
           </div>
           <div ref={sparkRef} className={styles.spark}>
-            <Image {...sparkProps} />
+            <Image {...sparkProps} alt="spark" />
           </div>
         </div>
       </Wrap>

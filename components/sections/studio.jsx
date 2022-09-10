@@ -16,7 +16,6 @@ export function Studio({ active, setActive }) {
   const imageProps = {
     src: '/studio.jpg',
     height: '360',
-    alt: 'studio',
     width: '270',
   }
   const containerProps = {
@@ -56,7 +55,7 @@ export function Studio({ active, setActive }) {
             <Player {...playerProps} />
           </div>
           <div className={styles.wrap_image}>
-            <Image {...imageProps} />
+            <Image alt="studio" {...imageProps} />
           </div>
         </div>
       </Wrap>

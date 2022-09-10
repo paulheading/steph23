@@ -14,9 +14,8 @@ export default function Acting() {
     top: true,
   }
   const title = `stephanie-cannon-headshot-acting-page`
-  const image = {
+  const imageProps = {
     src: `/${title}.jpg`,
-    alt: title,
     height: 112,
     width: 80,
   }
@@ -31,7 +30,7 @@ export default function Acting() {
             <p>I can deliver professional and friendly voices for e-learning or corporate reads, characters for radio drama and games, or child voices for animation and audiobooks.</p>
           </div>
           <div className={styles.image}>
-            <Image {...image} layout="responsive" />
+            <Image {...imageProps} alt={title} layout="responsive" />
           </div>
         </div>
       </Content>

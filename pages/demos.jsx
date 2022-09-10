@@ -39,11 +39,10 @@ export default function Demos() {
       const odd = index % 2
       if (value === odd) return
       const props = {
-        key: `data${index}`,
         ...playlistProps,
         data,
       }
-      return <Playlist {...props} />
+      return <Playlist key={`data${index}`} {...props} />
     })
   }
 
