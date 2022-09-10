@@ -1,7 +1,6 @@
-import { Container, Wrap, Title } from 'components'
+import { Container, Wrap, Title, Button } from 'components'
 import styles from 'styles/components/sections/portfolio.module.scss'
 import portfolio from 'data/portfolio'
-import { attachVariant } from 'scripts'
 import { useState } from 'react'
 
 function Links({ link, index, items }) {
@@ -15,15 +14,6 @@ function Links({ link, index, items }) {
   return <a {...props} style={{ backgroundImage }}></a>
 }
 
-function Button({ children, variant, onClick }) {
-  const classes = `${styles.button} ${attachVariant(variant, styles)}`
-  const props = {
-    className: classes,
-    onClick,
-  }
-  return <button {...props}>{children}</button>
-}
-
 export function Portfolio() {
   const [items, setItems] = useState(20)
   const increment = 5
@@ -35,6 +25,7 @@ export function Portfolio() {
   }
   const buttonProps = {
     onClick: () => setItems(items + increment),
+    className: styles.button,
     variant: 'red',
   }
 

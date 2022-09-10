@@ -1,0 +1,21 @@
+@import 'styles/mixins';
+
+@mixin center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: grid;
+}
+
+.wrap {
+  @include center;
+  @include crete-round;
+  grid-template-columns: auto 30rem auto;
+  font-size: 1.75rem;
+  gap: 3rem;
+}
+
+.quote {
+  @include center;
+  min-height: 6rem;
+}

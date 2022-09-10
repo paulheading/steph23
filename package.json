@@ -21,6 +21,7 @@
     "@types/react": "^18.0.17",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
-    "focus-visible": "^5.2.0"
+    "focus-visible": "^5.2.0",
+    "react-hook-form": "^7.35.0"
   }
 }

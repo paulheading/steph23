@@ -1,4 +1,5 @@
 @import 'styles/mixins';
+
 $size: 10rem;
 
 .wrap {
@@ -20,23 +21,6 @@ $size: 10rem;
 }
 
 .button {
-  @include crete-round;
-  border-radius: 0.75rem;
-  border: 0.125rem solid;
-  font-size: 1.375rem;
   margin-top: 2rem;
-  min-width: $size;
-  padding: 0.75rem;
-  cursor: pointer;
-
-  @include brand using($color, $variant) {
-    border-color: get-color($color, dark);
-    background-color: get-color($color);
-    color: get-color($color, dark);
-
-    @include focus {
-      background-color: get-color($color, dark);
-      color: get-color($color);
-    }
-  }
+  min-width: 10rem;
 }
