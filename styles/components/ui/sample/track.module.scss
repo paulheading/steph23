@@ -24,6 +24,10 @@ $size: 2.5rem;
 .container.dark {
   @include brand using ($color, $variant) {
     color: get-color($color);
+
+    .media {
+      background-color: rgba(get-color($color), 0.2);
+    }
   }
 }
 
