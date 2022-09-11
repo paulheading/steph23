@@ -3,14 +3,16 @@ import { Container, Wrap, Title } from 'components'
 import { Player } from 'components/ui'
 import styles from 'styles/components/sections/studio.module.scss'
 import Image from 'next/image'
+import { attachVariant } from 'scripts'
 
-export function Studio({ active, setActive }) {
+export function Studio({ active, setActive, variant }) {
   const handleSetActive = (track) => setActive(track)
+  const wrapImageClasses = `${styles.wrap_image} ${attachVariant(variant, styles)}`
   const playerProps = {
     data: intro[0],
     handleSetActive,
-    variant: 'red',
     dark: true,
+    variant,
     active,
   }
   const imageProps = {
@@ -19,8 +21,8 @@ export function Studio({ active, setActive }) {
     width: '270',
   }
   const containerProps = {
-    variant: 'red',
     dark: true,
+    variant,
   }
 
   return (
@@ -54,7 +56,7 @@ export function Studio({ active, setActive }) {
           <div className={styles.wrap_player}>
             <Player {...playerProps} />
           </div>
-          <div className={styles.wrap_image}>
+          <div className={wrapImageClasses}>
             <Image alt="studio" {...imageProps} />
           </div>
         </div>

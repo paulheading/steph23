@@ -16,11 +16,15 @@ export default function Home() {
     active,
     setActive,
   }
+  const studioProps = {
+    variant: 'red',
+    ...audioProps,
+  }
   return (
     <Page {...pageProps}>
       <Hero />
       <Intro {...audioProps} />
-      <Studio {...audioProps} />
+      <Studio {...studioProps} />
       <Testimonials />
       <Logos title="Clients">
         <Adobe />

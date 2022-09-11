@@ -1,14 +1,5 @@
 @import 'styles/mixins';
 
-.container {
-  @include theme-dark(red);
-  align-items: center;
-  text-align: center;
-  padding: 1rem;
-  display: grid;
-  height: 40rem;
-}
-
 .wrap {
   @include flex-separate;
 }
@@ -40,4 +31,8 @@
   border-radius: 2rem;
   overflow: hidden;
   display: flex;
+
+  @include brand using($color, $variant) {
+    background-color: rgba(get-color($color), 0.5);
+  }
 }
