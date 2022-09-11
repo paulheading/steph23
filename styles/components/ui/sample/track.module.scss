@@ -16,7 +16,7 @@ $size: 2.5rem;
     color: get-color($color, dark);
 
     .media {
-      background-color: get-color($color);
+      background-color: get-color($color, dark);
     }
   }
 }
@@ -24,10 +24,6 @@ $size: 2.5rem;
 .container.dark {
   @include brand using ($color, $variant) {
     color: get-color($color);
-
-    .media {
-      background-color: get-color($color, dark);
-    }
   }
 }
 
