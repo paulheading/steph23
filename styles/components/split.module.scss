@@ -1,0 +1,9 @@
+@import 'styles/mixins';
+
+.container {
+  grid-template-columns: repeat(2, 20rem);
+  justify-content: center;
+  align-items: flex-start;
+  display: grid;
+  gap: 4rem;
+}

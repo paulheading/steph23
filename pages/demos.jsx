@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { eLearning, advertising, gaming } from 'data/playlist'
-import { Page, Content, Title } from 'components'
+import { Page, Content, Title, Split } from 'components'
 import { Playlist } from 'components/ui'
 import { demos } from 'data/seo'
 import styles from 'styles/pages/demos.module.scss'
@@ -53,10 +53,10 @@ export default function Demos() {
         <p>I’m an award nominated voice actor with over 20 years experience, working in almost every area of the industry. I have a smooth, engaging voice with a US/transatlantic accent.</p>
         <p>As a trained actor, I’m proficient with crafting characters and accents. I’m also a skilled improviser, but am equally comfortable taking direction.</p>
         <p>I can deliver professional and friendly voices for e-learning or corporate reads, characters for radio drama and games, or child voices for animation and audiobooks.</p>
-        <div className={styles.grid}>
+        <Split className={styles.split}>
           <div className={styles.column}>{oddPlaylists(1)}</div>
           <div className={styles.column}>{oddPlaylists(0)}</div>
-        </div>
+        </Split>
       </Content>
     </Page>
   )

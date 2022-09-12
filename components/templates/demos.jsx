@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Page, Content } from 'components'
+import { Page, Content, Split } from 'components'
 import { Playlist } from 'components/ui'
 import { demos } from 'data/seo'
 import styles from 'styles/components/templates/demos.module.scss'
@@ -26,12 +26,12 @@ export function Template({ data, children }) {
   return (
     <Page {...pageProps}>
       <Content {...contentProps}>
-        <div className={styles.grid}>
+        <Split>
           <div className={styles.column}>{children}</div>
           <div className={styles.column}>
             <Playlist {...playlistProps} />
           </div>
-        </div>
+        </Split>
       </Content>
     </Page>
   )
