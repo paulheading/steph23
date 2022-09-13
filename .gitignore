@@ -32,4 +32,4 @@ yarn-error.log*
 .vercel
 
 # ignore mp3s
-/public/demos
+/public/ignore
