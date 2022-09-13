@@ -2,10 +2,12 @@ import { main, extra, mapIndexIDs } from 'data/playlist/setup'
 
 const id = 1
 const extras = {
-  genre: '3rd person, suspense',
+  cover: '/dont-need-this.jpeg',
   playlist_id: id,
   ...extra,
 }
+
+const path = (src) => `/demos/advertising/stephanie-cannon-us-commercial-${src}.mp3`
 
 let advertising = {
   title: 'Advertising',
@@ -13,18 +15,38 @@ let advertising = {
   main,
   tracks: [
     {
-      src: '/demos/stephanie-cannon-radio-drama-demo-us-comedy-drama-classic-young-podcast.mp3',
-      title: 'four',
+      title: 'Advertising Reel',
+      src: `/demos/advertising/stephanie-cannon-advertising-demo-us-comic-smooth-character-real-upbeat-hip.mp3`,
       ...extras,
     },
     {
-      src: '/demos/stephanie-cannon-gaming-reel-us-female-drama-fantasy-transatlantic-rp-action-texan-new-york-cockney.mp3',
-      title: 'five',
+      title: 'Upbeat, funny, girly',
+      src: path('upbeat-funny-girly-gordons-gin'),
       ...extras,
     },
     {
-      src: '/demos/stephanie-cannon-radio-drama-demo-us-comedy-drama-classic-young-podcast.mp3',
-      title: 'six',
+      title: 'Smooth, enticing, warm',
+      src: path('smooth-enticing-warm-engaging-samsung'),
+      ...extras,
+    },
+    {
+      title: 'Drama/Comedy, everywoman',
+      src: path('comedy-drama-everywoman-audible-transatlantic'),
+      ...extras,
+    },
+    {
+      title: 'Sultry, midatlantic, alluring',
+      src: path('sultry-midatlantic-alluring-mitsubishi'),
+      ...extras,
+    },
+    {
+      title: 'Bright, young, exciting',
+      src: path('bright-young-exciting-kids-kinder-surprise'),
+      ...extras,
+    },
+    {
+      title: 'Cool, teen, confident',
+      src: path('cool-teen-confident-young-hip-revlon'),
       ...extras,
     },
   ],

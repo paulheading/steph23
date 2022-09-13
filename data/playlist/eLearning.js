@@ -2,32 +2,67 @@ import { main, extra, mapIndexIDs } from 'data/playlist/setup'
 
 const id = 0
 const extras = {
-  genre: '3rd person, suspense',
+  cover: '/dont-need-this.jpeg',
+  genre: 'dont-need-this',
   playlist_id: id,
   ...extra,
 }
 
+const path = (src) => `/demos/eLearning/stephanie-cannon-us-e-learning-${src}.mp3`
+
 let eLearning = {
-  title: 'E Learning',
+  title: 'E-Learning',
   id,
   main,
   tracks: [
     {
-      src: '/demos/stephanie-cannon-advertising-demo-us-comic-smooth-character-real-upbeat-hip.mp3',
-      cover: '/audiobooks/stephanie-cannon-us-audiobook-narrator-childrens-fiction-lucas-lost-voice-cover-art.jpeg',
-      title: 'one',
+      title: 'E-Learning Reel',
+      src: `/demos/eLearning/stephanie-cannon-elearning-demo-modules-elt-conversational-teen-kid-us.mp3`,
       ...extras,
     },
     {
-      src: '/demos/stephanie-cannon-animation-demo-us-female-comedy-adult-teen-toddler-boy-accents-energetic.mp3',
-      cover: '/audiobooks/stephanie-cannon-us-audiobook-narrator-fiction-southern-1st-person-south-carolina-the-note-cover-art.jpeg',
-      title: 'two',
+      title: 'Down to earth, 30s',
+      src: path('down-to-earth-30s-environmental-real'),
       ...extras,
     },
     {
-      src: '/demos/stephanie-cannon-advertising-demo-us-comic-smooth-character-real-upbeat-hip.mp3',
-      cover: '/audiobooks/stephanie-cannon-us-audiobook-narrator-the-coral-bride-cover-art.jpeg',
-      title: 'three',
+      title: 'Professional, engaging',
+      src: path('professional-corporate-engaging-office-module'),
+      ...extras,
+    },
+    {
+      title: 'Cheeky, relatable, comic',
+      src: path('cheeky-relatable-comic-food-hygiene'),
+      ...extras,
+    },
+    {
+      title: 'Reassuring, Calm, informative',
+      src: path('medical-reassuring-calm-informative-knowledgable-covid'),
+      ...extras,
+    },
+    {
+      title: 'Motivating, upbeat',
+      src: path('motivating-upbeat-wefit'),
+      ...extras,
+    },
+    {
+      title: 'Conversational, friendly',
+      src: path('conversational-friendly-roleplay-rachel'),
+      ...extras,
+    },
+    {
+      title: 'Kids, fun, enthusiastic',
+      src: path('kids-fun-enthusiastic-science'),
+      ...extras,
+    },
+    {
+      title: 'Teen character, mental health',
+      src: path('teen-character-mental-health'),
+      ...extras,
+    },
+    {
+      title: 'Medical, authoritative',
+      src: path('medical-authoritative-educated-anatomy'),
       ...extras,
     },
   ],
