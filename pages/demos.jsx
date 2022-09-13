@@ -1,11 +1,9 @@
 import { useState } from 'react'
-import { eLearning, advertising, gaming, animation } from 'data/playlist'
+import { playlists } from 'data/demos'
 import { Page, Content, Title, Split } from 'components'
 import { Playlist } from 'components/ui'
 import { demos } from 'data/seo'
 import styles from 'styles/pages/demos.module.scss'
-
-const playlists = [eLearning, advertising, gaming, animation]
 
 export default function Demos() {
   const [active, setActive] = useState(playlists[0].main)
@@ -17,8 +15,8 @@ export default function Demos() {
   }
   const pageProps = {
     head: demos.index,
-    menu: 'red',
     footer: 'cream',
+    menu: 'red',
   }
   const contentProps = {
     className: 'text-align-center',

@@ -1,12 +1,12 @@
-import { advertising } from 'data/playlist'
+import { advertising as data } from 'data/demos'
 import { Title } from 'components'
 import { Template } from 'components/templates/demos'
 import { demos } from 'data/seo'
 
 export default function Advertising() {
   const props = {
-    data: advertising,
-    head: demos,
+    head: demos.index,
+    data,
   }
   return (
     <Template {...props}>

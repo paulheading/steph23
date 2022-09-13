@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { eLearning, advertising, gaming } from 'data/playlist'
+import { eLearning, advertising, gaming } from 'data/demos'
 import { Head } from 'components'
 import { Playlist } from 'components/ui'
 import styles from 'styles/ui.module.scss'

@@ -1,12 +1,12 @@
-import { eLearning } from 'data/playlist'
+import { eLearning as data } from 'data/demos'
 import { Title } from 'components'
 import { Template } from 'components/templates/demos'
 import { demos } from 'data/seo'
 
 export default function ELearning() {
   const props = {
-    data: eLearning,
-    head: demos,
+    head: demos.index,
+    data,
   }
   return (
     <Template {...props}>

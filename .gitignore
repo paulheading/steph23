@@ -31,5 +31,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-# ignore mp3s
-/public/ignore
+# ignore videos
+*.mp4
+*.mov

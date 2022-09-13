@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { eLearning, advertising, gaming, series } from 'data/playlist'
+import { eLearning, advertising, gaming, series } from 'data/demos'
 import { Samples } from 'components/ui'
 
 export default function UI_Samples() {

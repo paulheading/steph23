@@ -1,4 +1,4 @@
-import { eLearning, advertising, gaming } from 'data/playlist'
+import { eLearning, advertising, gaming } from 'data/demos'
 import { mapIndexIDs } from 'data/playlist/setup'
 
 let intro = [{ ...eLearning.main }, { ...advertising.main }, { ...gaming.main }]

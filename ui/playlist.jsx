@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { eLearning } from 'data/playlist'
+import { eLearning } from 'data/demos'
 import { Head } from 'components'
 import { Playlist } from 'components/ui'
 

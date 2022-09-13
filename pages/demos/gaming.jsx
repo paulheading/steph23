@@ -1,12 +1,12 @@
-import { gaming } from 'data/playlist'
+import { gaming as data } from 'data/demos'
 import { Title } from 'components'
 import { Template } from 'components/templates/demos'
 import { demos } from 'data/seo'
 
 export default function Gaming() {
   const props = {
-    data: gaming,
-    head: demos,
+    head: demos.index,
+    data,
   }
   return (
     <Template {...props}>

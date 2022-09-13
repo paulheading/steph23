@@ -1,24 +1,24 @@
 import { useState } from 'react'
 import { Page, Content, Split } from 'components'
 import { Playlist } from 'components/ui'
-import { demos } from 'data/seo'
 import styles from 'styles/components/templates/demos.module.scss'
 
-export function Template({ data, children }) {
+export function Template({ head, data, children }) {
   const [active, setActive] = useState(data.main)
   const handleSetActive = (track) => setActive(track)
+  const variant = 'red'
   const pageProps = {
-    head: demos,
-    menu: 'red',
     footer: 'cream',
+    menu: variant,
+    head,
   }
   const contentProps = {
-    variant: 'red',
     top: true,
+    variant,
   }
   const playlistProps = {
     handleSetActive,
-    variant: 'red',
+    variant,
     active,
     data,
   }

@@ -1,12 +1,12 @@
-import { animation } from 'data/playlist'
+import { animation as data } from 'data/demos'
 import { Title } from 'components'
 import { Template } from 'components/templates/demos'
 import { demos } from 'data/seo'
 
 export default function Animation() {
   const props = {
-    data: animation,
-    head: demos,
+    head: demos.index,
+    data,
   }
   return (
     <Template {...props}>

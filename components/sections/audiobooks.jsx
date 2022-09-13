@@ -1,4 +1,4 @@
-import { eLearning } from 'data/playlist'
+import { eLearning } from 'data/demos'
 import { Content, Title } from 'components'
 import { Samples } from 'components/ui'
 
