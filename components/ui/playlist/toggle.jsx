@@ -6,8 +6,13 @@ export function Toggle({ playlist, isOpen, handleSetOpenID }) {
   const openClass = isOpen ? styles.open : ''
   const MdCloseClasses = `${styles.MdClose} ${openClass}`
 
+  function toggleOpen() {
+    const ID = !isOpen ? playlist.id : null
+    handleSetOpenID(ID)
+  }
+
   return (
-    <button className={styles.container} onClick={() => handleSetOpenID(playlist.id)}>
+    <button className={styles.container} onClick={toggleOpen}>
       {playlist.title}
       <MdClose className={MdCloseClasses} />
     </button>

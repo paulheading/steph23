@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import styles from 'styles/components/ui/menu.module.scss'
 import { useRouter } from 'next/router'
 import { Dropdown } from 'components/ui/menu/dropdown'
@@ -18,10 +18,20 @@ function checkRoute(href, route) {
 export function Menu({ variant }) {
   const [openDropDownID, setDropDownID] = useState(null)
   const { route } = useRouter()
+  const navRef = useRef(null)
+
+  useEffect(() => {
+    if (!navRef.current || !openDropDownID) return
+    window.addEventListener('click', function (e) {
+      const { current } = navRef
+      const { target } = e
+      if (!current.contains(target)) setDropDownID(null)
+    })
+  }, [navRef, openDropDownID])
 
   return (
     <div className={styles.container}>
-      <nav>
+      <nav ref={navRef}>
         <ul className={styles.list}>
           {menu.map((item, index) => {
             const props = {
