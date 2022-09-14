@@ -5,7 +5,7 @@ import { demos } from 'data/seo'
 
 export default function Accents() {
   const props = {
-    head: demos.index,
+    head: demos.accents,
     data,
   }
   return (

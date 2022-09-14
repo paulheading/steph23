@@ -4,13 +4,13 @@ import { series } from 'data/playlist'
 import { Harper, AngryRobot, Penguin, ChatterBox, Hodder, Yoto, Audible, Bookotoure, RNIB, Storytel, Hachette, Ladbroke, Orion, Dreamscape, Bloomsbury, Tonies } from 'logos'
 import { Page, Logos } from 'components'
 import { Audiobooks as Intro, Affiliations, Accents, Portfolio, Samples } from 'components/sections'
-import { audiobooks } from 'data/seo'
+import { audiobooks as head } from 'data/seo'
 
 export default function Audiobooks() {
   const [active, setActive] = useState(eLearning.main)
   const pageProps = {
-    head: audiobooks.index,
     footer: 'cream',
+    head,
   }
   const audioProps = {
     setActive,

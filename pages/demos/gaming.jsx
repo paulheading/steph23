@@ -5,7 +5,7 @@ import { demos } from 'data/seo'
 
 export default function Gaming() {
   const props = {
-    head: demos.index,
+    head: demos.gaming,
     data,
   }
   return (

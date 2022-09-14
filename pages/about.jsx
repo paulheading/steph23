@@ -1,12 +1,12 @@
 import { Page, Content, Split, Title, Image } from 'components'
-import { about } from 'data/seo'
+import { about as head } from 'data/seo'
 
 export default function About() {
   const imageProps = {
     src: 'stephanie-cannon-headshot-acting-page',
   }
   return (
-    <Page head={about}>
+    <Page head={head}>
       <Content top>
         <Split>
           <div>

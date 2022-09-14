@@ -5,7 +5,7 @@ import { demos } from 'data/seo'
 
 export default function Singing() {
   const props = {
-    head: demos.index,
+    head: demos.singing,
     data,
   }
   return (

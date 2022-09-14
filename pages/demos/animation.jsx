@@ -5,7 +5,7 @@ import { demos } from 'data/seo'
 
 export default function Animation() {
   const props = {
-    head: demos.index,
+    head: demos.animation,
     data,
   }
   return (

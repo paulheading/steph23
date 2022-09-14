@@ -1,5 +1,5 @@
 import { Page, Container, Wrap, Split, Title, Image } from 'components'
-import { contact } from 'data/seo'
+import { contact as head } from 'data/seo'
 import { useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import styles from 'styles/pages/contact.module.scss'
@@ -32,8 +32,8 @@ export default function Contact() {
   const variant = 'yellow'
   const pageProps = {
     footer: variant,
-    head: contact,
     menu: variant,
+    head,
   }
   const containerProps = {
     section: false,

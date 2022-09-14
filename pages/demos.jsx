@@ -13,21 +13,22 @@ export default function Demos() {
     setActive({ ...active, playing: false })
     setOpenID(id)
   }
+  const variant = 'red'
   const pageProps = {
     head: demos.index,
     footer: 'cream',
-    menu: 'red',
+    menu: variant,
   }
   const contentProps = {
     className: 'text-align-center',
-    variant: 'red',
     top: true,
+    variant,
   }
   const playlistProps = {
     handleSetActive,
     handleSetOpenID,
-    variant: 'red',
     toggle: true,
+    variant,
     active,
     openID,
   }

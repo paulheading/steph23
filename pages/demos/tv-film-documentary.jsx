@@ -5,7 +5,7 @@ import { demos } from 'data/seo'
 
 export default function Documentary() {
   const props = {
-    head: demos.index,
+    head: demos.documentaries,
     data,
   }
   return (

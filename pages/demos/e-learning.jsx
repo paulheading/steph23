@@ -5,7 +5,7 @@ import { demos } from 'data/seo'
 
 export default function ELearning() {
   const props = {
-    head: demos.index,
+    head: demos.eLearning,
     data,
   }
   return (

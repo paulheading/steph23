@@ -3,14 +3,14 @@ import { useState } from 'react'
 import { Page, Logos } from 'components'
 import { Hero, Intro, Studio, Testimonials } from 'components/sections'
 import { Adobe, Pixar, Aljazeera, Disney, Sega, Unity, Microsoft, Sony, Audible, BBC, LucasFilm, TwentyFour, Cambridge, Yoto } from 'logos'
-import { home } from 'data/seo'
+import { home as head } from 'data/seo'
 
 export default function Home() {
   const [active, setActive] = useState(intro[0])
   const pageProps = {
-    head: home,
     menu: 'green',
     footer: 'cream',
+    head,
   }
   const audioProps = {
     active,

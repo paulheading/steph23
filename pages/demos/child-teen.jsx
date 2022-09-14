@@ -5,7 +5,7 @@ import { demos } from 'data/seo'
 
 export default function ChildTeen() {
   const props = {
-    head: demos.index,
+    head: demos.childTeen,
     data,
   }
   return (

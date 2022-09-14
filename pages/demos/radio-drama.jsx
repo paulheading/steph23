@@ -5,7 +5,7 @@ import { demos } from 'data/seo'
 
 export default function RadioDrama() {
   const props = {
-    head: demos.index,
+    head: demos.radioDrama,
     data,
   }
   return (

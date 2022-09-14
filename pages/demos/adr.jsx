@@ -5,7 +5,7 @@ import { demos } from 'data/seo'
 
 export default function ADR() {
   const props = {
-    head: demos.index,
+    head: demos.adr,
     data,
   }
   return (

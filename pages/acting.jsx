@@ -1,12 +1,12 @@
 import { Page, Content, Split, Title, Image } from 'components'
-import { acting } from 'data/seo'
+import { acting as head } from 'data/seo'
 
 export default function Acting() {
   const variant = 'cream'
   const pageProps = {
-    head: acting,
-    menu: variant,
     footer: variant,
+    menu: variant,
+    head,
   }
   const contentProps = {
     top: true,

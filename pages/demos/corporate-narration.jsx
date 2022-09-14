@@ -5,7 +5,7 @@ import { demos } from 'data/seo'
 
 export default function Corporate() {
   const props = {
-    head: demos.index,
+    head: demos.corporate,
     data,
   }
   return (
