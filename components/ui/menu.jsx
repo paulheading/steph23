@@ -23,9 +23,10 @@ export function Menu({ variant }) {
   useEffect(() => {
     if (!navRef.current || !openDropDownID) return
     window.addEventListener('click', function (e) {
+      if (!navRef.current) return
       if (!navRef.current.contains(e.target)) setDropDownID(null)
     })
-  }, [navRef, openDropDownID])
+  }, [navRef.current, openDropDownID])
 
   return (
     <div className={styles.container}>

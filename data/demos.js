@@ -7,7 +7,9 @@ import documentary from 'data/demos/documentary'
 import radioDrama from 'data/demos/radio-drama'
 import childTeen from 'data/demos/child-teen'
 import accents from 'data/demos/accents'
+import audioDescription from 'data/demos/audioDescription'
+import singing from 'data/demos/singing'
 
-const playlists = [advertising, eLearning, gaming, animation, corporate, documentary, radioDrama, childTeen, accents]
+const playlists = [advertising, eLearning, gaming, animation, corporate, documentary, radioDrama, childTeen, accents, audioDescription, singing]
 
-export { advertising, eLearning, gaming, animation, corporate, documentary, radioDrama, childTeen, accents, playlists }
+export { advertising, eLearning, gaming, animation, corporate, documentary, radioDrama, childTeen, accents, audioDescription, singing, playlists }
