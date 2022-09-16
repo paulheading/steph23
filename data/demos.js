@@ -10,6 +10,6 @@ import accents from 'data/demos/accents'
 import audioDescription from 'data/demos/audioDescription'
 import singing from 'data/demos/singing'
 
-const playlists = [advertising, eLearning, gaming, animation, corporate, documentary, radioDrama, childTeen, accents, audioDescription, singing]
+const all = [advertising, eLearning, gaming, animation, corporate, documentary, radioDrama, childTeen, accents, audioDescription, singing]
 
-export { advertising, eLearning, gaming, animation, corporate, documentary, radioDrama, childTeen, accents, audioDescription, singing, playlists }
+export { advertising, eLearning, gaming, animation, corporate, documentary, radioDrama, childTeen, accents, audioDescription, singing, all }

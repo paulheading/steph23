@@ -1,13 +1,12 @@
 import { useState } from 'react'
-import { eLearning, advertising, gaming } from 'data/demos'
-import { series } from 'data/playlist'
+import { intro, all as data } from 'data/audiobooks'
 import { Harper, AngryRobot, Penguin, ChatterBox, Hodder, Yoto, Audible, Bookotoure, RNIB, Storytel, Hachette, Ladbroke, Orion, Dreamscape, Bloomsbury, Tonies } from 'logos'
 import { Page, Logos } from 'components'
 import { Audiobooks as Intro, Affiliations, Accents, Portfolio, Samples } from 'components/sections'
 import { audiobooks as head } from 'data/seo'
 
 export default function Audiobooks() {
-  const [active, setActive] = useState(eLearning.main)
+  const [active, setActive] = useState(intro.tracks[0])
   const pageProps = {
     footer: 'cream',
     head,
@@ -17,10 +16,10 @@ export default function Audiobooks() {
     active,
   }
   const samplesProps = {
-    data: [eLearning, advertising, gaming, series],
     variant: 'red',
     ...audioProps,
     dark: true,
+    data,
   }
 
   return (

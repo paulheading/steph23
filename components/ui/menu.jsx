@@ -26,7 +26,7 @@ export function Menu({ variant }) {
       if (!navRef.current) return
       if (!navRef.current.contains(e.target)) setDropDownID(null)
     })
-  }, [navRef.current, openDropDownID])
+  }, [navRef, openDropDownID])
 
   return (
     <div className={styles.container}>

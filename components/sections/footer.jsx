@@ -17,27 +17,27 @@ export function Footer({ variant }) {
         <Wrap className={styles.wrap}>
           <div className={styles.socials}>
             <Link href="https://www.spotlight.com/9493-9081-8617">
-              <a>
+              <a target="_blank">
                 <Spotlight />
               </a>
             </Link>
             <Link href="https://twitter.com/sparkthecannon">
-              <a>
+              <a target="_blank">
                 <Twitter />
               </a>
             </Link>
             <Link href="https://www.linkedin.com/in/sparkthecannon/">
-              <a>
+              <a target="_blank">
                 <LinkedIn />
               </a>
             </Link>
             <Link href="https://www.facebook.com/stephanie.cannon.7927">
-              <a>
+              <a target="_blank">
                 <Facebook />
               </a>
             </Link>
             <Link href="https://www.facebook.com/stephanie.cannon.7927">
-              <a>
+              <a target="_blank">
                 <Instagram />
               </a>
             </Link>

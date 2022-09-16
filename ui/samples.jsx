@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import { eLearning, advertising, gaming, series } from 'data/demos'
+import { series } from 'data/audiobooks'
+import { playlists } from 'data/demos'
 import { Samples } from 'components/ui'
 
 export default function UI_Samples() {
   const [active, setActive] = useState(eLearning.main)
   const props = {
-    data: [eLearning, advertising, gaming, series],
+    data: [...playlists, series],
     setActive,
     active,
   }

@@ -1,13 +1,13 @@
 import { useState } from 'react'
-import { playlists } from 'data/demos'
+import { all } from 'data/demos'
 import { Page, Content, Title, Split } from 'components'
 import { Playlist } from 'components/ui'
 import { demos } from 'data/seo'
 import styles from 'styles/pages/demos.module.scss'
 
 export default function Demos() {
-  const [active, setActive] = useState(playlists[0].main)
-  const [openID, setOpenID] = useState(playlists[0].id)
+  const [active, setActive] = useState(all[0].main)
+  const [openID, setOpenID] = useState(all[0].id)
   const handleSetActive = (track) => setActive(track)
   function handleSetOpenID(id) {
     setActive({ ...active, playing: false })
@@ -34,7 +34,7 @@ export default function Demos() {
   }
 
   function oddPlaylists(value) {
-    return playlists.map((data, index) => {
+    return all.map((data, index) => {
       const odd = index % 2
       if (value === odd) return
       const props = {
