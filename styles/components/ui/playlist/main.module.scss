@@ -15,11 +15,19 @@
     .bar {
       background-color: get-color($color, bar);
     }
+
+    .progress {
+      background-color: get-color($color);
+    }
   }
 }
 
 .container.playlist {
   color: white;
+
+  .progress {
+    background-color: white;
+  }
 }
 
 .container.dark {
@@ -66,8 +74,4 @@
 .download {
   height: 2rem;
   width: 2rem;
-}
-
-.container[data='toggle-closed'] {
-  display: none;
 }

@@ -29,7 +29,3 @@
 .container:not(:last-of-type) {
   border-bottom: 1px solid currentColor;
 }
-
-.container[data='toggle-closed'] {
-  display: none;
-}

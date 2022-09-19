@@ -4,6 +4,7 @@ $size: 2.5rem;
 
 .container {
   background-color: transparent;
+  vertical-align: middle;
   display: inline-block;
   max-width: 12rem;
   font-size: 1rem;
@@ -31,10 +32,6 @@ $size: 2.5rem;
   }
 }
 
-.container[data='toggle-closed'] {
-  display: none;
-}
-
 .media {
   border: 1px solid currentColor;
   justify-content: center;
@@ -54,6 +51,7 @@ $size: 2.5rem;
 .title {
   @include crete-round;
   margin-bottom: 0.25rem;
+  min-height: 3.25rem;
   font-size: 1.25rem;
   margin-top: 1rem;
 }

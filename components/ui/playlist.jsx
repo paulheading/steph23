@@ -8,14 +8,9 @@ import { Toggle } from 'components/ui/playlist/toggle'
 export function Playlist({ data, active, handleSetActive, variant, toggle, openID, handleSetOpenID }) {
   const [playlist, setPlaylist] = useState(data)
   const playerRef = useRef(null)
-  const isOpen = openID === playlist.id
-  const activePlaylist = playlist.id === active.playlist_id
+  const isOpen = toggle ? openID === playlist.id : true
+  const activePlaylist = active ? playlist.id === active.playlist_id : false
   const containerClasses = `${styles.container} ${attachVariant(variant, styles)}`
-
-  function toggleData() {
-    if (!toggle) return ''
-    return !isOpen ? 'toggle-closed' : 'toggle-open'
-  }
 
   useEffect(() => {
     if (!activePlaylist) return
@@ -32,16 +27,19 @@ export function Playlist({ data, active, handleSetActive, variant, toggle, openI
     else handleSetActive({ ...active, progress, duration })
   }
 
+  const stateProps = {
+    activePlaylist,
+    variant,
+    active,
+    isOpen,
+  }
+
   const mainProps = {
     main: playlist.main,
     handleSetActive,
-    activePlaylist,
     playlist: true,
-    toggleData,
+    ...stateProps,
     playerRef,
-    variant,
-    active,
-    toggle,
   }
 
   function handleTrackChange(track) {
@@ -53,12 +51,8 @@ export function Playlist({ data, active, handleSetActive, variant, toggle, openI
 
   const trackProps = {
     handleTrackChange,
-    activePlaylist,
-    toggleData,
-    variant,
-    active,
+    ...stateProps,
     toggle,
-    isOpen,
   }
 
   const toggleProps = {
@@ -69,7 +63,7 @@ export function Playlist({ data, active, handleSetActive, variant, toggle, openI
 
   return (
     <div className={containerClasses}>
-      <audio ref={playerRef} src={active.src} onTimeUpdate={updateProgress}></audio>
+      <audio ref={playerRef} src={active && active.src} onTimeUpdate={updateProgress}></audio>
       {toggle && <Toggle {...toggleProps} />}
       <Main {...mainProps} />
       {playlist.tracks.map((track, index) => {
@@ -79,7 +73,6 @@ export function Playlist({ data, active, handleSetActive, variant, toggle, openI
         }
         return <Track key={'track' + index} {...props} />
       })}
-      <Track />
     </div>
   )
 }

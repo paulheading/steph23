@@ -9,18 +9,18 @@ export function Sample({ data, active, handleSetActive, variant, openID, series,
   const isOpen = openID === playlist.id
   const activePlaylist = playlist.id === active.playlist_id
   const containerClasses = `${styles.container}`
-  const toggleData = () => (!isOpen ? 'toggle-closed' : 'toggle-open')
 
   useEffect(() => {
     if (!activePlaylist) return
+    if (!playerRef.current) return
     active.playing ? playerRef.current.play() : playerRef.current.pause()
-  }, [active, activePlaylist])
+  }, [active, playerRef, activePlaylist])
 
   function updateProgress() {
     if (!playerRef.current) return
-    const duration = playerRef.current.duration
-    const time = playerRef.current.currentTime
-    const progress = (time / duration) * 100
+    const { current } = playerRef
+    const { duration, currentTime } = current
+    const progress = (currentTime / duration) * 100
     if (isNaN(progress)) return
     if (progress === 100) handleSetActive({ ...active, progress: 0, playing: false })
     else handleSetActive({ ...active, progress, duration })
@@ -40,7 +40,6 @@ export function Sample({ data, active, handleSetActive, variant, openID, series,
     handleTrackChange,
     handleSetActive,
     activePlaylist,
-    toggleData,
     playerRef,
     variant,
     active,
@@ -62,8 +61,10 @@ export function Sample({ data, active, handleSetActive, variant, openID, series,
     trackProps,
   }
 
+  if (!isOpen) return
+
   return (
-    <div data={toggleData()} className={containerClasses}>
+    <div className={containerClasses}>
       <audio ref={playerRef} src={active.src} onTimeUpdate={updateProgress}></audio>
       {!series ? mapTracks(playlist.tracks) : <Group {...groupProps} />}
     </div>
