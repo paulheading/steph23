@@ -9,13 +9,8 @@ export function Playlist({ data, active, handleSetActive, variant, toggle, openI
   const [playlist, setPlaylist] = useState(data)
   const playerRef = useRef(null)
   const isOpen = openID === playlist.id
-  const activePlaylist = playlist.id === active.playlist_id
+  const activePlaylist = active ? playlist.id === active.playlist_id : null
   const containerClasses = `${styles.container} ${attachVariant(variant, styles)}`
-
-  function toggleData() {
-    if (!toggle) return ''
-    return !isOpen ? 'toggle-closed' : 'toggle-open'
-  }
 
   useEffect(() => {
     if (!activePlaylist) return
@@ -24,24 +19,29 @@ export function Playlist({ data, active, handleSetActive, variant, toggle, openI
 
   function updateProgress() {
     if (!playerRef.current) return
-    const duration = playerRef.current.duration
-    const time = playerRef.current.currentTime
-    const progress = (time / duration) * 100
+    const { current } = playerRef
+    const { duration, currentTime } = current
+    const progress = (currentTime / duration) * 100
+
     if (isNaN(progress)) return
     if (progress === 100) handleSetActive({ ...active, progress: 0, playing: false })
     else handleSetActive({ ...active, progress, duration })
   }
 
-  const mainProps = {
-    main: playlist.main,
-    handleSetActive,
+  const stateProps = {
     activePlaylist,
-    playlist: true,
-    toggleData,
-    playerRef,
     variant,
     active,
     toggle,
+    isOpen,
+  }
+
+  const mainProps = {
+    main: playlist.main,
+    handleSetActive,
+    playlist: true,
+    ...stateProps,
+    playerRef,
   }
 
   function handleTrackChange(track) {
@@ -53,12 +53,7 @@ export function Playlist({ data, active, handleSetActive, variant, toggle, openI
 
   const trackProps = {
     handleTrackChange,
-    activePlaylist,
-    toggleData,
-    variant,
-    active,
-    toggle,
-    isOpen,
+    ...stateProps,
   }
 
   const toggleProps = {
@@ -69,7 +64,7 @@ export function Playlist({ data, active, handleSetActive, variant, toggle, openI
 
   return (
     <div className={containerClasses}>
-      <audio ref={playerRef} src={active.src} onTimeUpdate={updateProgress}></audio>
+      <audio ref={playerRef} src={active ? active.src : null} onTimeUpdate={updateProgress}></audio>
       {toggle && <Toggle {...toggleProps} />}
       <Main {...mainProps} />
       {playlist.tracks.map((track, index) => {

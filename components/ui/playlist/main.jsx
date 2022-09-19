@@ -4,7 +4,7 @@ import { MdOutlineFileDownload } from 'react-icons/md'
 import { attachVariant } from 'scripts'
 import { Button } from 'components/ui/playlist/button'
 
-export function Main({ activePlaylist, playerRef, active, handleSetActive, main, variant, toggleData, playlist = false, dark = false }) {
+export function Main({ activePlaylist, playerRef, active, handleSetActive, main, variant, playlist = false, dark = false, isOpen }) {
   const barRef = useRef(null)
   const progressRef = useRef(null)
   const playlistClass = playlist ? styles.playlist : ''
@@ -33,23 +33,20 @@ export function Main({ activePlaylist, playerRef, active, handleSetActive, main,
     return { width: `${active.progress}%` }
   }
 
-  function handleToggleData() {
-    if (!toggleData) return
-    return toggleData()
-  }
-
   const buttonProps = {
     onClick: () => togglePlay(),
     className: styles.button,
-    playing: active.playing,
+    playing: active ? active.playing : null,
     active: activePlaylist,
     playlist,
     variant,
     dark,
   }
 
+  if (!isOpen) return
+
   return (
-    <div data={handleToggleData()} className={containerClasses}>
+    <div className={containerClasses}>
       <div className={styles.wrap}>
         <Button {...buttonProps} />
         <div>

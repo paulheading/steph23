@@ -6,8 +6,8 @@ import { demos } from 'data/seo'
 import styles from 'styles/pages/demos.module.scss'
 
 export default function Demos() {
-  const [active, setActive] = useState(all[0].main)
-  const [openID, setOpenID] = useState(all[0].id)
+  const [active, setActive] = useState(null)
+  const [openID, setOpenID] = useState(null)
   const handleSetActive = (track) => setActive(track)
   function handleSetOpenID(id) {
     setActive({ ...active, playing: false })
