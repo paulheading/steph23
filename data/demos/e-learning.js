@@ -17,7 +17,7 @@ let eLearning = {
   tracks: [
     {
       title: 'E-Learning Reel',
-      src: `/demos/eLearning/stephanie-cannon-elearning-demo-modules-elt-conversational-teen-kid-us.mp3`,
+      src: `/demos/e-learning/stephanie-cannon-elearning-demo-modules-elt-conversational-teen-kid-us.mp3`,
       ...extras,
     },
     {
