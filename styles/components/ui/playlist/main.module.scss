@@ -67,3 +67,7 @@
   height: 2rem;
   width: 2rem;
 }
+
+.container[data='toggle-closed'] {
+  display: none;
+}

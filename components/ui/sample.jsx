@@ -9,6 +9,7 @@ export function Sample({ data, active, handleSetActive, variant, openID, series,
   const isOpen = openID === playlist.id
   const activePlaylist = playlist.id === active.playlist_id
   const containerClasses = `${styles.container}`
+  const toggleData = () => (!isOpen ? 'toggle-closed' : 'toggle-open')
 
   useEffect(() => {
     if (!activePlaylist) return
@@ -39,6 +40,7 @@ export function Sample({ data, active, handleSetActive, variant, openID, series,
     handleTrackChange,
     handleSetActive,
     activePlaylist,
+    toggleData,
     playerRef,
     variant,
     active,
@@ -60,10 +62,8 @@ export function Sample({ data, active, handleSetActive, variant, openID, series,
     trackProps,
   }
 
-  if (!isOpen) return null
-
   return (
-    <div className={containerClasses}>
+    <div data={toggleData()} className={containerClasses}>
       <audio ref={playerRef} src={active.src} onTimeUpdate={updateProgress}></audio>
       {!series ? mapTracks(playlist.tracks) : <Group {...groupProps} />}
     </div>

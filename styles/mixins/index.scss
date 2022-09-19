@@ -110,6 +110,18 @@
   margin: 0;
 }
 
+@mixin data($data) {
+  &[data-#{$data}='true'] {
+    @content;
+  }
+}
+
+@mixin not-data($data) {
+  &:not([data-#{$data}='true']) {
+    @content;
+  }
+}
+
 @mixin progressBar {
   height: $height-bar;
   position: relative;
