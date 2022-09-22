@@ -105,6 +105,7 @@ $border-radius-menu: $line-height-menu * 0.5;
   line-height: $line-height-menu;
   padding-right: $padding-menu;
   padding-left: $padding-menu;
+  text-decoration: none;
   display: inline-block;
 
   @include brand using ($color, $variant) {
@@ -127,6 +128,7 @@ $border-radius-menu: $line-height-menu * 0.5;
   line-height: $line-height-menu * 0.75;
   padding-right: $padding-menu * 1.25;
   padding-left: $padding-menu * 1.25;
+  text-decoration: none;
   display: inline-block;
   font-size: 1rem;
 

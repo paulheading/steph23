@@ -12,11 +12,11 @@ export function Studio({ active, setActive, variant }) {
     variant,
     active,
   }
-  const alt = 'studio'
+
   const imageProps = {
+    src: 'studio.jpg',
     height: 360,
     width: 270,
-    src: alt,
     variant,
   }
   const containerProps = {
@@ -55,7 +55,7 @@ export function Studio({ active, setActive, variant }) {
           <div className={styles.wrap_player}>
             <Player {...playerProps} />
           </div>
-          <Image {...imageProps} alt={alt} />
+          <Image {...imageProps} alt={imageProps.src} />
         </div>
       </Wrap>
     </Container>

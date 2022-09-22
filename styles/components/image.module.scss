@@ -3,7 +3,7 @@
 .container {
   border-radius: 0.75rem;
   overflow: hidden;
-  // display: flex;
+  display: flex;
 
   @include brand using($color, $variant) {
     background-color: get-color($color, light);

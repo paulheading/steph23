@@ -10,7 +10,6 @@ body {
 
 a {
   color: inherit;
-  text-decoration: none;
 }
 
 * {
@@ -43,4 +42,41 @@ p {
 
 .text-align-center {
   text-align: center;
+}
+
+@mixin inputStyles {
+  border: 1px solid grey;
+  font-family: inherit;
+  padding: 0.25rem;
+  color: inherit;
+
+  @include focus {
+    outline: none;
+    border-color: red;
+  }
+}
+
+@mixin inputOnlyStyles {
+  border-radius: 0.25rem;
+  width: 100%;
+}
+
+textarea {
+  @include inputStyles;
+  @include inputOnlyStyles;
+  resize: none;
+}
+
+input {
+  @include inputStyles;
+  @include inputOnlyStyles;
+}
+
+button {
+  @include inputStyles;
+  cursor: pointer;
+}
+
+label {
+  font-weight: bold;
 }

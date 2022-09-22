@@ -3,7 +3,7 @@ import { about as head } from 'data/seo'
 
 export default function About() {
   const imageProps = {
-    src: 'stephanie-cannon-headshot-acting-page',
+    src: 'stephanie-cannon-headshot-acting-page.jpg',
   }
   return (
     <Page head={head}>

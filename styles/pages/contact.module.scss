@@ -4,6 +4,25 @@
 }
 
 .split {
+  margin-bottom: 4rem;
   margin-top: 4rem;
   text-align: left;
+}
+
+.mocap_logo {
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+
+.form_row {
+  grid-template-columns: 100px auto;
+  display: grid;
+
+  &:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.submit {
+  grid-column: 1 / 3;
 }
