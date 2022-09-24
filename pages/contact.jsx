@@ -2,28 +2,11 @@ import { Page, Container, Wrap, Split, Title, Image } from 'components'
 import { contact as head } from 'data/seo'
 import { useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { FormRow } from 'components/ui'
 import styles from 'styles/pages/contact.module.scss'
 
-function FormRow({ htmlFor, label, error, errorMessage, className, children, rules }) {
-  const hasClassName = className ? className : ''
-  const containerClasses = `${styles.form_row} ${hasClassName}`
-  const required = !rules || !rules.required ? '(optional)' : '(required)'
-
-  return (
-    <div className={containerClasses}>
-      <div>
-        <label htmlFor={htmlFor}>{label}</label> <small>{label && required}</small>
-      </div>
-      <div>
-        {children}
-        {error && <div>{errorMessage}</div>}
-      </div>
-    </div>
-  )
-}
-
 export default function Contact() {
-  const [formSuccess, setFormSuccess] = useState(false)
+  const [formState, setFormState] = useState('Ready')
   const formRef = useRef(null)
   const submitRef = useRef(null)
   const {
@@ -38,12 +21,21 @@ export default function Contact() {
       .join('&')
   }
   function onSubmit(form) {
+    setFormState('Sending')
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...form }),
     })
-      .then(() => setFormSuccess(true))
+      .then(() =>
+        setTimeout(() => {
+          setFormState('Sent')
+          setTimeout(() => {
+            formRef.current.reset()
+            setFormState('Ready')
+          }, 1000)
+        }, 1000)
+      )
       .catch((error) => alert(error))
   }
 
@@ -75,8 +67,13 @@ export default function Contact() {
     },
   }
 
+  firstNameProps.input = {
+    ...input(firstNameProps.name, firstNameProps.title),
+    className: styles.firstName,
+  }
+
   firstNameProps.row = {
-    errorMessage: 'Message works!',
+    errorMessage: 'Please enter your first name',
     htmlFor: firstNameProps.name,
     label: firstNameProps.title,
     rules: firstNameProps.rules,
@@ -86,6 +83,11 @@ export default function Contact() {
   const lastNameProps = {
     name: 'lastName',
     title: 'Last name',
+  }
+
+  lastNameProps.input = {
+    ...input(lastNameProps.name, lastNameProps.title),
+    className: styles.lastName,
   }
 
   lastNameProps.row = {
@@ -98,6 +100,11 @@ export default function Contact() {
   const messageProps = {
     name: 'message',
     title: 'Message',
+  }
+
+  messageProps.input = {
+    ...input(messageProps.name, messageProps.title, null),
+    className: styles.message,
   }
 
   messageProps.row = {
@@ -113,6 +120,11 @@ export default function Contact() {
     placeholder: 'friendly@visitor.org',
   }
 
+  emailProps.input = {
+    ...input(emailProps.name, emailProps.placeholder, 'email'),
+    className: styles.email,
+  }
+
   emailProps.row = {
     htmlFor: emailProps.name,
     label: emailProps.title,
@@ -124,6 +136,11 @@ export default function Contact() {
     name: 'phone',
     title: 'Phone',
     placeholder: '01234567891',
+  }
+
+  phoneProps.input = {
+    ...input(phoneProps.name, phoneProps.placeholder, 'tel'),
+    className: styles.phone,
   }
 
   phoneProps.row = {
@@ -165,22 +182,22 @@ export default function Contact() {
             <div>
               <form {...formProps}>
                 <FormRow {...firstNameProps.row}>
-                  <input {...register(firstNameProps.name, firstNameProps.rules)} {...input(firstNameProps.name, firstNameProps.title)} />
+                  <input {...register(firstNameProps.name, firstNameProps.rules)} {...firstNameProps.input} />
                 </FormRow>
                 <FormRow {...lastNameProps.row}>
-                  <input {...register(lastNameProps.name)} {...input(lastNameProps.name, lastNameProps.title)} />
+                  <input {...register(lastNameProps.name)} {...lastNameProps.input} />
                 </FormRow>
                 <FormRow {...messageProps.row}>
-                  <textarea {...register(messageProps.name)} {...input(messageProps.name, messageProps.title, null)} />
+                  <textarea {...register(messageProps.name)} {...messageProps.input} />
                 </FormRow>
                 <FormRow {...emailProps.row}>
-                  <input {...register(emailProps.name)} {...input(emailProps.name, emailProps.placeholder, 'email')} />
+                  <input {...register(emailProps.name)} {...emailProps.input} />
                 </FormRow>
                 <FormRow {...phoneProps.row}>
-                  <input {...register(phoneProps.name)} {...input(phoneProps.name, phoneProps.placeholder, 'tel')} />
+                  <input {...register(phoneProps.name)} {...phoneProps.input} />
                 </FormRow>
                 <FormRow>
-                  <button {...submitProps}>Submit</button>
+                  <button {...submitProps}>{formState !== 'Ready' ? formState : 'Submit'}</button>
                 </FormRow>
               </form>
             </div>
