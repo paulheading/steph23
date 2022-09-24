@@ -1,42 +1,41 @@
 import { Page, Container, Wrap, Split, Title, Image } from 'components'
 import { contact as head } from 'data/seo'
-import { useRef, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import { FormRow } from 'components/ui'
 import styles from 'styles/pages/contact.module.scss'
 
 export default function Contact() {
-  const [formState, setFormState] = useState('Ready')
   const formRef = useRef(null)
-  const submitRef = useRef(null)
+  const [inProgress, setInProgress] = useState(false)
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    reset,
+    formState: { isSubmitSuccessful, errors },
   } = useForm()
+
+  useEffect(() => {
+    if (isSubmitSuccessful)
+      setTimeout(() => {
+        setInProgress(false)
+        reset()
+      }, 1000)
+  }, [isSubmitSuccessful, reset])
 
   function encode(data) {
     return Object.keys(data)
       .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
       .join('&')
   }
+
   function onSubmit(form) {
-    setFormState('Sending')
+    setInProgress(true)
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...form }),
-    })
-      .then(() =>
-        setTimeout(() => {
-          setFormState('Sent')
-          setTimeout(() => {
-            formRef.current.reset()
-            setFormState('Ready')
-          }, 1000)
-        }, 1000)
-      )
-      .catch((error) => alert(error))
+    }).catch((error) => alert(error))
   }
 
   const input = (title = '', placeholder = '', type = 'text') => ({ type, name: title, id: title, placeholder })
@@ -152,7 +151,6 @@ export default function Contact() {
 
   const submitProps = {
     className: styles.submit,
-    ref: submitRef,
     type: 'submit',
   }
 
@@ -197,7 +195,7 @@ export default function Contact() {
                   <input {...register(phoneProps.name)} {...phoneProps.input} />
                 </FormRow>
                 <FormRow>
-                  <button {...submitProps}>{formState !== 'Ready' ? formState : 'Submit'}</button>
+                  <button {...submitProps}>{inProgress ? 'Sending' : 'Submit'}</button>
                 </FormRow>
               </form>
             </div>
