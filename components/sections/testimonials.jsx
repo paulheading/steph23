@@ -3,9 +3,27 @@ import { Container, Wrap, Button } from 'components'
 import styles from 'styles/components/sections/testimonials.module.scss'
 import data from 'data/testimonials'
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi'
+import { GoStar } from 'react-icons/go'
+import parse from 'html-react-parser'
 
-function Testimonial({ quote }) {
-  return <div className={styles.quote}>{quote}</div>
+function Testimonial({ quote, author, role, rating }) {
+  const hasAuthor = author ? `${author},` : ''
+  const context = `${hasAuthor} ${role}`
+  return (
+    <div>
+      <div className={styles.quote}>{quote}</div>
+      {rating && (
+        <div className={styles.rating}>
+          <GoStar className={styles.star} />
+          <GoStar className={styles.star} />
+          <GoStar className={styles.star} />
+          <GoStar className={styles.star} />
+          <GoStar className={styles.star} />
+        </div>
+      )}
+      <div className={styles.author}>{parse(context)}</div>
+    </div>
+  )
 }
 
 export function Testimonials() {

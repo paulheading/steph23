@@ -2,9 +2,10 @@ import NextImage from 'next/image'
 import { attachVariant } from 'scripts'
 import styles from 'styles/components/image.module.scss'
 
-export function Image({ src, height = 448, width = 320, alt, className, variant }) {
+export function Image({ src, height = 448, width = 320, alt, className, variant, border = false }) {
   const hasClass = className ? className : ''
-  const containerClasses = `${styles.container} ${attachVariant(variant, styles)} ${hasClass}`
+  const borderClass = border ? styles.border : ''
+  const containerClasses = `${styles.container} ${attachVariant(variant, styles)} ${hasClass} ${borderClass}`
   const props = {
     src: `/${src}`,
     height,

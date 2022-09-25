@@ -2,10 +2,18 @@
 
 .container {
   border-radius: 0.75rem;
+  display: inline-flex;
   overflow: hidden;
-  display: flex;
 
   @include brand using($color, $variant) {
     background-color: get-color($color, light);
+  }
+}
+
+.container.border {
+  border: 1px solid;
+
+  @include brand using($color, $variant) {
+    border-color: get-color($color, dark);
   }
 }

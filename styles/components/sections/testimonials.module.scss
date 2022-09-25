@@ -11,11 +11,21 @@
   @include center;
   @include crete-round;
   grid-template-columns: auto 30rem auto;
-  font-size: 1.75rem;
   gap: 3rem;
 }
 
 .quote {
   @include center;
+  margin-bottom: 0.75rem;
+  font-size: 1.75rem;
   min-height: 6rem;
+}
+
+.rating {
+  margin-bottom: 0.75rem;
+}
+
+.star {
+  height: 1.5rem;
+  width: 1.5rem;
 }

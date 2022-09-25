@@ -156,6 +156,7 @@ export default function Contact() {
 
   const contactImageProps = {
     src: 'stephanie-cannon-headshot-contact-page-stephanie-cannon.jpg',
+    border: true,
     variant,
   }
   const mocapLogoProps = {
@@ -209,7 +210,7 @@ export default function Contact() {
             <br /> <a href="mailto:emily@themocapagency.com">emily@themocapagency.com</a>
             <br /> <a href="https://www.themocapagency.com/product/stephanie-cannon">themocapagency.com</a>
             <br /> <a href="tel:+44 7906905202">+44 7906905202</a>
-            {/* <br /> <Image {...mocapLogoProps} alt={mocapLogoProps.src} /> */}
+            <br /> <Image {...mocapLogoProps} alt={mocapLogoProps.src} />
           </p>
         </Wrap>
       </Container>

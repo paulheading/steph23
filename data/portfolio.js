@@ -1,5 +1,20 @@
 const path = (title) => `/portfolio/${title}`
 
+export const One = {
+  href: `https://www.audible.co.uk/pd/One-Audiobook/B013PEJNLO?qid=1649799195&sr=1-2&ref=a_search_c3_lProduct_1_2&pf_rd_p=c6e316b8-14da-418d-8f91-b3cad83c5183&pf_rd_r=HQRQ90BFX06AE9PK0JBX`,
+  src: path(`stephanie-cannon-us-audiobook-narration-young-adult-one-cover-art.jpg`),
+}
+
+export const GirlUnderWater = {
+  href: `https://www.audible.co.uk/pd/Girl-Under-Water-Audiobook/B08PZKLB4W?ref=a_series_Ch_c4_lProduct_1_2&pf_rd_p=3a993200-e281-426d-b228-794441551983&pf_rd_r=KM7146KBFZJG798MYX57`,
+  src: path(`stephanie-cannon-audiobook-narration-3rd-person-charlotte-winters-series-thriller-girl-under-water-cover-art.jpg`),
+}
+
+export const FlightGirls = {
+  href: `https://www.audible.co.uk/pd/The-Flight-Girls-Audiobook/1405545747?qid=1649799007&sr=1-1&ref=a_search_c3_lProduct_1_1&pf_rd_p=c6e316b8-14da-418d-8f91-b3cad83c5183&pf_rd_r=GATE0AHW33TGV6GX3JHW`,
+  src: path(`stephanie-cannon-us-audiobook-narrator-historical-fiction-flight-girls-cover-art.jpeg`),
+}
+
 const portfolio = [
   {
     href: `https://www.audible.co.uk/pd/The-Origins-of-Iris-Audiobook/1529357705`,
@@ -25,10 +40,7 @@ const portfolio = [
     href: `https://www.audible.co.uk/pd/Stargazer-Audiobook/B09ZFPHD5Q?qid=1652728779&sr=1-5&ref=a_search_c3_lProduct_1_5&pf_rd_p=c6e316b8-14da-418d-8f91-b3cad83c5183&pf_rd_r=E8GSH19FDJYJSQJ1R3CS`,
     src: path(`stephanie-cannon-us-audiobook-narrator-stargazer-cover-art.jpeg`),
   },
-  {
-    href: `https://www.audible.co.uk/pd/The-Flight-Girls-Audiobook/1405545747?qid=1649799007&sr=1-1&ref=a_search_c3_lProduct_1_1&pf_rd_p=c6e316b8-14da-418d-8f91-b3cad83c5183&pf_rd_r=GATE0AHW33TGV6GX3JHW`,
-    src: path(`stephanie-cannon-us-audiobook-narrator-historical-fiction-flight-girls-cover-art.jpeg`),
-  },
+  FlightGirls,
   {
     href: `https://www.audible.co.uk/pd/Branding-That-Means-Business-Audiobook/B0B5LXK575?qid=1662806605&sr=1-1&ref=a_search_c3_lProduct_1_1&pf_rd_p=c6e316b8-14da-418d-8f91-b3cad83c5183&pf_rd_r=M1MAWE3MT2ENMQHJS4HA`,
     src: path(`stephanie-cannon-us-audiobook-narrator-branding-that-means-business-non-fiction-cover-art.jpg`),
@@ -65,10 +77,7 @@ const portfolio = [
     href: `https://www.audible.co.uk/pd/Apex-Audiobook/B010QMZWEA?qid=1649795670&sr=1-10&ref=a_search_c3_lProduct_1_10&pf_rd_p=c6e316b8-14da-418d-8f91-b3cad83c5183&pf_rd_r=KVPH6JJEC2SFP9MG0QTH`,
     src: path(`stephanie-cannon-us-audiobook-narrator-apex-cover-art.jpg`),
   },
-  {
-    href: `https://www.audible.co.uk/pd/One-Audiobook/B013PEJNLO?qid=1649799195&sr=1-2&ref=a_search_c3_lProduct_1_2&pf_rd_p=c6e316b8-14da-418d-8f91-b3cad83c5183&pf_rd_r=HQRQ90BFX06AE9PK0JBX`,
-    src: path(`stephanie-cannon-us-audiobook-narration-young-adult-one-cover-art.jpg`),
-  },
+  One,
   {
     href: `https://www.audible.co.uk/pd/The-Lost-Mother-Audiobook/B08TF6T52M?qid=1649798978&sr=1-1&ref=a_search_c3_lProduct_1_1&pf_rd_p=c6e316b8-14da-418d-8f91-b3cad83c5183&pf_rd_r=WKSN4BWYDST56XWEQ90S`,
     src: path(`stephanie-cannon-us-narrator-the-lost-mother-cover-art-historical-fiction-audiobook.jpg`),
@@ -85,10 +94,7 @@ const portfolio = [
     href: `https://www.audible.co.uk/pd/My-Big-Fake-Wedding-Audiobook/B0B7R386PK?qid=1660392494&sr=1-3&ref=a_search_c3_lProduct_1_3&pf_rd_p=c6e316b8-14da-418d-8f91-b3cad83c5183&pf_rd_r=0JJ6XF34FRBZV5BC0CTN`,
     src: path(`stephanie-cannon-us-audiobook-narrator-my-big-fake-wedding-cover-art.jpg`),
   },
-  {
-    href: `https://www.audible.co.uk/pd/Girl-Under-Water-Audiobook/B08PZKLB4W?ref=a_series_Ch_c4_lProduct_1_2&pf_rd_p=3a993200-e281-426d-b228-794441551983&pf_rd_r=KM7146KBFZJG798MYX57`,
-    src: path(`stephanie-cannon-audiobook-narration-3rd-person-charlotte-winters-series-thriller-girl-under-water-cover-art.jpg`),
-  },
+  GirlUnderWater,
   {
     href: `https://www.audible.co.uk/pd/Getting-It-Done-When-Youre-Depressed-Second-Edition-Audiobook/0744045827?qid=1652728677&sr=1-1&ref=a_search_c3_lProduct_1_1&pf_rd_p=c6e316b8-14da-418d-8f91-b3cad83c5183&pf_rd_r=JT0ENGM3FWM7TVPN85DE`,
     src: path(`stephanie-cannon-us-audiobook-narrator-non-fiction-getting-it-done-when-youre-depressed-cover-art.jpg`),

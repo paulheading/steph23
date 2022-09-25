@@ -45,21 +45,21 @@ p {
 }
 
 @mixin inputStyles {
-  border: 1px solid currentColor;
   font-family: inherit;
   font-size: inherit;
   padding: 0.5rem;
   color: inherit;
+}
+
+@mixin inputOnlyStyles {
+  border: 1px solid currentColor;
+  border-radius: 0.375rem;
+  width: 100%;
 
   @include focus {
     @include single-box(currentColor, 1px);
     outline: none;
   }
-}
-
-@mixin inputOnlyStyles {
-  border-radius: 0.375rem;
-  width: 100%;
 }
 
 textarea {

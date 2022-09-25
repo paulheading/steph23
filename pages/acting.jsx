@@ -14,6 +14,7 @@ export default function Acting() {
   }
   const imageProps = {
     src: 'stephanie-cannon-headshot-acting-page.jpg',
+    border: true,
     variant,
   }
   return (
