@@ -10,7 +10,7 @@
 .wrap {
   @include center;
   @include crete-round;
-  grid-template-columns: auto 30rem auto;
+  display: flex;
   gap: 3rem;
 }
 

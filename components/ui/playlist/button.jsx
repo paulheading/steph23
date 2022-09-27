@@ -3,10 +3,10 @@ import { FaPlay, FaPause } from 'react-icons/fa'
 import { attachVariant } from 'scripts'
 
 export function Button({ active, playing, onClick, className, variant, dark = false, playlist = false }) {
-  const hasClass = className ? className : ''
+  const customClass = className ? className : ''
   const darkClass = dark ? styles.dark : ''
   const playlistClass = playlist ? styles.playlist : ''
-  const buttonClasses = `${styles.button} ${hasClass} ${attachVariant(variant, styles)} ${darkClass} ${playlistClass}`
+  const buttonClasses = `${styles.button} ${customClass} ${attachVariant(variant, styles)} ${darkClass} ${playlistClass}`
   const props = {
     className: buttonClasses,
     onClick,

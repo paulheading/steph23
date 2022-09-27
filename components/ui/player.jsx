@@ -3,13 +3,14 @@ import styles from 'styles/components/ui/player.module.scss'
 import { Main } from 'components/ui/playlist/main'
 import { attachVariant } from 'scripts'
 
-export function Player({ data, active, handleSetActive, variant, standalone, dark }) {
+export function Player({ data, active, handleSetActive, variant, standalone, dark, className }) {
   const [playlist, setPlaylist] = useState(data)
   const playerRef = useRef(null)
   const activePlaylist = playlist.id === active.id
   const darkClass = dark ? styles.dark : ''
+  const customClass = className ? className : ''
   const variantClass = attachVariant(variant, styles)
-  const containerClasses = `${styles.container} ${variantClass} ${darkClass}`
+  const containerClasses = `${styles.container} ${variantClass} ${darkClass} ${customClass}`
 
   useEffect(() => {
     if (!activePlaylist) return

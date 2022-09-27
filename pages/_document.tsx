@@ -1,9 +1,9 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html style={{ scrollBehavior: 'smooth' }}>
         <Head>
           <link rel="stylesheet" href="https://use.typekit.net/vdh1dlb.css" />
         </Head>
@@ -12,8 +12,8 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }
 
-export default MyDocument;
+export default MyDocument

@@ -10,9 +10,8 @@
   text-align: left;
 }
 
-.players {
-  display: grid;
-  gap: 1rem;
+.player + .player {
+  margin-top: 1rem;
 }
 
 .title {

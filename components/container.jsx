@@ -8,8 +8,8 @@ export function Container({ className, variant, dark = false, section = true, ce
   const paddingClass = padding ? styles.padding : ''
   const topClass = top ? styles.top : ''
   const footerClass = footer ? styles.footer : ''
-  const hasClassName = className ? className : ''
-  const containerClasses = `${styles.container} ${hasClassName} ${attachVariant(variant, styles)} ${darkClass} ${sectionClass} ${centerClass} ${paddingClass} ${topClass} ${footerClass}`
+  const customClass = className ? className : ''
+  const containerClasses = `${styles.container} ${customClass} ${attachVariant(variant, styles)} ${darkClass} ${sectionClass} ${centerClass} ${paddingClass} ${topClass} ${footerClass}`
   const props = {
     className: containerClasses,
     id,

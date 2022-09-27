@@ -1,8 +1,8 @@
 import styles from 'styles/components/wrap.module.scss'
 
 export function Wrap({ className, children }) {
-  const hasClassName = className ? className : ''
-  const wrapClasses = `${styles.wrap} ${hasClassName}`
+  const customClass = className ? className : ''
+  const wrapClasses = `${styles.wrap} ${customClass}`
 
   return <div className={wrapClasses}>{children}</div>
 }

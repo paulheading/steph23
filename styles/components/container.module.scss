@@ -11,6 +11,11 @@ $padding-container-hz: 1rem;
   @include brand using ($color, $variant) {
     background-color: get-color($color);
     color: get-color($color, dark);
+
+    ::selection {
+      background-color: get-color($color, dark);
+      color: get-color($color);
+    }
   }
 }
 
@@ -35,6 +40,11 @@ $padding-container-hz: 1rem;
   @include brand using ($color, $variant) {
     background-color: get-color($color, dark);
     color: get-color($color);
+
+    ::selection {
+      background-color: get-color($color);
+      color: get-color($color, dark);
+    }
   }
 }
 

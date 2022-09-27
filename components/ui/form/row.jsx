@@ -10,8 +10,8 @@ function Alert({ children }) {
 }
 
 export function FormRow({ htmlFor, label, error, errorMessage, className, children, rules }) {
-  const hasClassName = className ? className : ''
-  const containerClasses = `${styles.container} ${hasClassName}`
+  const customClass = className ? className : ''
+  const containerClasses = `${styles.container} ${customClass}`
   const required = !rules || !rules.required ? '(optional)' : '(required)'
 
   return (
