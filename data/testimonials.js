@@ -1,4 +1,4 @@
-import { FlightGirls, GirlUnderWater, One } from 'data/portfolio'
+import { FlightGirls, GirlUnderWater, One } from 'data/purchase'
 
 const link = (href, title) => `"<a target='_blank' href='${href}'>${title}</a>"`
 

@@ -1,4 +1,4 @@
-import intro from 'data/audiobooks/intro'
+import favourites from 'data/audiobooks/favourites'
 import series from 'data/audiobooks/series'
 import thrillers from 'data/audiobooks/thrillers'
 import historicalFiction from 'data/audiobooks/historical-fiction'
@@ -11,4 +11,4 @@ import romance from 'data/audiobooks/romance'
 
 const all = [series, thrillers, historicalFiction, literaryFiction, childrensLit, youngAdult, nonFiction, scienceFiction, romance]
 
-export { intro, series, all }
+export { favourites, series, all }

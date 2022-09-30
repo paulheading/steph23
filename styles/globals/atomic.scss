@@ -1,0 +1,13 @@
+$margins: 'top', 'left', 'bottom', 'right';
+
+@each $margin in $margins {
+  @for $i from 1 to 5 {
+    .margin-#{$margin}-#{$i} {
+      margin-#{$margin}: #{$i}rem;
+    }
+  }
+}
+
+.text-align-center {
+  text-align: center;
+}

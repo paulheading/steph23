@@ -38,7 +38,7 @@ export default function Contact() {
     }).catch((error) => alert(error))
   }
 
-  const input = (title = '', placeholder = '', type = 'text') => ({ type, name: title, id: title, placeholder })
+  const input = (title = '', type = 'text') => ({ type, name: title, id: title })
   const variant = 'yellow'
   const pageProps = {
     footer: variant,
@@ -58,6 +58,17 @@ export default function Contact() {
     ref: formRef,
   }
 
+  function row(data, error, errorMessage = '') {
+    const { name, title, rules } = data
+    return {
+      errorMessage,
+      htmlFor: name,
+      label: title,
+      error,
+      rules,
+    }
+  }
+
   const firstNameProps = {
     name: 'firstName',
     title: 'First name',
@@ -71,13 +82,7 @@ export default function Contact() {
     className: styles.firstName,
   }
 
-  firstNameProps.row = {
-    errorMessage: 'Please enter your first name',
-    htmlFor: firstNameProps.name,
-    label: firstNameProps.title,
-    rules: firstNameProps.rules,
-    error: errors.firstName,
-  }
+  firstNameProps.row = row(firstNameProps, errors.firstName, 'Please enter your first name')
 
   const lastNameProps = {
     name: 'lastName',
@@ -89,47 +94,37 @@ export default function Contact() {
     className: styles.lastName,
   }
 
-  lastNameProps.row = {
-    htmlFor: lastNameProps.name,
-    label: lastNameProps.title,
-    error: errors.lastName,
-    errorMessage: 'Message works!',
-  }
+  lastNameProps.row = row(lastNameProps, errors.lastName)
 
   const messageProps = {
     name: 'message',
     title: 'Message',
+    rules: {
+      required: true,
+    },
   }
+
+  messageProps.row = row(messageProps, errors.message, 'Please enter your message')
 
   messageProps.input = {
-    ...input(messageProps.name, messageProps.title, null),
+    ...input(messageProps.name, null),
     className: styles.message,
-  }
-
-  messageProps.row = {
-    htmlFor: messageProps.name,
-    label: messageProps.title,
-    error: errors.message,
-    errorMessage: 'Message works!',
   }
 
   const emailProps = {
     name: 'email',
     title: 'Email',
-    placeholder: 'friendly@visitor.org',
+    rules: {
+      required: true,
+    },
   }
 
   emailProps.input = {
-    ...input(emailProps.name, emailProps.placeholder, 'email'),
+    ...input(emailProps.name, 'email'),
     className: styles.email,
   }
 
-  emailProps.row = {
-    htmlFor: emailProps.name,
-    label: emailProps.title,
-    error: errors.email,
-    errorMessage: 'Message works!',
-  }
+  emailProps.row = row(emailProps, errors.email, 'Please enter your email')
 
   const phoneProps = {
     name: 'phone',
@@ -142,12 +137,7 @@ export default function Contact() {
     className: styles.phone,
   }
 
-  phoneProps.row = {
-    htmlFor: phoneProps.name,
-    label: phoneProps.title,
-    error: errors.phone,
-    errorMessage: 'Message works!',
-  }
+  phoneProps.row = row(phoneProps, errors.phone)
 
   const submitProps = {
     className: styles.submit,
@@ -159,11 +149,9 @@ export default function Contact() {
     border: true,
     variant,
   }
-  const mocapLogoProps = {
-    src: 'the-mocap-agency-logo-stephanie-cannon-female-actor.jpg',
-    className: styles.mocap_logo,
-    height: 60,
-    width: 157,
+  const mocapLinkProps = {
+    href: 'https://www.themocapagency.com/product/stephanie-cannon',
+    target: '_blank',
   }
   return (
     <Page {...pageProps}>
@@ -187,10 +175,10 @@ export default function Contact() {
                   <input {...register(lastNameProps.name)} {...lastNameProps.input} />
                 </FormRow>
                 <FormRow {...messageProps.row}>
-                  <textarea {...register(messageProps.name)} {...messageProps.input} />
+                  <textarea {...register(messageProps.name, messageProps.rules)} {...messageProps.input} />
                 </FormRow>
                 <FormRow {...emailProps.row}>
-                  <input {...register(emailProps.name)} {...emailProps.input} />
+                  <input {...register(emailProps.name, emailProps.rules)} {...emailProps.input} />
                 </FormRow>
                 <FormRow {...phoneProps.row}>
                   <input {...register(phoneProps.name)} {...phoneProps.input} />
@@ -207,10 +195,14 @@ export default function Contact() {
           <p>For Motion Capture Projects contact Emily at:</p>
           <p>
             The Mocap Agency
-            <br /> <a href="mailto:emily@themocapagency.com">emily@themocapagency.com</a>
-            <br /> <a href="https://www.themocapagency.com/product/stephanie-cannon">themocapagency.com</a>
-            <br /> <a href="tel:+44 7906905202">+44 7906905202</a>
-            <br /> <Image {...mocapLogoProps} alt={mocapLogoProps.src} />
+            <br />
+            <a {...mocapLinkProps}>
+              <strong>themocapagency.com</strong>
+            </a>
+            <br />
+            <a href="mailto:emily@themocapagency.com">emily@themocapagency.com</a>
+            <br />
+            <a href="tel:+44 7906905202">+44 7906905202</a>
           </p>
         </Wrap>
       </Container>

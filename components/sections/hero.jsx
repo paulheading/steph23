@@ -28,11 +28,9 @@ export function Hero() {
   useEffect(() => {
     if (!sparkRef.current) return
     const defaults = { ease: 'none' }
-    const spin = gsap.timeline({ defaults })
     const fade = gsap.timeline({ defaults })
     const target = sparkRef.current
     fade.to(target, { duration: 1, opacity: 1 })
-    spin.to(target, { rotate: 360, duration: 36, repeat: 3 })
   }, [sparkRef])
 
   return (

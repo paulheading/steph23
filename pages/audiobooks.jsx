@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import { intro, all as data } from 'data/audiobooks'
+import { favourites, all as data } from 'data/audiobooks'
 import { Harper, AngryRobot, Penguin, ChatterBox, Hodder, Yoto, Audible, Bookotoure, RNIB, Storytel, Hachette, Ladbroke, Orion, Dreamscape, Bloomsbury, Tonies } from 'logos'
 import { Page, Logos } from 'components'
-import { Audiobooks as Intro, Affiliations, Accents, Portfolio, Samples } from 'components/sections'
+import { Favourites, Affiliations, Accents, Purchase, Samples } from 'components/sections'
 import { audiobooks as head } from 'data/seo'
 
 export default function Audiobooks() {
-  const [active, setActive] = useState(intro.tracks[0])
+  const [active, setActive] = useState(favourites.tracks[0])
   const pageProps = {
     footer: 'cream',
     head,
@@ -24,11 +24,11 @@ export default function Audiobooks() {
 
   return (
     <Page {...pageProps}>
-      <Intro {...audioProps} />
+      <Favourites {...audioProps} />
 
       <Samples {...samplesProps} />
 
-      <Portfolio />
+      <Purchase />
 
       <Accents />
 

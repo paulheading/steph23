@@ -1,0 +1,57 @@
+@import 'styles/mixins';
+
+$size: 10rem;
+
+.wrap {
+  text-align: center;
+  max-width: 55rem;
+}
+
+.link {
+  background-color: currentColor;
+  border: 1px solid currentColor;
+  justify-content: center;
+  background-size: cover;
+  border-radius: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin: 0.5rem;
+  height: $size;
+  width: $size;
+
+  @include focus {
+    .overlay {
+      opacity: 1;
+    }
+  }
+}
+
+.overlay {
+  @include inset;
+  transition: opacity 200ms;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  display: flex;
+  opacity: 0;
+
+  @include brand using($color, $variant) {
+    background-color: rgba(get-color($color, dark), 0.9);
+  }
+}
+
+.logo {
+  height: 2.5rem;
+  width: 2.5rem;
+
+  @include brand using($color, $variant) {
+    color: get-color($color);
+  }
+}
+
+.button {
+  margin-top: 2rem;
+  min-width: 10rem;
+}

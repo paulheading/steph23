@@ -180,3 +180,21 @@
   display: grid;
   gap: 4rem;
 }
+
+@mixin inputStyles {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.5rem;
+  color: inherit;
+}
+
+@mixin inputOnlyStyles {
+  border: 1px solid currentColor;
+  border-radius: 0.375rem;
+  width: 100%;
+
+  @include focus {
+    @include single-box(currentColor, 1px);
+    outline: none;
+  }
+}

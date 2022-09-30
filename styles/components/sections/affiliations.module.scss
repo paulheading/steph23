@@ -1,7 +1,6 @@
 .list {
   justify-content: center;
   list-style: inside;
-  font-weight: bold;
   flex-wrap: wrap;
   display: flex;
   padding: 0;
@@ -11,8 +10,4 @@
 
 .list li:first-child {
   list-style: none;
-}
-
-.list a {
-  text-decoration: underline;
 }
