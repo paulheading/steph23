@@ -8,7 +8,7 @@ let menu = [
     title: 'Demos',
     href,
     items: [
-      createLink('View all'),
+      createLink('All Genres'),
       createLink('E-Learning'),
       createLink('Advertising'),
       createLink('Gaming'),
@@ -16,7 +16,6 @@ let menu = [
       createLink('Corporate Narration'),
       createLink('TV/Film Documentary'),
       createLink('Radio Drama'),
-      createLink('Audiobooks'),
       createLink('Child/Teen'),
       createLink('UK/International Accents'),
       createLink('ADR'),
@@ -26,7 +25,7 @@ let menu = [
   {
     title: 'Audiobooks',
     href,
-    items: [createLink('View all'), createLink('#Samples'), createLink('#Portfolio'), createLink('#Accents')],
+    items: [createLink('Introduction'), createLink('#Samples'), createLink('#Portfolio'), createLink('#Accents')],
   },
   createLink('Acting'),
   createLink('About'),

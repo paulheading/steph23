@@ -1,6 +1,6 @@
 import { main, extra, mapIndexIDs } from 'data/playlist/setup'
 
-const id = 2
+const id = 1
 const extras = {
   genre: 'dont-need-this',
   playlist_id: id,
@@ -15,7 +15,7 @@ let gaming = {
   main,
   tracks: [
     {
-      title: 'Video game reel',
+      title: 'Gaming Reel',
       src: `/demos/gaming/stephanie-cannon-gaming-reel-us-female-drama-fantasy-transatlantic-rp-action-texan-new-york-cockney.mp3`,
       ...extras,
     },

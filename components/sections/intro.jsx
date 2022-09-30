@@ -50,7 +50,7 @@ export function Intro({ active, setActive }) {
           })}
         </div>
         <div className={styles.message}>
-          <Title className={styles.title}>Smooth, Enticing, Youthful VO</Title>
+          <Title className={styles.title}>Smooth, Enticing, Youthful</Title>
           <div className={styles.copy}>
             <p>
               I’m an American Voiceover, Actor and Audiobook Narrator with over 20 years experience. I offer a quick turnaround service from my professional home studio in London, or I’m a short cycle from your preferred recording studio! With my dedication and creativity, I can ignite that special
