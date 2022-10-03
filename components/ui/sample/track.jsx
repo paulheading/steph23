@@ -1,6 +1,7 @@
 import styles from 'styles/components/ui/sample/track.module.scss'
 import { Button } from 'components/ui/playlist/button'
 import { attachVariant } from 'scripts'
+import { MdOutlineFileDownload } from 'react-icons/md'
 
 export function Track({ track, handleTrackChange, activePlaylist, active, variant, dark = false }) {
   if (!track) return null
@@ -23,7 +24,14 @@ export function Track({ track, handleTrackChange, activePlaylist, active, varian
       <div className={styles.media} style={{ backgroundImage }}>
         <Button {...buttonProps} />
       </div>
-      <div className={styles.title}>{track.title}</div>
+      {track.favourite ? (
+        <a className={styles.title} href={track.src} download>
+          {track.title}
+          <MdOutlineFileDownload className={styles.download} />
+        </a>
+      ) : (
+        <div className={styles.title}>{track.title}</div>
+      )}
       <div className={styles.genre}>{track.genre}</div>
     </div>
   )

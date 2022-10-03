@@ -1,4 +1,4 @@
-import { useState, Fragment } from 'react'
+import { useState } from 'react'
 import { Sample } from 'components/ui'
 import styles from 'styles/components/ui/samples.module.scss'
 import { attachVariant } from 'scripts'

@@ -4,10 +4,11 @@ let duration = 0
 let playing = false
 
 export const extra = {
-  id,
+  favourite: false,
   progress,
   duration,
   playing,
+  id,
 }
 
 export const main = {

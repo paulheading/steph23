@@ -1,11 +1,13 @@
+import { useEffect, useState, useRef } from 'react'
 import { Container, Wrap } from 'components'
 import { VO } from 'logos'
 import Image from 'next/image'
 import styles from 'styles/components/sections/hero.module.scss'
 import gsap from 'gsap'
-import { useEffect, useRef } from 'react'
 
 export function Hero() {
+  const [sparkReady, setSparkReady] = useState(false)
+  const [stephReady, setStephReady] = useState(false)
   const sparkRef = useRef(null)
   const containerProps = {
     className: styles.container,
@@ -14,16 +16,26 @@ export function Hero() {
     top: true,
   }
   const sparkProps = {
-    src: '/spark.png',
+    onLoad: () => setSparkReady(true),
+    src: '/spark.webp',
     priority: true,
     height: 702,
     width: 702,
   }
   const stephProps = {
-    src: '/steph.png',
+    onLoad: () => setStephReady(true),
+    src: '/steph.webp',
     height: 410,
     width: 520,
   }
+
+  console.log('spark: ', sparkReady)
+  console.log('steph: ', stephReady)
+
+  useEffect(() => {
+    if (sparkReady || stephReady) return
+    console.log('animation ready')
+  }, [sparkReady, stephReady])
 
   useEffect(() => {
     if (!sparkRef.current) return
