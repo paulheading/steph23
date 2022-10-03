@@ -1,4 +1,4 @@
-const path = (title) => `/portfolio/${title}`
+const path = (title) => `/purchase/${title}`
 
 export const One = {
   href: `https://www.audible.co.uk/pd/One-Audiobook/B013PEJNLO?qid=1649799195&sr=1-2&ref=a_search_c3_lProduct_1_2&pf_rd_p=c6e316b8-14da-418d-8f91-b3cad83c5183&pf_rd_r=HQRQ90BFX06AE9PK0JBX`,
@@ -77,7 +77,6 @@ const portfolio = [
     href: `https://www.audible.co.uk/pd/Apex-Audiobook/B010QMZWEA?qid=1649795670&sr=1-10&ref=a_search_c3_lProduct_1_10&pf_rd_p=c6e316b8-14da-418d-8f91-b3cad83c5183&pf_rd_r=KVPH6JJEC2SFP9MG0QTH`,
     src: path(`stephanie-cannon-us-audiobook-narrator-apex-cover-art.webp`),
   },
-  One,
   {
     href: `https://www.audible.co.uk/pd/The-Lost-Mother-Audiobook/B08TF6T52M?qid=1649798978&sr=1-1&ref=a_search_c3_lProduct_1_1&pf_rd_p=c6e316b8-14da-418d-8f91-b3cad83c5183&pf_rd_r=WKSN4BWYDST56XWEQ90S`,
     src: path(`stephanie-cannon-us-narrator-the-lost-mother-cover-art-historical-fiction-audiobook.webp`),
@@ -206,6 +205,10 @@ const portfolio = [
   {
     href: `https://www.storytel.com/sg/en/books/poppy-and-the-prank-too-far-1030079`,
     src: path(`stephanie-cannon-us-audiobook-narrator-kids-fiction-angry-birds-stella-diaries-poppy-and-the-prank-too-far-cover-art.webp`),
+  },
+  {
+    href: `https://www.audible.co.uk/pd/Somebody-Wonderful-Audiobook/B01N3B7SQS?qid=1664461863&sr=1-56&ref=a_search_c3_lProduct_3_16&pf_rd_p=c6e316b8-14da-418d-8f91-b3cad83c5183&pf_rd_r=VGX3QJVMT1K9NFKVTKVY`,
+    src: path(`stephanie-cannon-us-audiobook-narrator-somebody-wonderful-cover-art.webp`),
   },
 ]
 

@@ -4,7 +4,7 @@ const link = (href, title) => `"<a target='_blank' href='${href}'>${title}</a>"`
 
 const testimonials = [
   {
-    quote: `"It is a great pleasure to work with an actor as talented, professional and versatile as Stephanie. Her versatility and creativity in voices and accents added a great variety to our award-winning video game."`,
+    quote: `"It is a great pleasure to work with an actor as talented, professional, creative and versatile as Stephanie."`,
     author: `Maija Kozlova`,
     role: `Senior Assessment Manager at Cambridge University Press & Assessment`,
   },
@@ -14,7 +14,7 @@ const testimonials = [
     role: `Founder of Aequaland`,
   },
   {
-    quote: `"Stephanie responded excellently to feedback, had clearly done her research ahead of time and she came very prepared. The thorough approach and her calm, consistent manner was a really great experience for us. She worked quickly and efficiently, maintaining her quality as time went on. I would definitely recommend her to other prospective employers"`,
+    quote: `"Stephanie responded excellently to feedback and came very prepared. The thorough approach and her calm, consistent manner was a really great experience for us."`,
     author: `Shelby Derbyshire`,
     role: `Digital Theatre`,
   },
