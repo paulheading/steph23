@@ -14,7 +14,7 @@ export function Studio({ active, setActive, variant }) {
   }
 
   const imageProps = {
-    src: 'studio.jpg',
+    src: 'studio.webp',
     height: 360,
     width: 270,
     variant,

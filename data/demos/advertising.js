@@ -2,7 +2,6 @@ import { main, extra, mapIndexIDs } from 'data/playlist/setup'
 
 const id = 0
 const extras = {
-  cover: '/dont-need-this.jpeg',
   playlist_id: id,
   ...extra,
 }

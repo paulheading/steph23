@@ -45,7 +45,7 @@ export default function Demos() {
   }
 
   const imageProps = {
-    src: 'stephanie-cannon-voice-actor-home-studio-voiceover-headphones.jpg',
+    src: 'stephanie-cannon-voice-actor-home-studio-voiceover-headphones.webp',
     border: true,
     variant,
   }

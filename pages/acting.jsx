@@ -13,7 +13,7 @@ export default function Acting() {
     variant,
   }
   const imageProps = {
-    src: 'stephanie-cannon-headshot-acting-page.jpg',
+    src: 'stephanie-cannon-headshot-acting-page.webp',
     border: true,
     variant,
   }

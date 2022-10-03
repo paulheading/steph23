@@ -145,7 +145,7 @@ export default function Contact() {
   }
 
   const contactImageProps = {
-    src: 'stephanie-cannon-headshot-contact-page-stephanie-cannon.jpg',
+    src: 'stephanie-cannon-headshot-contact-page-stephanie-cannon.webp',
     border: true,
     variant,
   }

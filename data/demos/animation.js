@@ -2,7 +2,6 @@ import { main, extra, mapIndexIDs } from 'data/playlist/setup'
 
 const id = 3
 const extras = {
-  genre: 'dont-need-this',
   playlist_id: id,
   ...extra,
 }

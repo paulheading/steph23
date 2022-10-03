@@ -3,7 +3,7 @@ import { about as head } from 'data/seo'
 
 export default function About() {
   const imageProps = {
-    src: 'stephanie-cannon-american-female-actor-voiceover-cyclist-environmentalist.jpeg',
+    src: 'stephanie-cannon-american-female-actor-voiceover-cyclist-environmentalist.webp',
     border: true,
   }
   return (
