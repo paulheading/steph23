@@ -30,12 +30,6 @@ let scienceFiction = {
       src: path(`stephanie-cannon-audiobook-3rd-person-narration-dialogue-scottish-transatlantic-science-fiction-sample.mp3`),
       ...extras,
     },
-    {
-      title: `3rd person`,
-      cover: path(`stephanie-cannon-audiobook-narrator-science-fiction-bluebird-cover-art.webp`),
-      src: path(`stephanie-cannon-us-audiobook-3rd-person-narration-science-fiction-bluebird-sample.mp3`),
-      ...extras,
-    },
   ],
 }
 

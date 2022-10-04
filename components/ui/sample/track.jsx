@@ -24,14 +24,10 @@ export function Track({ track, handleTrackChange, activePlaylist, active, varian
       <div className={styles.media} style={{ backgroundImage }}>
         <Button {...buttonProps} />
       </div>
-      {track.favourite ? (
-        <a className={styles.title} href={track.src} download>
-          {track.title}
-          <MdOutlineFileDownload className={styles.download} />
-        </a>
-      ) : (
-        <div className={styles.title}>{track.title}</div>
-      )}
+      <a className={styles.title} href={track.src} download>
+        <span className={styles.title_copy}>{track.title}</span>
+        <MdOutlineFileDownload className={styles.download} />
+      </a>
       <div className={styles.genre}>{track.genre}</div>
     </div>
   )

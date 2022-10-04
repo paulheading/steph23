@@ -28,8 +28,10 @@
   margin-top: 1rem;
   flex-wrap: wrap;
   color: inherit;
-  display: flex;
   gap: 1rem;
+
+  display: grid;
+  grid-template-columns: auto 15rem auto;
 }
 
 .author {

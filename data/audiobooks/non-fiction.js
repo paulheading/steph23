@@ -20,12 +20,6 @@ let nonFiction = {
     },
     {
       title: `1st person`,
-      cover: path(`stephanie-cannon-us-audiobook-narrator-non-fiction-getting-it-done-when-youre-depressed-cover-art.webp`),
-      src: path(`stephanie-cannon-us-nonfiction-audiobook-narration-sample-getting-it-done-when-youre-depressed.mp3`),
-      ...extras,
-    },
-    {
-      title: `1st person`,
       cover: path(`stephanie-cannon-non-fiction-us-audiobook-narrator-cover-art-reality-no-reality.webp`),
       src: path(`stephanie-cannon-us-non-fiction-audiobook-narration-sample-reality-no-realiity-lia-kim.mp3`),
       ...extras,

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Wrap } from 'components'
 import { Sample } from 'components/ui'
 import styles from 'styles/components/ui/samples.module.scss'
 import { attachVariant } from 'scripts'
@@ -24,23 +25,24 @@ export function Samples({ data, variant, dark = false, active, setActive }) {
   return (
     <div className={styles.container}>
       {needsButtons && (
-        <div className={styles.buttons}>
-          {samples.map(({ title, id }, index) => {
-            const openClass = openID === id ? styles.open : ''
-            const darkClass = dark ? styles.dark : ''
-            const classes = `${styles.button} ${attachVariant(variant, styles)} ${openClass} ${darkClass}`
-            const props = {
-              onClick: () => handleSetOpenID(id),
-              className: classes,
-            }
-
-            return (
-              <button key={'button' + index} {...props}>
-                {title}
-              </button>
-            )
-          })}
-        </div>
+        <Wrap>
+          <div className={styles.buttons}>
+            {samples.map(({ title, id }, index) => {
+              const openClass = openID === id ? styles.open : ''
+              const darkClass = dark ? styles.dark : ''
+              const classes = `${styles.button} ${attachVariant(variant, styles)} ${openClass} ${darkClass}`
+              const props = {
+                onClick: () => handleSetOpenID(id),
+                className: classes,
+              }
+              return (
+                <button key={'button' + index} {...props}>
+                  {title}
+                </button>
+              )
+            })}
+          </div>
+        </Wrap>
       )}
       {data.map((playlist, index) => {
         const sampleProps = {

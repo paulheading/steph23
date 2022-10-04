@@ -54,7 +54,7 @@ let series = {
           ...extras,
         },
         {
-          title: `Poppy and the Prank Too Far`,
+          title: `Poppy & the Prank Too Far`,
           cover: path.stella(`stephanie-cannon-us-audiobook-narrator-kids-fiction-angry-birds-stella-diaries-poppy-and-the-prank-too-far-cover-art.webp`),
           src: path.stella(`stephanie-cannon-us-audiobook-1st-person-childrens-narration-fun-angry-birds-stella-diaries-poppy-and-the-prank-too-far-sample.mp3`),
           ...extras,
@@ -66,7 +66,7 @@ let series = {
           ...extras,
         },
         {
-          title: `Dahlia and the Ultimate Invention`,
+          title: `Dahlia & the Ultimate Invention`,
           cover: path.stella(`stephanie-cannon-us-audiobook-narrator-kids-fiction-angry-birds-stella-diaries-dahlia-and-the-ultimate-invention-cover-art.webp`),
           src: path.stella(`stephanie-cannon-us-audiobook-narration-1st-person-kids-fiction-angry-birds-stella-diaries-dahlia-and-the-ultimate-invention-sample.mp3`),
           ...extras,
@@ -93,7 +93,7 @@ let series = {
         {
           title: `The House Across the Lake`,
           cover: path.saga(`stephanie-cannon-audiobook-narrator-1st-person-thriller-riley-sager-the-house-across-the-lake-cover-art.webp`),
-          src: path.saga(`stephanie-cannon-audiobook-narrator-thriller-riley-sager-the-house-across-the-lake-sample.mp3`),
+          src: path.saga(`stephanie-cannon-audiobook-narrator-1st-person-thriller-riley-sager-the-house-across-the-lake-sample.mp3`),
           ...extras,
         },
         {

@@ -1,4 +1,4 @@
-import { Content, Title } from 'components'
+import { Container, Title } from 'components'
 import { Samples as SamplesUI } from 'components/ui'
 import styles from 'styles/components/sections/samples.module.scss'
 
@@ -18,9 +18,9 @@ export function Samples({ data, variant, dark = false, active, setActive }) {
     dark,
   }
   return (
-    <Content {...contentProps}>
+    <Container {...contentProps}>
       <Title>Samples</Title>
       <SamplesUI {...samplesProps} />
-    </Content>
+    </Container>
   )
 }

@@ -30,12 +30,6 @@ let youngAdult = {
       src: path(`stephanie-cannon-us-audiobook-narration-1st-person-young-adult-child-teen-dialogue-sample-one.mp3`),
       ...extras,
     },
-    {
-      title: `3rd person`,
-      cover: path(`stephanie-cannon-us-audiobook-narrator-ya-lgbtq-pulp-cover-art.webp`),
-      src: path(`stephanie-cannon-us-audiobook-narration-3rd-person-young-adult-lgbtq-pulp-sample.mp3`),
-      ...extras,
-    },
   ],
 }
 
