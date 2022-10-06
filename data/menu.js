@@ -18,7 +18,7 @@ let menu = [
       createLink('Radio Drama'),
       createLink('Child/Teen'),
       createLink('UK/International Accents'),
-      createLink('ADR'),
+      createLink('Audio Description'),
       createLink('Singing'),
     ],
   },

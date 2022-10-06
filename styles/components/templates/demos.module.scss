@@ -1,5 +1,22 @@
-.column {
-  align-items: flex-start;
-  display: grid;
-  gap: 1rem;
+@import 'styles/mixins';
+
+.wrap {
+  max-width: 48rem;
+}
+
+.wrap_iframe {
+  border: 0.125rem solid currentColor;
+  border-radius: 1rem;
+  padding-top: 56.25%;
+  position: relative;
+  margin-top: 4rem;
+  overflow: hidden;
+  width: 100%;
+
+  iframe {
+    @include inset;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
 }

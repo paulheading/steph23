@@ -5,6 +5,10 @@ import { demos } from 'data/seo'
 
 export default function Advertising() {
   const props = {
+    video: {
+      title: 'stephanie-cannon-advertising-video-24-hr-fitness-friendly-upbeat-us',
+      src: '757468267?h=0bdde5b129',
+    },
     head: demos.advertising,
     data,
   }

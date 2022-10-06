@@ -1,7 +1,7 @@
 @import 'styles/mixins';
 
 .container {
-  grid-template-columns: repeat(2, 20rem);
+  grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: flex-start;
   display: grid;

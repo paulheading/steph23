@@ -5,9 +5,14 @@ import { demos } from 'data/seo'
 
 export default function ELearning() {
   const props = {
+    video: {
+      title: 'stephanie-cannon-us-e-learning-video-educational-theatre-secondary-school-high-school-digital-theatre',
+      src: '757468004?h=979b35ba32',
+    },
     head: demos.eLearning,
     data,
   }
+
   return (
     <Template {...props}>
       <Title>E Learning</Title>
