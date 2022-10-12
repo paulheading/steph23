@@ -14,8 +14,8 @@ let studio = {
   main,
   tracks: [
     {
-      title: `The Imitation Game, Drama`,
-      src: path('drama-film-the-imitation-game-audio-clip'),
+      title: `Sample`,
+      src: path('stephanie-cannon-home-studio-raw-sample-narrator-voiceover-voice-actor-v-o'),
       ...extras,
     },
   ],

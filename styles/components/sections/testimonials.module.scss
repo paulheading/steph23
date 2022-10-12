@@ -10,6 +10,7 @@
 .wrap {
   @include center;
   @include crete-round;
+  min-height: 13rem;
   display: flex;
   gap: 3rem;
 }

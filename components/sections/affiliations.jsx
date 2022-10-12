@@ -1,5 +1,5 @@
 import styles from 'styles/components/sections/affiliations.module.scss'
-import { Content, Title } from 'components'
+import { Content, Wrap, Title } from 'components'
 
 function Link({ href, children }) {
   const props = {
@@ -21,8 +21,10 @@ export function Affiliations() {
   }
   return (
     <Content {...contentProps}>
-      <Title>Affiliations</Title>
-      <p className="margin-bottom-1">I am a proud member of</p>
+      <Wrap className="margin-bottom-1">
+        <Title>Affiliations</Title>
+        <p>I am a proud member of</p>
+      </Wrap>
       <ul className={styles.list}>
         <li>
           <Link href="https://www.equity.org.uk/">British Actors Equity</Link>

@@ -10,7 +10,8 @@ import audioDescription from 'data/demos/audioDescription'
 import childTeen from 'data/demos/child-teen'
 import accents from 'data/demos/accents'
 import singing from 'data/demos/singing'
+import studio from 'data/demos/studio'
 
 const all = [advertising, gaming, eLearning, animation, corporate, radioDrama, documentary, audiobooks, audioDescription, childTeen, accents, singing]
 
-export { advertising, gaming, eLearning, animation, corporate, radioDrama, documentary, audiobooks, audioDescription, childTeen, accents, singing, all }
+export { advertising, gaming, eLearning, animation, corporate, radioDrama, documentary, audiobooks, audioDescription, childTeen, accents, singing, all, studio }

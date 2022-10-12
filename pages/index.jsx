@@ -1,4 +1,4 @@
-import { intro } from 'data/playlist'
+import { homepage } from 'data/playlist'
 import { useState } from 'react'
 import { Page, Logos } from 'components'
 import { Hero, Intro, Studio, Testimonials } from 'components/sections'
@@ -6,7 +6,7 @@ import { Adobe, Pixar, Aljazeera, Disney, Sega, Unity, Microsoft, Sony, Audible,
 import { home as head } from 'data/seo'
 
 export default function Home() {
-  const [active, setActive] = useState(intro[0])
+  const [active, setActive] = useState(homepage[0])
   const pageProps = {
     menu: 'green',
     footer: 'cream',

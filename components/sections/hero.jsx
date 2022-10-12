@@ -60,9 +60,6 @@ export function Hero() {
             <Image {...sparkProps} alt="spark" />
           </div>
         </div>
-        <div className={styles.capsule}>
-          <div className={styles.skillset}>Voice Artist / Actor</div>
-        </div>
       </Wrap>
     </Container>
   )

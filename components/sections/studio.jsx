@@ -1,4 +1,4 @@
-import { intro } from 'data/playlist'
+import { homepage } from 'data/playlist'
 import { Container, Wrap, Title, Image } from 'components'
 import { Player } from 'components/ui'
 import styles from 'styles/components/sections/studio.module.scss'
@@ -6,8 +6,9 @@ import styles from 'styles/components/sections/studio.module.scss'
 export function Studio({ active, setActive, variant }) {
   const handleSetActive = (track) => setActive(track)
   const playerProps = {
-    data: intro[0],
+    className: styles.player,
     handleSetActive,
+    data: homepage[4],
     dark: true,
     variant,
     active,
@@ -20,6 +21,7 @@ export function Studio({ active, setActive, variant }) {
     variant,
   }
   const containerProps = {
+    section: false,
     dark: true,
     variant,
   }

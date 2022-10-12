@@ -1,17 +1,11 @@
 @import 'styles/mixins';
 
-.wrap {
-  grid-auto-flow: column;
-  display: grid;
-  gap: 3.75rem;
-}
-
-.message {
-  text-align: left;
-}
-
 .player + .player {
   margin-top: 1rem;
+}
+
+.split {
+  grid-template-columns: 19rem auto;
 }
 
 .title {

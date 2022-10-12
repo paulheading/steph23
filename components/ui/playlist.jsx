@@ -5,12 +5,13 @@ import { Main } from 'components/ui/playlist/main'
 import { Track } from 'components/ui/playlist/track'
 import { Toggle } from 'components/ui/playlist/toggle'
 
-export function Playlist({ data, active, handleSetActive, variant, toggle, openID, handleSetOpenID }) {
+export function Playlist({ data, active, handleSetActive, variant, toggle, openID, handleSetOpenID, className }) {
   const [playlist, setPlaylist] = useState(data)
   const playerRef = useRef(null)
   const isOpen = toggle ? openID === playlist.id : true
   const activePlaylist = active ? playlist.id === active.playlist_id : false
-  const containerClasses = `${styles.container} ${attachVariant(variant, styles)}`
+  const customClass = className ? className : ''
+  const containerClasses = `${styles.container} ${attachVariant(variant, styles)} ${customClass}`
 
   useEffect(() => {
     if (!activePlaylist) return

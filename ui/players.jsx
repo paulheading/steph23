@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import { intro } from 'data/playlist'
+import { homepage } from 'data/playlist'
 import { Head } from 'components'
 import { Player } from 'components/ui'
 import styles from 'styles/ui.module.scss'
 
 export default function UI_Players() {
-  const [active, setActive] = useState(intro[0])
+  const [active, setActive] = useState(homepage[0])
   const handleSetActive = (track) => setActive(track)
   const playerProps = {
     handleSetActive,
@@ -45,7 +45,7 @@ export default function UI_Players() {
     <div>
       <Head />
       <div className={styles.grid}>
-        {intro.map((track, index) => (
+        {homepage.map((track, index) => (
           <Player key={`player${index}`} data={track} {...playerProps} standalone={setStandalone(index)} variant={setVariant(index)} dark={setDark(index)} />
         ))}
       </div>

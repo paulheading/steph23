@@ -60,7 +60,7 @@ export function Purchase() {
         <Title>Purchase</Title>
         <Wrap className="margin-bottom-2">
           <p>
-            A selection of my audiobooks is available to buy. Find the one you&apos;re looking for here or visit <Link href="https://audible.co.uk">audible.co.uk</Link> or <Link href="https://audible.com">audible.com</Link>.
+            Add to your audiobook listening collection by selecting any of the below titles, or visit <Link href="https://audible.co.uk">audible.co.uk</Link> or <Link href="https://audible.com">audible.com</Link> to buy.
           </p>
         </Wrap>
         <div className={styles.wrap}>

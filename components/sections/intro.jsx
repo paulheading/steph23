@@ -1,5 +1,5 @@
-import { intro } from 'data/playlist'
-import { Container, Wrap, Title } from 'components'
+import { homepage } from 'data/playlist'
+import { Content, Title, Split } from 'components'
 import { Player } from 'components/ui'
 import styles from 'styles/components/sections/intro.module.scss'
 import Link from 'next/link'
@@ -33,11 +33,16 @@ export function Intro({ active, setActive }) {
     }
   }
 
+  const contentProps = {
+    variant: 'red',
+  }
+
   return (
-    <Container variant="red">
-      <Wrap className={styles.wrap}>
+    <Content {...contentProps}>
+      <Split className={styles.split}>
         <div className={styles.players}>
-          {intro.map((track, index) => {
+          {homepage.map((track, index) => {
+            if (index > 3) return
             const props = {
               variant: setVariant(index),
               className: styles.player,
@@ -67,7 +72,7 @@ export function Intro({ active, setActive }) {
             </p>
           </div>
         </div>
-      </Wrap>
-    </Container>
+      </Split>
+    </Content>
   )
 }

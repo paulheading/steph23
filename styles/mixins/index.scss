@@ -25,7 +25,7 @@
   margin: auto;
 }
 
-@mixin wrap($max: 50rem) {
+@mixin wrap($max: 48rem) {
   margin-right: auto;
   margin-left: auto;
   max-width: $max;

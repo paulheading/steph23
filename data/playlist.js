@@ -1,3 +1,3 @@
-import intro from 'data/playlist/intro'
+import homepage from 'data/playlist/homepage'
 
-export { intro }
+export { homepage }

@@ -25,7 +25,7 @@ export function Samples({ data, variant, dark = false, active, setActive }) {
   return (
     <div className={styles.container}>
       {needsButtons && (
-        <Wrap>
+        <Wrap className="margin-bottom-3">
           <div className={styles.buttons}>
             {samples.map(({ title, id }, index) => {
               const openClass = openID === id ? styles.open : ''
