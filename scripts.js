@@ -1,4 +1,4 @@
-export const createImageSrc = (alt = '') => ({ src: alt + '.webp', alt })
+export const createImageSrc = (string = '') => ({ src: string + '.webp', alt: string.replace(/-/g, ' ') })
 
 export function attachVariant(variant, styles) {
   switch (variant) {

@@ -37,8 +37,8 @@ export default function Acting() {
           <div>
             <Title>Acting</Title>
             <p>
-              I've always had a passion for bringing stories to life, from acting on stage in my youth to later studying Drama at the University of California Santa Cruz. I'm constantly improving my craft and strive to bring authenticity to every character I play; whether that's Shakespeare,
-              Contemporary Drama or Improvisational Comedy.
+              I&apos;ve always had a passion for bringing stories to life, from acting on stage in my youth to later studying Drama at the University of California Santa Cruz. I&apos;m constantly improving my craft and strive to bring authenticity to every character I play; whether that&apos;s
+              Shakespeare, Contemporary Drama or Improvisational Comedy.
             </p>
           </div>
           <Image {...headshotProps} />
