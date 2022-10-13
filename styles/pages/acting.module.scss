@@ -1,0 +1,15 @@
+@import 'styles/mixins';
+
+.first_row {
+  grid-template-columns: auto 20rem;
+}
+
+.second_row {
+  grid-template-columns: 20rem auto;
+  margin-top: 3rem;
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+}

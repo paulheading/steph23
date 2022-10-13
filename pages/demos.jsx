@@ -4,6 +4,7 @@ import { Page, Content, Title, Split, Image } from 'components'
 import { Playlist } from 'components/ui'
 import { demos } from 'data/seo'
 import styles from 'styles/pages/demos.module.scss'
+import { createImageSrc } from 'scripts'
 
 export default function Demos() {
   const [active, setActive] = useState(null)
@@ -45,7 +46,7 @@ export default function Demos() {
   }
 
   const imageProps = {
-    src: 'stephanie-cannon-voice-actor-home-studio-voiceover-headphones.webp',
+    ...createImageSrc('stephanie-cannon-voice-actor-home-studio-voiceover-headphones'),
     border: true,
     variant,
   }
@@ -61,7 +62,7 @@ export default function Demos() {
             <p>I can deliver professional and friendly voices for e-learning or corporate reads, characters for radio drama and games, or child voices for animation and audiobooks.</p>
           </div>
           <div>
-            <Image {...imageProps} alt={imageProps.src} />
+            <Image {...imageProps} />
           </div>
         </Split>
         <Split className={styles.split_playlists}>

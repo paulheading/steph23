@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import { FormRow } from 'components/ui'
 import styles from 'styles/pages/contact.module.scss'
+import { createImageSrc } from 'scripts'
 
 export default function Contact() {
   const formRef = useRef(null)
@@ -143,9 +144,8 @@ export default function Contact() {
     className: styles.submit,
     type: 'submit',
   }
-
   const contactImageProps = {
-    src: 'stephanie-cannon-headshot-contact-page-stephanie-cannon.webp',
+    ...createImageSrc('stephanie-cannon-headshot-contact-page-stephanie-cannon'),
     border: true,
     variant,
   }
@@ -189,7 +189,7 @@ export default function Contact() {
               </form>
             </div>
             <div>
-              <Image {...contactImageProps} alt={contactImageProps.src} />
+              <Image {...contactImageProps} />
             </div>
           </Split>
           <p>For Motion Capture Projects contact Emily at:</p>

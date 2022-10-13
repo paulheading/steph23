@@ -2,6 +2,7 @@ import { homepage } from 'data/playlist'
 import { Container, Wrap, Title, Image } from 'components'
 import { Player } from 'components/ui'
 import styles from 'styles/components/sections/studio.module.scss'
+import { createImageSrc } from 'scripts'
 
 export function Studio({ active, setActive, variant }) {
   const handleSetActive = (track) => setActive(track)
@@ -15,7 +16,7 @@ export function Studio({ active, setActive, variant }) {
   }
 
   const imageProps = {
-    src: 'studio.webp',
+    ...createImageSrc('studio'),
     height: 360,
     width: 270,
     variant,
@@ -57,7 +58,7 @@ export function Studio({ active, setActive, variant }) {
           <div className={styles.wrap_player}>
             <Player {...playerProps} />
           </div>
-          <Image {...imageProps} alt={imageProps.src} />
+          <Image {...imageProps} />
         </div>
       </Wrap>
     </Container>

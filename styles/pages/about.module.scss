@@ -1,0 +1,11 @@
+@import 'styles/mixins';
+
+.content {
+  display: flow-root;
+}
+
+.image {
+  margin-bottom: $margin-split;
+  margin-left: $margin-split;
+  float: right;
+}

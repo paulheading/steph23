@@ -1,5 +1,7 @@
-import { Page, Content, Split, Title, Image } from 'components'
+import { Page, Content, Split, Title, Image, Video } from 'components'
 import { acting as head } from 'data/seo'
+import styles from 'styles/pages/acting.module.scss'
+import { createImageSrc } from 'scripts'
 
 export default function Acting() {
   const variant = 'cream'
@@ -13,24 +15,60 @@ export default function Acting() {
     variant,
   }
   const imageProps = {
-    src: 'stephanie-cannon-headshot-acting-page.webp',
     border: true,
     variant,
+  }
+  const headshotProps = {
+    ...createImageSrc('stephanie-cannon-headshot-acting-page'),
+    ...imageProps,
+  }
+  const fullBodyProps = {
+    ...createImageSrc('stephanie-cannon-full-body-pic-female-american-actor'),
+    ...imageProps,
+  }
+  const videoProps = {
+    title: 'stephanie-cannon-us-e-learning-video-educational-theatre-secondary-school-high-school-digital-theatre',
+    src: '757468004?h=979b35ba32',
   }
   return (
     <Page {...pageProps}>
       <Content {...contentProps}>
-        <Split>
+        <Split className={styles.first_row}>
           <div>
             <Title>Acting</Title>
-            <p>I’m an award nominated voice actor with over 20 years experience, working in almost every area of the industry. I have a smooth, engaging voice with a US/transatlantic accent.</p>
-            <p>As a trained actor, I’m proficient with crafting characters and accents. I’m also a skilled improviser, but am equally comfortable taking direction.</p>
-            <p>I can deliver professional and friendly voices for e-learning or corporate reads, characters for radio drama and games, or child voices for animation and audiobooks.</p>
+            <p>
+              I've always had a passion for bringing stories to life, from acting on stage in my youth to later studying Drama at the University of California Santa Cruz. I'm constantly improving my craft and strive to bring authenticity to every character I play; whether that's Shakespeare,
+              Contemporary Drama or Improvisational Comedy.
+            </p>
           </div>
+          <Image {...headshotProps} />
+        </Split>
+        <Split className={styles.second_row}>
+          <Image {...fullBodyProps} />
           <div>
-            <Image {...imageProps} alt={imageProps.src} />
+            <ul className={styles.list}>
+              <li>BA & Postgraduate certificate from the University of California Santa Cruz</li>
+              <li>Stephane Cornicard – Character Development, Voice & Dubbing</li>
+              <li>NIDA - Musical Theatre</li>
+              <li>VON – Ongoing workshops on voice acting for games & animation</li>
+              <li>Gravy for the Brain – Courses for vocal development, script breakdown and more.</li>
+              <li>The Actors Centre – classes for accents, scene work, & character creation</li>
+            </ul>
           </div>
         </Split>
+        <div className="text-align-center margin-top-3">
+          <Title>Motion Capture</Title>
+          <p>I’m also an experienced motion capture performer. I’ve created characters for films, animation, games and television. I enjoy creating physicality for monsters, animals and aliens, and am often cast in child roles.</p>
+          <p>Whether I’m creating full performance capture for a game, or creature mocap for a fantasy film, I always light up when I get to play in the volume. Check out some of the physical acting I could bring to your next project.</p>
+          <p>To discuss a mo-cap project, contact Emily Dean at The Mocap Agency</p>
+          <Video {...videoProps} className="margin-top-3" />
+          <Title className="margin-top-3">Stilt Walking</Title>
+          <p>
+            Is there nothing this girl can’t do?! I’ve always been drawn to the most unusual day jobs, and stilt walking fits perfectly into my unique universe! I’ve performed in a variety of guises on peg, dura and power riser stilts. Get in touch if your production is looking for a freelance stilt
+            walker!
+          </p>
+          <p>If you need to create a specific theme for an event, I’d be happy to put you in touch with one of the brilliant circus companies I work for.</p>
+        </div>
       </Content>
     </Page>
   )

@@ -1,3 +1,5 @@
+export const createImageSrc = (alt = '') => ({ src: alt + '.webp', alt })
+
 export function attachVariant(variant, styles) {
   switch (variant) {
     case 'red':

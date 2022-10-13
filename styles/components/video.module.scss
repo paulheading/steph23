@@ -1,15 +1,10 @@
 @import 'styles/mixins';
 
-.wrap {
-  max-width: 48rem;
-}
-
-.wrap_iframe {
+.container {
   border: 0.125rem solid currentColor;
   border-radius: 1rem;
   padding-top: 56.25%;
   position: relative;
-  margin-top: 4rem;
   overflow: hidden;
   width: 100%;
 
