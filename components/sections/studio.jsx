@@ -1,5 +1,5 @@
 import { homepage } from 'data/playlist'
-import { Container, Wrap, Title, Image } from 'components'
+import { Container, Wrap, Title, Image as Portrait } from 'components'
 import { Player } from 'components/ui'
 import styles from 'styles/components/sections/studio.module.scss'
 import { createImageSrc } from 'scripts'
@@ -23,6 +23,7 @@ export function Studio({ active, setActive, variant }) {
   }
   const containerProps = {
     section: false,
+    id: 'studio',
     dark: true,
     variant,
   }
@@ -47,7 +48,7 @@ export function Studio({ active, setActive, variant }) {
               <br />
               Hardwired Superfast Broadband
             </p>
-            <p>
+            <p className='margin-bottom-2'>
               <strong>Live Direction available via</strong>
               <br />
               Source Connect, Cleanfeed, Zoom, Skype
@@ -58,7 +59,7 @@ export function Studio({ active, setActive, variant }) {
           <div className={styles.wrap_player}>
             <Player {...playerProps} />
           </div>
-          <Image {...imageProps} />
+          <Portrait {...imageProps} />
         </div>
       </Wrap>
     </Container>

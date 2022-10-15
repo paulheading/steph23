@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
-import styles from 'styles/components/ui/sample.module.scss'
+import { Fragment, useEffect, useRef, useState } from 'react'
 import { Track } from 'components/ui/sample/track'
 import { Group } from 'components/ui/sample/group'
 
@@ -8,7 +7,6 @@ export function Sample({ data, active, handleSetActive, variant, openID, series,
   const playerRef = useRef(null)
   const isOpen = openID === playlist.id
   const activePlaylist = playlist.id === active.playlist_id
-  const containerClasses = `${styles.container}`
 
   useEffect(() => {
     if (!activePlaylist) return
@@ -64,9 +62,9 @@ export function Sample({ data, active, handleSetActive, variant, openID, series,
   if (!isOpen) return
 
   return (
-    <div className={containerClasses}>
+    <Fragment>
       <audio ref={playerRef} src={active.src} onTimeUpdate={updateProgress}></audio>
       {!series ? mapTracks(playlist.tracks) : <Group {...groupProps} />}
-    </div>
+    </Fragment>
   )
 }

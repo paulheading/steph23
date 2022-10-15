@@ -19,15 +19,32 @@ export function Track({ track, handleTrackChange, activePlaylist, active, varian
     variant,
   }
 
+  function printTitle() {
+    const titles = track.title
+    if (!Array.isArray(titles)) return titles
+
+    return titles.map((title, index) => {
+      const last = index === titles.length - 1
+      return (
+        <div key={'title' + index}>
+          {title}
+          {!last && ','}
+        </div>
+      )
+    })
+  }
+
   return (
     <div className={containerClasses}>
       <div className={styles.media} style={{ backgroundImage }}>
         <Button {...buttonProps} />
       </div>
-      <a className={styles.title} href={track.src} download>
-        <span className={styles.title_copy}>{track.title}</span>
-        <MdOutlineFileDownload className={styles.download} />
-      </a>
+      <div className={styles.title_wrap}>
+        <a className={styles.download} href={track.src} download>
+          <MdOutlineFileDownload className={styles.download} />
+        </a>
+        <div className={styles.title}>{printTitle()}</div>
+      </div>
       <div className={styles.genre}>{track.genre}</div>
     </div>
   )

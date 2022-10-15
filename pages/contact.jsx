@@ -83,7 +83,7 @@ export default function Contact() {
     className: styles.firstName,
   }
 
-  firstNameProps.row = row(firstNameProps, errors.firstName, 'Please enter your first name')
+  firstNameProps.row = row(firstNameProps, errors.firstName, 'Please add your name. Don’t be shy now!')
 
   const lastNameProps = {
     name: 'lastName',
@@ -105,7 +105,7 @@ export default function Contact() {
     },
   }
 
-  messageProps.row = row(messageProps, errors.message, 'Please enter your message')
+  messageProps.row = row(messageProps, errors.message, 'Tell me about your project.')
 
   messageProps.input = {
     ...input(messageProps.name, null),
@@ -125,7 +125,7 @@ export default function Contact() {
     className: styles.email,
   }
 
-  emailProps.row = row(emailProps, errors.email, 'Please enter your email')
+  emailProps.row = row(emailProps, errors.email, 'Please add your email. Be great to chat!')
 
   const phoneProps = {
     name: 'phone',

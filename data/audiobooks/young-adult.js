@@ -13,19 +13,19 @@ let youngAdult = {
   id,
   tracks: [
     {
-      title: `3rd person`,
+      title: [`3rd person`],
       cover: path(`stephanie-cannon-us-audiobook-narration-3rd-person-young-adult-strange-lies-cover-art.webp`),
       src: path(`stephanie-cannon-us-audiobook-narration-3rd-person-young-adult-strange lies audible sample.mp3`),
       ...extras,
     },
     {
-      title: `Dialogue, 1st person`,
+      title: [`Dialogue`, `1st person`],
       cover: path(`stephanie-cannon-us-audiobook-narration-3rd-person-young-adult-skylark-cover-art.webp`),
       src: path(`stephanie-cannon-us-audiobook-narration-1st-person-young-adult-fiction-dialogue-teen-skylark-sample.mp3`),
       ...extras,
     },
     {
-      title: `1st person`,
+      title: [`1st person`],
       cover: path(`stephanie-cannon-us-audiobook-narration-young-adult-one-cover-art.webp`),
       src: path(`stephanie-cannon-us-audiobook-narration-1st-person-young-adult-child-teen-dialogue-sample-one.mp3`),
       ...extras,

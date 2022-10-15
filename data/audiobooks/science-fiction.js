@@ -13,19 +13,19 @@ let scienceFiction = {
   id,
   tracks: [
     {
-      title: `Narration, Dialogue`,
+      title: [`Narration`, `Dialogue`],
       cover: path(`stephanie-cannon-us-audiobook-narrator-science-fiction-dreamspinner-cover-art.webp`),
       src: path(`stephanie-cannon-us-midatlantic-audiobook-narration-dreamspinner-character-drama-science-fiction-dialogue.mp3`),
       ...extras,
     },
     {
-      title: `1st person YA`,
+      title: [`1st person`, `YA`],
       cover: path(`stephanie-cannon-audiobook-narrator-science-fiction-mindwalker-cover-art.webp`),
       src: path(`stephanie-cannon-us-audiobook-narration-1st-person-science-fiction-mindwalker-sample.mp3`),
       ...extras,
     },
     {
-      title: `Transatlantic, Scottish Dialogue`,
+      title: [`Transatlantic`, `Scottish Dialogue`],
       cover: path(`stephanie-cannon-us-audiobook-narrator-science-fiction-dreams-the-sarah-midnight-trilogy-cover-art.webp`),
       src: path(`stephanie-cannon-audiobook-3rd-person-narration-dialogue-scottish-transatlantic-science-fiction-sample.mp3`),
       ...extras,

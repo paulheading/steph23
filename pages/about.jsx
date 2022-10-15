@@ -10,7 +10,7 @@ export default function About() {
     border: true,
   }
   const contentProps = {
-    className: styles.content,
+    className: 'display-flow-root',
     top: true,
   }
   return (

@@ -13,19 +13,19 @@ let literaryFiction = {
   id,
   tracks: [
     {
-      title: `1st person`,
+      title: [`1st person`],
       cover: path(`stephanie-cannon-us-audiobook-narrator-fiction-contemporary-the-origins-of-iris.webp`),
       src: path(`stephanie-cannon-us-audiobook-narration-1st-person-literary-fiction-contemporary-sample-the-origins-of-iris.mp3`),
       ...extras,
     },
     {
-      title: `Transatlantic, 3rd person`,
+      title: [`Transatlantic`, `3rd person`],
       cover: path(`stephanie-cannon-us-audiobook-narrator-classic-literary-fiction-the-age-of-innocence-cover-art.webp`),
       src: path(`stephanie-cannon-transatlantic-audiobook-sample-classic-fiction-3rd-person-narration-dialogue-male-female-the-age-of-innocence.mp3`),
       ...extras,
     },
     {
-      title: `1st person`,
+      title: [`1st person`],
       cover: path(`stephanie-cannon-audiobook-narrator-literary-fiction-the-detective-and-the-woman-cover-art.webp`),
       src: path(`stephanie-cannon-us-1st-person-literary-fiction-audiobook-narration-sample-the-detective-and-the-woman.mp3`),
       ...extras,
