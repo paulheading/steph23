@@ -2,6 +2,7 @@ import { gaming as data } from 'data/demos'
 import { Title } from 'components'
 import { Template } from 'components/templates/demos'
 import { demos } from 'data/seo'
+import Link from 'next/link'
 
 export default function Gaming() {
   const props = {
@@ -16,9 +17,11 @@ export default function Gaming() {
         using dialects from around the globe as well as voicing child characters.
       </p>
       <p>
-        And it doesn&apos;t end there. I&apos;m also a dedicated physical performer with experience in MoCap and Performance Capture! I&apos;ve worked on advanced character/creature physicality, performed harness and wire work, and am proficient with stilt walking on pegs, duras and power risers.{' '}
+        And it doesn&apos;t end there. I&apos;m also a dedicated physical performer with experience in MoCap and Performance Capture! I&apos;ve worked on advanced character/creature physicality, performed harness and wire work, and am proficient with stilt walking on pegs, duras and power risers.
       </p>
-      <p>I&apos;m no stranger to lighting things up in a MoCap space! Check out some of what I can do below.</p>
+      <p>
+        I&apos;m no stranger to lighting things up in a MoCap space! Check out some of what I can do below. Need performance capture for your game? Find out more about my <Link href="/acting">Mocap experience here</Link>.
+      </p>
     </Template>
   )
 }

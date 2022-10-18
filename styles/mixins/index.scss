@@ -197,3 +197,54 @@
     outline: none;
   }
 }
+
+@mixin anchor-focus($color) {
+  background-color: get-color($color, dark);
+  color: white;
+  outline: none;
+}
+
+@mixin anchor-default($color) {
+  background-color: get-color($color, light);
+  color: get-color($color, dark);
+}
+
+@mixin last-anchor {
+  border-bottom-right-radius: $border-radius-menu;
+  border-top-right-radius: $border-radius-menu;
+  padding-right: $border-radius-menu;
+}
+
+@mixin button {
+  padding: 0 0 0 $padding-menu;
+  font-family: inherit;
+  align-items: center;
+  font-size: inherit;
+  cursor: pointer;
+  display: flex;
+  border: none;
+
+  @include brand using ($color, $variant) {
+    @include anchor-default($color);
+
+    @include focus {
+      @include anchor-focus($color);
+    }
+  }
+
+  &.active {
+    @include brand using ($color, $variant) {
+      @include anchor-focus($color);
+    }
+  }
+
+  &.open {
+    @include brand using ($color, $variant) {
+      @include anchor-focus($color);
+    }
+
+    .MdArrowDropDown {
+      transform: rotate(180deg);
+    }
+  }
+}

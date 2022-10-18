@@ -1,9 +1,9 @@
 @import 'styles/mixins';
 
-@mixin contact {
-  align-items: center;
-  display: flex;
-  gap: 1.25rem;
+@mixin inny-b {
+  vertical-align: middle;
+  display: inline-block;
+  margin: 0.75rem;
 }
 
 .container {
@@ -11,15 +11,40 @@
 }
 
 .wrap {
-  @include flex-separate;
   padding-bottom: 0.5rem;
   padding-top: 0.5rem;
+
+  @include medium-down {
+    text-align: center;
+  }
+
+  @include medium-up {
+    @include flex-separate;
+  }
 }
 
 .contact {
-  @include contact;
+  @include medium-up {
+    margin: -0.75rem;
+
+    div {
+      @include inny-b;
+    }
+  }
+
+  @include medium-down {
+    margin-top: 0.5rem;
+
+    div + div {
+      margin-top: 0.25rem;
+    }
+  }
 }
 
 .socials {
-  @include contact;
+  margin: -0.75rem;
+
+  a {
+    @include inny-b;
+  }
 }

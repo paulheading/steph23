@@ -1,20 +1,5 @@
 @import 'styles/mixins';
 
-$padding-menu: 0.75rem;
-$line-height-menu: 3rem;
-$border-radius-menu: $line-height-menu * 0.5;
-
-@mixin anchor-focus($color) {
-  background-color: get-color($color, dark);
-  color: white;
-  outline: none;
-}
-
-@mixin anchor-default($color) {
-  background-color: get-color($color, light);
-  color: get-color($color, dark);
-}
-
 .container {
   justify-content: center;
   position: absolute;
@@ -22,6 +7,11 @@ $border-radius-menu: $line-height-menu * 0.5;
   display: flex;
   width: 100%;
   z-index: 3;
+}
+
+.nav {
+  position: relative;
+  z-index: 2;
 }
 
 .list {
@@ -41,10 +31,24 @@ $border-radius-menu: $line-height-menu * 0.5;
     padding-left: $border-radius-menu;
   }
 
-  &:last-child .anchor {
-    border-bottom-right-radius: $border-radius-menu;
-    border-top-right-radius: $border-radius-menu;
-    padding-right: $border-radius-menu;
+  @include small-down {
+    &:nth-child(3) {
+      display: none;
+    }
+  }
+
+  @include medium-down {
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6) {
+      display: none;
+    }
+  }
+
+  @include medium-up {
+    &:nth-last-child(2) .anchor {
+      @include last-anchor;
+    }
   }
 }
 
@@ -63,37 +67,7 @@ $border-radius-menu: $line-height-menu * 0.5;
 }
 
 .button {
-  padding: 0 0 0 $padding-menu;
-  font-family: inherit;
-  align-items: center;
-  font-size: inherit;
-  cursor: pointer;
-  display: flex;
-  border: none;
-
-  @include brand using ($color, $variant) {
-    @include anchor-default($color);
-
-    @include focus {
-      @include anchor-focus($color);
-    }
-  }
-}
-
-.button.active {
-  @include brand using ($color, $variant) {
-    @include anchor-focus($color);
-  }
-}
-
-.button.open {
-  @include brand using ($color, $variant) {
-    @include anchor-focus($color);
-  }
-
-  .MdArrowDropDown {
-    transform: rotate(180deg);
-  }
+  @include button;
 }
 
 .MdArrowDropDown {
@@ -137,5 +111,13 @@ $border-radius-menu: $line-height-menu * 0.5;
       background-color: get-color($color, hover);
       outline: none;
     }
+  }
+}
+
+.burger_item {
+  border-left: 0.125rem solid transparent;
+
+  @include medium-up {
+    display: none;
   }
 }

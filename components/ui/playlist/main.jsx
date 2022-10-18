@@ -45,8 +45,6 @@ export function Main({ activePlaylist, playerRef, active, handleSetActive, main,
 
   if (!isOpen) return
 
-  console.log('receiving data: ', main)
-
   return (
     <div className={containerClasses}>
       <div className={styles.wrap}>

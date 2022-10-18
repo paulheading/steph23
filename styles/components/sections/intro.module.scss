@@ -1,5 +1,9 @@
 @import 'styles/mixins';
 
+.wrap {
+  max-width: 50rem;
+}
+
 .player + .player {
   margin-top: 1rem;
 }

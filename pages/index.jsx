@@ -36,7 +36,7 @@ export default function Home() {
   return (
     <Page {...pageProps}>
       <Hero />
-      <Intro {...audioProps} />
+      {/* <Intro {...audioProps} />
       <Studio {...studioProps} />
       <Testimonials />
       <Logos title="Clients">
@@ -54,7 +54,7 @@ export default function Home() {
         <Aljazeera />
         <Audible />
         <Disney />
-      </Logos>
+      </Logos> */}
       {/* <Content {...contentProps}>
         <Image {...stephProps} alt="steph" />
       </Content> */}

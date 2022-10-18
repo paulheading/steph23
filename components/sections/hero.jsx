@@ -29,12 +29,8 @@ export function Hero() {
     width: 520,
   }
 
-  console.log('spark: ', sparkReady)
-  console.log('steph: ', stephReady)
-
   useEffect(() => {
     if (sparkReady || stephReady) return
-    console.log('animation ready')
   }, [sparkReady, stephReady])
 
   useEffect(() => {
@@ -52,14 +48,14 @@ export function Hero() {
           <VO className={styles.svg} />
           <div className={styles.shadow}></div>
         </div>
-        <div className={styles.animation}>
+        {/* <div className={styles.animation}>
           <div className={styles.steph}>
             <Image {...stephProps} alt="steph" />
           </div>
           <div ref={sparkRef} className={styles.spark}>
             <Image {...sparkProps} alt="spark" />
           </div>
-        </div>
+        </div> */}
       </Wrap>
     </Container>
   )

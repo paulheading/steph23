@@ -43,8 +43,12 @@ export function Footer({ variant }) {
             </Link>
           </div>
           <div className={styles.contact}>
-            <a href="mailto:steph@sparkthecannon.com">steph@sparkthecannon.com</a>
-            <a href="tel:+447547795849">+44 7547 795849</a>
+            <div>
+              <a href="mailto:steph@sparkthecannon.com">steph@sparkthecannon.com</a>
+            </div>
+            <div>
+              <a href="tel:+447547795849">+44 7547 795849</a>
+            </div>
           </div>
         </Wrap>
       </Container>

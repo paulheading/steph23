@@ -11,7 +11,6 @@ export function Image({ src, height = 448, width = 320, alt, className, variant,
     height,
     width,
   }
-  console.log('received props: ', props)
   return (
     <span className={containerClasses} style={{ height, width }}>
       <NextImage {...props} alt={alt} />

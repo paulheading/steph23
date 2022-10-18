@@ -7,11 +7,15 @@ $height: 35rem;
   display: flex;
 }
 
+$padding-mobile: 2rem;
+
 .container {
   overflow: hidden;
 }
 
 .wrap {
+  padding-right: $padding-mobile;
+  padding-left: $padding-mobile;
   min-height: $height;
   text-align: center;
   position: relative;
@@ -36,7 +40,12 @@ $height: 35rem;
   z-index: 2;
 }
 
+@mixin svg-width {
+  max-width: 100%;
+}
+
 .svg {
+  @include svg-width;
   position: relative;
   display: block;
   margin: auto;
@@ -48,6 +57,7 @@ $height: 35rem;
 }
 
 .shadow {
+  @include svg-width;
   @include inset;
   box-shadow: 0 0 2rem 2rem $c-green;
   background-color: $c-green;
