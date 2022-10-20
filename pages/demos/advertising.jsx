@@ -7,7 +7,7 @@ export default function Advertising() {
   const props = {
     video: {
       title: 'stephanie-cannon-advertising-video-24-hr-fitness-friendly-upbeat-us',
-      src: '757468267?h=0bdde5b129',
+      src: '759504478?h=91268d4bde',
     },
     head: demos.advertising,
     data,

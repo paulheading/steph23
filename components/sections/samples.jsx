@@ -1,7 +1,6 @@
-import { Container, Wrap, Title } from 'components'
+import { Container, Wrap, Title, Link } from 'components'
 import { Samples as SamplesUI } from 'components/ui'
 import styles from 'styles/components/sections/samples.module.scss'
-import Link from 'next/link'
 
 export function Samples({ data, variant, dark = false, active, setActive }) {
   const contentProps = {
@@ -24,9 +23,7 @@ export function Samples({ data, variant, dark = false, active, setActive }) {
         <Title>Samples</Title>
         <p>Thanks to my extensive acting training, I am able to pull listeners into the story with a smooth and captivating delivery, providing an authentic connection to the characters and their journeys, no matter what the genre.</p>
         <p>
-          <Link href="/#studio">
-            <a>Click here for home studio info and sample</a>
-          </Link>
+          <Link href="/#studio">Click here for home studio info and sample</Link>
         </p>
       </Wrap>
       <SamplesUI {...samplesProps} />

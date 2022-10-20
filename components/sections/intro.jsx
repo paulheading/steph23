@@ -1,8 +1,7 @@
 import { homepage } from 'data/playlist'
-import { Container, Wrap, Title, Split } from 'components'
+import { Container, Wrap, Title, Split, Link } from 'components'
 import { Player } from 'components/ui'
 import styles from 'styles/components/sections/intro.module.scss'
-import Link from 'next/link'
 
 export function Intro({ active, setActive }) {
   const handleSetActive = (track) => setActive(track)
@@ -37,6 +36,11 @@ export function Intro({ active, setActive }) {
     variant: 'red',
   }
 
+  const demoLinkProps = {
+    href: '/demos',
+    bold: true,
+  }
+
   return (
     <Container {...contentProps}>
       <Wrap className={styles.wrap}>
@@ -63,13 +67,7 @@ export function Intro({ active, setActive }) {
                 special spark in your next project.
               </p>
               <p>
-                Here are a few of my audio samples. You can also visit my&nbsp;
-                <Link href="/demos">
-                  <a>
-                    <strong>Demos</strong>
-                  </a>
-                </Link>
-                &nbsp;section to hear more.
+                Here are a few of my audio samples. You can also visit my <Link {...demoLinkProps}>Demos</Link> section to hear more.
               </p>
             </div>
           </div>

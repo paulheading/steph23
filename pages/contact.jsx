@@ -1,4 +1,4 @@
-import { Page, Container, Wrap, Split, Title, Image } from 'components'
+import { Page, Container, Wrap, Split, Title, Image, Link } from 'components'
 import { contact as head } from 'data/seo'
 import { useEffect, useState, useRef } from 'react'
 import { useForm } from 'react-hook-form'
@@ -150,9 +150,13 @@ export default function Contact() {
     variant,
   }
   const mocapLinkProps = {
-    href: 'https://www.themocapagency.com/product/stephanie-cannon',
+    href: 'https://www.voicefox.co.uk/artist/mocap-stephanie-cannon',
     target: '_blank',
+    bold: true,
   }
+  const mocapPhone = `+44 7906905202`
+  const mocapEmail = `info@voicefox.co.uk`
+
   return (
     <Page {...pageProps}>
       <Container {...containerProps}>
@@ -194,15 +198,11 @@ export default function Contact() {
           </Split>
           <p>For Motion Capture Projects contact Emily at:</p>
           <p>
-            The Mocap Agency
+            <Link {...mocapLinkProps}>Voicefox.co.uk</Link>
             <br />
-            <a {...mocapLinkProps}>
-              <strong>themocapagency.com</strong>
-            </a>
+            <Link href={'mailto:' + mocapEmail}>{mocapEmail}</Link>
             <br />
-            <a href="mailto:emily@themocapagency.com">emily@themocapagency.com</a>
-            <br />
-            <a href="tel:+44 7906905202">+44 7906905202</a>
+            <Link href={'tel:' + mocapPhone}>{mocapPhone}</Link>
           </p>
         </Wrap>
       </Container>

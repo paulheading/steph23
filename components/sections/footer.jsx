@@ -1,7 +1,6 @@
-import { Container, Wrap } from 'components'
+import { Container, Wrap, Link } from 'components'
 import styles from 'styles/components/sections/footer.module.scss'
 import { Spotlight, Twitter, LinkedIn, Facebook, Instagram } from 'logos'
-import Link from 'next/link'
 
 export function Footer({ variant }) {
   const containerProps = {
@@ -16,30 +15,20 @@ export function Footer({ variant }) {
       <Container {...containerProps}>
         <Wrap className={styles.wrap}>
           <div className={styles.socials}>
-            <Link href="https://www.spotlight.com/9493-9081-8617">
-              <a target="_blank">
-                <Spotlight />
-              </a>
+            <Link target="_blank" href="https://www.spotlight.com/9493-9081-8617">
+              <Spotlight />
             </Link>
-            <Link href="https://twitter.com/sparkthecannon">
-              <a target="_blank">
-                <Twitter />
-              </a>
+            <Link target="_blank" href="https://twitter.com/sparkthecannon">
+              <Twitter />
             </Link>
-            <Link href="https://www.linkedin.com/in/sparkthecannon/">
-              <a target="_blank">
-                <LinkedIn />
-              </a>
+            <Link target="_blank" href="https://www.linkedin.com/in/sparkthecannon/">
+              <LinkedIn />
             </Link>
-            <Link href="https://www.facebook.com/stephanie.cannon.7927">
-              <a target="_blank">
-                <Facebook />
-              </a>
+            <Link target="_blank" href="https://www.facebook.com/stephanie.cannon.7927">
+              <Facebook />
             </Link>
-            <Link href="https://www.facebook.com/stephanie.cannon.7927">
-              <a target="_blank">
-                <Instagram />
-              </a>
+            <Link target="_blank" href="https://www.facebook.com/stephanie.cannon.7927">
+              <Instagram />
             </Link>
           </div>
           <div className={styles.contact}>

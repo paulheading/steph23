@@ -7,7 +7,7 @@ export default function ELearning() {
   const props = {
     video: {
       title: 'stephanie-cannon-us-e-learning-video-educational-theatre-secondary-school-high-school-digital-theatre',
-      src: '757468004?h=979b35ba32',
+      src: '759551069?h=98e58eba98',
     },
     head: demos.eLearning,
     data,

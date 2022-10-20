@@ -1,4 +1,4 @@
-import { Page, Content, Split, Title, Image, Video } from 'components'
+import { Page, Content, Split, Title, Image, Video, Link } from 'components'
 import { acting as head } from 'data/seo'
 import styles from 'styles/pages/acting.module.scss'
 import { createImageSrc } from 'scripts'
@@ -28,7 +28,11 @@ export default function Acting() {
   }
   const videoProps = {
     title: 'stephanie-cannon-us-e-learning-video-educational-theatre-secondary-school-high-school-digital-theatre',
-    src: '757468004?h=979b35ba32',
+    src: '759504478?h=91268d4bde',
+  }
+  const linkProps = {
+    href: 'https://www.voicefox.co.uk/artist/mocap-stephanie-cannon',
+    bold: true,
   }
   return (
     <Page {...pageProps}>
@@ -46,6 +50,7 @@ export default function Acting() {
         <Split className={styles.second_row}>
           <Image {...fullBodyProps} />
           <div>
+            <Title>Training</Title>
             <ul className={styles.list}>
               <li>BA & Postgraduate certificate from the University of California Santa Cruz</li>
               <li>Stephane Cornicard – Character Development, Voice & Dubbing</li>
@@ -60,12 +65,14 @@ export default function Acting() {
           <Title>Motion Capture</Title>
           <p>I’m also an experienced motion capture performer. I’ve created characters for films, animation, games and television. I enjoy creating physicality for monsters, animals and aliens, and am often cast in child roles.</p>
           <p>Whether I’m creating full performance capture for a game, or creature mocap for a fantasy film, I always light up when I get to play in the volume. Check out some of the physical acting I could bring to your next project.</p>
-          <p>To discuss a mo-cap project, contact Emily Dean at The Mocap Agency</p>
+          <p>
+            To discuss a mo-cap project, contact Emily Dean at <Link {...linkProps}>Voicefox</Link>
+          </p>
           <Video {...videoProps} className="margin-top-3" />
           <Title className="margin-top-3">Stilt Walking</Title>
           <p>
-            Is there nothing this girl can’t do?! I’ve always been drawn to the most unusual day jobs, and stilt walking fits perfectly into my unique universe! I’ve performed in a variety of guises on peg, dura and power riser stilts. Get in touch if your production is looking for a freelance stilt
-            walker!
+            Is there anything this girl can’t do?! I’ve always been drawn to the most unusual day jobs, and stilt walking fits perfectly into my unique universe! I’ve performed in a variety of guises on peg, dura and power riser stilts. Get in touch if your production is looking for a freelance
+            stilt walker!
           </p>
           <p>If you need to create a specific theme for an event, I’d be happy to put you in touch with one of the brilliant circus companies I work for.</p>
         </div>

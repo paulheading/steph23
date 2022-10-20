@@ -1,8 +1,7 @@
 import { gaming as data } from 'data/demos'
-import { Title } from 'components'
+import { Title, Link } from 'components'
 import { Template } from 'components/templates/demos'
 import { demos } from 'data/seo'
-import Link from 'next/link'
 
 export default function Gaming() {
   const props = {
