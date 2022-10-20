@@ -1,6 +1,6 @@
 import { gaming as data } from 'data/demos'
 import { Title, Link } from 'components'
-import { Template } from 'components/templates/demos'
+import Layout from 'components/layouts/demos'
 import { demos } from 'data/seo'
 
 export default function Gaming() {
@@ -9,7 +9,7 @@ export default function Gaming() {
     data,
   }
   return (
-    <Template {...props}>
+    <Layout {...props}>
       <Title>Gaming</Title>
       <p>
         As a trained actor with a BA in Drama, I&apos;ve got the skills needed to bring your characters to life. I am passionate about finding the humanity in each role and letting their authenticity shine through. I regularly voice characters in my native US/transatlantic accents, but also enjoy
@@ -21,6 +21,6 @@ export default function Gaming() {
       <p>
         I&apos;m no stranger to lighting things up in a MoCap space! Check out some of what I can do below. Need performance capture for your game? Find out more about my <Link href="/acting">Mocap experience here</Link>.
       </p>
-    </Template>
+    </Layout>
   )
 }
