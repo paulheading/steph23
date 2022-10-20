@@ -2,7 +2,7 @@ import { Page, Content, Split, Title, Image, Video, Link } from 'components'
 import { acting as head } from 'data/seo'
 import styles from 'styles/pages/acting.module.scss'
 import { createImageSrc } from 'scripts'
-import { ArtsCouncil, Equity } from 'logos'
+import { ArtsCouncil, Equity, Spotlight } from 'logos'
 
 export default function Acting() {
   const variant = 'cream'
@@ -77,11 +77,14 @@ export default function Acting() {
           </p>
           <p>If you need to create a specific theme for an event, I’d be happy to put you in touch with one of the brilliant circus companies I work for.</p>
           <div className={styles.logos}>
-            <Link target="_blank" href="https://www.artscouncil.org.uk/">
-              <ArtsCouncil />
-            </Link>
             <Link target="_blank" href="https://www.equity.org.uk/">
               <Equity />
+            </Link>
+            <Link target="_blank" href="https://www.spotlight.com/9493-9081-8617">
+              <Spotlight className={styles.spotlight} />
+            </Link>
+            <Link target="_blank" href="https://www.artscouncil.org.uk/">
+              <ArtsCouncil />
             </Link>
           </div>
         </div>
