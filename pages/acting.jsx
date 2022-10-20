@@ -2,6 +2,7 @@ import { Page, Content, Split, Title, Image, Video, Link } from 'components'
 import { acting as head } from 'data/seo'
 import styles from 'styles/pages/acting.module.scss'
 import { createImageSrc } from 'scripts'
+import { ArtsCouncil, Equity } from 'logos'
 
 export default function Acting() {
   const variant = 'cream'
@@ -27,8 +28,8 @@ export default function Acting() {
     ...imageProps,
   }
   const videoProps = {
-    title: 'stephanie-cannon-us-e-learning-video-educational-theatre-secondary-school-high-school-digital-theatre',
-    src: '759504478?h=91268d4bde',
+    title: 'stephanie-cannon-motion-capture-reel-actor-female-performance-capture-artist',
+    src: '762181761?h=1a4e59750c',
   }
   const linkProps = {
     href: 'https://www.voicefox.co.uk/artist/mocap-stephanie-cannon',
@@ -75,6 +76,14 @@ export default function Acting() {
             stilt walker!
           </p>
           <p>If you need to create a specific theme for an event, I’d be happy to put you in touch with one of the brilliant circus companies I work for.</p>
+          <div className={styles.logos}>
+            <Link target="_blank" href="https://www.artscouncil.org.uk/">
+              <ArtsCouncil />
+            </Link>
+            <Link target="_blank" href="https://www.equity.org.uk/">
+              <Equity />
+            </Link>
+          </div>
         </div>
       </Content>
     </Page>

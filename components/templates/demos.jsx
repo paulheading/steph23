@@ -22,6 +22,11 @@ export function Template({ head, data, children, video }) {
     data,
   }
 
+  function PrintVideos() {
+    if (video.constructor === Array) return video.map((video, index) => <Video key={'video' + index} {...video} />)
+    return <Video {...video} />
+  }
+
   return (
     <Page {...pageProps}>
       <Container {...containerProps}>
@@ -32,7 +37,11 @@ export function Template({ head, data, children, video }) {
               <Playlist {...playlistProps} />
             </div>
           </Split>
-          {video && <Video {...video} className="margin-top-4" />}
+          {video && (
+            <div className="margin-top-4">
+              <PrintVideos />
+            </div>
+          )}
         </Wrap>
       </Container>
     </Page>

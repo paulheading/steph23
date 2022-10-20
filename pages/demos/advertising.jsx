@@ -5,11 +5,17 @@ import { demos } from 'data/seo'
 
 export default function Advertising() {
   const props = {
-    video: {
-      title: 'stephanie-cannon-advertising-video-24-hr-fitness-friendly-upbeat-us',
-      src: '759504478?h=91268d4bde',
-    },
     head: demos.advertising,
+    video: [
+      {
+        title: '24 Hr Fitness Commercial',
+        src: '759504478?h=91268d4bde',
+      },
+      {
+        title: 'Artfinder Commercial',
+        src: '759489225?h=f4780e652b',
+      },
+    ],
     data,
   }
   return (
