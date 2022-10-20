@@ -46,7 +46,7 @@ export default function Demos() {
   }
 
   const imageProps = {
-    ...createImageSrc('stephanie-cannon-voice-actor-home-studio-voiceover-headphones'),
+    ...createImageSrc('stephanie-cannon-headphones-pic2-demos'),
     border: true,
     variant,
   }
