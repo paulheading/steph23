@@ -29,3 +29,5 @@ export function Burger({ toggleMenu }) {
     </button>
   )
 }
+
+Overlay.displayName = 'Overlay'
