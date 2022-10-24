@@ -1,5 +1,5 @@
 import { homepage } from 'data/playlist'
-import { Container, Wrap, Title, Image as Portrait } from 'components'
+import { Container, Wrap, Title, Image as Portrait, Link } from 'components'
 import { Player } from 'components/ui'
 import styles from 'styles/components/sections/studio.module.scss'
 import { createImageSrc } from 'scripts'
@@ -52,6 +52,9 @@ export function Studio({ active, setActive, variant }) {
               <strong>Live Direction available via</strong>
               <br />
               Source Connect, Cleanfeed, Zoom, Skype
+            </p>
+            <p>
+              <Link href="/contact">Get in touch</Link> for a demo from your script!
             </p>
           </div>
         </div>

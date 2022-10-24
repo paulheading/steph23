@@ -11,6 +11,7 @@ export default function About() {
   }
   const contentProps = {
     className: 'display-flow-root',
+    variant: 'green',
     top: true,
   }
   return (

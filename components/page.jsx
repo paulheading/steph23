@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { Head, Footer } from 'components'
 import { Menu } from 'components/ui'
 
-export function Page({ head, children, menu, footer }) {
+export function Page({ head, children, menu = 'green', footer = 'green' }) {
   return (
     <Fragment>
       <Head {...head} />

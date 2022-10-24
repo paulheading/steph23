@@ -27,7 +27,11 @@ let menu = [
     href,
     items: [createLink('Favourites'), createLink('#Samples'), createLink('#Purchase'), createLink('#Accents')],
   },
-  createLink('Acting'),
+  {
+    title: 'Acting',
+    href,
+    items: [createLink('Introduction'), createLink('#Motion Capture')],
+  },
   createLink('About'),
   createLink('Contact'),
 ]

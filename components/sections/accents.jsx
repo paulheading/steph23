@@ -42,6 +42,7 @@ function Region({ region, areas }, index) {
 export function Accents() {
   const props = {
     className: 'text-align-center',
+    variant: 'green',
     id: 'accents',
     dark: true,
   }

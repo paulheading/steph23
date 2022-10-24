@@ -3,14 +3,18 @@ import { Container, Wrap, Title } from 'components'
 import { Samples } from 'components/ui'
 
 export function Favourites({ active, setActive }) {
+  const containerProps = {
+    className: 'text-align-center',
+    variant: 'green',
+    top: true,
+  }
   const props = {
     data: [favourites],
     setActive,
     active,
   }
-
   return (
-    <Container top className="text-align-center">
+    <Container {...containerProps}>
       <Wrap className="margin-bottom-3">
         <Title>Favourites</Title>
         <p>

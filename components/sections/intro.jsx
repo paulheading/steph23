@@ -1,6 +1,7 @@
 import { homepage } from 'data/playlist'
 import { Container, Wrap, Title, Split, Link } from 'components'
 import { Player } from 'components/ui'
+import { Nominee } from 'logos'
 import styles from 'styles/components/sections/intro.module.scss'
 
 export function Intro({ active, setActive }) {
@@ -60,7 +61,7 @@ export function Intro({ active, setActive }) {
             })}
           </div>
           <div className={styles.message}>
-            <Title className={styles.title}>A smooth, enticing, youthful US Voice</Title>
+            <Title className={styles.title}>A Smooth, Enticing, Youthful US Voice</Title>
             <div className={styles.copy}>
               <p>
                 I’m an American Voiceover, Actor and Audiobook Narrator with over 20 years experience. I offer a quick turnaround service from my professional home studio in London, or I’m a short cycle from your preferred recording studio! With my dedication and creativity, I can ignite that
@@ -69,6 +70,7 @@ export function Intro({ active, setActive }) {
               <p>
                 Here are a few of my audio samples. You can also visit my <Link {...demoLinkProps}>Demos</Link> section to hear more.
               </p>
+              <Nominee className="margin-top-3" />
             </div>
           </div>
         </Split>

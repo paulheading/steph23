@@ -19,7 +19,7 @@ export default function Gaming() {
         And it doesn&apos;t end there. I&apos;m also a dedicated physical performer with experience in MoCap and Performance Capture! I&apos;ve worked on advanced character/creature physicality, performed harness and wire work, and am proficient with stilt walking on pegs, duras and power risers.
       </p>
       <p>
-        I&apos;m no stranger to lighting things up in a MoCap space! Check out some of what I can do below. Need performance capture for your game? Find out more about my <Link href="/acting">Mocap experience here</Link>.
+        I&apos;m no stranger to lighting things up in a MoCap space! Check out some of what I can do below. Need performance capture for your game? Find out more about my <Link href="/acting#motion-capture">Mocap experience here</Link>.
       </p>
     </Layout>
   )

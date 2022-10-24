@@ -22,11 +22,11 @@ export function Samples({ data, variant, dark = false, active, setActive }) {
       <Wrap className="margin-bottom-3">
         <Title>Samples</Title>
         <p>Thanks to my extensive acting training, I am able to pull listeners into the story with a smooth and captivating delivery, providing an authentic connection to the characters and their journeys, no matter what the genre.</p>
-        <p>
-          <Link href="/#studio">Click here for home studio info and sample</Link>
-        </p>
       </Wrap>
       <SamplesUI {...samplesProps} />
+      <p className="margin-top-3">
+        <Link href="/#studio">Click here for home studio info and sample</Link>
+      </p>
     </Container>
   )
 }

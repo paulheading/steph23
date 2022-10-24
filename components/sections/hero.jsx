@@ -11,6 +11,7 @@ export function Hero() {
   const sparkRef = useRef(null)
   const containerProps = {
     className: styles.container,
+    variant: 'green',
     section: false,
     padding: false,
     top: true,
@@ -44,10 +45,10 @@ export function Hero() {
   return (
     <Container {...containerProps}>
       <Wrap className={styles.wrap}>
-        <div className={styles.logo}>
+        {/* <div className={styles.logo}>
           <VO className={styles.svg} />
           <div className={styles.shadow}></div>
-        </div>
+        </div> */}
         <div className={styles.animation}>
           <div className={styles.steph}>
             <Image {...stephProps} alt="steph" />

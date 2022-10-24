@@ -4,7 +4,7 @@ import { Sample } from 'components/ui'
 import styles from 'styles/components/ui/samples.module.scss'
 import { attachVariant } from 'scripts'
 
-export function Samples({ data, variant, dark = false, active, setActive }) {
+export function Samples({ data, variant = 'green', dark = false, active, setActive }) {
   const [samples, setSamples] = useState(data)
   const [openID, setOpenID] = useState(data[0].id)
   const handleSetActive = (track) => setActive(track)
@@ -25,7 +25,7 @@ export function Samples({ data, variant, dark = false, active, setActive }) {
   return (
     <div className={styles.container}>
       {needsButtons && (
-        <Wrap className="margin-bottom-3">
+        <Wrap className="margin-bottom-2">
           <div className={styles.buttons}>
             {samples.map(({ title, id }, index) => {
               const openClass = openID === id ? styles.open : ''
