@@ -2,4 +2,6 @@
 
 .container {
   @include playlist;
+  transition-property: margin, top, bottom, left, right;
+  transition-duration: 200ms;
 }
