@@ -23,9 +23,10 @@
 }
 
 .player {
-  max-width: 19rem;
-
+  transition: max-width 200ms;
   @include small-down {
+    max-width: 19rem;
+
     + .player {
       margin-top: 1rem;
     }
@@ -34,8 +35,13 @@
   @include large-down {
     @include small-up {
       display: inline-block;
+      max-width: 15rem;
       margin: 0.5rem;
     }
+  }
+
+  @include medium-up {
+    max-width: 19rem;
   }
 
   @include large-up {
