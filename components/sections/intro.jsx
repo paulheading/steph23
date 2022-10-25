@@ -46,6 +46,19 @@ export function Intro({ active, setActive }) {
     <Container {...contentProps}>
       <Wrap className={styles.wrap}>
         <Split className={styles.split}>
+          <div className={styles.message}>
+            <Title className={styles.title}>A Smooth, Enticing, Youthful US Voice</Title>
+            <div className={styles.copy}>
+              <p>
+                I’m an American Voiceover, Actor and Audiobook Narrator with over 20 years experience. I offer a quick turnaround service from my professional home studio in London, or I’m a short cycle from your preferred recording studio! With my dedication and creativity, I can ignite that
+                special spark in your next project.
+              </p>
+              <p>
+                Here are a few of my audio samples. You can also visit my <Link {...demoLinkProps}>Demos</Link> section to hear more.
+              </p>
+              <Nominee className="margin-top-3" />
+            </div>
+          </div>
           <div className={styles.players}>
             {homepage.map((track, index) => {
               if (index > 3) return
@@ -59,19 +72,6 @@ export function Intro({ active, setActive }) {
               }
               return <Player key={'players' + index} {...props} />
             })}
-          </div>
-          <div className={styles.message}>
-            <Title className={styles.title}>A Smooth, Enticing, Youthful US Voice</Title>
-            <div className={styles.copy}>
-              <p>
-                I’m an American Voiceover, Actor and Audiobook Narrator with over 20 years experience. I offer a quick turnaround service from my professional home studio in London, or I’m a short cycle from your preferred recording studio! With my dedication and creativity, I can ignite that
-                special spark in your next project.
-              </p>
-              <p>
-                Here are a few of my audio samples. You can also visit my <Link {...demoLinkProps}>Demos</Link> section to hear more.
-              </p>
-              <Nominee className="margin-top-3" />
-            </div>
           </div>
         </Split>
       </Wrap>

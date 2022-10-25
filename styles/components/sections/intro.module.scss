@@ -4,16 +4,49 @@
   max-width: 50rem;
 }
 
-.players {
-  margin-top: 1rem;
-}
-
-.player + .player {
-  margin-top: 1rem;
-}
-
 .split {
-  grid-template-columns: 19rem auto;
+  @include large-up {
+    grid-template-columns: 19rem auto;
+  }
+
+  @include large-down {
+    display: block;
+  }
+}
+
+.players {
+  @include large-up {
+    margin-top: 1rem;
+    order: 1;
+  }
+
+  @include large-down {
+    margin: -0.5rem;
+  }
+}
+
+.player {
+  @include large-down {
+    display: inline-block;
+    max-width: 19rem;
+    margin: 0.5rem;
+  }
+
+  @include large-up {
+    + .player {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.message {
+  @include large-down {
+    margin-bottom: 2rem;
+  }
+
+  @include large-up {
+    order: 2;
+  }
 }
 
 .title {

@@ -29,6 +29,10 @@ $height: 35rem;
   @include large-up {
     left: -3rem;
   }
+
+  @include large-down {
+    display: none;
+  }
 }
 
 .spark {
@@ -39,6 +43,10 @@ $height: 35rem;
     bottom: -2.75rem;
     right: -4.5rem;
     opacity: 0;
+  }
+
+  @include large-down {
+    display: none;
   }
 }
 
