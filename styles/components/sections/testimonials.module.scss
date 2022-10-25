@@ -1,18 +1,22 @@
 @import 'styles/mixins';
 
 @mixin center {
-  justify-content: center;
+  justify-items: center;
   align-items: center;
   text-align: center;
   display: grid;
 }
 
 .wrap {
-  @include center;
   @include crete-round;
-  min-height: 13rem;
-  display: flex;
-  gap: 3rem;
+  @include center;
+  gap: 2rem;
+
+  @include large-up {
+    grid-auto-flow: column;
+    min-height: 13rem;
+    gap: 3rem;
+  }
 }
 
 .quote {

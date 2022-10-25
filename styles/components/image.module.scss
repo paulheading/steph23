@@ -1,9 +1,9 @@
 @import 'styles/mixins';
 
 .container {
-  border-radius: 0.75rem;
-  display: inline-flex;
+  border-radius: 1rem;
   overflow: hidden;
+  font-size: 0;
 
   @include brand using($color, $variant) {
     background-color: get-color($color, light);

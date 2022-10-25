@@ -52,9 +52,16 @@
   gap: 1rem;
 }
 
+.title_wrap {
+  overflow: hidden;
+}
+
 .title {
   @include nav-link;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   line-height: normal;
+  overflow: hidden;
 }
 
 .bar {

@@ -43,19 +43,36 @@ export function Main({ activePlaylist, playerRef, active, handleSetActive, main,
     dark,
   }
 
+  const barProps = {
+    onClick: updateProgress,
+    className: styles.bar,
+    ref: barRef,
+  }
+
+  const progressProps = {
+    className: styles.progress,
+    style: styleWidth(),
+    ref: progressRef,
+  }
+
+  const linkProps = {
+    href: activePlaylist ? active.src : main.src,
+    download: true,
+  }
+
   if (!isOpen) return
 
   return (
     <div className={containerClasses}>
       <div className={styles.wrap}>
         <Button {...buttonProps} />
-        <div>
+        <div className={styles.title_wrap}>
           <div className={styles.title}>{activePlaylist ? active.title : main.title}</div>
-          <button ref={barRef} className={styles.bar} onClick={updateProgress}>
-            <div ref={progressRef} style={styleWidth()} className={styles.progress}></div>
+          <button {...barProps}>
+            <div {...progressProps}></div>
           </button>
         </div>
-        <a href={activePlaylist ? active.src : main.src} download>
+        <a {...linkProps}>
           <MdOutlineFileDownload className={styles.download} />
         </a>
       </div>

@@ -1,20 +1,26 @@
-$margin: 2rem;
+@import 'styles/mixins';
 
 .container {
   text-align: center;
 }
 
-.title {
-  margin-bottom: 1rem;
-}
-
 .children {
-  margin-right: -$margin;
-  margin-left: -$margin;
+  @include small-up {
+    margin-right: -2rem;
+    margin-left: -2rem;
+  }
 }
 
 .children svg {
-  margin: ($margin * 0.5) $margin;
   vertical-align: middle;
   display: inline-block;
+
+  @include small-up {
+    margin: 1rem 2rem;
+  }
+
+  @include small-down {
+    transform: scale(0.8);
+    margin: 0.5rem;
+  }
 }

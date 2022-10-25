@@ -1,9 +1,44 @@
 @import 'styles/mixins';
 
-.container {
-  grid-template-columns: repeat(2, 1fr);
-  justify-content: center;
-  align-items: flex-start;
-  display: grid;
-  gap: 4rem;
+$gap-split: 4rem;
+
+@mixin setup-container {
+  @include large-down {
+    > div:nth-child(1) {
+      margin-bottom: $gap-split;
+    }
+  }
+
+  &.swap {
+    @include large-up {
+      > div {
+        &:nth-child(1) {
+          order: 2;
+        }
+        &:nth-child(2) {
+          order: 1;
+        }
+      }
+    }
+  }
+}
+
+.container_columns {
+  @include setup-container;
+  @include large-up {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: flex-start;
+    gap: $gap-split;
+    display: grid;
+  }
+}
+
+.container_apart {
+  @include setup-container;
+  @include large-up {
+    justify-content: space-between;
+    align-items: flex-start;
+    display: flex;
+  }
 }

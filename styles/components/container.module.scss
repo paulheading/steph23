@@ -1,7 +1,7 @@
 @import 'styles/mixins';
 
 $padding-container-vt: 6rem;
-$padding-container-hz: 1rem;
+$padding-container-hz: 2rem;
 
 .container {
   svg {
@@ -29,10 +29,6 @@ $padding-container-hz: 1rem;
   @include large-down {
     padding-top: $padding-container-vt * 1.5;
   }
-}
-
-.container.section {
-  min-height: 40rem;
 }
 
 .container.center {

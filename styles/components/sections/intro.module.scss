@@ -8,44 +8,40 @@
   @include large-up {
     grid-template-columns: 19rem auto;
   }
-
-  @include large-down {
-    display: block;
-  }
 }
 
 .players {
   @include large-up {
     margin-top: 1rem;
-    order: 1;
   }
 
   @include large-down {
-    margin: -0.5rem;
+    @include small-up {
+      margin: -0.5rem;
+    }
   }
 }
 
 .player {
+  max-width: 19rem;
+
+  @include small-down {
+    + .player {
+      margin-top: 1rem;
+    }
+  }
+
   @include large-down {
-    display: inline-block;
-    max-width: 19rem;
-    margin: 0.5rem;
+    @include small-up {
+      display: inline-block;
+      margin: 0.5rem;
+    }
   }
 
   @include large-up {
     + .player {
       margin-top: 1rem;
     }
-  }
-}
-
-.message {
-  @include large-down {
-    margin-bottom: 2rem;
-  }
-
-  @include large-up {
-    order: 2;
   }
 }
 

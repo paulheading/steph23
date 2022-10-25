@@ -12,8 +12,8 @@ export function Image({ src, height = 448, width = 320, alt, className, variant,
     width,
   }
   return (
-    <span className={containerClasses} style={{ height, width }}>
+    <div className={containerClasses} style={{ maxWidth: width }}>
       <NextImage {...props} alt={alt} />
-    </span>
+    </div>
   )
 }

@@ -37,6 +37,11 @@ export function Intro({ active, setActive }) {
     variant: 'red',
   }
 
+  const splitProps = {
+    className: styles.split,
+    swap: true,
+  }
+
   const demoLinkProps = {
     href: '/demos',
     bold: true,
@@ -45,7 +50,7 @@ export function Intro({ active, setActive }) {
   return (
     <Container {...contentProps}>
       <Wrap className={styles.wrap}>
-        <Split className={styles.split}>
+        <Split {...splitProps}>
           <div className={styles.message}>
             <Title className={styles.title}>A Smooth, Enticing, Youthful US Voice</Title>
             <div className={styles.copy}>

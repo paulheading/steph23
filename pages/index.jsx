@@ -27,12 +27,6 @@ export default function Home() {
     section: false,
   }
 
-  const stephProps = {
-    src: '/stephanie-cannon-one-voice-awards-uk-21-nominee-badge.webp',
-    height: 138,
-    width: 200,
-  }
-
   return (
     <Page {...pageProps}>
       <Hero />
@@ -55,9 +49,6 @@ export default function Home() {
         <Audible />
         <Disney />
       </Logos>
-      {/* <Content {...contentProps}>
-        <Image {...stephProps} alt="steph" />
-      </Content> */}
     </Page>
   )
 }
