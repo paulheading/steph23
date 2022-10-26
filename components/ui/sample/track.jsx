@@ -34,14 +34,20 @@ export function Track({ track, handleTrackChange, activePlaylist, active, varian
     })
   }
 
+  const linkProps = {
+    className: styles.download,
+    href: track.src,
+    download: true,
+  }
+
   return (
     <div className={containerClasses}>
       <div className={styles.media} style={{ backgroundImage }}>
         <Button {...buttonProps} />
       </div>
       <div className={styles.title_wrap}>
-        <a className={styles.download} href={track.src} download>
-          <MdOutlineFileDownload className={styles.download} />
+        <a {...linkProps}>
+          <MdOutlineFileDownload className={styles.icon} />
         </a>
         <div className={styles.title}>{printTitle()}</div>
       </div>

@@ -150,6 +150,7 @@
 @mixin playlist {
   border: 2px solid currentColor;
   border-radius: 1rem;
+  max-width: 22rem;
   overflow: hidden;
   width: 100%;
 
@@ -247,4 +248,11 @@
       transform: rotate(180deg);
     }
   }
+}
+
+@mixin text-overflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+  overflow: hidden;
 }

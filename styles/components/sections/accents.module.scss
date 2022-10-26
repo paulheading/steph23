@@ -1,47 +1,76 @@
 @import 'styles/mixins';
 
 .region {
-  grid-template-columns: 250px auto;
-  align-items: center;
   margin-top: 4rem;
-  display: grid;
+
+  @include large-up {
+    grid-template-columns: 15.625rem auto;
+    align-items: center;
+    display: grid;
+  }
 }
 
 .region_inner {
-  white-space: nowrap;
-  align-items: center;
-  display: flex;
-  gap: 1rem;
+  @include large-up {
+    white-space: nowrap;
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+  }
+
+  @include large-down {
+    margin-bottom: 1rem;
+  }
 }
 
 .region_name {
   font-weight: bold;
+
+  @include large-down {
+    border-bottom: 2px solid;
+    display: inline-block;
+  }
 }
 
 .divider {
-  background-color: currentColor;
-  height: 0.125rem;
-  width: 100%;
+  @include large-up {
+    background-color: currentColor;
+    height: 0.125rem;
+    width: 100%;
+  }
 }
 
 .areas {
-  border-left: 0.125rem solid currentColor;
-  white-space: nowrap;
-  padding-left: 1rem;
+  @include large-up {
+    border-left: 0.125rem solid currentColor;
+    white-space: nowrap;
+    padding-left: 1rem;
+  }
 }
 
 .area {
   @include reset-list;
   list-style: inside;
-  display: flex;
-  gap: 1rem;
-}
 
-.area + .area {
-  margin-top: 0.75rem;
+  + .area {
+    margin-top: 0.75rem;
+  }
+
+  @include large-up {
+    display: flex;
+    gap: 1rem;
+  }
 }
 
 .area_name {
   font-weight: bold;
   list-style: none;
+}
+
+.place {
+  @include large-down {
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0.25rem;
+  }
 }

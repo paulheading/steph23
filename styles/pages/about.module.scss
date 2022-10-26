@@ -1,7 +1,22 @@
 @import 'styles/mixins';
 
 .image {
-  margin-bottom: $margin-split;
-  margin-left: $margin-split;
-  float: right;
+  @include large-up {
+    margin-bottom: $margin-split;
+    margin-left: $margin-split;
+    float: right;
+  }
+}
+
+@include large-down {
+  .wrap {
+    display: grid;
+    gap: 2rem;
+  }
+  .copy {
+    order: 1;
+  }
+  .image {
+    order: 2;
+  }
 }

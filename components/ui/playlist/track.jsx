@@ -14,7 +14,7 @@ export function Track({ track, handleTrackChange, activePlaylist, active, varian
   return (
     <button className={containerClasses} onClick={() => handleTrackChange(track)}>
       {statusIcon}
-      {track.title}
+      <span className={styles.title}>{track.title}</span>
     </button>
   )
 }

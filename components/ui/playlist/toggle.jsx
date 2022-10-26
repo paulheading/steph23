@@ -13,7 +13,7 @@ export function Toggle({ playlist, isOpen, handleSetOpenID }) {
 
   return (
     <button className={styles.container} onClick={toggleOpen}>
-      {playlist.title}
+      <span className={styles.title}>{playlist.title}</span>
       <MdClose className={MdCloseClasses} />
     </button>
   )

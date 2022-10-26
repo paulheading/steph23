@@ -20,8 +20,8 @@ export const Overlay = forwardRef(({ className }, ref) => {
   )
 })
 
-export function Burger({ toggleMenu }) {
-  const containerClasses = `${styles.container} ${attachVariant('green', styles)}`
+export function Burger({ toggleMenu, variant = 'green' }) {
+  const containerClasses = `${styles.container} ${attachVariant(variant, styles)}`
 
   return (
     <button onClick={toggleMenu} className={containerClasses}>

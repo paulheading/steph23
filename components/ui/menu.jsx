@@ -39,6 +39,11 @@ export function Menu({ variant }) {
     setMenuOpen(!menuOpen)
   }
 
+  const burgerProps = {
+    toggleMenu,
+    variant,
+  }
+
   return (
     <div className={styles.container}>
       <nav ref={navRef} className={styles.nav}>
@@ -55,7 +60,7 @@ export function Menu({ variant }) {
             return item.items ? <Dropdown key={`dropdown${index}`} {...props} /> : <Anchor key={`anchor${index}`} {...props} />
           })}
           <li className={styles.burger_item}>
-            <Burger toggleMenu={toggleMenu} />
+            <Burger {...burgerProps} />
           </li>
         </ul>
       </nav>

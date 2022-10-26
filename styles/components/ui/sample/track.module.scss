@@ -57,8 +57,16 @@ $size: 2.5rem;
   display: flow-root;
 }
 
+.icon {
+  height: 1.375rem;
+  width: 1.375rem;
+}
+
 .download {
-  height: 1.5rem;
-  width: 1.5rem;
+  border: 0.125rem solid;
+  align-items: center;
+  border-radius: 50%;
+  padding: 0.1875rem;
+  display: flex;
   float: right;
 }

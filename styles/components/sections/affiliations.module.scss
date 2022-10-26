@@ -1,3 +1,5 @@
+@import 'styles/mixins';
+
 .list {
   justify-content: center;
   list-style: inside;
@@ -6,8 +8,14 @@
   padding: 0;
   margin: 0;
   gap: 1rem;
-}
 
-.list li:first-child {
-  list-style: none;
+  li {
+    &:first-child {
+      list-style: none;
+    }
+
+    @include large-down {
+      list-style: none;
+    }
+  }
 }

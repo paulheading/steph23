@@ -5,7 +5,7 @@ import styles from 'styles/components/sections/accents.module.scss'
 function Place(place, index) {
   const props = {
     className: styles.place,
-    key: `place${index}`,
+    key: 'place' + index,
   }
   return <li {...props}>{place}</li>
 }
@@ -13,7 +13,7 @@ function Place(place, index) {
 function Area({ area, places }, index) {
   const props = {
     className: styles.area,
-    key: `area${index}`,
+    key: 'area' + index,
   }
   return (
     <ul {...props}>
@@ -26,7 +26,7 @@ function Area({ area, places }, index) {
 function Region({ region, areas }, index) {
   const props = {
     className: styles.region,
-    key: `region${index}`,
+    key: 'region' + index,
   }
   return (
     <div {...props}>
@@ -57,8 +57,8 @@ export function Accents() {
       <p>
         Born in Alaska, my native accent is Standard American or West Coast. Having lived in London half my life, I also speak with a neutral Transatlantic accent. I&apos;ve been fortunate to live all over the world from Mexico to Australia and in that time have collected a lot of brilliant accents.
         Here&apos;s a selection of accents I perform regularly. If you don&apos;t see the one you&apos;re after, <Link {...linkProps}>let&apos;s talk!</Link>
-        <br /> I love an excuse for research and full immersion!
       </p>
+      <p>I love an excuse for research and full immersion!</p>
       {accents.map(Region)}
     </Content>
   )
