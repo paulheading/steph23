@@ -24,11 +24,7 @@ $padding-container-hz: 2rem;
 }
 
 .container.top {
-  padding-top: $padding-container-vt * 1.66;
-
-  @include large-down {
-    padding-top: $padding-container-vt * 1.5;
-  }
+  padding-top: $padding-container-vt * 1.5;
 }
 
 .container.center {

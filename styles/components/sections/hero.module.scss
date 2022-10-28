@@ -9,52 +9,71 @@ $height: 35rem;
 }
 
 .container {
+  padding-top: 2rem;
   overflow: hidden;
 }
 
 .wrap {
-  padding-right: $padding-mobile;
-  padding-left: $padding-mobile;
-  // min-height: $height;
-  text-align: center;
-  position: relative;
+  justify-content: center;
+  display: flex;
+
+  @include medium-down {
+    overflow: hidden;
+  }
+}
+
+@function scale($size) {
+  @return $size / 52;
+}
+
+@mixin animation($size) {
+  .steph {
+    height: scale($size) * 41;
+    left: 0;
+    width: $size;
+
+    @include medium-up {
+      left: -(scale($size) * 5);
+    }
+  }
+
+  .spark {
+    height: scale($size) * 70.2;
+    width: scale($size) * 70.2;
+    left: scale($size) * 12;
+    top: scale($size) * 4.4;
+    
+    @include medium-up {
+      left: scale($size) * 7;
+    }
+  }
 }
 
 .steph {
   @include image-wrap;
-  @include inset;
   z-index: 2;
-  top: auto;
-
-  @include large-up {
-    left: -3rem;
-  }
-
-  @include large-down {
-    display: none;
-  }
+  bottom: 0;
+  left: 0;
 }
 
 .spark {
-  @include image-wrap;
-  bottom: 0;
-
-  @include large-up {
-    bottom: -2.75rem;
-    right: -4.5rem;
-    opacity: 0;
-  }
-
-  @include large-down {
-    display: none;
-  }
+  mask-image: url('/mask.webp');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  position: relative;
+  mask-size: 0;
+  opacity: 0;
 }
 
 .logo {
-  
-  @include large-up {
-    position: relative;
-    z-index: 2;
+  position: absolute;
+  z-index: 2;
+  top: 10rem;
+  right: 0;
+  left: 0;
+
+  @include medium-down {
+    display: none;
   }
 }
 
@@ -86,5 +105,13 @@ $height: 35rem;
 
 .animation {
   position: relative;
-  padding-top: 80%;
+  @include animation(23rem);
+
+  @include small-up {
+    @include animation(27rem);
+  }
+
+  @include medium-up {
+    @include animation(32.5rem);
+  }
 }

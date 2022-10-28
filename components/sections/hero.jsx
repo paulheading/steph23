@@ -14,7 +14,6 @@ export function Hero() {
     variant: 'green',
     section: false,
     padding: false,
-    top: true,
   }
   const sparkProps = {
     onLoad: () => setSparkReady(true),
@@ -36,19 +35,21 @@ export function Hero() {
 
   useEffect(() => {
     if (!sparkRef.current) return
-    const defaults = { ease: 'none' }
-    const fade = gsap.timeline({ defaults })
-    const target = sparkRef.current
-    fade.to(target, { duration: 1, opacity: 1 })
+    const tl = gsap.timeline()
+    const { current } = sparkRef
+
+    tl
+    .to(current, { duration: 0.4, opacity: 1, maskSize: 700 })
+    .to(current, { duration: 0.8, opacity: 0.5, maskSize: 300, repeat: -1, yoyo: true })
   }, [sparkRef])
 
   return (
     <Container {...containerProps}>
       <Wrap className={styles.wrap}>
-        {/* <div className={styles.logo}>
+        <div className={styles.logo}>
           <VO className={styles.svg} />
           <div className={styles.shadow}></div>
-        </div> */}
+        </div>
         <div className={styles.animation}>
           <div className={styles.steph}>
             <Image {...stephProps} alt="steph" />

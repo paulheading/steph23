@@ -3,6 +3,7 @@
 .container {
   @include crete-round;
   font-size: 2.125rem;
+  line-height: 1.2;
 }
 
 .container.small {
