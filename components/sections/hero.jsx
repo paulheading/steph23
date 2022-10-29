@@ -17,10 +17,14 @@ export function Hero() {
   }
   const sparkProps = {
     onLoad: () => setSparkReady(true),
-    src: '/spark.webp',
+    src: '/spark3.webp',
     priority: true,
     height: 702,
     width: 702,
+  }
+  const topSpark = {
+    className: styles.top_spark,
+    ref: sparkRef,
   }
   const stephProps = {
     onLoad: () => setStephReady(true),
@@ -30,17 +34,13 @@ export function Hero() {
   }
 
   useEffect(() => {
-    if (sparkReady || stephReady) return
-  }, [sparkReady, stephReady])
-
-  useEffect(() => {
     if (!sparkRef.current) return
-    const tl = gsap.timeline()
+    const tl = gsap.timeline({ delay: 1 })
     const { current } = sparkRef
 
     tl
-    .to(current, { duration: 0.4, opacity: 1, maskSize: 700 })
-    .to(current, { duration: 0.8, opacity: 0.5, maskSize: 300, repeat: -1, yoyo: true })
+    .to(current, { duration: 0.4, opacity: 1, maskSize: 600 })
+    .to(current, { duration: 0.8, opacity: 0.3, maskSize: 300, repeat: -1, yoyo: true })
   }, [sparkRef])
 
   return (
@@ -54,8 +54,13 @@ export function Hero() {
           <div className={styles.steph}>
             <Image {...stephProps} alt="steph" />
           </div>
-          <div ref={sparkRef} className={styles.spark}>
-            <Image {...sparkProps} alt="spark" />
+          <div className={styles.wrap_spark}>
+            <div {...topSpark}>
+              <Image {...sparkProps} alt="spark" />
+            </div>
+            <div className={styles.bg_spark}>
+              <Image {...sparkProps} alt="spark" />
+            </div>
           </div>
         </div>
       </Wrap>

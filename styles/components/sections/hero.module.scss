@@ -37,12 +37,12 @@ $height: 35rem;
     }
   }
 
-  .spark {
+  .wrap_spark {
     height: scale($size) * 70.2;
     width: scale($size) * 70.2;
     left: scale($size) * 12;
     top: scale($size) * 4.4;
-    
+
     @include medium-up {
       left: scale($size) * 7;
     }
@@ -56,13 +56,22 @@ $height: 35rem;
   left: 0;
 }
 
-.spark {
+.wrap_spark {
+  position: relative;
+}
+
+.top_spark {
   mask-image: url('/mask.webp');
   mask-repeat: no-repeat;
   mask-position: center;
-  position: relative;
   mask-size: 0;
   opacity: 0;
+}
+
+.bg_spark {
+  @include inset;
+  position: absolute;
+  opacity: 0.3;
 }
 
 .logo {
