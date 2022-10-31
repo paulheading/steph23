@@ -5,16 +5,33 @@ import { attachVariant } from 'scripts'
 import { Fragment, useState } from 'react'
 import { Container, Wrap } from 'components'
 import gsap from 'gsap'
+import { useRouter } from 'next/router'
+import menu from 'data/menu'
+import { Dropdown } from 'components/ui/menu/dropdown'
+import { Anchor } from 'components/ui/menu/anchor'
+
+function checkRoute(href, route) {
+  if (href === route) return true
+  const parent = {
+    route: route.split('/')[1],
+    href: href.split('/')[1],
+  }
+  if (parent.href === parent.route) return true
+  return false
+}
 
 export function Burger({ toggleMenu, variant = 'green' }) {
+  const { route } = useRouter()
   const [overlayOpen, setOverlayOpen] = useState(false)
   const overlayRef = useRef(null)
   const buttonClasses = `${styles.button} ${attachVariant(variant, styles)}`
-  const containerProps = {
-    section: false,
-    fill: false,
-    top: true,
+  const overlayClasses = `${styles.overlay} ${attachVariant(variant, styles)}`
+  const overlayProps = {
+    className: overlayClasses,
+    ref: overlayRef,
   }
+
+  console.log('variant: ', variant)
 
   function toggleMenu() {
     if (!overlayRef.current) return
@@ -36,8 +53,20 @@ export function Burger({ toggleMenu, variant = 'green' }) {
           <HiMenu className={styles.HiMenu} />
         </button>
       </Wrap>
-      <div ref={overlayRef} className={styles.overlay}>
-        <Container {...containerProps}>menu</Container>
+      <div {...overlayProps}>
+        <Container fill="false">
+          <ul className={styles.list}>
+            {menu.map((item, index) => {
+              const props = {
+                active: checkRoute(item.href, route),
+                variant,
+                ...item,
+                index,
+              }
+              return item.items ? <Dropdown key={'dropdown' + index} {...props} /> : <Anchor key={'anchor' + index} {...props} />
+            })}
+          </ul>
+        </Container>
       </div>
     </Fragment>
   )

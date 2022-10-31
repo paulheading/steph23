@@ -25,16 +25,18 @@
 .item {
   position: relative;
 
-  &:first-child .anchor {
-    border-bottom-left-radius: $border-radius-menu;
-    border-top-left-radius: $border-radius-menu;
-    padding-left: $border-radius-menu;
-  }
+  @include medium-up {
+    &:first-child .anchor {
+      border-bottom-left-radius: $border-radius-menu;
+      border-top-left-radius: $border-radius-menu;
+      padding-left: $border-radius-menu;
+    }
 
-  &:last-child .anchor {
-    border-bottom-right-radius: $border-radius-menu;
-    border-top-right-radius: $border-radius-menu;
-    padding-right: $border-radius-menu;
+    &:last-child .anchor {
+      border-bottom-right-radius: $border-radius-menu;
+      border-top-right-radius: $border-radius-menu;
+      padding-right: $border-radius-menu;
+    }
   }
 }
 
