@@ -1,5 +1,7 @@
 export const createImageSrc = (string = '') => ({ src: string + '.webp', alt: string.replace(/-/g, ' ') })
 
+export const getCSS = (value) => getComputedStyle(document.documentElement).getPropertyValue('--' + value)
+
 export function attachVariant(variant, styles) {
   switch (variant) {
     case 'cream': return styles.cream
@@ -10,3 +12,4 @@ export function attachVariant(variant, styles) {
     default: return ''
   }
 }
+

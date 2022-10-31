@@ -1,6 +1,10 @@
 @import 'styles/mixins';
 @import 'globals/atomic';
 
+html {
+  --lg: 1024;
+}
+
 html,
 body {
   @include montserrat;

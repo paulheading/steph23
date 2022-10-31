@@ -31,24 +31,10 @@
     padding-left: $border-radius-menu;
   }
 
-  @include small-down {
-    &:nth-child(3) {
-      display: none;
-    }
-  }
-
-  @include medium-down {
-    &:nth-child(4),
-    &:nth-child(5),
-    &:nth-child(6) {
-      display: none;
-    }
-  }
-
-  @include medium-up {
-    &:nth-last-child(2) .anchor {
-      @include last-anchor;
-    }
+  &:last-child .anchor {
+    border-bottom-right-radius: $border-radius-menu;
+    border-top-right-radius: $border-radius-menu;
+    padding-right: $border-radius-menu;
   }
 }
 

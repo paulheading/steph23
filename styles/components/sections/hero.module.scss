@@ -9,8 +9,10 @@ $height: 35rem;
 }
 
 .container {
+  position: relative;
   padding-top: 2rem;
   overflow: hidden;
+  z-index: 1;
 }
 
 .wrap {
