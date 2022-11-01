@@ -43,6 +43,7 @@ export function Burger({ toggleMenu, variant = 'green' }) {
       <Wrap className={styles.wrap}>
         <button {...buttonProps}>
           <HiMenu className={styles.HiMenu} />
+          new
         </button>
       </Wrap>
       <div {...overlayProps}>
