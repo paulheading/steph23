@@ -3,10 +3,3 @@
 .container {
   @include playlist;
 }
-
-.wrap {
-  @include brand using ($color, $variant) {
-    background-color: brand($color, light);
-    color: brand($color, dark);
-  }
-}

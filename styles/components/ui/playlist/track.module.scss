@@ -13,6 +13,12 @@
   border: none;
   gap: 0.5rem;
   width: 100%;
+  margin: 0; // safari bug
+
+  @include brand using ($color, $variant) {
+    background-color: brand($color, light);
+    color: brand($color, dark);
+  }
 
   @include focus {
     background-color: white;
@@ -24,7 +30,7 @@
 }
 
 .container:not(:last-of-type) {
-  // border-bottom: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
 }
 
 .title {
