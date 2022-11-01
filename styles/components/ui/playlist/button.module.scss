@@ -13,8 +13,8 @@
   padding: 0;
 
   @include brand using ($color, $variant) {
-    background-color: get-color($color);
-    color: get-color($color, dark);
+    background-color: brand($color);
+    color: brand($color, dark);
 
     &.playlist {
       background-color: white;
@@ -24,8 +24,8 @@
 
 .button.dark {
   @include brand using ($color, $variant) {
-    background-color: get-color($color, dark);
-    color: get-color($color);
+    background-color: brand($color, dark);
+    color: brand($color);
 
     &.playlist {
       background-color: white;

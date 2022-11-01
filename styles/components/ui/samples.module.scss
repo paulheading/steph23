@@ -18,30 +18,30 @@
   cursor: pointer;
 
   @include brand using($color, $variant) {
-    background-color: get-color($color);
-    color: get-color($color, dark);
+    background-color: brand($color);
+    color: brand($color, dark);
   }
 
   &.open {
     @include brand using($color, $variant) {
-      background-color: get-color($color, dark);
-      border-color: get-color($color, dark);
-      color: get-color($color);
+      background-color: brand($color, dark);
+      border-color: brand($color, dark);
+      color: brand($color);
     }
   }
 }
 
 .button.dark {
   @include brand using($color, $variant) {
-    background-color: get-color($color, dark);
-    color: get-color($color);
+    background-color: brand($color, dark);
+    color: brand($color);
   }
 
   &.open {
     @include brand using($color, $variant) {
-      background-color: get-color($color);
-      border-color: get-color($color);
-      color: get-color($color, dark);
+      background-color: brand($color);
+      border-color: brand($color);
+      color: brand($color, dark);
     }
   }
 }

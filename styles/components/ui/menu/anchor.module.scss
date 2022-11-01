@@ -1,0 +1,60 @@
+@import 'styles/mixins';
+
+.item {
+  @include menu-item;
+}
+
+@mixin setup-anchor {
+  line-height: $line-height-menu;
+  text-decoration: none;
+  display: block;
+}
+
+.anchor {
+  @include setup-anchor;
+  @include mobile-menu-title;
+
+  @include medium-up {
+    padding-right: $padding-menu;
+    padding-left: $padding-menu;
+    display: inline-block;
+
+    @include brand using ($color, $variant) {
+      @include anchor-default($color);
+
+      @include focus {
+        @include anchor-focus($color);
+      }
+    }
+
+    &.active {
+      @include brand using ($color, $variant) {
+        @include anchor-focus($color);
+      }
+    }
+  }
+}
+
+.dropdown_anchor {
+  @include setup-anchor;
+
+  @include medium-down {
+    font-weight: bold;
+  }
+
+  @include medium-up {
+    border-radius: $border-radius-menu * 0.6;
+    line-height: $line-height-menu * 0.75;
+    padding-right: $padding-menu * 1.25;
+    padding-left: $padding-menu * 1.25;
+    display: inline-block;
+    font-size: 1rem;
+
+    @include brand using ($color, $variant) {
+      @include focus {
+        background-color: brand($color, hover);
+        outline: none;
+      }
+    }
+  }
+}

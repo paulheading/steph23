@@ -15,20 +15,20 @@ $size: 2.5rem;
   width: 100%;
 
   @include brand using ($color, $variant) {
-    color: get-color($color, dark);
+    color: brand($color, dark);
 
     .media {
-      background-color: get-color($color, dark);
+      background-color: brand($color, dark);
     }
   }
 }
 
 .container.dark {
   @include brand using ($color, $variant) {
-    color: get-color($color);
+    color: brand($color);
 
     .media {
-      background-color: rgba(get-color($color), 0.2);
+      background-color: rgba(brand($color), 0.2);
     }
   }
 }

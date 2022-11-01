@@ -6,12 +6,12 @@
   }
 
   @include brand using ($color, $variant) {
-    background-color: get-color($color);
-    color: get-color($color, dark);
+    background-color: brand($color);
+    color: brand($color, dark);
 
     ::selection {
-      background-color: get-color($color, dark);
-      color: get-color($color);
+      background-color: brand($color, dark);
+      color: brand($color);
     }
   }
 }
@@ -31,19 +31,19 @@
 
 .container.dark {
   @include brand using ($color, $variant) {
-    background-color: get-color($color, dark);
-    color: get-color($color);
+    background-color: brand($color, dark);
+    color: brand($color);
 
     ::selection {
-      background-color: get-color($color);
-      color: get-color($color, dark);
+      background-color: brand($color);
+      color: brand($color, dark);
     }
   }
 }
 
 .container.footer {
-  color: get-color('cream');
+  color: brand('cream');
   @include brand using ($color, $variant) {
-    background-color: get-color($color, dark);
+    background-color: brand($color, dark);
   }
 }

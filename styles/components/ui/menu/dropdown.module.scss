@@ -1,0 +1,41 @@
+@import 'styles/mixins';
+
+.item {
+  @include menu-item;
+}
+
+.button {
+  @include menu-button;
+  @include mobile-menu-title;
+
+  @include medium-down {
+    @include text-overflow;
+  }
+
+  @include medium-down {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.MdArrowDropDown {
+  height: $line-height-menu;
+  width: $line-height-menu;
+}
+
+.list {
+  @include reset-list;
+
+  @include medium-up {
+    border-radius: $border-radius-menu * 0.8;
+    top: $line-height-menu + 1rem;
+    white-space: nowrap;
+    position: absolute;
+    padding: 0.5rem;
+    color: white;
+
+    @include brand using ($color, $variant) {
+      background-color: brand($color, dark);
+    }
+  }
+}

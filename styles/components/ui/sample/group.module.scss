@@ -17,7 +17,7 @@
   width: 100%;
 
   @include brand using($color, $variant) {
-    color: get-color($color);
+    color: brand($color);
   }
 }
 

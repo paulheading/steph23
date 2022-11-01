@@ -38,7 +38,7 @@ $size: 10rem;
   opacity: 0;
 
   @include brand using($color, $variant) {
-    background-color: rgba(get-color($color, dark), 0.9);
+    background-color: rgba(brand($color, dark), 0.9);
   }
 }
 
@@ -47,7 +47,7 @@ $size: 10rem;
   width: 2.5rem;
 
   @include brand using($color, $variant) {
-    color: get-color($color);
+    color: brand($color);
   }
 }
 

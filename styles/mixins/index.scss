@@ -32,13 +32,13 @@
   width: 100%;
 }
 
-@function get-color($color, $variant: base) {
+@function brand($color, $variant: base) {
   @return map-get(map-get($colors, $color), $variant);
 }
 
 @mixin theme($color: green) {
-  background-color: get-color($color);
-  color: get-color($color, dark);
+  background-color: brand($color);
+  color: brand($color, dark);
 
   svg {
     fill: currentColor;
@@ -46,8 +46,8 @@
 }
 
 @mixin theme-dark($color: green) {
-  background-color: get-color($color, dark);
-  color: get-color($color);
+  background-color: brand($color, dark);
+  color: brand($color);
 
   svg {
     fill: currentColor;
@@ -155,14 +155,14 @@
   width: 100%;
 
   @include brand using ($color, $variant) {
-    background-color: get-color($color, light);
-    color: get-color($color, dark);
+    background-color: brand($color, dark);
+    color: brand($color, dark);
   }
 
   &.dark {
     @include brand using ($color, $variant) {
-      background-color: get-color($color, dark);
-      color: get-color($color);
+      background-color: brand($color);
+      color: brand($color);
     }
   }
 }
@@ -200,46 +200,49 @@
 }
 
 @mixin anchor-focus($color) {
-  background-color: get-color($color, dark);
+  background-color: brand($color, dark);
   color: white;
   outline: none;
 }
 
 @mixin anchor-default($color) {
-  background-color: get-color($color, light);
-  color: get-color($color, dark);
+  background-color: brand($color, light);
+  color: brand($color, dark);
 }
 
-@mixin button {
-  padding: 0 0 0 $padding-menu;
+@mixin menu-button {
+  background-color: transparent;
   font-family: inherit;
   align-items: center;
   font-size: inherit;
   cursor: pointer;
   display: flex;
   border: none;
-
-  @include brand using ($color, $variant) {
-    @include anchor-default($color);
-
-    @include focus {
-      @include anchor-focus($color);
-    }
-  }
-
-  &.active {
-    @include brand using ($color, $variant) {
-      @include anchor-focus($color);
-    }
-  }
+  padding: 0;
 
   &.open {
-    @include brand using ($color, $variant) {
-      @include anchor-focus($color);
-    }
-
     .MdArrowDropDown {
       transform: rotate(180deg);
+    }
+  }
+
+  @include medium-up {
+    padding-left: $padding-menu;
+
+    @include brand using ($color, $variant) {
+      @include anchor-default($color);
+
+      @include focus {
+        @include anchor-focus($color);
+      }
+
+      &.open {
+        @include anchor-focus($color);
+      }
+
+      &.active {
+        @include anchor-focus($color);
+      }
     }
   }
 }
@@ -249,4 +252,37 @@
   white-space: nowrap;
   text-align: left;
   overflow: hidden;
+}
+
+@mixin menu-item {
+  position: relative;
+
+  @include medium-down {
+    &:not(:last-child) {
+      border-bottom: 1px solid currentColor;
+    }
+  }
+
+  @include medium-up {
+    &:first-child .anchor {
+      border-bottom-left-radius: $border-radius-menu;
+      border-top-left-radius: $border-radius-menu;
+      padding-left: $border-radius-menu;
+    }
+
+    &:last-child .anchor {
+      border-bottom-right-radius: $border-radius-menu;
+      border-top-right-radius: $border-radius-menu;
+      padding-right: $border-radius-menu;
+    }
+  }
+}
+
+@mixin mobile-menu-title {
+  @include medium-down {
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    font-weight: bold;
+    font-size: 2rem;
+  }
 }

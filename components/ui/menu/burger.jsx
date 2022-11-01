@@ -1,28 +1,17 @@
 import styles from 'styles/components/ui/menu/burger.module.scss'
-import { useRef } from 'react'
+import { Fragment, useState, useRef } from 'react'
 import { HiMenu } from 'react-icons/hi'
-import { attachVariant } from 'scripts'
-import { Fragment, useState } from 'react'
+import { attachVariant, isRouteActive } from 'scripts'
+import { Anchor, Dropdown } from 'components/ui/menu'
 import { Container, Wrap } from 'components'
-import gsap from 'gsap'
 import { useRouter } from 'next/router'
 import menu from 'data/menu'
-import { Dropdown } from 'components/ui/menu/dropdown'
-import { Anchor } from 'components/ui/menu/anchor'
-
-function checkRoute(href, route) {
-  if (href === route) return true
-  const parent = {
-    route: route.split('/')[1],
-    href: href.split('/')[1],
-  }
-  if (parent.href === parent.route) return true
-  return false
-}
+import gsap from 'gsap'
 
 export function Burger({ toggleMenu, variant = 'green' }) {
-  const { route } = useRouter()
+  const [openDropDownID, setDropDownID] = useState(null)
   const [overlayOpen, setOverlayOpen] = useState(false)
+  const { route } = useRouter()
   const overlayRef = useRef(null)
   const buttonClasses = `${styles.button} ${attachVariant(variant, styles)}`
   const overlayClasses = `${styles.overlay} ${attachVariant(variant, styles)}`
@@ -31,13 +20,16 @@ export function Burger({ toggleMenu, variant = 'green' }) {
     ref: overlayRef,
   }
 
-  console.log('variant: ', variant)
-
   function toggleMenu() {
     if (!overlayRef.current) return
     const { current } = overlayRef
-    const toggle = overlayOpen ? '100%' : '0%'
-    gsap.to(current, { x: toggle })
+    const tl = gsap.timeline({ defaults: { ease: 'circ.out', duration: 0.2 } })
+    if (overlayOpen) {
+      tl.to('body', { clearProps: 'overflow' }).to(current, { x: '100%' })
+    } else {
+      tl.to('body', { overflow: 'hidden' }).to(current, { x: '0%' })
+    }
+
     setOverlayOpen(!overlayOpen)
   }
 
@@ -58,7 +50,9 @@ export function Burger({ toggleMenu, variant = 'green' }) {
           <ul className={styles.list}>
             {menu.map((item, index) => {
               const props = {
-                active: checkRoute(item.href, route),
+                active: isRouteActive(item.href, route),
+                openDropDownID,
+                setDropDownID,
                 variant,
                 ...item,
                 index,

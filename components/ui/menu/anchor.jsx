@@ -1,4 +1,4 @@
-import styles from 'styles/components/ui/menu.module.scss'
+import styles from 'styles/components/ui/menu/anchor.module.scss'
 import { attachVariant } from 'scripts'
 import Link from 'next/link'
 

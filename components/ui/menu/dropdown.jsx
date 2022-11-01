@@ -1,4 +1,4 @@
-import styles from 'styles/components/ui/menu.module.scss'
+import styles from 'styles/components/ui/menu/dropdown.module.scss'
 import { MdArrowDropDown } from 'react-icons/md'
 import { Anchor } from 'components/ui/menu/anchor'
 import { attachVariant } from 'scripts'
@@ -9,17 +9,18 @@ export function Dropdown({ title, items, active, variant, openDropDownID, setDro
   const isOpen = openDropDownID === index
   const openClass = isOpen ? styles.open : ''
   const buttonClasses = `${styles.button} ${activeClass} ${variantClass} ${openClass}`
-  const listClasses = `${styles.dropdown_list} ${variantClass}`
+  const listClasses = `${styles.list} ${variantClass}`
   const dropDownID = !isOpen ? index : null
 
   const buttonProps = {
     onClick: () => setDropDownID(dropDownID),
     className: buttonClasses,
   }
+
   return (
     <li className={styles.item}>
       <button {...buttonProps}>
-        {title}
+        <span>{title}</span>
         <MdArrowDropDown className={styles.MdArrowDropDown} />
       </button>
       {isOpen && (
@@ -31,7 +32,7 @@ export function Dropdown({ title, items, active, variant, openDropDownID, setDro
               ...item,
               active,
             }
-            return <Anchor key={`ddanchor${index}`} {...props} />
+            return <Anchor key={'ddanchor' + index} {...props} />
           })}
         </ul>
       )}

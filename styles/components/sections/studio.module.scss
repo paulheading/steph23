@@ -46,6 +46,6 @@
   display: flex;
 
   @include brand using($color, $variant) {
-    background-color: rgba(get-color($color), 0.5);
+    background-color: rgba(brand($color), 0.5);
   }
 }

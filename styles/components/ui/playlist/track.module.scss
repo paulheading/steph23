@@ -15,7 +15,8 @@
   width: 100%;
 
   @include brand using ($color, $variant) {
-    color: get-color($color, dark);
+    background-color: brand($color, light);
+    color: brand($color, dark);
   }
 
   @include focus {

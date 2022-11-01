@@ -1,19 +1,9 @@
 import styles from 'styles/components/ui/menu.module.scss'
-import { Dropdown } from 'components/ui/menu/dropdown'
+import { Dropdown, Anchor } from 'components/ui/menu'
 import { useEffect, useState, useRef } from 'react'
-import { Anchor } from 'components/ui/menu/anchor'
+import { isRouteActive } from 'scripts'
 import { useRouter } from 'next/router'
 import menu from 'data/menu'
-
-function checkRoute(href, route) {
-  if (href === route) return true
-  const parent = {
-    route: route.split('/')[1],
-    href: href.split('/')[1],
-  }
-  if (parent.href === parent.route) return true
-  return false
-}
 
 export function Menu({ variant }) {
   const [openDropDownID, setDropDownID] = useState(null)
@@ -28,23 +18,28 @@ export function Menu({ variant }) {
     })
   }, [navRef, openDropDownID])
 
+  function items(item, index) {
+    const props = {
+      active: isRouteActive(item.href, route),
+      openDropDownID,
+      setDropDownID,
+      variant,
+      ...item,
+      index,
+    }
+    if (item.items) return <Dropdown key={'dropdown' + index} {...props} />
+    return <Anchor key={'anchor' + index} {...props} />
+  }
+
   return (
     <div className={styles.container}>
       <nav ref={navRef} className={styles.nav}>
-        <ul className={styles.list}>
-          {menu.map((item, index) => {
-            const props = {
-              active: checkRoute(item.href, route),
-              openDropDownID,
-              setDropDownID,
-              variant,
-              ...item,
-              index,
-            }
-            return item.items ? <Dropdown key={`dropdown${index}`} {...props} /> : <Anchor key={`anchor${index}`} {...props} />
-          })}
-        </ul>
+        <ul className={styles.list}>{menu.map(items)}</ul>
       </nav>
     </div>
   )
 }
+
+export * from 'components/ui/menu/anchor'
+export * from 'components/ui/menu/burger'
+export * from 'components/ui/menu/dropdown'

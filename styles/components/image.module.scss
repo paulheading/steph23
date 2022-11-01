@@ -6,7 +6,7 @@
   font-size: 0;
 
   @include brand using($color, $variant) {
-    background-color: get-color($color, light);
+    background-color: brand($color, light);
   }
 }
 
@@ -14,6 +14,6 @@
   border: 0.125rem solid;
 
   @include brand using($color, $variant) {
-    border-color: get-color($color, dark);
+    border-color: brand($color, dark);
   }
 }
