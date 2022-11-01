@@ -39,29 +39,31 @@ export function Burger({ toggleMenu, variant = 'green' }) {
   }
 
   return (
-    <div className={styles.container}>
+    <Fragment>
       <Wrap className={styles.wrap}>
         <button {...buttonProps}>
           <HiMenu className={styles.HiMenu} />
         </button>
       </Wrap>
-      <div {...overlayProps}>
-        <Container fill="false">
-          <ul className={styles.list}>
-            {menu.map((item, index) => {
-              const props = {
-                active: isRouteActive(item.href, route),
-                openDropDownID,
-                setDropDownID,
-                variant,
-                ...item,
-                index,
-              }
-              return item.items ? <Dropdown key={'dropdown' + index} {...props} /> : <Anchor key={'anchor' + index} {...props} />
-            })}
-          </ul>
-        </Container>
+      <div className={styles.container}>
+        <div {...overlayProps}>
+          <Container fill="false">
+            <ul className={styles.list}>
+              {menu.map((item, index) => {
+                const props = {
+                  active: isRouteActive(item.href, route),
+                  openDropDownID,
+                  setDropDownID,
+                  variant,
+                  ...item,
+                  index,
+                }
+                return item.items ? <Dropdown key={'dropdown' + index} {...props} /> : <Anchor key={'anchor' + index} {...props} />
+              })}
+            </ul>
+          </Container>
+        </div>
       </div>
-    </div>
+    </Fragment>
   )
 }
