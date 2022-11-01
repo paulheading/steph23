@@ -12,6 +12,7 @@ export function Playlist({ data, active, handleSetActive, variant, toggle, openI
   const activePlaylist = active ? playlist.id === active.playlist_id : false
   const customClass = className ? className : ''
   const containerClasses = `${styles.container} ${attachVariant(variant, styles)} ${customClass}`
+  const wrapClasses = `${styles.wrap} ${attachVariant(variant, styles)}`
 
   useEffect(() => {
     if (!activePlaylist) return
@@ -62,18 +63,26 @@ export function Playlist({ data, active, handleSetActive, variant, toggle, openI
     isOpen,
   }
 
+  const audioProps = {
+    ref: playerRef,
+    src: active && active.src,
+    onTimeUpdate: updateProgress,
+  }
+
+  function track(track, index) {
+    const props = {
+      ...trackProps,
+      track,
+    }
+    return <Track key={'track' + index} {...props} />
+  }
+
   return (
     <div className={containerClasses}>
-      <audio ref={playerRef} src={active && active.src} onTimeUpdate={updateProgress}></audio>
+      <audio {...audioProps}></audio>
       {toggle && <Toggle {...toggleProps} />}
       <Main {...mainProps} />
-      {playlist.tracks.map((track, index) => {
-        const props = {
-          ...trackProps,
-          track,
-        }
-        return <Track key={'track' + index} {...props} />
-      })}
+      <div className={wrapClasses}>{playlist.tracks.map(track)}</div>
     </div>
   )
 }

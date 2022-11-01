@@ -14,11 +14,6 @@
   gap: 0.5rem;
   width: 100%;
 
-  @include brand using ($color, $variant) {
-    background-color: brand($color, light);
-    color: brand($color, dark);
-  }
-
   @include focus {
     background-color: white;
   }
