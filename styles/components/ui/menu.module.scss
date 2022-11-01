@@ -1,12 +1,16 @@
 @import 'styles/mixins';
 
 .container {
-  justify-content: center;
   position: absolute;
-  padding-top: 3rem;
-  display: flex;
-  width: 100%;
+  overflow: hidden;
   z-index: 3;
+
+  @include medium-up {
+    justify-content: center;
+    padding-top: 3rem;
+    display: flex;
+    width: 100%;
+  }
 }
 
 .nav {

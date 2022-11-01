@@ -1,24 +1,12 @@
-import { Fragment, useEffect } from 'react'
+import { Fragment } from 'react'
 import { Head, Footer } from 'components'
 import { Menu } from 'components/ui'
-import useMediaQuery from 'hooks/useMediaQuery'
-import { Burger } from 'components/ui/menu/burger'
-import gsap from 'gsap'
 
 export function Page({ head, children, menu = 'green', footer = 'green' }) {
-  const isDesktop = useMediaQuery(`(min-width: 768px)`)
-  const menuProps = {
-    variant: menu,
-  }
-
-  useEffect(() => {
-    if (isDesktop) gsap.set('body', { clearProps: 'overflow' })
-  }, [isDesktop])
-
   return (
     <Fragment>
       <Head {...head} />
-      {isDesktop ? <Menu {...menuProps} /> : <Burger {...menuProps} />}
+      <Menu variant={menu} />
       {children}
       <Footer variant={footer} />
     </Fragment>
