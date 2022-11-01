@@ -2,7 +2,6 @@
 
 .container {
   position: absolute;
-  overflow: hidden;
   z-index: 3;
 
   @include medium-up {
