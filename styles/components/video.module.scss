@@ -1,8 +1,10 @@
 @import 'styles/mixins';
 
+$border-radius-video: 1rem;
+
 .container {
+  border-radius: $border-radius-video;
   border: 0.125rem solid currentColor;
-  border-radius: 1rem;
   padding-top: 56.25%;
   position: relative;
   overflow: hidden;
@@ -10,6 +12,7 @@
 
   iframe {
     @include inset;
+    border-radius: $border-radius-video; // safari bug
     position: absolute;
     height: 100%;
     width: 100%;
