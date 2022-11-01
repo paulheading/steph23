@@ -39,7 +39,7 @@ export function Burger({ toggleMenu, variant = 'green' }) {
   }
 
   return (
-    <Fragment>
+    <div className={styles.container}>
       <Wrap className={styles.wrap}>
         <button {...buttonProps}>
           <HiMenu className={styles.HiMenu} />
@@ -63,6 +63,6 @@ export function Burger({ toggleMenu, variant = 'green' }) {
           </ul>
         </Container>
       </div>
-    </Fragment>
+    </div>
   )
 }

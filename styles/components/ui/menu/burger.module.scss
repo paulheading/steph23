@@ -1,5 +1,9 @@
 @import 'styles/mixins';
 
+.container {
+  overflow: hidden;
+}
+
 .wrap {
   padding: $padding-container-hz;
   position: fixed;

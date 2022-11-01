@@ -1,15 +1,12 @@
 import styles from 'styles/components/ui/menu.module.scss'
-import { Dropdown, Anchor, Burger } from 'components/ui/menu'
+import { Dropdown, Anchor } from 'components/ui/menu'
 import { useEffect, useState, useRef } from 'react'
-import useMediaQuery from 'hooks/useMediaQuery'
 import { isRouteActive } from 'scripts'
 import { useRouter } from 'next/router'
 import menu from 'data/menu'
-import gsap from 'gsap'
 
 export function Menu({ variant }) {
   const [openDropDownID, setDropDownID] = useState(null)
-  const isDesktop = useMediaQuery(`(min-width: 768px)`)
   const { route } = useRouter()
   const navRef = useRef(null)
 
@@ -20,10 +17,6 @@ export function Menu({ variant }) {
       if (!navRef.current.contains(e.target)) setDropDownID(null)
     })
   }, [navRef, openDropDownID])
-
-  useEffect(() => {
-    if (isDesktop) gsap.set('body', { clearProps: 'overflow' })
-  }, [isDesktop])
 
   function items(item, index) {
     const props = {
@@ -41,7 +34,7 @@ export function Menu({ variant }) {
   return (
     <div className={styles.container}>
       <nav ref={navRef} className={styles.nav}>
-        {isDesktop ? <ul className={styles.list}>{menu.map(items)}</ul> : <Burger variant={variant} />}
+        <ul className={styles.list}>{menu.map(items)}</ul>
       </nav>
     </div>
   )
