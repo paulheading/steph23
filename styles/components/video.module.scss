@@ -1,10 +1,9 @@
 @import 'styles/mixins';
 
-$border-radius-video: 1rem;
-
 .container {
-  border-radius: $border-radius-video;
+  mask-image: radial-gradient(white, black); // safari bug
   border: 0.125rem solid currentColor;
+  border-radius: 1rem;
   padding-top: 56.25%;
   position: relative;
   overflow: hidden;
@@ -12,7 +11,6 @@ $border-radius-video: 1rem;
 
   iframe {
     @include inset;
-    border-radius: $border-radius-video; // safari bug
     position: absolute;
     height: 100%;
     width: 100%;
