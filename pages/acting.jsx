@@ -40,8 +40,7 @@ export default function Acting() {
           </div>
           <Image {...headshotProps} />
         </Split>
-        <Split className={styles.second_row}>
-          <Image {...fullBodyProps} />
+        <Split swap className={styles.second_row}>
           <div>
             <Title>Training</Title>
             <ul className={styles.list}>
@@ -53,6 +52,7 @@ export default function Acting() {
               <li>The Actors Centre – classes for accents, scene work, & character creation</li>
             </ul>
           </div>
+          <Image {...fullBodyProps} />
         </Split>
         <Mocap />
       </Content>

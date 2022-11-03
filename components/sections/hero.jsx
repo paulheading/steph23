@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
-import { Container, Wrap } from 'components'
-import { VO } from 'logos'
+import { Container, Wrap, Logo } from 'components'
 import Image from 'next/image'
 import styles from 'styles/components/sections/hero.module.scss'
 import gsap from 'gsap'
@@ -46,10 +45,7 @@ export function Hero() {
   return (
     <Container {...containerProps}>
       <Wrap className={styles.wrap}>
-        <div className={styles.logo}>
-          <VO className={styles.svg} />
-          <div className={styles.shadow}></div>
-        </div>
+        <Logo className={styles.logo} />
         <div className={styles.animation}>
           <div className={styles.steph}>
             <Image {...stephProps} alt="steph" />

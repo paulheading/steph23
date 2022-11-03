@@ -3,7 +3,7 @@ import { Fragment, useState, useRef } from 'react'
 import { HiMenu } from 'react-icons/hi'
 import { attachVariant, isRouteActive } from 'scripts'
 import { Anchor, Dropdown } from 'components/ui/menu'
-import { Container, Wrap } from 'components'
+import { Container, Wrap, Logo } from 'components'
 import { useRouter } from 'next/router'
 import menu from 'data/menu'
 import gsap from 'gsap'
@@ -41,6 +41,7 @@ export function Burger({ toggleMenu, variant = 'green' }) {
   return (
     <Fragment>
       <Wrap className={styles.wrap}>
+        <Logo className={styles.logo} />
         <button {...buttonProps}>
           <HiMenu className={styles.HiMenu} />
         </button>

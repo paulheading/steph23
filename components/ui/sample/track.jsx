@@ -47,7 +47,7 @@ export function Track({ track, handleTrackChange, activePlaylist, active, varian
       </div>
       <div className={styles.title_wrap}>
         <a {...linkProps}>
-          <MdOutlineFileDownload className={styles.icon} />
+          <MdOutlineFileDownload className={styles.MdOutlineFileDownload} />
         </a>
         <div className={styles.title}>{printTitle()}</div>
       </div>

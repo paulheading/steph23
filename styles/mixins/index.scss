@@ -287,3 +287,8 @@
     font-size: 2rem;
   }
 }
+
+@mixin size($size) {
+  height: $size;
+  width: $size;
+}

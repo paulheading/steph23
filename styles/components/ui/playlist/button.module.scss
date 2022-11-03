@@ -1,6 +1,7 @@
 @import 'styles/mixins';
 
 .button {
+  border: 1px solid currentColor;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
@@ -9,7 +10,6 @@
   font-size: 2rem;
   cursor: pointer;
   display: flex;
-  border: none;
   padding: 0;
 
   @include brand using ($color, $variant) {

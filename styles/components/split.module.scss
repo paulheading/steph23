@@ -3,14 +3,14 @@
 $gap-split: 4rem;
 
 @mixin setup-container {
-  @include large-down {
+  @include medium-down {
     > div:nth-child(1) {
       margin-bottom: $gap-split;
     }
   }
 
   &.swap {
-    @include large-up {
+    @include medium-up {
       > div {
         &:nth-child(1) {
           order: 2;
@@ -25,7 +25,7 @@ $gap-split: 4rem;
 
 .container_columns {
   @include setup-container;
-  @include large-up {
+  @include medium-up {
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: flex-start;
@@ -36,7 +36,7 @@ $gap-split: 4rem;
 
 .container_apart {
   @include setup-container;
-  @include large-up {
+  @include medium-up {
     justify-content: space-between;
     align-items: flex-start;
     display: flex;

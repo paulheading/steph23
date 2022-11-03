@@ -21,7 +21,11 @@
 }
 
 .container.top {
-  padding-top: $padding-container-vt * 1.5;
+  padding-top: $padding-container-vt * 1.25;
+
+  @include medium-up {
+    padding-top: $padding-container-vt * 1.75;
+  }
 }
 
 .container.center {

@@ -59,6 +59,7 @@ export function Playlist({ data, active, handleSetActive, variant, toggle, openI
   const toggleProps = {
     handleSetOpenID,
     playlist,
+    variant,
     isOpen,
   }
 

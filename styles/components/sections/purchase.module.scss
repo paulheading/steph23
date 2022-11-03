@@ -1,13 +1,12 @@
 @import 'styles/mixins';
 
-$size: 10rem;
-
 .wrap {
   text-align: center;
-  max-width: 55rem;
+  max-width: 68rem;
 }
 
 .link {
+  @include size($size-track-media);
   background-color: currentColor;
   border: 1px solid currentColor;
   justify-content: center;
@@ -17,9 +16,7 @@ $size: 10rem;
   align-items: center;
   position: relative;
   overflow: hidden;
-  margin: 0.5rem;
-  height: $size;
-  width: $size;
+  margin: 0.75rem;
 
   @include focus {
     .overlay {
@@ -43,9 +40,7 @@ $size: 10rem;
 }
 
 .logo {
-  height: 2.5rem;
-  width: 2.5rem;
-
+  @include size(2.5rem);
   @include brand using($color, $variant) {
     color: brand($color);
   }

@@ -8,8 +8,8 @@ export function Page({ head, children, menu = 'green', footer = 'green' }) {
   const isDesktop = useMediaQuery(`(min-width: 768px)`)
 
   useEffect(() => {
-    if (isDesktop) gsap.set('body', { clearProps: 'overflow' })
-  }, [isDesktop])
+    gsap.set('body', { clearProps: 'overflow' })
+  }, [])
 
   return (
     <Fragment>

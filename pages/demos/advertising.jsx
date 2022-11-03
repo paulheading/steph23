@@ -4,10 +4,13 @@ import { Split, Title, Video } from 'components'
 import Page from 'components/page/demos'
 import { Playlist } from 'components/ui'
 import { demos } from 'data/seo'
+import styles from 'styles/pages/demos.module.scss'
+import { attachVariant } from 'scripts'
 
 export default function Advertising() {
   const [active, setActive] = useState(data.main)
   const handleSetActive = (track) => setActive(track)
+  const variant = 'red'
   const videos = [
     {
       title: '24 Hr Fitness Commercial',
@@ -22,10 +25,19 @@ export default function Advertising() {
   ]
   const playlistProps = {
     handleSetActive,
-    variant: 'red',
+    variant,
     active,
     data,
   }
+
+  const captionStyles = `${styles.caption} ${attachVariant(variant, styles)}`
+
+  const titleProps = {
+    className: captionStyles,
+    margin: false,
+    small: true,
+  }
+
   return (
     <Page head={demos.advertising}>
       <Split>
@@ -37,18 +49,16 @@ export default function Advertising() {
         </div>
         <Playlist {...playlistProps} />
       </Split>
-      <Split className="margin-top-4">
-        {videos.map((video, index) => {
-          return (
-            <div key={'video' + index}>
-              <Video {...video} />
-              <div className="text-align-center margin-top-1">
-                <Title small>{video.caption}</Title>
-              </div>
+      {videos.map((video, index) => {
+        return (
+          <div key={'video' + index} className="margin-top-4">
+            <Video {...video} />
+            <div className="text-align-center margin-top-2">
+              <Title {...titleProps}>{video.caption}</Title>
             </div>
-          )
-        })}
-      </Split>
+          </div>
+        )
+      })}
     </Page>
   )
 }

@@ -2,14 +2,26 @@
 
 .container {
   overflow: hidden;
+
+  @include medium-up {
+    display: none;
+  }
 }
 
 .wrap {
+  justify-content: space-between;
   padding: $padding-container-hz;
+  align-items: center;
   position: absolute;
-  width: auto;
+  display: flex;
   z-index: 3;
+  gap: 2rem;
   right: 0;
+  left: 0;
+
+  @include medium-up {
+    display: none;
+  }
 }
 
 .button {
@@ -17,8 +29,10 @@
   border-radius: $border-radius-menu;
   height: $line-height-menu;
   padding-right: 0.75rem;
+  border: 0.125rem solid;
   padding-left: 0.75rem;
-  border: 2px solid;
+  position: relative;
+  z-index: 2;
 
   @include brand using ($color, $variant) {
     background-color: brand($color, light);
@@ -56,4 +70,8 @@
   overflow: hidden;
   padding: 0;
   margin: 0;
+}
+
+.logo {
+  max-width: 20rem;
 }
