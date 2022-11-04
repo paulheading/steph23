@@ -1,8 +1,5 @@
 @import 'styles/mixins';
 
-$padding-mobile: 2rem;
-$height: 35rem;
-
 @mixin image-wrap {
   position: absolute;
   display: flex;
@@ -10,9 +7,12 @@ $height: 35rem;
 
 .container {
   position: relative;
-  padding-top: 2rem;
   overflow: hidden;
   z-index: 1;
+
+  @include medium-up {
+    padding-top: 2rem;
+  }
 }
 
 .wrap {
