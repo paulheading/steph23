@@ -3,11 +3,11 @@
 .container {
   @include sample-size($height: false);
   background-color: transparent;
+  margin: $margin-samples;
   display: inline-block;
   vertical-align: top;
   text-align: left;
   font-size: 1rem;
-  margin: 0.75rem;
   cursor: pointer;
   max-width: 100%;
   border: none;

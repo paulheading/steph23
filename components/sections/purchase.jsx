@@ -61,12 +61,12 @@ export function Purchase() {
     <Container {...containerProps}>
       <Wrap className={styles.wrap}>
         <Title>Purchase</Title>
-        <Wrap className="margin-bottom-2">
+        <Wrap className={styles.wrap_copy}>
           <p>
             Add to your audiobook listening collection by selecting any of the below titles, or visit <Link href={audible_uk}>audible.co.uk</Link> or <Link href={audible_us}>audible.com</Link> to buy.
           </p>
         </Wrap>
-        <div className={styles.wrap}>
+        <div className={styles.wrap_links}>
           {purchase.map((link, index) => {
             const props = {
               variant,
