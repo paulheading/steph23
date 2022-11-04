@@ -9,12 +9,48 @@
 }
 
 .button {
-  @include menu-button;
   @include mobile-menu-title;
+  background-color: transparent;
+  font-family: inherit;
+  align-items: center;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  margin: 0; // safari bug
 
   @include medium-down {
-    justify-content: space-between;
+    grid-template-columns: auto 3rem;
+    display: grid;
     width: 100%;
+    gap: 1rem;
+  }
+
+  @include medium-up {
+    padding-left: $padding-menu;
+    display: flex;
+
+    @include brand using ($color, $variant) {
+      @include anchor-default($color);
+
+      @include focus {
+        @include anchor-focus($color);
+      }
+
+      &.open {
+        @include anchor-focus($color);
+      }
+
+      &.active {
+        @include anchor-focus($color);
+      }
+    }
+  }
+}
+
+.button.open {
+  .MdArrowDropDown {
+    transform: rotate(180deg);
   }
 }
 

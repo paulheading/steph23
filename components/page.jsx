@@ -9,7 +9,7 @@ export function Page({ head, children, menu = 'green', footer = 'green' }) {
 
   useEffect(() => {
     gsap.set('body', { clearProps: 'overflow' })
-  }, [])
+  }, [isDesktop])
 
   return (
     <Fragment>

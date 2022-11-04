@@ -17,9 +17,12 @@ export function Studio({ active, setActive, variant }) {
     active,
   }
 
-  imageProps.src = studioImage
-  imageProps.height = 360
-  imageProps.width = 270
+  const studioProps = {
+    ...imageProps,
+    src: studioImage,
+    height: 360,
+    width: 270,
+  }
 
   const containerProps = {
     section: false,
@@ -61,8 +64,8 @@ export function Studio({ active, setActive, variant }) {
           </div>
           <div className={styles.sample}>
             <Player {...playerProps} />
-            <ImageWrap>
-              <Image {...imageProps} alt="Stephanie Cannon smiling in a pink cardigan with her head tilted to the left" />
+            <ImageWrap width={studioProps.width}>
+              <Image {...studioProps} alt="Stephanie Cannon smiling in a pink cardigan with her head tilted to the left" />
             </ImageWrap>
           </div>
         </Split>

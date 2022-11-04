@@ -215,46 +215,6 @@
   color: brand($color, dark);
 }
 
-@mixin menu-button {
-  grid-template-columns: auto 3rem;
-  background-color: transparent;
-  font-family: inherit;
-  align-items: center;
-  font-size: inherit;
-  cursor: pointer;
-  display: grid;
-  border: none;
-  padding: 0;
-  margin: 0; // safari bug
-  gap: 1rem;
-
-  &.open {
-    .MdArrowDropDown {
-      transform: rotate(180deg);
-    }
-  }
-
-  @include medium-up {
-    padding-left: $padding-menu;
-
-    @include brand using ($color, $variant) {
-      @include anchor-default($color);
-
-      @include focus {
-        @include anchor-focus($color);
-      }
-
-      &.open {
-        @include anchor-focus($color);
-      }
-
-      &.active {
-        @include anchor-focus($color);
-      }
-    }
-  }
-}
-
 @mixin text-overflow {
   text-overflow: ellipsis;
   white-space: nowrap;
