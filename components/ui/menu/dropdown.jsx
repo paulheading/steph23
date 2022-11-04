@@ -20,7 +20,7 @@ export function Dropdown({ title, items, active, variant, openDropDownID, setDro
   return (
     <li className={styles.item}>
       <button {...buttonProps}>
-        <span>{title}</span>
+        <span className={styles.title}>{title}</span>
         <MdArrowDropDown className={styles.MdArrowDropDown} />
       </button>
       {isOpen && (

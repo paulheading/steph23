@@ -39,6 +39,8 @@
   @include setup-anchor;
 
   @include medium-down {
+    @include text-overflow;
+    font-size: 1.25rem;
     font-weight: bold;
   }
 

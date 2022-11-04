@@ -21,7 +21,6 @@
 }
 
 .button {
-  @include menu-button;
   border-radius: $border-radius-menu;
   height: $line-height-menu;
   padding-right: 0.75rem;

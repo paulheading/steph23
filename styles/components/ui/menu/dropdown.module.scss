@@ -4,13 +4,13 @@
   @include menu-item;
 }
 
+.title {
+  @include text-overflow;
+}
+
 .button {
   @include menu-button;
   @include mobile-menu-title;
-
-  @include medium-down {
-    @include text-overflow;
-  }
 
   @include medium-down {
     justify-content: space-between;
