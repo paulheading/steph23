@@ -7,7 +7,7 @@ export function ImageWrap({ children, width = imageProps.width, className, varia
   const containerClasses = `${styles.container} ${attachVariant(variant, styles)} ${customClass}`
 
   return (
-    <div className={containerClasses} style={{ width }}>
+    <div className={containerClasses} style={{ maxWidth: width }}>
       {children}
     </div>
   )

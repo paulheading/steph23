@@ -26,3 +26,11 @@
 .spotlight {
   width: 3rem;
 }
+
+.mocap_container {
+  padding-top: 3rem;
+
+  @include medium-up {
+    text-align: center;
+  }
+}

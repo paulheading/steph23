@@ -4,7 +4,7 @@ import { ArtsCouncil, Equity, Spotlight } from 'logos'
 
 export function Mocap() {
   const containerProps = {
-    className: 'text-align-center padding-top-3',
+    className: styles.mocap_container,
     id: 'motion-capture',
     padding: false,
   }

@@ -52,13 +52,13 @@
 
 .submit {
   background-color: $c-yellow-dark;
-  border-color: $c-yellow-dark;
   border-radius: 0.375rem;
   color: $c-yellow-light;
   margin-top: 0.5rem;
   font-weight: bold;
   padding: 0.75rem;
   font-size: 1rem;
+  border: none;
   width: 100%;
 
   @include focus {
