@@ -66,12 +66,17 @@
 }
 
 @mixin focus {
-  @include focus-visible {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+
+  &:active {
     @content;
   }
 
-  &:active,
-  &:hover {
+  @include focus-visible {
     @content;
   }
 }
