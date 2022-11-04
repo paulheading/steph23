@@ -1,10 +1,11 @@
-import { favourites } from 'data/audiobooks'
+import styles from 'styles/pages/audiobooks.module.scss'
 import { Container, Wrap, Title } from 'components'
+import { favourites } from 'data/audiobooks'
 import { Samples } from 'components/ui'
 
 export function Favourites({ active, setActive }) {
   const containerProps = {
-    className: 'text-align-center',
+    className: styles.favourites_container,
     variant: 'green',
     top: true,
   }

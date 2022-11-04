@@ -4,7 +4,7 @@
   border: 0.125rem solid currentColor;
   border-radius: 1rem;
   overflow: hidden;
-  max-width: 60vw;
+  max-width: 65vw;
   font-size: 0;
 
   @include brand using($color, $variant) {

@@ -259,3 +259,19 @@
   height: $size;
   width: $size;
 }
+
+@mixin sample-size($height: true) {
+  @if $height {
+    @include size($size-track-media--mobile);
+
+    @include medium-up {
+      @include size($size-track-media);
+    }
+  } @else {
+    width: $size-track-media--mobile;
+
+    @include medium-up {
+      width: $size-track-media;
+    }
+  }
+}

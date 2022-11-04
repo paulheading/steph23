@@ -1,0 +1,7 @@
+@import 'styles/mixins';
+
+.favourites_container {
+  @include medium-up {
+    text-align: center;
+  }
+}

@@ -1,16 +1,16 @@
 @import 'styles/mixins';
 
 .container {
+  @include sample-size($height: false);
   background-color: transparent;
-  max-width: $size-track-media;
   display: inline-block;
   vertical-align: top;
   text-align: left;
   font-size: 1rem;
   margin: 0.75rem;
   cursor: pointer;
+  max-width: 100%;
   border: none;
-  width: 100%;
 
   @include brand using ($color, $variant) {
     color: brand($color, dark);
@@ -32,7 +32,7 @@
 }
 
 .media {
-  @include size($size-track-media);
+  @include sample-size;
   border: 1px solid currentColor;
   justify-content: center;
   background-size: cover;
@@ -52,6 +52,7 @@
   margin-top: 1.25rem;
   font-size: 1.25rem;
   display: flow-root;
+  line-height: 1.25;
 }
 
 .MdOutlineFileDownload {
