@@ -37,3 +37,19 @@ $small: 520;
     @content;
   }
 }
+
+@mixin small-only {
+  @include small-up {
+    @include medium-down {
+      @content;
+    }
+  }
+}
+
+@mixin medium-only {
+  @include medium-up {
+    @include large-down {
+      @content;
+    }
+  }
+}

@@ -79,12 +79,16 @@
 .logo {
   position: absolute;
   z-index: 2;
-  top: 10rem;
+  top: 6rem;
   right: 0;
   left: 0;
 
-  @include medium-down {
-    display: none;
+  @include small-up {
+    top: 6.75rem;
+  }
+
+  @include medium-up {
+    top: 10rem;
   }
 }
 

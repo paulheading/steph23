@@ -9,7 +9,7 @@ export function Logo({ className }) {
   return (
     <div className={customClass}>
       <div className={styles.container}>
-        {isDesktop ? <StephDesktop className={styles.svg} /> : <StephMobile className={styles.svg} />}
+        <StephDesktop className={styles.svg} />
         <div className={styles.shadow}></div>
       </div>
     </div>

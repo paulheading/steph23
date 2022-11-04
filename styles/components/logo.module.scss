@@ -1,7 +1,11 @@
 @import 'styles/mixins';
 
 .container {
+  justify-content: center;
+  align-items: center;
   position: relative;
+  height: 6.25rem;
+  display: flex;
   z-index: 2;
 }
 
@@ -9,8 +13,12 @@
   position: relative;
   max-width: 100%;
   display: block;
-  margin: auto;
   z-index: 2;
+
+  @include small-down {
+    max-width: 20rem;
+    width: 80vw;
+  }
 
   path {
     fill: white;

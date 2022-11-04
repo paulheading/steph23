@@ -9,18 +9,11 @@
 }
 
 .wrap {
-  justify-content: space-between;
   padding: $padding-container-hz;
   position: absolute;
-  display: flex;
+  width: auto;
   z-index: 3;
-  gap: 2rem;
   right: 0;
-  left: 0;
-
-  @include small-up {
-    align-items: center;
-  }
 
   @include medium-up {
     display: none;
@@ -50,8 +43,7 @@
 }
 
 .HiMenu {
-  height: 1.75rem;
-  width: 1.75rem;
+  @include size(1.75rem);
 }
 
 .overlay {
