@@ -1,5 +1,3 @@
-export const createImageSrc = (string = '') => ({ src: string + '.webp', alt: string.replace(/-/g, ' ') })
-
 export const getCSS = (value) => getComputedStyle(document.documentElement).getPropertyValue('--' + value)
 
 export function attachVariant(variant, styles) {
@@ -27,4 +25,25 @@ export function isRouteActive(href, route) {
   }
   if (parent.href === parent.route) return true
   return false
+}
+
+export const imageProps = {
+  placeholder: 'blur',
+  height: 448,
+  width: 320,
+  alt: '',
+}
+
+export const contact = {
+  input: (title = '', type = 'text') => ({ type, name: title, id: title }),
+  row: (data, error, errorMessage = '') => {
+    const { name, title, rules } = data
+    return {
+      errorMessage,
+      htmlFor: name,
+      label: title,
+      error,
+      rules,
+    }
+  },
 }

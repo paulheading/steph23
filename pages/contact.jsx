@@ -1,12 +1,15 @@
-import { Page, Container, Wrap, Split, Title, Image, Link } from 'components'
-import { contact as head } from 'data/seo'
+import contactImage from 'public/stephanie-cannon-headshot-contact-page-stephanie-cannon.webp'
+import { Page, Container, Wrap, Split, Title, ImageWrap, Link } from 'components'
+import styles from 'styles/pages/contact.module.scss'
 import { useEffect, useState, useRef } from 'react'
+import { imageProps, contact } from 'scripts'
+import { contact as head } from 'data/seo'
 import { useForm } from 'react-hook-form'
 import { FormRow } from 'components/ui'
-import styles from 'styles/pages/contact.module.scss'
-import { createImageSrc } from 'scripts'
+import Image from 'next/image'
 
 export default function Contact() {
+  const { input, row } = contact
   const formRef = useRef(null)
   const [inProgress, setInProgress] = useState(false)
   const {
@@ -39,8 +42,8 @@ export default function Contact() {
     }).catch((error) => alert(error))
   }
 
-  const input = (title = '', type = 'text') => ({ type, name: title, id: title })
   const variant = 'yellow'
+
   const pageProps = {
     footer: variant,
     menu: variant,
@@ -57,17 +60,6 @@ export default function Contact() {
     name: 'contact',
     method: 'post',
     ref: formRef,
-  }
-
-  function row(data, error, errorMessage = '') {
-    const { name, title, rules } = data
-    return {
-      errorMessage,
-      htmlFor: name,
-      label: title,
-      error,
-      rules,
-    }
   }
 
   const firstNameProps = {
@@ -144,18 +136,18 @@ export default function Contact() {
     className: styles.submit,
     type: 'submit',
   }
-  const contactImageProps = {
-    ...createImageSrc('stephanie-cannon-headshot-contact-page-stephanie-cannon'),
-    border: true,
-    variant,
+
+  const mocapProps = {
+    link: {
+      href: `https://www.voicefox.co.uk/artist/mocap-stephanie-cannon`,
+      target: `_blank`,
+      bold: true,
+    },
+    phone: `+44 7906905202`,
+    email: `info@voicefox.co.uk`,
   }
-  const mocapLinkProps = {
-    href: 'https://www.voicefox.co.uk/artist/mocap-stephanie-cannon',
-    target: '_blank',
-    bold: true,
-  }
-  const mocapPhone = `+44 7906905202`
-  const mocapEmail = `info@voicefox.co.uk`
+
+  imageProps.src = contactImage
 
   return (
     <Page {...pageProps}>
@@ -192,17 +184,17 @@ export default function Contact() {
                 </FormRow>
               </form>
             </div>
-            <div>
-              <Image {...contactImageProps} />
-            </div>
+            <ImageWrap>
+              <Image {...imageProps} alt="Stephanie Cannon friendly contact image, head tilted slightly to the right" />
+            </ImageWrap>
           </Split>
           <p>For Motion Capture Projects contact Emily at:</p>
           <p>
-            <Link {...mocapLinkProps}>Voicefox.co.uk</Link>
+            <Link {...mocapProps.link}>Voicefox.co.uk</Link>
             <br />
-            <Link href={'mailto:' + mocapEmail}>{mocapEmail}</Link>
+            <Link href={'mailto:' + mocapProps.email}>{mocapProps.email}</Link>
             <br />
-            <Link href={'tel:' + mocapPhone}>{mocapPhone}</Link>
+            <Link href={'tel:' + mocapProps.phone}>{mocapProps.phone}</Link>
           </p>
         </Wrap>
       </Container>

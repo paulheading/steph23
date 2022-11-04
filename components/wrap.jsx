@@ -6,3 +6,5 @@ export function Wrap({ className, children }) {
 
   return <div className={wrapClasses}>{children}</div>
 }
+
+export * from 'components/wrap/image'

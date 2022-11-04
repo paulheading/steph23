@@ -1,12 +1,16 @@
+import demosImage from 'public/stephanie-cannon-headphones-pic2-demos.webp'
 import { useState } from 'react'
 import { all } from 'data/demos'
-import { Page, Content, Title, Split, Image } from 'components'
+import { Page, Content, Title, Split, ImageWrap } from 'components'
 import { Playlist } from 'components/ui'
 import { demos } from 'data/seo'
 import styles from 'styles/pages/demos.module.scss'
-import { createImageSrc } from 'scripts'
+import { imageProps } from 'scripts'
+import Image from 'next/image'
 
 export default function Demos() {
+  imageProps.src = demosImage
+
   const [active, setActive] = useState(null)
   const [openID, setOpenID] = useState(null)
   const handleSetActive = (track) => setActive(track)
@@ -45,12 +49,6 @@ export default function Demos() {
     })
   }
 
-  const imageProps = {
-    ...createImageSrc('stephanie-cannon-headphones-pic2-demos'),
-    border: true,
-    variant,
-  }
-
   return (
     <Page {...pageProps}>
       <Content {...contentProps}>
@@ -61,9 +59,9 @@ export default function Demos() {
             <p>As a trained actor, I’m proficient with crafting characters and accents. I’m also a skilled improviser, but am equally comfortable taking direction.</p>
             <p>I can deliver professional and friendly voices for e-learning or corporate reads, characters for radio drama and games, or child voices for animation and audiobooks.</p>
           </div>
-          <div>
-            <Image {...imageProps} />
-          </div>
+          <ImageWrap>
+            <Image {...imageProps} alt="Stephanie Cannon wearing headphones and smiling broadly" />
+          </ImageWrap>
         </Split>
         <Split className={styles.split_playlists}>
           <div className={styles.column}>{oddPlaylists(1)}</div>

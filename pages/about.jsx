@@ -1,24 +1,27 @@
-import { Page, Container, Wrap, Title, Image } from 'components'
-import { about as head } from 'data/seo'
+import aboutImage from 'public/stephanie-cannon-american-female-actor-voiceover-cyclist-environmentalist.webp'
 import styles from 'styles/pages/about.module.scss'
-import { createImageSrc } from 'scripts'
+import { Page, Container, Wrap, Title, ImageWrap } from 'components'
+import { about as head } from 'data/seo'
+import { imageProps } from 'scripts'
+import Image from 'next/image'
 
 export default function About() {
-  const imageProps = {
-    ...createImageSrc('stephanie-cannon-american-female-actor-voiceover-cyclist-environmentalist'),
-    className: styles.image,
-    border: true,
-  }
+  imageProps.src = aboutImage
+  const variant = 'green'
+
   const containerProps = {
     className: 'display-flow-root',
-    variant: 'green',
     top: true,
+    variant,
   }
+
   return (
     <Page head={head}>
       <Container {...containerProps}>
         <Wrap className={styles.wrap}>
-          <Image {...imageProps} />
+          <ImageWrap className={styles.image}>
+            <Image {...imageProps} alt="Stephanie Cannon standing with her bicycle gazing up towards the sky" />
+          </ImageWrap>
           <div className={styles.copy}>
             <Title>About</Title>
             <p>A dedicated and professional US voice, you’ll feel a special spark working with me.</p>

@@ -1,19 +1,12 @@
 @import 'styles/mixins';
 
 .container {
+  border: 0.125rem solid currentColor;
   border-radius: 1rem;
   overflow: hidden;
   font-size: 0;
 
   @include brand using($color, $variant) {
     background-color: brand($color, light);
-  }
-}
-
-.container.border {
-  border: 0.125rem solid;
-
-  @include brand using($color, $variant) {
-    border-color: brand($color, dark);
   }
 }

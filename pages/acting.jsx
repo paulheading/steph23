@@ -1,8 +1,11 @@
-import { Page, Content, Split, Title, Image } from 'components'
+import headshotImage from 'public/stephanie-cannon-headshot-acting-page.webp'
+import fullbodyImage from 'public/stephanie-cannon-full-body-pic-female-american-actor.webp'
+import { Page, Content, Split, Title, ImageWrap } from 'components'
 import { Mocap } from 'components/sections'
 import { acting as head } from 'data/seo'
 import styles from 'styles/pages/acting.module.scss'
-import { createImageSrc } from 'scripts'
+import { imageProps } from 'scripts'
+import Image from 'next/image'
 
 export default function Acting() {
   const variant = 'cream'
@@ -15,17 +18,13 @@ export default function Acting() {
     top: true,
     variant,
   }
-  const imageProps = {
-    border: true,
-    variant,
-  }
   const headshotProps = {
-    ...createImageSrc('stephanie-cannon-headshot-acting-page'),
     ...imageProps,
+    src: headshotImage,
   }
-  const fullBodyProps = {
-    ...createImageSrc('stephanie-cannon-full-body-pic-female-american-actor'),
+  const fullbodyProps = {
     ...imageProps,
+    src: fullbodyImage,
   }
   return (
     <Page {...pageProps}>
@@ -38,7 +37,9 @@ export default function Acting() {
               Shakespeare, Contemporary Drama or Improvisational Comedy.
             </p>
           </div>
-          <Image {...headshotProps} />
+          <ImageWrap>
+            <Image {...headshotProps} alt="Stephanie Cannon headshot, pleasantly smiling in a pink cardigan" />
+          </ImageWrap>
         </Split>
         <Split swap className={styles.second_row}>
           <div>
@@ -52,7 +53,9 @@ export default function Acting() {
               <li>The Actors Centre – classes for accents, scene work, & character creation</li>
             </ul>
           </div>
-          <Image {...fullBodyProps} />
+          <ImageWrap>
+            <Image {...fullbodyProps} alt="Stephanie Cannon full body image, taken in a studio" />
+          </ImageWrap>
         </Split>
         <Mocap />
       </Content>

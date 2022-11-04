@@ -1,8 +1,10 @@
-import { homepage } from 'data/playlist'
-import { Container, Wrap, Split, Title, Image as Portrait, Link } from 'components'
-import { Player } from 'components/ui'
+import { Container, Wrap, Split, Title, ImageWrap, Link } from 'components'
 import styles from 'styles/components/sections/studio.module.scss'
-import { createImageSrc } from 'scripts'
+import studioImage from 'public/studio.webp'
+import { homepage } from 'data/playlist'
+import { Player } from 'components/ui'
+import { imageProps } from 'scripts'
+import Image from 'next/image'
 
 export function Studio({ active, setActive, variant }) {
   const handleSetActive = (track) => setActive(track)
@@ -15,12 +17,10 @@ export function Studio({ active, setActive, variant }) {
     active,
   }
 
-  const imageProps = {
-    ...createImageSrc('studio'),
-    height: 360,
-    width: 270,
-    variant,
-  }
+  imageProps.src = studioImage
+  imageProps.height = 360
+  imageProps.width = 270
+
   const containerProps = {
     section: false,
     id: 'studio',
@@ -61,7 +61,9 @@ export function Studio({ active, setActive, variant }) {
           </div>
           <div className={styles.sample}>
             <Player {...playerProps} />
-            <Portrait {...imageProps} />
+            <ImageWrap>
+              <Image {...imageProps} alt="Stephanie Cannon smiling in a pink cardigan with her head tilted to the left" />
+            </ImageWrap>
           </div>
         </Split>
       </Wrap>
