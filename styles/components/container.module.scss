@@ -47,6 +47,7 @@
 
 .container.footer {
   color: brand('cream');
+
   @include brand using ($color, $variant) {
     background-color: brand($color, dark);
   }

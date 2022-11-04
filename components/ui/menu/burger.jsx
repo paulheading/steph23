@@ -40,13 +40,11 @@ export function Burger({ toggleMenu, variant = 'green' }) {
 
   return (
     <Fragment>
-      <Wrap className={styles.wrap}>
-        <div></div>
-        {/* <Logo className={styles.logo} /> */}
+      <div className={styles.wrap}>
         <button {...buttonProps}>
           <HiMenu className={styles.HiMenu} />
         </button>
-      </Wrap>
+      </div>
       <div className={styles.container}>
         <div {...overlayProps}>
           <Container fill="false">
