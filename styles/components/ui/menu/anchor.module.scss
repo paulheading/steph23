@@ -8,6 +8,15 @@
   line-height: $line-height-menu;
   text-decoration: none;
   display: block;
+
+  @include medium-down {
+    &.active {
+      @include brand using ($color, $variant) {
+        background-color: brand($color, light);
+        color: brand($color, dark);
+      }
+    }
+  }
 }
 
 .anchor {
@@ -37,6 +46,7 @@
 
 .dropdown_anchor {
   @include setup-anchor;
+  outline: none;
 
   @include medium-down {
     @include text-overflow;
@@ -55,7 +65,6 @@
     @include brand using ($color, $variant) {
       @include focus {
         background-color: brand($color, hover);
-        outline: none;
       }
     }
   }

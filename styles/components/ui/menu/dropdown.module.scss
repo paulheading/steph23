@@ -24,6 +24,13 @@
     display: grid;
     width: 100%;
     gap: 1rem;
+
+    @include brand using ($color, $variant) {
+      &.active {
+        background-color: brand($color, light);
+        color: brand($color, dark);
+      }
+    }
   }
 
   @include medium-up {
