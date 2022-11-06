@@ -248,9 +248,9 @@
 
 @mixin mobile-menu-title {
   @include medium-down {
+    padding: $padding-menu--desktop;
     font-weight: bold;
     font-size: 2rem;
-    padding: 0.5rem;
   }
 }
 

@@ -50,6 +50,8 @@
 
   @include medium-down {
     @include text-overflow;
+    padding-right: $padding-menu--mobile;
+    padding-left: $padding-menu--mobile;
     font-size: 1.25rem;
     font-weight: bold;
   }

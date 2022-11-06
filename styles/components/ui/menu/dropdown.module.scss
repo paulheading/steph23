@@ -68,7 +68,6 @@
 
 .list {
   @include reset-list;
-  padding: $padding-menu--mobile;
 
   @include medium-down {
     border-top: 1px solid currentColor;
@@ -76,6 +75,7 @@
 
   @include medium-up {
     border-radius: $border-radius-menu * 0.8;
+    padding: $padding-menu--mobile;
     top: $line-height-menu + 1rem;
     white-space: nowrap;
     position: absolute;
