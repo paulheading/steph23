@@ -34,7 +34,6 @@ export function Burger({ variant = 'green' }) {
             <ul className={styles.list}>
               {menu.map((item, index) => {
                 const props = {
-                  active: isRouteActive(item.href, route),
                   openDropDownID,
                   setDropDownID,
                   variant,

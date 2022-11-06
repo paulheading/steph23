@@ -40,7 +40,11 @@ function mapHrefs(menu) {
   return menu.map((item) => {
     const isHome = item.title === 'Home'
     const hasItems = item.items
-    const createHref = (title) => `/${title.toLowerCase().replace(' ', '-').replace('/', '-')}`
+
+    function createHref(title) {
+      const result = title.toLowerCase().replace(' ', '-').replace('/', '-')
+      return title.charAt(0) === '#' ? result : '/' + result
+    }
 
     if (!isHome || !hasItems) item.href = createHref(item.title)
 

@@ -1,11 +1,13 @@
 import styles from 'styles/components/ui/menu/dropdown.module.scss'
 import { MdArrowDropDown } from 'react-icons/md'
 import { Anchor } from 'components/ui/menu/anchor'
-import { attachVariant } from 'scripts'
+import { attachVariant, isRouteActive } from 'scripts'
+import { useRouter } from 'next/router'
 
-export function Dropdown({ title, items, active, variant, openDropDownID, setDropDownID, index }) {
+export function Dropdown({ title, href, items, active, variant, openDropDownID, setDropDownID, index }) {
+  const { route } = useRouter()
   const variantClass = attachVariant(variant, styles)
-  const activeClass = active ? styles.active : ''
+  const activeClass = isRouteActive(href, route, true) ? styles.active : ''
   const isOpen = openDropDownID === index
   const openClass = isOpen ? styles.open : ''
   const buttonClasses = `${styles.button} ${activeClass} ${variantClass} ${openClass}`

@@ -1,7 +1,6 @@
 @import 'styles/mixins';
 
-.container {
-  border: 0.125rem solid currentColor;
+@mixin container {
   border-radius: 1rem;
   overflow: hidden;
   max-width: 65vw;
@@ -10,4 +9,13 @@
   @include brand using($color, $variant) {
     background-color: brand($color, light);
   }
+}
+
+.container {
+  @include container;
+}
+
+.container_border {
+  @include container;
+  border: 0.125rem solid currentColor;
 }

@@ -10,8 +10,6 @@ export function Menu({ variant }) {
   const { route } = useRouter()
   const navRef = useRef(null)
 
-  console.log('menu: ', menu)
-
   useEffect(() => {
     if (!navRef.current || !openDropDownID) return
     window.addEventListener('click', function (event) {

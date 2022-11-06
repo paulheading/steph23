@@ -31,6 +31,11 @@ export function Studio({ active, setActive, variant }) {
     variant,
   }
 
+  const wrapProps = {
+    width: studioProps.width,
+    border: false,
+  }
+
   return (
     <Container {...containerProps}>
       <Wrap>
@@ -64,7 +69,7 @@ export function Studio({ active, setActive, variant }) {
           </div>
           <div className={styles.sample}>
             <Player {...playerProps} />
-            <ImageWrap width={studioProps.width}>
+            <ImageWrap {...wrapProps}>
               <Image {...studioProps} alt="Stephanie Cannon smiling in a pink cardigan with her head tilted to the left" />
             </ImageWrap>
           </div>
