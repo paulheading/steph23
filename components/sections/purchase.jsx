@@ -42,14 +42,19 @@ export function Purchase() {
     variant,
   }
 
+  const linkProps = {
+    target: '_blank',
+    bold: true,
+  }
+
   const ukProps = {
     href: `https://www.audible.co.uk/search?keywords=stephanie+cannon&sort=pubdate-desc-rank&ref=a_search_c1_sort_1&pf_rd_p=56a637ed-6f1b-4758-8d02-5bcd48128c1f&pf_rd_r=XA5THSAB7EKDPB395RCT`,
-    bold: true,
+    ...linkProps,
   }
 
   const usProps = {
     href: `https://www.audible.com/search?k=stephanie+cannon&keywords=stephanie+cannon&ref-override=a_hp_t1_header_search&sort=pubdate-desc-rank&ref=a_search_c1_sort_1&pf_rd_p=073d8370-97e5-4b7b-be04-aa06cf22d7dd&pf_rd_r=PBQ1RXBVNE8RRSKE066E`,
-    bold: true,
+    ...linkProps,
   }
 
   return (

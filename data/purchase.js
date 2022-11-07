@@ -180,7 +180,7 @@ const portfolio = [
   },
   {
     href: `https://www.audible.co.uk/pd/Strange-Things-Done-Audiobook/B077BL7Y65?qid=1652729837&sr=1-1&ref=a_search_c3_lProduct_1_1&pf_rd_p=c6e316b8-14da-418d-8f91-b3cad83c5183&pf_rd_r=YJHKP1ZQH2SMBYBB8VHK`,
-    src: path(`-crop image to square-stephanie-cannon-us-audiobook-narrator-thriller-strange-things-done-cover-art.webp`),
+    src: path(`stephanie-cannon-us-audiobook-narrator-thriller-strange-things-done-cover-art.webp`),
   },
   {
     href: `https://www.audible.co.uk/pd/The-Bench-Audiobook/1405545615?qid=1649795670&sr=1-14&ref=a_search_c3_lProduct_1_14&pf_rd_p=c6e316b8-14da-418d-8f91-b3cad83c5183&pf_rd_r=KVPH6JJEC2SFP9MG0QTH`,

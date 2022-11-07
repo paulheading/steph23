@@ -6,6 +6,12 @@ export function Affiliations() {
     className: styles.container,
     variant: 'yellow',
   }
+
+  const linkProps = {
+    target: '_blank',
+    bold: true,
+  }
+
   return (
     <Container {...containerProps}>
       <Wrap className="margin-bottom-1">
@@ -14,17 +20,17 @@ export function Affiliations() {
       </Wrap>
       <ul className={styles.list}>
         <li>
-          <Link bold href="https://www.equity.org.uk/">
+          <Link {...linkProps} href="https://www.equity.org.uk/">
             British Actors Equity
           </Link>
         </li>
         <li>
-          <Link bold href="https://www.audiopub.org/">
+          <Link {...linkProps} href="https://www.audiopub.org/">
             Audio Publishers Association
           </Link>
         </li>
         <li>
-          <Link bold href="https://www.pronarrators.org/">
+          <Link {...linkProps} href="https://www.pronarrators.org/">
             Professional Audiobooks Narrators Association
           </Link>
         </li>

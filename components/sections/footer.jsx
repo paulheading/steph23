@@ -26,7 +26,7 @@ export function Footer({ variant }) {
             <Link target="_blank" href="https://www.facebook.com/stephanie.cannon.7927">
               <Facebook />
             </Link>
-            <Link target="_blank" href="https://www.facebook.com/stephanie.cannon.7927">
+            <Link target="_blank" href="https://www.instagram.com/sparkthecannon/">
               <Instagram />
             </Link>
           </div>
