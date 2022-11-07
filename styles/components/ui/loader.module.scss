@@ -1,0 +1,115 @@
+@import 'styles/mixins';
+
+$offset: 0.875rem;
+$animation-setup: 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+@mixin inline-block($align: middle) {
+  vertical-align: $align;
+  display: inline-block;
+}
+
+@mixin loading-icon($size: 0.75rem) {
+  @include inline-block;
+  @include size($size);
+  border-radius: 50%;
+  position: absolute;
+  content: '';
+}
+
+@mixin wrap-size($size) {
+  width: $size * 1.5;
+  height: $size;
+}
+
+.wrap {
+  @include wrap-size(6.5rem);
+  @include inset;
+  padding-bottom: 2rem;
+  position: absolute;
+  padding-top: 2rem;
+  margin: auto;
+  top: 3rem;
+}
+
+.icon {
+  @include inline-block;
+  position: relative;
+
+  &:not(:last-child) {
+    margin-right: $offset * 1.75;
+  }
+
+  @include brand using ($color, $variant) {
+    &::before {
+      background-color: darken(brand($color), 30%);
+    }
+    &::after {
+      background-color: lighten(brand($color), 30%);
+    }
+  }
+
+  &:before {
+    @include loading-icon;
+    animation: animation-before $animation-setup;
+  }
+
+  &:after {
+    @include loading-icon;
+    animation: animation-after $animation-setup;
+  }
+
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      &:before,
+      &:after {
+        animation-delay: #{$i * 0.2}s;
+      }
+    }
+  }
+}
+
+@keyframes animation-before {
+  0% {
+    top: -$offset;
+    z-index: 2;
+  }
+  25% {
+    transform: scale(1.25);
+    z-index: 2;
+  }
+  50% {
+    top: $offset;
+    z-index: 1;
+  }
+  75% {
+    transform: scale(0.75);
+    z-index: 1;
+  }
+  100% {
+    top: -$offset;
+    z-index: 2;
+  }
+}
+
+@keyframes animation-after {
+  0% {
+    top: $offset;
+    z-index: 1;
+  }
+  25% {
+    transform: scale(0.75);
+    z-index: 1;
+  }
+  50% {
+    top: -$offset;
+    z-index: 2;
+  }
+  75% {
+    transform: scale(1.25);
+    z-index: 2;
+  }
+  100% {
+    top: $offset;
+    z-index: 2;
+  }
+}
