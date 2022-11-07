@@ -46,7 +46,7 @@ export function Hero() {
       <Wrap className={styles.wrap}>
         <Logo className={styles.logo} />
         <div className={styles.animation}>
-          {!imagesReady && <Loader variant={variant} />}
+          {!imagesReady && <Loader />}
           <div style={{ visibility: !imagesReady && 'hidden' }}>
             <div className={styles.steph}>
               <Image {...stephProps} alt="" />

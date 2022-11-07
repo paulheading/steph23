@@ -1,107 +1,26 @@
 @import 'styles/mixins';
 
-@mixin loading-icon($size: 0.75rem) {
-  @include inline-block;
-  @include size($size);
+$size-loader: 6rem;
+
+.container {
+  @include size($size-loader);
+  @include inset;
+  animation: animation 1s ease-in infinite;
+  background-color: white;
+  box-sizing: border-box;
+  display: inline-block;
   border-radius: 50%;
   position: absolute;
-  content: '';
-}
-
-@mixin wrap-size($size) {
-  width: $size * 1.5;
-  height: $size;
-}
-
-.wrap {
-  @include wrap-size(6.5rem);
-  @include inset;
-  padding-bottom: 2rem;
-  position: absolute;
-  padding-top: 2rem;
   margin: auto;
-  top: 3rem;
 }
 
-.icon {
-  @include inline-block;
-  position: relative;
-
-  &:not(:last-child) {
-    margin-right: $margin-loader * 1.75;
-  }
-
-  @include brand using ($color, $variant) {
-    &::before {
-      background-color: shade(brand($color), 55%);
-    }
-    &::after {
-      background-color: tint(brand($color), 55%);
-    }
-  }
-
-  &:before {
-    @include loading-icon;
-    animation: animation-before $ease-loader;
-  }
-
-  &:after {
-    @include loading-icon;
-    animation: animation-after $ease-loader;
-  }
-
-  @for $i from 1 through 10 {
-    &:nth-child(#{$i}) {
-      &:before,
-      &:after {
-        animation-delay: #{$i * 0.2}s;
-      }
-    }
-  }
-}
-
-@keyframes animation-before {
+@keyframes animation {
   0% {
-    top: -$margin-loader;
-    z-index: 2;
-  }
-  25% {
-    transform: scale(1.25);
-    z-index: 2;
-  }
-  50% {
-    top: $margin-loader;
-    z-index: 1;
-  }
-  75% {
-    transform: scale(0.75);
-    z-index: 1;
+    transform: scale(0);
+    opacity: 1;
   }
   100% {
-    top: -$margin-loader;
-    z-index: 2;
-  }
-}
-
-@keyframes animation-after {
-  0% {
-    top: $margin-loader;
-    z-index: 1;
-  }
-  25% {
-    transform: scale(0.75);
-    z-index: 1;
-  }
-  50% {
-    top: -$margin-loader;
-    z-index: 2;
-  }
-  75% {
-    transform: scale(1.25);
-    z-index: 2;
-  }
-  100% {
-    top: $margin-loader;
-    z-index: 2;
+    transform: scale(1);
+    opacity: 0;
   }
 }
