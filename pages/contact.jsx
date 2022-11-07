@@ -1,5 +1,6 @@
 import contactImage from 'public/stephanie-cannon-headshot-contact-page-stephanie-cannon.webp'
 import { Page, Container, Wrap, Split, Title, ImageWrap, Link } from 'components'
+import layout from 'styles/components/layouts/demos.module.scss'
 import styles from 'styles/pages/contact.module.scss'
 import { useEffect, useState, useRef } from 'react'
 import { imageProps, contact } from 'scripts'
@@ -161,7 +162,7 @@ export default function Contact() {
             </small>
           </p>
           <Split className={styles.split}>
-            <div>
+            <div className={layout.copy}>
               <form {...formProps}>
                 <FormRow {...firstNameProps.row}>
                   <input {...register(firstNameProps.name, firstNameProps.rules)} {...firstNameProps.input} />

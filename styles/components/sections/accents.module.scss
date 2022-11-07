@@ -1,7 +1,17 @@
 @import 'styles/mixins';
 
+.container {
+  @include medium-up {
+    text-align: center;
+  }
+}
+
 .region {
-  margin-top: 4rem;
+  margin-top: 2rem;
+
+  @include medium-up {
+    margin-top: 4rem;
+  }
 
   @include large-up {
     grid-template-columns: 15.625rem auto;
@@ -70,7 +80,8 @@
 .place {
   @include large-down {
     display: inline-block;
+    margin-right: 0.5rem;
     white-space: nowrap;
-    margin: 0.25rem;
+    margin-top: 0.25rem;
   }
 }

@@ -1,5 +1,5 @@
 import styles from 'styles/components/sections/affiliations.module.scss'
-import { Content, Wrap, Title } from 'components'
+import { Container, Wrap, Title } from 'components'
 
 function Link({ href, children }) {
   const props = {
@@ -14,13 +14,12 @@ function Link({ href, children }) {
 }
 
 export function Affiliations() {
-  const contentProps = {
-    className: 'text-align-center',
+  const containerProps = {
+    className: styles.container,
     variant: 'yellow',
-    wrap: false,
   }
   return (
-    <Content {...contentProps}>
+    <Container {...containerProps}>
       <Wrap className="margin-bottom-1">
         <Title>Affiliations</Title>
         <p>I am a proud member of</p>
@@ -36,6 +35,6 @@ export function Affiliations() {
           <Link href="https://www.pronarrators.org/">Professional Audiobooks Narrators Association</Link>
         </li>
       </ul>
-    </Content>
+    </Container>
   )
 }

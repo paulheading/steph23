@@ -1,15 +1,13 @@
 import { audioDescription as data } from 'data/demos'
-import { Title } from 'components'
 import Layout from 'components/layouts/demos'
+import { Title } from 'components'
 import { demos } from 'data/seo'
 
 export default function AudioDescription() {
+  const { video } = data
   const props = {
-    video: {
-      title: 'stephanie-cannon-us-audio-description-ad-drama-film-the-imitation-game-video',
-      src: '759506581?h=ab6d58ff2a',
-    },
     head: demos.adr,
+    video,
     data,
   }
   return (

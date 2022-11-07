@@ -1,7 +1,12 @@
 @import 'styles/mixins';
 
+.container {
+  @include medium-up {
+    text-align: center;
+  }
+}
+
 .list {
-  justify-content: center;
   list-style: inside;
   flex-wrap: wrap;
   display: flex;
@@ -9,12 +14,16 @@
   margin: 0;
   gap: 1rem;
 
+  @include medium-up {
+    justify-content: center;
+  }
+
   li {
     &:first-child {
       list-style: none;
     }
 
-    @include large-down {
+    @include medium-down {
       list-style: none;
     }
   }

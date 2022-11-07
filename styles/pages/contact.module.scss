@@ -1,14 +1,22 @@
 @import 'styles/mixins';
 
 .wrap {
-  text-align: center;
-  max-width: 704px;
+  max-width: 44rem;
+
+  @include medium-up {
+    text-align: center;
+  }
 }
 
 .split {
-  margin-bottom: 4rem;
-  margin-top: 4rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
   text-align: left;
+
+  @include medium-up {
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+  }
 }
 
 .mocap_logo {

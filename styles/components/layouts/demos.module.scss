@@ -1,0 +1,23 @@
+@import 'styles/mixins';
+
+.copy {
+  @include medium-down {
+    margin-bottom: 2rem;
+  }
+}
+
+.video {
+  margin-top: 4rem;
+
+  @include medium-down {
+    margin-top: 2rem;
+  }
+}
+
+.caption {
+  margin-top: 2rem;
+
+  @include medium-up {
+    text-align: center;
+  }
+}
