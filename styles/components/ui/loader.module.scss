@@ -1,21 +1,5 @@
 @import 'styles/mixins';
 
-$offset: 0.875rem;
-$animation-setup: 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-
-@mixin inline-block($align: middle) {
-  vertical-align: $align;
-  display: inline-block;
-}
-
-@function tint($color, $percentage) {
-  @return mix(white, $color, $percentage);
-}
-
-@function shade($color, $percentage) {
-  @return mix(black, $color, $percentage);
-}
-
 @mixin loading-icon($size: 0.75rem) {
   @include inline-block;
   @include size($size);
@@ -44,7 +28,7 @@ $animation-setup: 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   position: relative;
 
   &:not(:last-child) {
-    margin-right: $offset * 1.75;
+    margin-right: $margin-loader * 1.75;
   }
 
   @include brand using ($color, $variant) {
@@ -58,12 +42,12 @@ $animation-setup: 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
   &:before {
     @include loading-icon;
-    animation: animation-before $animation-setup;
+    animation: animation-before $ease-loader;
   }
 
   &:after {
     @include loading-icon;
-    animation: animation-after $animation-setup;
+    animation: animation-after $ease-loader;
   }
 
   @for $i from 1 through 10 {
@@ -78,7 +62,7 @@ $animation-setup: 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
 @keyframes animation-before {
   0% {
-    top: -$offset;
+    top: -$margin-loader;
     z-index: 2;
   }
   25% {
@@ -86,7 +70,7 @@ $animation-setup: 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     z-index: 2;
   }
   50% {
-    top: $offset;
+    top: $margin-loader;
     z-index: 1;
   }
   75% {
@@ -94,14 +78,14 @@ $animation-setup: 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     z-index: 1;
   }
   100% {
-    top: -$offset;
+    top: -$margin-loader;
     z-index: 2;
   }
 }
 
 @keyframes animation-after {
   0% {
-    top: $offset;
+    top: $margin-loader;
     z-index: 1;
   }
   25% {
@@ -109,7 +93,7 @@ $animation-setup: 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     z-index: 1;
   }
   50% {
-    top: -$offset;
+    top: -$margin-loader;
     z-index: 2;
   }
   75% {
@@ -117,7 +101,7 @@ $animation-setup: 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     z-index: 2;
   }
   100% {
-    top: $offset;
+    top: $margin-loader;
     z-index: 2;
   }
 }

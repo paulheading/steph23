@@ -4,6 +4,10 @@
   max-width: 50rem;
 }
 
+.message {
+  @include split-copy;
+}
+
 .split {
   @include large-up {
     grid-template-columns: 19rem auto;

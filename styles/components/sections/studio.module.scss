@@ -5,7 +5,7 @@
 }
 
 .message {
-  text-align: left;
+  @include split-copy;
 }
 
 .sample {

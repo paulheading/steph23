@@ -1,9 +1,7 @@
 @import 'styles/mixins';
 
 .copy {
-  @include medium-down {
-    margin-bottom: 2rem;
-  }
+  @include split-copy;
 }
 
 .video {

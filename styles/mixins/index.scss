@@ -274,3 +274,22 @@
     }
   }
 }
+
+@mixin inline-block($align: middle) {
+  vertical-align: $align;
+  display: inline-block;
+}
+
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+@mixin split-copy {
+  @include medium-down {
+    margin-bottom: 2rem;
+  }
+}
