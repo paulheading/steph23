@@ -3,7 +3,7 @@
 @mixin container {
   border-radius: 1rem;
   overflow: hidden;
-  max-width: 65vw;
+  max-width: 60vw;
   font-size: 0;
 
   @include brand using($color, $variant) {
