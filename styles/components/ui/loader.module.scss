@@ -8,6 +8,14 @@ $animation-setup: 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   display: inline-block;
 }
 
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
 @mixin loading-icon($size: 0.75rem) {
   @include inline-block;
   @include size($size);
@@ -41,10 +49,10 @@ $animation-setup: 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
   @include brand using ($color, $variant) {
     &::before {
-      background-color: darken(brand($color), 30%);
+      background-color: shade(brand($color), 55%);
     }
     &::after {
-      background-color: lighten(brand($color), 30%);
+      background-color: tint(brand($color), 55%);
     }
   }
 
