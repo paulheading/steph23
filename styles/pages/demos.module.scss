@@ -1,17 +1,35 @@
 @import 'styles/mixins';
 
-.split_intro {
-  grid-template-columns: auto 20rem;
-}
-
-.split_playlists {
-  margin-top: 4rem;
-}
-
-.column {
+@mixin column {
   align-items: flex-start;
   display: grid;
   gap: 1rem;
+}
+
+.intro {
+  grid-template-columns: auto 20rem;
+  margin-bottom: 2rem;
+
+  @include medium-up {
+    margin-bottom: 4rem;
+  }
+}
+
+.copy {
+  @include medium-down {
+    margin-bottom: 2rem;
+  }
+}
+
+.odds {
+  @include column;
+  @include medium-down {
+    margin-bottom: 1rem;
+  }
+}
+
+.evens {
+  @include column;
 }
 
 .caption {

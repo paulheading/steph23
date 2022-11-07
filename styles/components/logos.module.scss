@@ -14,13 +14,13 @@
 .children svg {
   vertical-align: middle;
   display: inline-block;
+  margin: 0.75rem;
 
   @include small-up {
     margin: 1rem 2rem;
   }
 
   @include small-down {
-    transform: scale(0.8);
-    margin: 0.5rem;
+    transform: scale(0.9);
   }
 }

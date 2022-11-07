@@ -52,8 +52,8 @@ export default function Demos() {
   return (
     <Page {...pageProps}>
       <Content {...contentProps}>
-        <Split className={styles.split_intro}>
-          <div>
+        <Split className={styles.intro}>
+          <div className={styles.copy}>
             <Title>Demos</Title>
             <p>I’m an award nominated voice actor with over 20 years experience, working in almost every area of the industry. I have a smooth, engaging voice with a US/transatlantic accent.</p>
             <p>As a trained actor, I’m proficient with crafting characters and accents. I’m also a skilled improviser, but am equally comfortable taking direction.</p>
@@ -63,9 +63,9 @@ export default function Demos() {
             <Image {...imageProps} alt="Stephanie Cannon wearing headphones and smiling broadly" />
           </ImageWrap>
         </Split>
-        <Split className={styles.split_playlists}>
-          <div className={styles.column}>{oddPlaylists(1)}</div>
-          <div className={styles.column}>{oddPlaylists(0)}</div>
+        <Split className={styles.playlists}>
+          <div className={styles.odds}>{oddPlaylists(1)}</div>
+          <div className={styles.evens}>{oddPlaylists(0)}</div>
         </Split>
       </Content>
     </Page>

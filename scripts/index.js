@@ -51,3 +51,4 @@ export const contact = {
 }
 
 export * from 'scripts/overlay'
+export * from 'scripts/sparkle'

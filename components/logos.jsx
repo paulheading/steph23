@@ -5,7 +5,6 @@ export function Logos({ title, children }) {
   const containerProps = {
     className: styles.container,
     variant: 'cream',
-    section: false,
   }
   return (
     <Container {...containerProps}>

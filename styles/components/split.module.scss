@@ -1,14 +1,6 @@
 @import 'styles/mixins';
 
-$gap-split: 4rem;
-
 @mixin setup-container {
-  @include medium-down {
-    > div:nth-child(1) {
-      margin-bottom: $gap-split;
-    }
-  }
-
   &.swap {
     @include medium-up {
       > div {
@@ -29,8 +21,8 @@ $gap-split: 4rem;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: flex-start;
-    gap: $gap-split;
     display: grid;
+    gap: 4rem;
   }
 }
 

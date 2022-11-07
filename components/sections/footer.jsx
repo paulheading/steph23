@@ -5,7 +5,6 @@ import { Spotlight, Twitter, LinkedIn, Facebook, Instagram } from 'logos'
 export function Footer({ variant }) {
   const containerProps = {
     className: styles.container,
-    section: false,
     padding: false,
     footer: true,
     variant,

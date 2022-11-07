@@ -1,11 +1,11 @@
 import styles from 'styles/components/sections/hero.module.scss'
-import { useEffect, useState } from 'react'
 import { Container, Wrap, Logo } from 'components'
-import { Loader } from 'components/ui'
+import { useEffect, useState } from 'react'
 import sparkImage from 'public/spark3.webp'
 import stephImage from 'public/steph.webp'
+import { Loader } from 'components/ui'
+import { sparkle } from 'scripts'
 import Image from 'next/image'
-import gsap from 'gsap'
 
 export function Hero() {
   const [sparkReady, setSparkReady] = useState(false)
@@ -14,7 +14,6 @@ export function Hero() {
   const variant = 'green'
   const containerProps = {
     className: styles.container,
-    section: false,
     padding: false,
     variant,
   }
@@ -39,8 +38,7 @@ export function Hero() {
 
   useEffect(() => {
     if (!imagesReady) return
-    const tl = gsap.timeline()
-    tl.to('#topSpark', { duration: 0.4, opacity: 1, maskSize: 600 }).to('#topSpark', { duration: 0.8, opacity: 0.3, maskSize: 300, repeat: -1, yoyo: true })
+    sparkle.play()
   }, [imagesReady])
 
   return (

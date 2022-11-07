@@ -31,7 +31,6 @@ export function Testimonials() {
   const variant = 'yellow'
   const length = data.length - 1
   const containerProps = {
-    section: false,
     variant,
   }
   const prevButtonProps = {

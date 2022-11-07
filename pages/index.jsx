@@ -1,16 +1,15 @@
 import { homepage } from 'data/playlist'
 import { useState } from 'react'
-import { Page, Logos, Content } from 'components'
+import { Page, Logos } from 'components'
 import { Hero, Intro, Studio, Testimonials } from 'components/sections'
 import { Adobe, Pixar, Aljazeera, Disney, Sega, Unity, Microsoft, Sony, Audible, BBC, LucasFilm, TwentyFour, Cambridge, Yoto } from 'logos'
 import { home as head } from 'data/seo'
-import Image from 'next/image'
 
 export default function Home() {
   const [active, setActive] = useState(homepage[0])
   const pageProps = {
-    menu: 'green',
     footer: 'cream',
+    menu: 'green',
     head,
   }
   const audioProps = {
@@ -20,11 +19,6 @@ export default function Home() {
   const studioProps = {
     variant: 'red',
     ...audioProps,
-  }
-
-  const contentProps = {
-    variant: 'cream',
-    section: false,
   }
 
   return (

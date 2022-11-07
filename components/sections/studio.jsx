@@ -25,7 +25,6 @@ export function Studio({ active, setActive, variant }) {
   }
 
   const containerProps = {
-    section: false,
     id: 'studio',
     dark: true,
     variant,

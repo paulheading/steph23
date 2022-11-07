@@ -50,7 +50,6 @@ export default function Contact() {
     head,
   }
   const containerProps = {
-    section: false,
     top: true,
     variant,
   }
