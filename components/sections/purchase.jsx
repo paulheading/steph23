@@ -1,9 +1,9 @@
-import { Container, Wrap, Title, Button } from 'components'
 import styles from 'styles/components/sections/purchase.module.scss'
+import { Container, Wrap, Title, Button, Link } from 'components'
+import { RiExternalLinkLine } from 'react-icons/ri'
+import { attachVariant } from 'scripts'
 import purchase from 'data/purchase'
 import { useState } from 'react'
-import { attachVariant } from 'scripts'
-import { RiExternalLinkLine } from 'react-icons/ri'
 
 function Links({ link, index, items, variant }) {
   const { src, href } = link
@@ -27,18 +27,6 @@ function Links({ link, index, items, variant }) {
   )
 }
 
-function Link({ href, children }) {
-  const props = {
-    target: '_blank',
-    href,
-  }
-  return (
-    <a {...props}>
-      <strong>{children}</strong>
-    </a>
-  )
-}
-
 export function Purchase() {
   const [items, setItems] = useState(20)
   const increment = 5
@@ -54,8 +42,15 @@ export function Purchase() {
     variant,
   }
 
-  const audible_uk = `https://www.audible.co.uk/search?keywords=stephanie+cannon&sort=pubdate-desc-rank&ref=a_search_c1_sort_1&pf_rd_p=56a637ed-6f1b-4758-8d02-5bcd48128c1f&pf_rd_r=XA5THSAB7EKDPB395RCT`
-  const audible_us = `https://www.audible.com/search?k=stephanie+cannon&keywords=stephanie+cannon&ref-override=a_hp_t1_header_search&sort=pubdate-desc-rank&ref=a_search_c1_sort_1&pf_rd_p=073d8370-97e5-4b7b-be04-aa06cf22d7dd&pf_rd_r=PBQ1RXBVNE8RRSKE066E`
+  const ukProps = {
+    href: `https://www.audible.co.uk/search?keywords=stephanie+cannon&sort=pubdate-desc-rank&ref=a_search_c1_sort_1&pf_rd_p=56a637ed-6f1b-4758-8d02-5bcd48128c1f&pf_rd_r=XA5THSAB7EKDPB395RCT`,
+    bold: true,
+  }
+
+  const usProps = {
+    href: `https://www.audible.com/search?k=stephanie+cannon&keywords=stephanie+cannon&ref-override=a_hp_t1_header_search&sort=pubdate-desc-rank&ref=a_search_c1_sort_1&pf_rd_p=073d8370-97e5-4b7b-be04-aa06cf22d7dd&pf_rd_r=PBQ1RXBVNE8RRSKE066E`,
+    bold: true,
+  }
 
   return (
     <Container {...containerProps}>
@@ -63,7 +58,7 @@ export function Purchase() {
         <Title>Purchase</Title>
         <Wrap className={styles.wrap_copy}>
           <p>
-            Add to your audiobook listening collection by selecting any of the below titles, or visit <Link href={audible_uk}>audible.co.uk</Link> or <Link href={audible_us}>audible.com</Link> to buy.
+            Add to your audiobook listening collection by selecting any of the below titles, or visit <Link {...ukProps}>audible.co.uk</Link> or <Link {...usProps}>audible.com</Link> to buy.
           </p>
         </Wrap>
         <div className={styles.wrap_links}>
