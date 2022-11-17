@@ -40,6 +40,12 @@ h4 {
 p {
   @include reset-title;
 
+  a {
+    @include focus {
+      outline: none;
+    }
+  }
+
   + p {
     margin-top: 1rem;
   }

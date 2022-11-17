@@ -14,7 +14,7 @@
   box-shadow: 0 0 0 $bg_size $bg, 0 0 0 ($bg_size + $col_size) $col;
 }
 
-@mixin single-box($bg: $white, $size: 0.25rem) {
+@mixin single-box($bg: white, $size: 0.25rem) {
   @include box-setup;
   box-shadow: 0 0 0 $size $bg;
 }

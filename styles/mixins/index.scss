@@ -210,6 +210,53 @@
   outline: none;
 }
 
+@mixin selection-focus($color, $dark: false) {
+  @if $dark {
+    background-color: brand($color);
+    color: brand($color, dark);
+  } @else {
+    background-color: brand($color, dark);
+    color: brand($color);
+  }
+}
+
+@mixin player-button($color, $dark: false) {
+  @if $dark {
+    background-color: brand($color, dark);
+    color: brand($color);
+  } @else {
+    background-color: brand($color);
+    color: brand($color, dark);
+  }
+
+  @include focus {
+    outline-offset: 0.0625rem;
+    outline-width: 0.125rem;
+    outline-style: solid;
+
+    @if $dark {
+      outline-color: brand($color, dark);
+    } @else {
+      outline-color: brand($color);
+    }
+  }
+
+  &.playlist {
+    background-color: white;
+  }
+}
+
+@mixin setup--bar($color) {
+  background-color: $color;
+
+  @include focus-visible {
+    outline-color: $color;
+    outline-style: solid;
+    outline-offset: 2px;
+    outline-width: 2px;
+  }
+}
+
 @mixin anchor-default($color) {
   background-color: brand($color, light);
   color: brand($color, dark);

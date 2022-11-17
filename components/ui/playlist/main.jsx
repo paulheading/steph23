@@ -9,7 +9,8 @@ export function Main({ activePlaylist, playerRef, active, handleSetActive, main,
   const progressRef = useRef(null)
   const playlistClass = playlist ? styles.playlist : ''
   const darkClass = dark ? styles.dark : ''
-  const containerClasses = `${styles.container} ${attachVariant(variant, styles)} ${playlistClass} ${darkClass}`
+  const variantClass = variant ? attachVariant(variant, styles) : ''
+  const containerClasses = `${styles.container} ${variantClass} ${playlistClass} ${darkClass}`
 
   function togglePlay() {
     if (activePlaylist) handleSetActive({ ...active, playing: !active.playing })
@@ -56,6 +57,7 @@ export function Main({ activePlaylist, playerRef, active, handleSetActive, main,
   }
 
   const linkProps = {
+    className: `${styles.link} ${variantClass} ${darkClass}`,
     href: activePlaylist ? active.src : main.src,
     download: true,
   }
@@ -73,7 +75,7 @@ export function Main({ activePlaylist, playerRef, active, handleSetActive, main,
           </button>
         </div>
         <a {...linkProps}>
-          <MdOutlineFileDownload className={styles.download} />
+          <MdOutlineFileDownload className={styles.MdOutlineFileDownload} />
         </a>
       </div>
     </div>

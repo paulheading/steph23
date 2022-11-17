@@ -29,6 +29,8 @@
   overflow: hidden;
 
   @include focus {
+    outline: none;
+
     .overlay {
       opacity: 1;
     }

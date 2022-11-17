@@ -39,6 +39,10 @@
     &.active {
       @include brand using ($color, $variant) {
         @include anchor-focus($color);
+
+        @include focus-visible {
+          // @include anchor-default($color);
+        }
       }
     }
   }

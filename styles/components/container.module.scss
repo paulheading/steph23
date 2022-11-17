@@ -9,9 +9,16 @@
     background-color: brand($color);
     color: brand($color, dark);
 
+    p a {
+      @include focus {
+        @include selection-focus($color);
+        outline: 0.1875rem solid brand($color, dark);
+        outline-offset: 0;
+      }
+    }
+
     ::selection {
-      background-color: brand($color, dark);
-      color: brand($color);
+      @include selection-focus($color);
     }
   }
 }
@@ -35,12 +42,10 @@
 
 .container.dark {
   @include brand using ($color, $variant) {
-    background-color: brand($color, dark);
-    color: brand($color);
+    @include selection-focus($color);
 
     ::selection {
-      background-color: brand($color);
-      color: brand($color, dark);
+      @include selection-focus($color, true);
     }
   }
 }

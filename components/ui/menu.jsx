@@ -12,10 +12,19 @@ export function Menu({ variant }) {
 
   useEffect(() => {
     if (!navRef.current || !openDropDownID) return
+
     window.addEventListener('click', function (event) {
-      if (!navRef.current) return
       if (!navRef.current.contains(event.target)) setDropDownID(null)
     })
+
+    document.onkeydown = function (event) {
+      event = event || window.event
+      let isEscape = false
+      if ('key' in event) isEscape = event.key === 'Escape' || event.key === 'Esc'
+      if (isEscape) {
+        setDropDownID(null)
+      }
+    }
   }, [navRef, openDropDownID])
 
   function items(item, index) {
