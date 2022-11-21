@@ -189,7 +189,7 @@ export default function Contact() {
       <div className={styles.confirm_wrap}>
         <div className={styles.confirm_copy}>
           <Title {...confirmTitleProps}>Thanks!</Title>
-          <p>I'll be in touch soon</p>
+          <p>I’ll be in touch soon</p>
           <button {...closeConfirmProps}>Close</button>
         </div>
       </div>
