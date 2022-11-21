@@ -13,6 +13,7 @@ export default function Contact() {
   const { input, row } = contact
   const formRef = useRef(null)
   const [inProgress, setInProgress] = useState(false)
+  const [justSent, setJustSent] = useState(false)
   const {
     register,
     handleSubmit,
@@ -21,11 +22,10 @@ export default function Contact() {
   } = useForm()
 
   useEffect(() => {
-    if (isSubmitSuccessful)
-      setTimeout(() => {
-        setInProgress(false)
-        reset()
-      }, 1000)
+    if (!isSubmitSuccessful) return
+    setInProgress(false)
+    reset()
+    setJustSent(true)
   }, [isSubmitSuccessful, reset])
 
   function encode(data) {
@@ -149,6 +149,53 @@ export default function Contact() {
 
   imageProps.src = contactImage
 
+  function ContactForm() {
+    return (
+      <form {...formProps}>
+        <FormRow {...firstNameProps.row}>
+          <input {...register(firstNameProps.name, firstNameProps.rules)} {...firstNameProps.input} />
+        </FormRow>
+        <FormRow {...lastNameProps.row}>
+          <input {...register(lastNameProps.name)} {...lastNameProps.input} />
+        </FormRow>
+        <FormRow {...messageProps.row}>
+          <textarea {...register(messageProps.name, messageProps.rules)} {...messageProps.input} />
+        </FormRow>
+        <FormRow {...emailProps.row}>
+          <input {...register(emailProps.name, emailProps.rules)} {...emailProps.input} />
+        </FormRow>
+        <FormRow {...phoneProps.row}>
+          <input {...register(phoneProps.name)} {...phoneProps.input} />
+        </FormRow>
+        <FormRow>
+          <button {...submitProps}>{inProgress ? 'Sending' : 'Submit'}</button>
+        </FormRow>
+      </form>
+    )
+  }
+
+  const closeConfirmProps = {
+    onClick: () => setJustSent(false),
+    className: styles.confirm_button,
+  }
+
+  const confirmTitleProps = {
+    className: styles.confirm_title,
+    margin: false,
+  }
+
+  function ConfirmMessage() {
+    return (
+      <div className={styles.confirm_wrap}>
+        <div className={styles.confirm_copy}>
+          <Title {...confirmTitleProps}>Thanks!</Title>
+          <p>I'll be in touch soon</p>
+          <button {...closeConfirmProps}>Close</button>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <Page {...pageProps}>
       <Container {...containerProps}>
@@ -162,28 +209,7 @@ export default function Contact() {
             </small>
           </p>
           <Split className={styles.split}>
-            <div className={layout.copy}>
-              <form {...formProps}>
-                <FormRow {...firstNameProps.row}>
-                  <input {...register(firstNameProps.name, firstNameProps.rules)} {...firstNameProps.input} />
-                </FormRow>
-                <FormRow {...lastNameProps.row}>
-                  <input {...register(lastNameProps.name)} {...lastNameProps.input} />
-                </FormRow>
-                <FormRow {...messageProps.row}>
-                  <textarea {...register(messageProps.name, messageProps.rules)} {...messageProps.input} />
-                </FormRow>
-                <FormRow {...emailProps.row}>
-                  <input {...register(emailProps.name, emailProps.rules)} {...emailProps.input} />
-                </FormRow>
-                <FormRow {...phoneProps.row}>
-                  <input {...register(phoneProps.name)} {...phoneProps.input} />
-                </FormRow>
-                <FormRow>
-                  <button {...submitProps}>{inProgress ? 'Sending' : 'Submit'}</button>
-                </FormRow>
-              </form>
-            </div>
+            <div className={`${layout.copy} ${styles.copy}`}>{justSent ? <ConfirmMessage /> : <ContactForm />}</div>
             <ImageWrap>
               <Image {...imageProps} alt="Stephanie Cannon friendly contact image, head tilted slightly to the right" />
             </ImageWrap>

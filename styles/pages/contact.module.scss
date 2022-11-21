@@ -1,5 +1,15 @@
 @import 'styles/mixins';
 
+@mixin button {
+  background-color: $c-yellow-dark;
+  border-radius: 0.375rem;
+  color: $c-yellow-light;
+  font-weight: bold;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+}
+
 .wrap {
   max-width: 44rem;
 
@@ -59,17 +69,40 @@
 }
 
 .submit {
-  background-color: $c-yellow-dark;
-  border-radius: 0.375rem;
-  color: $c-yellow-light;
+  @include button;
   margin-top: 0.5rem;
-  font-weight: bold;
-  padding: 0.75rem;
-  font-size: 1rem;
-  border: none;
   width: 100%;
 
   @include focus {
     @include double-box($c-yellow, $c-yellow-dark, 0.125rem, 0.125rem);
   }
+}
+
+.copy {
+  position: relative;
+  height: 100%;
+}
+
+.confirm_wrap {
+  background-color: lighten($c-yellow, 10%);
+  justify-content: center;
+  border-radius: 1rem;
+  align-items: center;
+  display: flex;
+  padding: 2rem;
+  height: 100%;
+  z-index: 2;
+}
+
+.confirm_copy {
+  text-align: center;
+}
+
+.confirm_title {
+  margin-bottom: 0.5rem;
+}
+
+.confirm_button {
+  @include button;
+  margin-top: 1rem;
 }
