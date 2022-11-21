@@ -35,9 +35,9 @@ export function Main({ activePlaylist, playerRef, active, handleSetActive, main,
   }
 
   const buttonProps = {
+    playing: active ? active.playing : null,
     onClick: () => togglePlay(),
     className: styles.button,
-    playing: active ? active.playing : null,
     active: activePlaylist,
     playlist,
     variant,

@@ -230,14 +230,10 @@
   }
 
   @include focus {
-    outline-offset: 0.0625rem;
-    outline-width: 0.125rem;
-    outline-style: solid;
-
     @if $dark {
-      outline-color: brand($color, dark);
+      @include double-box(brand($color), brand($color, dark), 0.125rem);
     } @else {
-      outline-color: brand($color);
+      @include double-box(brand($color, dark), brand($color), 0.125rem);
     }
   }
 
