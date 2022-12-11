@@ -3,15 +3,17 @@ import styles from 'styles/components/sections/studio.module.scss'
 import studioImage from 'public/studio.webp'
 import { homepage } from 'data/playlist'
 import { Player } from 'components/ui'
-import { imageProps } from 'scripts'
+import { imageProps, intro, studio } from 'scripts'
+import { useEffect } from 'react'
 import Image from 'next/image'
 
 export function Studio({ active, setActive, variant }) {
   const handleSetActive = (track) => setActive(track)
   const playerProps = {
     className: styles.player,
-    handleSetActive,
     data: homepage[4],
+    handleSetActive,
+    id: 'player',
     dark: true,
     variant,
     active,
@@ -33,7 +35,19 @@ export function Studio({ active, setActive, variant }) {
   const wrapProps = {
     width: studioProps.width,
     border: false,
+    id: 'image',
   }
+
+  useEffect(() => {
+    const player = '#player'
+    const image = '#image'
+    const { reset, scroll } = intro
+    const { wiggle } = studio
+
+    reset(player)
+    scroll(player)
+    wiggle(image)
+  }, [])
 
   return (
     <Container {...containerProps}>
