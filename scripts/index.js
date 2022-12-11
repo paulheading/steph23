@@ -51,4 +51,7 @@ export const contact = {
 }
 
 export * from 'scripts/overlay'
-export * from 'scripts/sparkle'
+export * from 'scripts/hero'
+export * from 'scripts/intro'
+export * from 'scripts/studio'
+export * from 'scripts/testimonials'

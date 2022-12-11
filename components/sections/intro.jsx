@@ -3,6 +3,8 @@ import { Container, Wrap, Title, Split, Link } from 'components'
 import { Player } from 'components/ui'
 import { Nominee } from 'logos'
 import styles from 'styles/components/sections/intro.module.scss'
+import { useEffect } from 'react'
+import { intro } from 'scripts'
 
 export function Intro({ active, setActive }) {
   const handleSetActive = (track) => setActive(track)
@@ -47,13 +49,21 @@ export function Intro({ active, setActive }) {
     bold: true,
   }
 
+  useEffect(() => {
+    const players = '.intro-player'
+    intro.reset(players)
+    intro.scroll(players)
+  }, [])
+
   return (
     <Container {...contentProps}>
       <Wrap className={styles.wrap}>
         <Split {...splitProps}>
           <div className={styles.message}>
-            <Title className={styles.title}>A Smooth, Enticing, Youthful US Voice</Title>
-            <div className={styles.copy}>
+            <Title id="title" className={styles.title}>
+              A Smooth, Enticing, Youthful US Voice
+            </Title>
+            <div id="copy" className={styles.copy}>
               <p>
                 I’m an American Voiceover, Actor and Audiobook Narrator with over 20 years experience. I offer a quick turnaround service from my professional home studio in London, or I’m a short cycle from your preferred recording studio! With my dedication and creativity, I can ignite that
                 special spark in your next project.
@@ -61,15 +71,17 @@ export function Intro({ active, setActive }) {
               <p>
                 Here are a few of my audio samples. You can also visit my <Link {...demoLinkProps}>Demos</Link> section to hear more.
               </p>
-              <Nominee className="margin-top-3" />
+              <div id="nominee">
+                <Nominee className="margin-top-3" />
+              </div>
             </div>
           </div>
           <div className={styles.players}>
             {homepage.map((track, index) => {
               if (index > 3) return
               const props = {
+                className: `${styles.player} intro-player`,
                 variant: setVariant(index),
-                className: styles.player,
                 dark: setDark(index),
                 standalone: true,
                 ...playerProps,

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import sparkImage from 'public/spark3.webp'
 import stephImage from 'public/steph.webp'
 import { Loader } from 'components/ui'
-import { sparkle } from 'scripts'
+import { hero } from 'scripts'
 import Image from 'next/image'
 
 export function Hero() {
@@ -38,7 +38,8 @@ export function Hero() {
 
   useEffect(() => {
     if (!imagesReady) return
-    sparkle.play()
+    const { sparkle } = hero
+    sparkle('#topSpark')
   }, [imagesReady])
 
   return (

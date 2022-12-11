@@ -1,16 +1,20 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Container, Wrap, Button } from 'components'
 import styles from 'styles/components/sections/testimonials.module.scss'
 import data from 'data/testimonials'
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi'
 import { GoStar } from 'react-icons/go'
 import parse from 'html-react-parser'
+import { testimonials } from 'scripts'
 
-function Testimonial({ quote, author, role, rating }) {
+function Testimonial({ className, quote, author, role, rating }) {
   const hasAuthor = author ? `${author},` : ''
   const context = `${hasAuthor} ${role}`
+  const customClass = {
+    className: className ? className : null,
+  }
   return (
-    <div>
+    <div {...customClass}>
       <div className={styles.quote}>{quote}</div>
       {rating && (
         <div className={styles.rating}>
@@ -28,37 +32,66 @@ function Testimonial({ quote, author, role, rating }) {
 
 export function Testimonials() {
   const [quoteID, setQuoteID] = useState(0)
+  const { animatePrev, animateNext } = testimonials
   const variant = 'yellow'
   const length = data.length - 1
   const containerProps = {
     variant,
   }
   const prevButtonProps = {
-    onClick: prevItem,
+    onClick: () => {
+      animatePrev(null, prevQuote)
+    },
     variant,
   }
   const nextButtonProps = {
-    onClick: nextItem,
+    onClick: () => {
+      animateNext(null, nextQuote)
+    },
+    id: 'next',
     variant,
   }
-  function prevItem() {
+
+  function prevQuote() {
     if (quoteID === 0) setQuoteID(length)
-    else setQuoteID(quoteID - 1)
+    else setQuoteID((quoteID) => quoteID - 1)
   }
-  function nextItem() {
+
+  function nextQuote() {
     if (quoteID === length) setQuoteID(0)
-    else setQuoteID(quoteID + 1)
+    else setQuoteID((quoteID) => quoteID + 1)
   }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const nextButton = document.getElementById('next')
+      function start() {
+        nextButton.style.backgroundColor = '#341919'
+        nextButton.style.color = '#ffb866'
+      }
+      function end() {
+        if (quoteID === length) setQuoteID(0)
+        else setQuoteID((quoteID) => quoteID + 1)
+        nextButton.removeAttribute('style')
+      }
+      animateNext(start, end)
+    }, 3000)
+
+    return () => clearInterval(interval)
+  }, [quoteID, length])
+
   return (
     <Container {...containerProps}>
       <Wrap className={styles.wrap}>
         <Button {...prevButtonProps}>
           <HiOutlineArrowLeft />
         </Button>
-        {data.map((testimonial, index) => {
-          if (quoteID !== index) return
-          return <Testimonial key={'testimonial' + index} {...testimonial} />
-        })}
+        <div id="testimonial">
+          {data.map((testimonial, index) => {
+            if (quoteID !== index) return
+            return <Testimonial key={'testimonial' + index} {...testimonial} />
+          })}
+        </div>
         <Button {...nextButtonProps}>
           <HiOutlineArrowRight />
         </Button>
