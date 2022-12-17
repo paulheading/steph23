@@ -2,10 +2,10 @@ import layout from 'styles/components/layouts/demos.module.scss'
 import styles from 'styles/pages/demos.module.scss'
 import { advertising as data } from 'data/demos'
 import { Split, Title, Video } from 'components'
+import { attachVariant, studio } from 'scripts'
+import { useEffect, useState } from 'react'
 import Page from 'components/page/demos'
 import { Playlist } from 'components/ui'
-import { attachVariant } from 'scripts'
-import { useState } from 'react'
 import { demos } from 'data/seo'
 
 export default function Advertising() {
@@ -28,6 +28,36 @@ export default function Advertising() {
     small: true,
   }
 
+  const PrintVideos = () =>
+    videos.map((video, index) => {
+      const id = 'video' + index
+      const { caption } = video
+
+      useEffect(() => {
+        const { wiggle } = studio
+        wiggle({ target: '#video' + index })
+      }, [])
+
+      const containerProps = {
+        className: layout.video,
+        key: 'video' + index,
+      }
+
+      const videoProps = {
+        ...video,
+        id,
+      }
+
+      return (
+        <div {...containerProps}>
+          <Video {...videoProps} />
+          <div className={layout.caption}>
+            <Title {...titleProps}>{caption}</Title>
+          </div>
+        </div>
+      )
+    })
+
   return (
     <Page head={demos.advertising}>
       <Split>
@@ -39,16 +69,7 @@ export default function Advertising() {
         </div>
         <Playlist {...playlistProps} />
       </Split>
-      {videos.map((video, index) => {
-        return (
-          <div key={'video' + index} className={layout.video}>
-            <Video {...video} />
-            <div className={layout.caption}>
-              <Title {...titleProps}>{video.caption}</Title>
-            </div>
-          </div>
-        )
-      })}
+      <PrintVideos />
     </Page>
   )
 }

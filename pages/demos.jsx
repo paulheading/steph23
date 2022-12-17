@@ -1,9 +1,9 @@
 import demosImage from 'public/stephanie-cannon-headphones-pic2-demos.webp'
 import { Page, Container, Wrap, Title, Split, ImageWrap } from 'components'
 import styles from 'styles/pages/demos.module.scss'
+import { imageProps, about } from 'scripts'
+import { useState, useEffect } from 'react'
 import { Playlist } from 'components/ui'
-import { imageProps } from 'scripts'
-import { useState } from 'react'
 import { demos } from 'data/seo'
 import { all } from 'data/demos'
 import Image from 'next/image'
@@ -49,6 +49,11 @@ export default function Demos() {
     })
   }
 
+  useEffect(() => {
+    const { wiggle } = about
+    wiggle({ target: '#image' })
+  }, [])
+
   return (
     <Page {...pageProps}>
       <Container {...containerProps}>
@@ -60,7 +65,7 @@ export default function Demos() {
               <p>As a trained actor, I’m proficient with crafting characters and accents. I’m also a skilled improviser, but am equally comfortable taking direction.</p>
               <p>I can deliver professional and friendly voices for e-learning or corporate reads, characters for radio drama and games, or child voices for animation and audiobooks.</p>
             </div>
-            <ImageWrap>
+            <ImageWrap id="image">
               <Image {...imageProps} alt="Stephanie Cannon wearing headphones and smiling broadly" />
             </ImageWrap>
           </Split>

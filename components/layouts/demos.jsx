@@ -1,8 +1,9 @@
 import styles from 'styles/components/layouts/demos.module.scss'
+import { useState, useEffect } from 'react'
 import { Split, Video } from 'components'
 import Page from 'components/page/demos'
 import { Playlist } from 'components/ui'
-import { useState } from 'react'
+import { studio } from 'scripts'
 
 export default function DemosLayout({ head, data, children, video }) {
   const [active, setActive] = useState(data.main)
@@ -15,9 +16,43 @@ export default function DemosLayout({ head, data, children, video }) {
     data,
   }
 
-  function PrintVideos() {
-    if (video.constructor === Array) return video.map((video, index) => <Video key={'video' + index} {...video} />)
-    return <Video {...video} />
+  function MultipleVideos() {
+    video.map((video, index) => {
+      const id = 'video' + index
+
+      useEffect(() => {
+        const { wiggle } = studio
+        wiggle({ target: '#video' + index })
+      }, [])
+
+      const containerProps = {
+        key: 'video' + index,
+      }
+
+      const videoProps = {
+        ...video,
+        id,
+      }
+
+      return (
+        <div {...containerProps}>
+          <Video {...videoProps} />
+        </div>
+      )
+    })
+  }
+
+  function SingleVideo() {
+    useEffect(() => {
+      const { wiggle } = studio
+      wiggle({ target: '#video' })
+    }, [])
+
+    return (
+      <div>
+        <Video {...video} id="video" />
+      </div>
+    )
   }
 
   return (
@@ -26,11 +61,7 @@ export default function DemosLayout({ head, data, children, video }) {
         <div className={styles.copy}>{children}</div>
         <Playlist {...playlistProps} />
       </Split>
-      {video && (
-        <div className={styles.video}>
-          <PrintVideos />
-        </div>
-      )}
+      {video && <div className={styles.video}>{video.constructor === Array ? <MultipleVideos /> : <SingleVideo />}</div>}
     </Page>
   )
 }

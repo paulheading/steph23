@@ -17,15 +17,19 @@ studio.trigger = ({ target, trigger, start }) => ({
   toggleActions: 'restart',
 })
 
+studio.config = {
+  ease: studio.ease,
+  duration: 0.8,
+  rotation: 4,
+}
+
 studio.wiggle = (value) => {
-  const { ease, trigger } = studio
+  const { trigger, config } = studio
   const { target } = value
 
   gsap.to(target, {
     scrollTrigger: trigger(value),
-    duration: 0.8,
-    rotation: 4,
-    ease,
+    ...config,
   })
 }
 

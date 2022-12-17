@@ -1,7 +1,7 @@
 import aboutImage from 'public/stephanie-cannon-american-female-actor-voiceover-cyclist-environmentalist.webp'
 import styles from 'styles/pages/about.module.scss'
 import { Page, Container, Wrap, Title, ImageWrap } from 'components'
-import { imageProps, studio } from 'scripts'
+import { imageProps, about } from 'scripts'
 import { about as head } from 'data/seo'
 import { useEffect } from 'react'
 import Image from 'next/image'
@@ -22,15 +22,8 @@ export default function About() {
   }
 
   useEffect(() => {
-    const { wiggle } = studio
-
-    const image = {
-      target: '#image',
-      trigger: 'body',
-      start: 'body',
-    }
-
-    wiggle(image)
+    const { wiggle } = about
+    wiggle({ target: '#image' })
   }, [])
 
   return (

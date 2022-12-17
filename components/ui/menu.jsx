@@ -14,7 +14,8 @@ export function Menu({ variant }) {
     if (!navRef.current || !openDropDownID) return
 
     window.addEventListener('click', function (event) {
-      if (!navRef.current.contains(event.target)) setDropDownID(null)
+      if (navRef.current === null) setDropDownID(null)
+      else if (!navRef.current.contains(event.target)) setDropDownID(null)
     })
 
     document.onkeydown = function (event) {

@@ -3,7 +3,7 @@ import headshotImage from 'public/stephanie-cannon-headshot-acting-page.webp'
 import { Page, Container, Wrap, Split, Title, ImageWrap } from 'components'
 import layout from 'styles/components/layouts/demos.module.scss'
 import styles from 'styles/pages/acting.module.scss'
-import { imageProps, studio } from 'scripts'
+import { imageProps, about, studio } from 'scripts'
 import { Mocap } from 'components/sections'
 import { acting as head } from 'data/seo'
 import { useEffect } from 'react'
@@ -30,16 +30,8 @@ export default function Acting() {
   }
 
   useEffect(() => {
-    const { wiggle } = studio
-
-    const headshot = {
-      target: '#headshot',
-      trigger: 'body',
-      start: 'body',
-    }
-
-    wiggle(headshot)
-    wiggle({ target: '#body' })
+    about.wiggle({ target: '#headshot' })
+    studio.wiggle({ target: '#body' })
   }, [])
 
   return (
