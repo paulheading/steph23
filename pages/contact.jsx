@@ -2,8 +2,8 @@ import contactImage from 'public/stephanie-cannon-headshot-contact-page-stephani
 import { Page, Container, Wrap, Split, Title, ImageWrap, Link } from 'components'
 import layout from 'styles/components/layouts/demos.module.scss'
 import styles from 'styles/pages/contact.module.scss'
+import { imageProps, contact, studio } from 'scripts'
 import { useEffect, useState, useRef } from 'react'
-import { imageProps, contact } from 'scripts'
 import { contact as head } from 'data/seo'
 import { useForm } from 'react-hook-form'
 import { FormRow } from 'components/ui'
@@ -149,6 +149,11 @@ export default function Contact() {
 
   imageProps.src = contactImage
 
+  useEffect(() => {
+    const { wiggle } = studio
+    wiggle({ target: '#image' })
+  }, [])
+
   function ContactForm() {
     return (
       <form {...formProps}>
@@ -210,7 +215,7 @@ export default function Contact() {
           </p>
           <Split className={styles.split}>
             <div className={`${layout.copy} ${styles.copy}`}>{justSent ? <ConfirmMessage /> : <ContactForm />}</div>
-            <ImageWrap>
+            <ImageWrap id="image">
               <Image {...imageProps} alt="Stephanie Cannon friendly contact image, head tilted slightly to the right" />
             </ImageWrap>
           </Split>

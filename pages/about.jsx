@@ -1,8 +1,9 @@
 import aboutImage from 'public/stephanie-cannon-american-female-actor-voiceover-cyclist-environmentalist.webp'
 import styles from 'styles/pages/about.module.scss'
 import { Page, Container, Wrap, Title, ImageWrap } from 'components'
+import { imageProps, studio } from 'scripts'
 import { about as head } from 'data/seo'
-import { imageProps } from 'scripts'
+import { useEffect } from 'react'
 import Image from 'next/image'
 
 export default function About() {
@@ -15,11 +16,28 @@ export default function About() {
     variant,
   }
 
+  const imageWrapProps = {
+    className: styles.image,
+    id: 'image',
+  }
+
+  useEffect(() => {
+    const { wiggle } = studio
+
+    const image = {
+      target: '#image',
+      trigger: 'body',
+      start: 'body',
+    }
+
+    wiggle(image)
+  }, [])
+
   return (
     <Page head={head}>
       <Container {...containerProps}>
         <Wrap className={styles.wrap}>
-          <ImageWrap className={styles.image}>
+          <ImageWrap {...imageWrapProps}>
             <Image {...imageProps} alt="Stephanie Cannon standing with her bicycle gazing up towards the sky" />
           </ImageWrap>
           <div className={styles.copy}>
