@@ -3,9 +3,10 @@ import headshotImage from 'public/stephanie-cannon-headshot-acting-page.webp'
 import { Page, Container, Wrap, Split, Title, ImageWrap } from 'components'
 import layout from 'styles/components/layouts/demos.module.scss'
 import styles from 'styles/pages/acting.module.scss'
+import { imageProps, studio } from 'scripts'
 import { Mocap } from 'components/sections'
 import { acting as head } from 'data/seo'
-import { imageProps } from 'scripts'
+import { useEffect } from 'react'
 import Image from 'next/image'
 
 export default function Acting() {
@@ -27,6 +28,20 @@ export default function Acting() {
     ...imageProps,
     src: fullbodyImage,
   }
+
+  useEffect(() => {
+    const { wiggle } = studio
+
+    const headshot = {
+      target: '#headshot',
+      trigger: 'body',
+      start: 'body',
+    }
+
+    wiggle(headshot)
+    wiggle({ target: '#body' })
+  }, [])
+
   return (
     <Page {...pageProps}>
       <Container {...containerProps}>
@@ -39,7 +54,7 @@ export default function Acting() {
                 Shakespeare, Contemporary Drama or Improvisational Comedy.
               </p>
             </div>
-            <ImageWrap>
+            <ImageWrap id="headshot">
               <Image {...headshotProps} alt="Stephanie Cannon headshot, pleasantly smiling in a pink cardigan" />
             </ImageWrap>
           </Split>
@@ -55,7 +70,7 @@ export default function Acting() {
                 <li>The Actors Centre – classes for accents, scene work, & character creation</li>
               </ul>
             </div>
-            <ImageWrap>
+            <ImageWrap id="body">
               <Image {...fullbodyProps} alt="Stephanie Cannon full body image, taken in a studio" />
             </ImageWrap>
           </Split>

@@ -1,6 +1,8 @@
 import { Container, Title, Video, Link } from 'components'
 import styles from 'styles/pages/acting.module.scss'
 import { ArtsCouncil, Equity, Spotlight } from 'logos'
+import { useEffect } from 'react'
+import { studio } from 'scripts'
 
 export function Mocap() {
   const containerProps = {
@@ -11,12 +13,20 @@ export function Mocap() {
   const videoProps = {
     title: 'stephanie-cannon-motion-capture-reel-actor-female-performance-capture-artist',
     src: '762181761?h=1a4e59750c',
+    className: 'margin-top-3',
+    id: 'video',
   }
   const linkProps = {
     href: 'https://www.voicefox.co.uk/artist/mocap-stephanie-cannon',
     target: '_blank',
     bold: true,
   }
+
+  useEffect(() => {
+    const { wiggle } = studio
+    wiggle({ target: '#video' })
+  }, [])
+
   return (
     <Container {...containerProps}>
       <Title>Motion Capture</Title>
@@ -25,7 +35,7 @@ export function Mocap() {
       <p>
         To discuss a mo-cap project, contact Emily Dean at <Link {...linkProps}>Voicefox</Link>
       </p>
-      <Video {...videoProps} className="margin-top-3" />
+      <Video {...videoProps} />
       <Title className="margin-top-3">Stilt Walking</Title>
       <p>
         Is there anything this girl can’t do?! I’ve always been drawn to the most unusual day jobs, and stilt walking fits perfectly into my unique universe! I’ve performed in a variety of guises on peg, dura and power riser stilts. Get in touch if your production is looking for a freelance stilt

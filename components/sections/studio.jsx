@@ -40,13 +40,12 @@ export function Studio({ active, setActive, variant }) {
 
   useEffect(() => {
     const player = '#player'
-    const image = '#image'
     const { reset, scroll } = intro
     const { wiggle } = studio
 
     reset(player)
     scroll(player)
-    wiggle(image)
+    wiggle({ target: '#image' })
   }, [])
 
   return (

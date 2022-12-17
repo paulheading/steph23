@@ -11,17 +11,18 @@ const studio = {}
 
 studio.ease = CustomWiggle.create('myWiggle', { wiggles: 5, type: 'easeOut' })
 
-studio.trigger = (target) => ({
+studio.trigger = ({ target, trigger, start }) => ({
+  start: `top ${start ? start : 'center'}`,
+  trigger: trigger ? trigger : target,
   toggleActions: 'restart',
-  start: 'top center',
-  trigger: target,
 })
 
-studio.wiggle = (target) => {
+studio.wiggle = (value) => {
   const { ease, trigger } = studio
+  const { target } = value
 
   gsap.to(target, {
-    scrollTrigger: trigger(target),
+    scrollTrigger: trigger(value),
     duration: 0.8,
     rotation: 4,
     ease,
