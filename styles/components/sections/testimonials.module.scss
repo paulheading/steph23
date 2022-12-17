@@ -10,6 +10,7 @@
 .wrap {
   @include crete-round;
   @include center;
+  overflow: hidden;
   gap: 2rem;
 
   @include large-up {
