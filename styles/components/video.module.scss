@@ -3,6 +3,7 @@
 .container {
   mask-image: radial-gradient(white, black); // safari bug
   border: 0.125rem solid currentColor;
+  background-color: black;
   border-radius: 1rem;
   padding-top: 56.25%;
   position: relative;
