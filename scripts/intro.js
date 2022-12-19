@@ -4,8 +4,8 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const intro = {
-  reset: (target) => gsap.set(target, { x: -80, opacity: 0 }),
-  duration: 2,
+  reset: (target) => gsap.set(target, { x: -100, opacity: 0 }),
+  duration: 1,
   stagger: 1,
 }
 

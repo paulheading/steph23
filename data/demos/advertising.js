@@ -49,21 +49,21 @@ let advertising = {
       ...extras,
     },
   ],
+  videos: [
+    {
+      title: '24 Hr Fitness Commercial',
+      src: '759504478?h=91268d4bde',
+      caption: 'Cheerful, Conversational',
+    },
+    {
+      title: 'Artfinder Commercial',
+      src: '759489225?h=f4780e652b',
+      caption: 'Smooth, Hip, Enticing',
+    },
+  ],
 }
 
 advertising.tracks = mapIndexIDs(advertising.tracks)
 advertising.main = advertising.tracks[0]
-advertising.videos = [
-  {
-    title: '24 Hr Fitness Commercial',
-    src: '759504478?h=91268d4bde',
-    caption: 'Cheerful, Conversational',
-  },
-  {
-    title: 'Artfinder Commercial',
-    src: '759489225?h=f4780e652b',
-    caption: 'Smooth, Hip, Enticing',
-  },
-]
 
 export default advertising

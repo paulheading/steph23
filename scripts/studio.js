@@ -11,10 +11,10 @@ const studio = {}
 
 studio.ease = CustomWiggle.create('myWiggle', { wiggles: 5, type: 'easeOut' })
 
-studio.trigger = ({ target, trigger, start }) => ({
+studio.trigger = ({ target, trigger, start, toggleActions = 'restart none restart' }) => ({
   start: `top ${start ? start : 'center'}`,
   trigger: trigger ? trigger : target,
-  toggleActions: 'restart',
+  toggleActions,
 })
 
 studio.config = {

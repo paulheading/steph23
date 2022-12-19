@@ -1,11 +1,12 @@
 import styles from 'styles/components/layouts/demos.module.scss'
+import { studio, attachVariant } from 'scripts'
 import { useState, useEffect } from 'react'
 import { Split, Video } from 'components'
 import Page from 'components/page/demos'
 import { Playlist } from 'components/ui'
-import { studio } from 'scripts'
+import { Title } from 'components'
 
-export default function DemosLayout({ head, data, children, video }) {
+export default function DemosLayout({ head, data, children }) {
   const [active, setActive] = useState(data.main)
   const handleSetActive = (track) => setActive(track)
   const variant = 'red'
@@ -15,44 +16,53 @@ export default function DemosLayout({ head, data, children, video }) {
     active,
     data,
   }
+  const { videos } = data
 
-  function MultipleVideos() {
-    video.map((video, index) => {
-      const id = 'video' + index
-
-      useEffect(() => {
+  useEffect(() => {
+    if (!videos) return
+    if (videos.length > 1) {
+      videos.map((_, index) => {
         const { wiggle } = studio
         wiggle({ target: '#video' + index })
-      }, [])
-
-      const containerProps = {
-        key: 'video' + index,
-      }
-
-      const videoProps = {
-        ...video,
-        id,
-      }
-
-      return (
-        <div {...containerProps}>
-          <Video {...videoProps} />
-        </div>
-      )
-    })
-  }
-
-  function SingleVideo() {
-    useEffect(() => {
+      })
+    } else {
       const { wiggle } = studio
       wiggle({ target: '#video' })
-    }, [])
+    }
+  }, [videos])
+
+  const MultipleVideos = () => (
+    <div className={styles.video}>
+      {videos.map((video, index) => {
+        const key = 'video' + index
+        return <SingleVideo key={key} id={key} {...video} />
+      })}
+    </div>
+  )
+
+  function SingleVideo(video, id) {
+    const captionStyles = `${styles.caption} ${attachVariant(variant, styles)}`
+
+    const titleProps = {
+      className: captionStyles,
+      margin: false,
+      small: true,
+    }
 
     return (
-      <div>
-        <Video {...video} id="video" />
+      <div className={styles.wrap_video}>
+        <Video id={id} {...video} />
+        <div className={styles.wrap_caption}>
+          <Title {...titleProps}>{video.caption}</Title>
+        </div>
       </div>
     )
+  }
+
+  function CheckVideos() {
+    if (!videos) return
+    if (videos.length > 1) return <MultipleVideos />
+    return <SingleVideo id="video" {...videos[0]} />
   }
 
   return (
@@ -61,7 +71,7 @@ export default function DemosLayout({ head, data, children, video }) {
         <div className={styles.copy}>{children}</div>
         <Playlist {...playlistProps} />
       </Split>
-      {video && <div className={styles.video}>{video.constructor === Array ? <MultipleVideos /> : <SingleVideo />}</div>}
+      <CheckVideos />
     </Page>
   )
 }

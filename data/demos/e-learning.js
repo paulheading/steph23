@@ -64,6 +64,13 @@ let eLearning = {
       ...extras,
     },
   ],
+  videos: [
+    {
+      title: 'stephanie-cannon-us-e-learning-video-educational-theatre-secondary-school-high-school-digital-theatre',
+      src: '759551069?h=98e58eba98',
+      caption: 'Friendly, Relatable',
+    },
+  ],
 }
 
 eLearning.tracks = mapIndexIDs(eLearning.tracks)

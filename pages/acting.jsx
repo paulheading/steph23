@@ -30,8 +30,10 @@ export default function Acting() {
   }
 
   useEffect(() => {
-    about.wiggle({ target: '#headshot' })
-    studio.wiggle({ target: '#body' })
+    const { wiggle } = studio
+
+    wiggle({ target: '#headshot' })
+    wiggle({ target: '#body' })
   }, [])
 
   return (

@@ -1,7 +1,7 @@
 import demosImage from 'public/stephanie-cannon-headphones-pic2-demos.webp'
 import { Page, Container, Wrap, Title, Split, ImageWrap } from 'components'
 import styles from 'styles/pages/demos.module.scss'
-import { imageProps, about } from 'scripts'
+import { imageProps, studio } from 'scripts'
 import { useState, useEffect } from 'react'
 import { Playlist } from 'components/ui'
 import { demos } from 'data/seo'
@@ -50,7 +50,7 @@ export default function Demos() {
   }
 
   useEffect(() => {
-    const { wiggle } = about
+    const { wiggle } = studio
     wiggle({ target: '#image' })
   }, [])
 

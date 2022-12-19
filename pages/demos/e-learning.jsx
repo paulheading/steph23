@@ -5,10 +5,6 @@ import { demos } from 'data/seo'
 
 export default function ELearning() {
   const props = {
-    video: {
-      title: 'stephanie-cannon-us-e-learning-video-educational-theatre-secondary-school-high-school-digital-theatre',
-      src: '759551069?h=98e58eba98',
-    },
     head: demos.eLearning,
     data,
   }

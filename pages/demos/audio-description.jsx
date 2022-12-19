@@ -4,10 +4,8 @@ import { Title } from 'components'
 import { demos } from 'data/seo'
 
 export default function AudioDescription() {
-  const { video } = data
   const props = {
     head: demos.adr,
-    video,
     data,
   }
   return (

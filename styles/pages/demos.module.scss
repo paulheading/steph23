@@ -31,13 +31,3 @@
 .evens {
   @include column;
 }
-
-.caption {
-  padding: 0.75rem 1.25rem;
-  border-radius: 1.75rem;
-  display: inline-block;
-
-  @include brand using ($color, $variant) {
-    background-color: brand($color, light);
-  }
-}
