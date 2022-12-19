@@ -1,14 +1,11 @@
 @import 'styles/mixins';
 
 @mixin container {
+  background-color: currentColor;
   border-radius: 1rem;
   overflow: hidden;
   max-width: 55vw;
   font-size: 0;
-
-  @include brand using($color, $variant) {
-    background-color: brand($color, light);
-  }
 }
 
 .container {
