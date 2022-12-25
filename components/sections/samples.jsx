@@ -1,6 +1,8 @@
 import { Container, Wrap, Title, Link } from 'components'
 import { Samples as SamplesUI } from 'components/ui'
 import styles from 'styles/components/sections/samples.module.scss'
+import { useEffect, useMemo } from 'react'
+import { studio } from 'scripts'
 
 export function Samples({ data, variant, dark = false, active, setActive }) {
   const contentProps = {
@@ -10,14 +12,25 @@ export function Samples({ data, variant, dark = false, active, setActive }) {
     variant,
     dark,
   }
-  const samplesProps = {
-    animate: 'samples',
-    setActive,
-    variant,
-    active,
-    data,
-    dark,
-  }
+
+  const samplesProps = useMemo(
+    () => ({
+      animate: 'samples',
+      setActive,
+      variant,
+      active,
+      data,
+      dark,
+    }),
+    [setActive, active, data, dark, variant]
+  )
+
+  useEffect(() => {
+    const { wiggle } = studio
+    const { animate } = samplesProps
+    wiggle({ target: `.${animate}` })
+  }, [samplesProps])
+
   return (
     <Container {...contentProps}>
       <Wrap className="margin-bottom-3">

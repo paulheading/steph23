@@ -2,6 +2,8 @@ import styles from 'styles/pages/audiobooks.module.scss'
 import { Container, Wrap, Title } from 'components'
 import { favourites } from 'data/audiobooks'
 import { Samples } from 'components/ui'
+import { useEffect, useMemo } from 'react'
+import { studio } from 'scripts'
 
 export function Favourites({ active, setActive }) {
   const containerProps = {
@@ -9,12 +11,23 @@ export function Favourites({ active, setActive }) {
     variant: 'green',
     top: true,
   }
-  const props = {
-    animate: 'favourites',
-    data: [favourites],
-    setActive,
-    active,
-  }
+
+  const props = useMemo(
+    () => ({
+      animate: 'favourites',
+      data: [favourites],
+      setActive,
+      active,
+    }),
+    [active, setActive]
+  )
+
+  useEffect(() => {
+    const { wiggle } = studio
+    const { animate } = props
+    wiggle({ target: `.${animate}` })
+  }, [props])
+
   return (
     <Container {...containerProps}>
       <Wrap className="margin-bottom-3">
