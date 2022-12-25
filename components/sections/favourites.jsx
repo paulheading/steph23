@@ -10,6 +10,7 @@ export function Favourites({ active, setActive }) {
     top: true,
   }
   const props = {
+    animate: 'favourites',
     data: [favourites],
     setActive,
     active,

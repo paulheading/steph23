@@ -11,6 +11,7 @@ export function Samples({ data, variant, dark = false, active, setActive }) {
     dark,
   }
   const samplesProps = {
+    animate: 'samples',
     setActive,
     variant,
     active,

@@ -2,7 +2,7 @@ import { Fragment, useEffect, useRef, useState } from 'react'
 import { Track } from 'components/ui/sample/track'
 import { Group } from 'components/ui/sample/group'
 
-export function Sample({ data, active, handleSetActive, variant, openID, series, dark = false }) {
+export function Sample({ data, active, handleSetActive, variant, openID, series, dark = false, animate }) {
   const [playlist, setPlaylist] = useState(data)
   const playerRef = useRef(null)
   const isOpen = openID === playlist.id
@@ -40,6 +40,7 @@ export function Sample({ data, active, handleSetActive, variant, openID, series,
     activePlaylist,
     playerRef,
     variant,
+    animate,
     active,
     isOpen,
     dark,
@@ -63,8 +64,10 @@ export function Sample({ data, active, handleSetActive, variant, openID, series,
 
   return (
     <Fragment>
-      <audio ref={playerRef} src={active.src} onTimeUpdate={updateProgress}></audio>
-      {!series ? mapTracks(playlist.tracks) : <Group {...groupProps} />}
+      <div>
+        <audio ref={playerRef} src={active.src} onTimeUpdate={updateProgress}></audio>
+        {!series ? mapTracks(playlist.tracks) : <Group {...groupProps} />}
+      </div>
     </Fragment>
   )
 }

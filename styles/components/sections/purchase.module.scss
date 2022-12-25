@@ -41,6 +41,7 @@
   @include inset;
   transition: opacity 200ms;
   justify-content: center;
+  pointer-events: none;
   align-items: center;
   position: absolute;
   display: flex;

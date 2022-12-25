@@ -1,7 +1,7 @@
 import styles from 'styles/components/sections/purchase.module.scss'
 import { Container, Wrap, Title, Button, Link } from 'components'
 import { RiExternalLinkLine } from 'react-icons/ri'
-import { attachVariant } from 'scripts'
+import { attachVariant, purchase as animate } from 'scripts'
 import purchase from 'data/purchase'
 import { useState } from 'react'
 
@@ -9,7 +9,7 @@ function Links({ link, index, items, variant }) {
   const { src, href } = link
   const backgroundImage = `url(${src})`
   const variantStyle = attachVariant(variant, styles)
-  const linkStyles = `${styles.link} ${variantStyle}`
+  const linkStyles = `${styles.link} ${variantStyle} link`
   const overlayStyles = `${styles.overlay} ${variantStyle}`
   const logoStyles = `${styles.logo} ${variantStyle}`
   const props = {
@@ -18,8 +18,14 @@ function Links({ link, index, items, variant }) {
     href,
   }
   if (index >= items) return null
+
+  function MouseOver({ target }) {
+    const { wiggle } = animate
+    wiggle({ target })
+  }
+
   return (
-    <a {...props} style={{ backgroundImage }}>
+    <a {...props} style={{ backgroundImage }} onMouseOver={MouseOver}>
       <span className={overlayStyles}>
         <RiExternalLinkLine className={logoStyles} />
       </span>
@@ -57,6 +63,16 @@ export function Purchase() {
     ...linkProps,
   }
 
+  function Purchases(link, index) {
+    const props = {
+      variant,
+      index,
+      items,
+      link,
+    }
+    return <Links key={'links' + index} {...props} />
+  }
+
   return (
     <Container {...containerProps}>
       <Wrap className={styles.wrap}>
@@ -66,17 +82,7 @@ export function Purchase() {
             Add to your audiobook listening collection by selecting any of the below titles, or visit <Link {...ukProps}>audible.co.uk</Link> or <Link {...usProps}>audible.com</Link> to buy.
           </p>
         </Wrap>
-        <div className={styles.wrap_links}>
-          {purchase.map((link, index) => {
-            const props = {
-              variant,
-              index,
-              items,
-              link,
-            }
-            return <Links key={'links' + index} {...props} />
-          })}
-        </div>
+        <div className={styles.wrap_links}>{purchase.map(Purchases)}</div>
         {moreItems && <Button {...buttonProps}>More</Button>}
       </Wrap>
     </Container>

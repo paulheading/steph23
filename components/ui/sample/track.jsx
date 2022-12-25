@@ -2,13 +2,16 @@ import styles from 'styles/components/ui/sample/track.module.scss'
 import { Button } from 'components/ui/playlist/button'
 import { attachVariant } from 'scripts'
 import { MdOutlineFileDownload } from 'react-icons/md'
+import { useEffect } from 'react'
+import { studio } from 'scripts'
 
-export function Track({ track, handleTrackChange, activePlaylist, active, variant, dark = false }) {
+export function Track({ track, handleTrackChange, activePlaylist, active, variant, dark = false, animate }) {
   if (!track) return null
   const activeTrack = activePlaylist && track.id === active.id
   const activeStyles = activeTrack ? styles.active : ''
   const darkClass = dark ? styles.dark : ''
-  const containerClasses = `${styles.container} ${attachVariant(variant, styles)} ${activeStyles} ${darkClass}`
+  const animateClass = animate ? animate : null
+  const containerClasses = `${styles.container} ${attachVariant(variant, styles)} ${activeStyles} ${darkClass} ${animateClass}`
   const backgroundImage = `url(${track.cover})`
 
   const buttonProps = {
@@ -39,6 +42,12 @@ export function Track({ track, handleTrackChange, activePlaylist, active, varian
     href: track.src,
     download: true,
   }
+
+  useEffect(() => {
+    if (!animate) return
+    const { wiggle } = studio
+    wiggle({ target: `.${animate}` })
+  }, [animate])
 
   return (
     <div className={containerClasses}>

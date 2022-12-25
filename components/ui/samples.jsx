@@ -4,7 +4,7 @@ import { Sample } from 'components/ui'
 import styles from 'styles/components/ui/samples.module.scss'
 import { attachVariant } from 'scripts'
 
-export function Samples({ data, variant = 'green', dark = false, active, setActive }) {
+export function Samples({ data, variant = 'green', dark = false, active, setActive, animate }) {
   const [samples, setSamples] = useState(data)
   const [openID, setOpenID] = useState(data[0].id)
   const handleSetActive = (track) => setActive(track)
@@ -22,40 +22,41 @@ export function Samples({ data, variant = 'green', dark = false, active, setActi
     openID,
   }
 
-  // const test = '123'
+  function Buttons({ title, id }, index) {
+    const openClass = openID === id ? styles.open : ''
+    const darkClass = dark ? styles.dark : ''
+    const classes = `${styles.button} ${attachVariant(variant, styles)} ${openClass} ${darkClass}`
+    const props = {
+      onClick: () => handleSetOpenID(id),
+      className: classes,
+    }
+    return (
+      <button key={'button' + index} {...props}>
+        {title}
+      </button>
+    )
+  }
+
+  function Content(playlist, index) {
+    const sampleProps = {
+      series: playlist.groups,
+      ...playlistProps,
+      data: playlist,
+      animate,
+      variant,
+      dark,
+    }
+    return <Sample key={'sample' + index} {...sampleProps} />
+  }
 
   return (
     <div className={styles.container}>
       {needsButtons && (
         <Wrap className="margin-bottom-2">
-          <div className={styles.buttons}>
-            {samples.map(({ title, id }, index) => {
-              const openClass = openID === id ? styles.open : ''
-              const darkClass = dark ? styles.dark : ''
-              const classes = `${styles.button} ${attachVariant(variant, styles)} ${openClass} ${darkClass}`
-              const props = {
-                onClick: () => handleSetOpenID(id),
-                className: classes,
-              }
-              return (
-                <button key={'button' + index} {...props}>
-                  {title}
-                </button>
-              )
-            })}
-          </div>
+          <div className={styles.buttons}>{samples.map(Buttons)}</div>
         </Wrap>
       )}
-      {data.map((playlist, index) => {
-        const sampleProps = {
-          series: playlist.groups,
-          ...playlistProps,
-          data: playlist,
-          variant,
-          dark,
-        }
-        return <Sample key={'sample' + index} {...sampleProps} />
-      })}
+      {data.map(Content)}
     </div>
   )
 }
