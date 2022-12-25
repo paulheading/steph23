@@ -22,6 +22,8 @@ export function Samples({ data, variant = 'green', dark = false, active, setActi
     openID,
   }
 
+  // const test = '123'
+
   return (
     <div className={styles.container}>
       {needsButtons && (
