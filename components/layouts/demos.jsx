@@ -18,18 +18,18 @@ export default function DemosLayout({ head, data, children }) {
   }
   const { videos } = data
 
-  useEffect(() => {
-    if (!videos) return
-    if (videos.length > 1) {
-      videos.map((_, index) => {
-        const { wiggle } = studio
-        wiggle({ target: '#video' + index })
-      })
-    } else {
-      const { wiggle } = studio
-      wiggle({ target: '#video' })
-    }
-  }, [videos])
+  // useEffect(() => {
+  //   if (!videos) return
+  //   if (videos.length > 1) {
+  //     videos.map((_, index) => {
+  //       const { wiggle } = studio
+  //       wiggle({ target: '#video' + index })
+  //     })
+  //   } else {
+  //     const { wiggle } = studio
+  //     wiggle({ target: '#video' })
+  //   }
+  // }, [videos])
 
   const MultipleVideos = () => (
     <div className={styles.video}>
