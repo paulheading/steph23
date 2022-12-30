@@ -25,7 +25,7 @@ let menu = [
   {
     title: 'Audiobooks',
     href,
-    items: [createLink('Favourites'), createLink('#Samples'), createLink('#Purchase'), createLink('#Accents')],
+    items: [createLink('Introduction'), createLink('#Samples'), createLink('#Purchase'), createLink('#Accents')],
   },
   {
     title: 'Acting',
