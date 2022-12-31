@@ -34,3 +34,5 @@ yarn-error.log*
 # ignore videos
 *.mp4
 *.mov
+
+/libraries
