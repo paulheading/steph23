@@ -9,7 +9,7 @@ testimonials.clear = () => {
   gsap.set(target, { opacity: 1 })
 }
 
-testimonials.animate = (start, complete, a) => {
+testimonials.animate = (start, complete, animate) => {
   const { target } = testimonials
   const tl = gsap.timeline()
   const reset = { x: 0 }
@@ -18,7 +18,7 @@ testimonials.animate = (start, complete, a) => {
     ease: 'back.in(3)',
     duration: 0.6,
     opacity: 0,
-    ...a,
+    ...animate,
     onStart: () => start && start(),
     onComplete: () => complete && complete(),
   })

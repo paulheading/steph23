@@ -86,7 +86,7 @@ export function Testimonials() {
     }, 3000)
 
     return () => clearInterval(interval)
-  }, [quoteID, length, animateNext])
+  }, [quoteID, length, animateNext, clear])
 
   return (
     <Container {...containerProps}>
