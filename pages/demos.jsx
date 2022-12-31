@@ -49,10 +49,10 @@ export default function Demos() {
     })
   }
 
-  // useEffect(() => {
-  //   const { wiggle } = studio
-  //   wiggle({ target: '#image' })
-  // }, [])
+  useEffect(() => {
+    const { wiggle } = studio
+    wiggle({ target: '#image' })
+  }, [])
 
   return (
     <Page {...pageProps}>

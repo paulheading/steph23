@@ -51,9 +51,7 @@ export function Intro({ active, setActive }) {
 
   useEffect(() => {
     const players = '.intro-player'
-    const { reset, scroll } = intro
-
-    reset(players)
+    const { scroll } = intro
     scroll(players)
   }, [])
 

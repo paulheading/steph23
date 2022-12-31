@@ -5,7 +5,7 @@ import data from 'data/testimonials'
 import { HiOutlineArrowLeft, HiOutlineArrowRight } from 'react-icons/hi'
 import { GoStar } from 'react-icons/go'
 import parse from 'html-react-parser'
-import { testimonials } from 'scripts'
+import { testimonials, query } from 'scripts'
 
 function Testimonial({ className, quote, author, role, rating }) {
   const hasAuthor = author ? `${author},` : ''
@@ -64,17 +64,23 @@ export function Testimonials() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const nextButton = document.getElementById('next')
-      function start() {
-        nextButton.style.backgroundColor = '#341919'
-        nextButton.style.color = '#ffb866'
-      }
-      function end() {
-        if (quoteID === length) setQuoteID(0)
-        else setQuoteID((quoteID) => quoteID + 1)
-        nextButton.removeAttribute('style')
-      }
-      animateNext(start, end)
+      const { desktop } = query
+
+      desktop.up(() => {
+        const nextButton = document.getElementById('next')
+
+        function start() {
+          nextButton.style.backgroundColor = '#341919'
+          nextButton.style.color = '#ffb866'
+        }
+        function end() {
+          if (quoteID === length) setQuoteID(0)
+          else setQuoteID((quoteID) => quoteID + 1)
+          nextButton.removeAttribute('style')
+        }
+
+        animateNext(start, end)
+      })
     }, 3000)
 
     return () => clearInterval(interval)
