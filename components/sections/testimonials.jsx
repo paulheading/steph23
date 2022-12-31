@@ -32,7 +32,7 @@ function Testimonial({ className, quote, author, role, rating }) {
 
 export function Testimonials() {
   const [quoteID, setQuoteID] = useState(0)
-  const { animatePrev, animateNext } = testimonials
+  const { clear, animatePrev, animateNext } = testimonials
   const variant = 'yellow'
   const length = data.length - 1
   const containerProps = {
@@ -65,6 +65,8 @@ export function Testimonials() {
   useEffect(() => {
     const interval = setInterval(() => {
       const { desktop } = query
+
+      desktop.down(clear)
 
       desktop.up(() => {
         const nextButton = document.getElementById('next')

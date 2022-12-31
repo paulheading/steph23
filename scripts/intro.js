@@ -32,9 +32,7 @@ intro.scroll = (target) => {
     })
   })
 
-  desktop.down(() => {
-    clear(target)
-  })
+  desktop.down(() => clear(target))
 }
 
 export { intro }
