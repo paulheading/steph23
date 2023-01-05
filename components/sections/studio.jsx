@@ -4,16 +4,18 @@ import studioImage from 'public/studio.webp'
 import { homepage } from 'data/playlist'
 import { Player } from 'components/ui'
 import { imageProps, intro, studio } from 'scripts'
-import { useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import Image from 'next/image'
 
 export function Studio({ active, setActive, variant }) {
+  const imageRef = useRef(null)
+  const playerRef = useRef(null)
   const handleSetActive = (track) => setActive(track)
   const playerProps = {
     className: styles.player,
     data: homepage[4],
     handleSetActive,
-    id: 'player',
+    ref: playerRef,
     dark: true,
     variant,
     active,
@@ -27,7 +29,6 @@ export function Studio({ active, setActive, variant }) {
   }
 
   const containerProps = {
-    id: 'studio',
     dark: true,
     variant,
   }
@@ -35,17 +36,17 @@ export function Studio({ active, setActive, variant }) {
   const wrapProps = {
     width: studioProps.width,
     border: false,
-    id: 'image',
+    ref: imageRef,
   }
 
   useEffect(() => {
-    const player = '#player'
+    if (!imageRef || !playerRef) return
     const { scroll } = intro
     const { wiggle } = studio
 
-    scroll(player)
-    wiggle({ target: '#image' })
-  }, [])
+    scroll(playerRef.current)
+    wiggle({ target: imageRef.current })
+  }, [imageRef, playerRef])
 
   return (
     <Container {...containerProps}>

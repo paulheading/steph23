@@ -7,17 +7,16 @@ const overlay = {
 
 overlay.isOpen = function () {
   const { target } = overlay
-  const value = gsap.getProperty(target, 'x')
-  return value === 0
+  return gsap.getProperty(target, 'x') === 0
 }
 
 overlay.close = function () {
-  const { tl, target } = overlay
+  const { target, tl } = overlay
   tl.to('body', { clearProps: 'overflow' }).to(target, { x: '100%' })
 }
 
 overlay.open = function () {
-  const { tl, target } = overlay
+  const { target, tl } = overlay
   tl.to('body', { overflow: 'hidden' }).to(target, { x: '0%' })
 }
 

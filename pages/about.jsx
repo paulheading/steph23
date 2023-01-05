@@ -3,10 +3,11 @@ import styles from 'styles/pages/about.module.scss'
 import { Page, Container, Wrap, Title, ImageWrap } from 'components'
 import { imageProps, studio } from 'scripts'
 import { about as head } from 'data/seo'
-import { useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import Image from 'next/image'
 
 export default function About() {
+  const imageRef = useRef(null)
   imageProps.src = aboutImage
   const variant = 'green'
 
@@ -18,13 +19,14 @@ export default function About() {
 
   const imageWrapProps = {
     className: styles.image,
-    id: 'image',
+    ref: imageRef,
   }
 
   useEffect(() => {
+    if (!imageRef) return
     const { wiggle } = studio
-    wiggle({ target: '#image' })
-  }, [])
+    wiggle({ target: imageRef.current })
+  }, [imageRef])
 
   return (
     <Page head={head}>

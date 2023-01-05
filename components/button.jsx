@@ -1,7 +1,8 @@
+import { forwardRef } from 'react'
 import styles from 'styles/components/button.module.scss'
 import { attachVariant } from 'scripts'
 
-export function Button({ id, children, variant, onClick, className }) {
+const Button = forwardRef(({ id, children, variant, onClick, className }, ref) => {
   const customClass = className ? className : ''
   const classes = `${styles.button} ${attachVariant(variant, styles)} ${customClass}`
   const props = {
@@ -9,5 +10,13 @@ export function Button({ id, children, variant, onClick, className }) {
     className: classes,
     onClick,
   }
-  return <button {...props}>{children}</button>
-}
+  return (
+    <button ref={ref} {...props}>
+      {children}
+    </button>
+  )
+})
+
+Button.displayName = 'Button'
+
+export { Button }

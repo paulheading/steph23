@@ -18,6 +18,7 @@ export default function Audiobooks() {
   const samplesProps = {
     variant: 'red',
     ...audioProps,
+    animate: true,
     dark: true,
     data,
   }

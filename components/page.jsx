@@ -2,19 +2,20 @@ import { Fragment, useEffect } from 'react'
 import { Head, Footer } from 'components'
 import { Burger, Menu } from 'components/ui'
 import useMediaQuery from 'hooks/useMediaQuery'
-import gsap from 'gsap'
+import { page } from 'scripts'
 
 export function Page({ head, children, menu = 'green', footer = 'green' }) {
-  const isDesktop = useMediaQuery(`(min-width: 768px)`)
+  const isTablet = useMediaQuery(`(min-width: 768px)`)
 
   useEffect(() => {
-    gsap.set('body', { clearProps: 'overflow' })
-  }, [isDesktop])
+    const { reset } = page
+    reset('body')
+  }, [isTablet])
 
   return (
     <Fragment>
       <Head {...head} />
-      {isDesktop ? <Menu variant={menu} /> : <Burger variant={menu} />}
+      {isTablet ? <Menu variant={menu} /> : <Burger variant={menu} />}
       {children}
       <Footer variant={footer} />
     </Fragment>

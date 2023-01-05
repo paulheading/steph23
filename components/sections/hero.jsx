@@ -1,6 +1,6 @@
 import styles from 'styles/components/sections/hero.module.scss'
 import { Container, Wrap, Logo } from 'components'
-import { useEffect, useState } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import sparkImage from 'public/spark3.webp'
 import stephImage from 'public/steph.webp'
 import { Loader } from 'components/ui'
@@ -8,6 +8,7 @@ import { hero } from 'scripts'
 import Image from 'next/image'
 
 export function Hero() {
+  const sparkRef = useRef(null)
   const [sparkReady, setSparkReady] = useState(false)
   const [stephReady, setStephReady] = useState(false)
   const imagesReady = sparkReady && stephReady
@@ -26,7 +27,7 @@ export function Hero() {
 
   const topSpark = {
     className: styles.top_spark,
-    id: 'topSpark',
+    ref: sparkRef,
   }
 
   const stephProps = {
@@ -37,10 +38,10 @@ export function Hero() {
   }
 
   useEffect(() => {
-    if (!imagesReady) return
+    if (!imagesReady || !sparkRef) return
     const { sparkle } = hero
-    sparkle('#topSpark')
-  }, [imagesReady])
+    sparkle(sparkRef.current)
+  }, [imagesReady, sparkRef])
 
   return (
     <Container {...containerProps}>

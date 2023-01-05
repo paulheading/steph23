@@ -12,6 +12,7 @@ import Image from 'next/image'
 export default function Contact() {
   const { input, row } = contact
   const formRef = useRef(null)
+  const imageRef = useRef(null)
   const [inProgress, setInProgress] = useState(false)
   const [justSent, setJustSent] = useState(false)
   const {
@@ -150,9 +151,10 @@ export default function Contact() {
   imageProps.src = contactImage
 
   useEffect(() => {
+    if (!imageRef) return
     const { wiggle } = studio
-    wiggle({ target: '#image' })
-  }, [])
+    wiggle({ target: imageRef.current })
+  }, [imageRef])
 
   function ContactForm() {
     return (
@@ -215,7 +217,7 @@ export default function Contact() {
           </p>
           <Split className={styles.split}>
             <div className={`${layout.copy} ${styles.copy}`}>{justSent ? <ConfirmMessage /> : <ContactForm />}</div>
-            <ImageWrap id="image">
+            <ImageWrap ref={imageRef}>
               <Image {...imageProps} alt="Stephanie Cannon friendly contact image, head tilted slightly to the right" />
             </ImageWrap>
           </Split>

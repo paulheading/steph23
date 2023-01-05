@@ -1,7 +1,8 @@
 import styles from 'styles/components/wrap/image.module.scss'
 import { attachVariant } from 'scripts'
+import { forwardRef } from 'react'
 
-export function ImageWrap({ id, children, width = 320, className, variant, border = true }) {
+const ImageWrap = forwardRef(({ children, width = 320, className, variant, border = true }, ref) => {
   function containerClasses() {
     let result = `${attachVariant(variant, styles)}`
     if (border) result += ` ${styles.container_border}`
@@ -10,11 +11,16 @@ export function ImageWrap({ id, children, width = 320, className, variant, borde
     return result
   }
 
-  const customID = { id: id ? id : null }
+  const containerProps = {
+    className: containerClasses(),
+    ref,
+  }
 
   return (
-    <div {...customID} className={containerClasses()} style={{ width }}>
+    <div {...containerProps} style={{ width }}>
       {children}
     </div>
   )
-}
+})
+
+export { ImageWrap }

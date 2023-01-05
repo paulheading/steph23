@@ -14,7 +14,7 @@ export function Sample({ data, active, handleSetActive, variant, openID, series,
     active.playing ? playerRef.current.play() : playerRef.current.pause()
   }, [active, playerRef, activePlaylist])
 
-  function updateProgress() {
+  function onTimeUpdate() {
     if (!playerRef.current) return
     const { current } = playerRef
     const { duration, currentTime } = current
@@ -46,14 +46,13 @@ export function Sample({ data, active, handleSetActive, variant, openID, series,
     dark,
   }
 
-  const mapTracks = (tracks) =>
-    tracks.map((track, index) => {
-      const props = {
-        ...trackProps,
-        track,
-      }
-      return <Track key={'track' + index} {...props} />
-    })
+  function Tracks(track, index) {
+    const props = {
+      ...trackProps,
+      track,
+    }
+    return <Track key={'track' + index} {...props} />
+  }
 
   const groupProps = {
     groups: playlist.groups,
@@ -62,12 +61,16 @@ export function Sample({ data, active, handleSetActive, variant, openID, series,
 
   if (!isOpen) return
 
+  const audioProps = {
+    ref: playerRef,
+    src: active.src,
+    onTimeUpdate,
+  }
+
   return (
     <Fragment>
-      <div>
-        <audio ref={playerRef} src={active.src} onTimeUpdate={updateProgress}></audio>
-        {!series ? mapTracks(playlist.tracks) : <Group {...groupProps} />}
-      </div>
+      <audio {...audioProps} />
+      {!series ? playlist.tracks.map(Tracks) : <Group {...groupProps} />}
     </Fragment>
   )
 }

@@ -1,35 +1,27 @@
 import { Container, Wrap, Title, Link } from 'components'
 import { Samples as SamplesUI } from 'components/ui'
 import styles from 'styles/components/sections/samples.module.scss'
-import { useEffect, useMemo } from 'react'
-import { studio } from 'scripts'
+import { useMemo } from 'react'
 
-export function Samples({ data, variant, dark = false, active, setActive }) {
+export function Samples({ data, variant, dark = false, active, setActive, animate }) {
   const contentProps = {
     className: styles.content,
     section: true,
-    id: 'samples',
     variant,
     dark,
   }
 
   const samplesProps = useMemo(
     () => ({
-      animate: 'samples',
       setActive,
+      animate,
       variant,
       active,
       data,
       dark,
     }),
-    [setActive, active, data, dark, variant]
+    [setActive, animate, active, data, dark, variant]
   )
-
-  useEffect(() => {
-    const { wiggle } = studio
-    const { animate } = samplesProps
-    wiggle({ target: `.${animate}` })
-  }, [samplesProps])
 
   return (
     <Container {...contentProps}>

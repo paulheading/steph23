@@ -70,9 +70,9 @@ export function Main({ activePlaylist, playerRef, active, handleSetActive, main,
         <Button {...buttonProps} />
         <div className={styles.title_wrap}>
           <div className={styles.title}>{activePlaylist ? active.title : main.title}</div>
-          <button {...barProps}>
+          {/* <button {...barProps}>
             <div {...progressProps}></div>
-          </button>
+          </button> */}
         </div>
         <a {...linkProps}>
           <MdOutlineFileDownload className={styles.MdOutlineFileDownload} />

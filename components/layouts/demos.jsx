@@ -1,6 +1,6 @@
 import styles from 'styles/components/layouts/demos.module.scss'
-import { studio, attachVariant } from 'scripts'
-import { useState, useEffect } from 'react'
+import { attachVariant } from 'scripts'
+import { useState } from 'react'
 import { Split, Video } from 'components'
 import Page from 'components/page/demos'
 import { Playlist } from 'components/ui'
@@ -18,29 +18,7 @@ export default function DemosLayout({ head, data, children }) {
   }
   const { videos } = data
 
-  useEffect(() => {
-    if (!videos) return
-    if (videos.length > 1) {
-      videos.map((_, index) => {
-        const { wiggle } = studio
-        wiggle({ target: '#video' + index })
-      })
-    } else {
-      const { wiggle } = studio
-      wiggle({ target: '#video' })
-    }
-  }, [videos])
-
-  const MultipleVideos = () => (
-    <div className={styles.video}>
-      {videos.map((video, index) => {
-        const key = 'video' + index
-        return <SingleVideo key={key} id={key} {...video} />
-      })}
-    </div>
-  )
-
-  function SingleVideo(video, id) {
+  function WrapVideo(props) {
     const captionStyles = `${styles.caption} ${attachVariant(variant, styles)}`
 
     const titleProps = {
@@ -51,19 +29,15 @@ export default function DemosLayout({ head, data, children }) {
 
     return (
       <div className={styles.wrap_video}>
-        <Video id={id} {...video} />
+        <Video {...props} />
         <div className={styles.wrap_caption}>
-          <Title {...titleProps}>{video.caption}</Title>
+          <Title {...titleProps}>{props.caption}</Title>
         </div>
       </div>
     )
   }
 
-  function CheckVideos() {
-    if (!videos) return
-    if (videos.length > 1) return <MultipleVideos />
-    return <SingleVideo id="video" {...videos[0]} />
-  }
+  const CountVideos = () => (videos.length > 1 ? videos.map((props, index) => <WrapVideo key={'video' + index} {...props} />) : <WrapVideo {...videos[0]} />)
 
   return (
     <Page head={head}>
@@ -71,7 +45,7 @@ export default function DemosLayout({ head, data, children }) {
         <div className={styles.copy}>{children}</div>
         <Playlist {...playlistProps} />
       </Split>
-      <CheckVideos />
+      {videos && <CountVideos />}
     </Page>
   )
 }

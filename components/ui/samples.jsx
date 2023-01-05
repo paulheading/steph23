@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import { forwardRef, useState } from 'react'
 import { Wrap } from 'components'
 import { Sample } from 'components/ui'
 import styles from 'styles/components/ui/samples.module.scss'
 import { attachVariant } from 'scripts'
 
-export function Samples({ data, variant = 'green', dark = false, active, setActive, animate }) {
+const Samples = forwardRef(({ data, variant = 'green', dark = false, active, setActive, animate }, ref) => {
   const [samples, setSamples] = useState(data)
   const [openID, setOpenID] = useState(data[0].id)
   const handleSetActive = (track) => setActive(track)
@@ -49,8 +49,13 @@ export function Samples({ data, variant = 'green', dark = false, active, setActi
     return <Sample key={'sample' + index} {...sampleProps} />
   }
 
+  const containerProps = {
+    className: styles.container,
+    ref,
+  }
+
   return (
-    <div className={styles.container}>
+    <div {...containerProps}>
       {needsButtons && (
         <Wrap className="margin-bottom-2">
           <div className={styles.buttons}>{samples.map(Buttons)}</div>
@@ -59,4 +64,6 @@ export function Samples({ data, variant = 'green', dark = false, active, setActi
       {data.map(Content)}
     </div>
   )
-}
+})
+
+export { Samples }

@@ -6,10 +6,12 @@ import styles from 'styles/pages/acting.module.scss'
 import { imageProps, about, studio } from 'scripts'
 import { Mocap } from 'components/sections'
 import { acting as head } from 'data/seo'
-import { useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import Image from 'next/image'
 
 export default function Acting() {
+  const headshotRef = useRef(null)
+  const bodyRef = useRef(null)
   const variant = 'cream'
   const pageProps = {
     footer: variant,
@@ -30,11 +32,11 @@ export default function Acting() {
   }
 
   useEffect(() => {
+    if (!headshotRef || !bodyRef) return
     const { wiggle } = studio
-
-    wiggle({ target: '#headshot' })
-    wiggle({ target: '#body' })
-  }, [])
+    wiggle({ target: headshotRef.current })
+    wiggle({ target: bodyRef.current })
+  }, [headshotRef, bodyRef])
 
   return (
     <Page {...pageProps}>
@@ -48,7 +50,7 @@ export default function Acting() {
                 Shakespeare, Contemporary Drama or Improvisational Comedy.
               </p>
             </div>
-            <ImageWrap id="headshot">
+            <ImageWrap ref={headshotRef}>
               <Image {...headshotProps} alt="Stephanie Cannon headshot, pleasantly smiling in a pink cardigan" />
             </ImageWrap>
           </Split>
@@ -64,7 +66,7 @@ export default function Acting() {
                 <li>The Actors Centre – classes for accents, scene work, & character creation</li>
               </ul>
             </div>
-            <ImageWrap id="body">
+            <ImageWrap ref={bodyRef}>
               <Image {...fullbodyProps} alt="Stephanie Cannon full body image, taken in a studio" />
             </ImageWrap>
           </Split>

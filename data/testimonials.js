@@ -41,7 +41,7 @@ const testimonials = [
   {
     quote: `"Stephanie Cannon is something of a genius. She plays each character as if they were herself. Bravo."`,
     role: `Audible review for ${link(FlightGirls.href, 'The Flight Girls')}`,
-    rating: true,
+    rating: 5,
   },
   {
     quote: `"Thanks again for your great work and your commitment! The recordings turned out really well"`,
@@ -52,7 +52,7 @@ const testimonials = [
     quote: `"In spoken word the depth of the novel really does change. The narrator does a brilliant job and I cannot recommend it enough."`,
     author: `Holly B`,
     role: `Audible review for ${link(One.href, 'One')}`,
-    rating: true,
+    rating: 5,
   },
   {
     quote: `"I can't fault the experience I've had. We were very pleased with your professionalism, manner and the quality of your voice."`,
@@ -63,7 +63,7 @@ const testimonials = [
     quote: `"Stephanie Cannon is the absolute best to narrate these stories! Can't wait for the next one!"`,
     author: `Charla White`,
     role: `Audible review for ${link(GirlUnderWater.href, 'Girl Under Water')}`,
-    rating: true,
+    rating: 5,
   },
 ]
 

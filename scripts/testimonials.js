@@ -2,15 +2,9 @@ import gsap from 'gsap'
 
 const testimonials = {}
 
-testimonials.target = '#testimonial'
+testimonials.clear = (target) => gsap.set(target, { opacity: 1 })
 
-testimonials.clear = () => {
-  const { target } = testimonials
-  gsap.set(target, { opacity: 1 })
-}
-
-testimonials.animate = (start, complete, animate) => {
-  const { target } = testimonials
+testimonials.animate = (target, start, complete, animate) => {
   const tl = gsap.timeline()
   const reset = { x: 0 }
 
@@ -26,14 +20,14 @@ testimonials.animate = (start, complete, animate) => {
     .to(target, { opacity: 1, duration: 0.6 })
 }
 
-testimonials.animateNext = (start, complete) => {
+testimonials.animateNext = (target, start, complete) => {
   const { animate } = testimonials
-  animate(start, complete, { x: 60 })
+  animate(target, start, complete, { x: 60 })
 }
 
-testimonials.animatePrev = (start, complete) => {
+testimonials.animatePrev = (target, start, complete) => {
   const { animate } = testimonials
-  animate(start, complete, { x: -60 })
+  animate(target, start, complete, { x: -60 })
 }
 
 export { testimonials }

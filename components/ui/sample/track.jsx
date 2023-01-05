@@ -2,14 +2,16 @@ import styles from 'styles/components/ui/sample/track.module.scss'
 import { Button } from 'components/ui/playlist/button'
 import { attachVariant } from 'scripts'
 import { MdOutlineFileDownload } from 'react-icons/md'
+import { useEffect, useRef } from 'react'
+import { studio } from 'scripts'
 
-export function Track({ track, handleTrackChange, activePlaylist, active, variant, dark = false, animate }) {
+export function Track({ track, handleTrackChange, activePlaylist, active, variant, dark = false, animate = false }) {
   if (!track) return null
+  const containerRef = useRef(null)
   const activeTrack = activePlaylist && track.id === active.id
   const activeStyles = activeTrack ? styles.active : ''
   const darkClass = dark ? styles.dark : ''
-  const animateClass = animate ? animate : null
-  const containerClasses = `${styles.container} ${attachVariant(variant, styles)} ${activeStyles} ${darkClass} ${animateClass}`
+  const containerClasses = `${styles.container} ${attachVariant(variant, styles)} ${activeStyles} ${darkClass}`
   const backgroundImage = `url(${track.cover})`
 
   const buttonProps = {
@@ -41,8 +43,19 @@ export function Track({ track, handleTrackChange, activePlaylist, active, varian
     download: true,
   }
 
+  const containerProps = {
+    className: containerClasses,
+    ref: containerRef,
+  }
+
+  useEffect(() => {
+    if (!containerRef || !animate) return
+    const { wiggle } = studio
+    wiggle({ target: containerRef.current })
+  }, [containerRef, animate])
+
   return (
-    <div className={containerClasses}>
+    <div {...containerProps}>
       <div className={styles.media} style={{ backgroundImage }}>
         <Button {...buttonProps} />
       </div>

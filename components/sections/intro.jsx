@@ -3,10 +3,11 @@ import { Container, Wrap, Title, Split, Link } from 'components'
 import { Player } from 'components/ui'
 import { Nominee } from 'logos'
 import styles from 'styles/components/sections/intro.module.scss'
-import { useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import { intro } from 'scripts'
 
 export function Intro({ active, setActive }) {
+  const playersRef = useRef(null)
   const handleSetActive = (track) => setActive(track)
   const playerProps = {
     handleSetActive,
@@ -35,10 +36,6 @@ export function Intro({ active, setActive }) {
     }
   }
 
-  const contentProps = {
-    variant: 'red',
-  }
-
   const splitProps = {
     className: styles.split,
     swap: true,
@@ -50,13 +47,26 @@ export function Intro({ active, setActive }) {
   }
 
   useEffect(() => {
-    const players = '.intro-player'
+    if (!playersRef) return
     const { scroll } = intro
-    scroll(players)
-  }, [])
+    scroll(playersRef.current.children)
+  }, [playersRef])
+
+  function Players(track, index) {
+    if (index > 3) return
+    const props = {
+      variant: setVariant(index),
+      className: styles.player,
+      dark: setDark(index),
+      standalone: true,
+      ...playerProps,
+      data: track,
+    }
+    return <Player key={'players' + index} {...props} />
+  }
 
   return (
-    <Container {...contentProps}>
+    <Container variant="red">
       <Wrap className={styles.wrap}>
         <Split {...splitProps}>
           <div className={styles.message}>
@@ -76,19 +86,8 @@ export function Intro({ active, setActive }) {
               </div>
             </div>
           </div>
-          <div className={styles.players}>
-            {homepage.map((track, index) => {
-              if (index > 3) return
-              const props = {
-                className: `${styles.player} intro-player`,
-                variant: setVariant(index),
-                dark: setDark(index),
-                standalone: true,
-                ...playerProps,
-                data: track,
-              }
-              return <Player key={'players' + index} {...props} />
-            })}
+          <div ref={playersRef} className={styles.players}>
+            {homepage.map(Players)}
           </div>
         </Split>
       </Wrap>

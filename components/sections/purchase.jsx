@@ -12,20 +12,24 @@ function Links({ link, index, items, variant }) {
   const linkStyles = `${styles.link} ${variantStyle} link`
   const overlayStyles = `${styles.overlay} ${variantStyle}`
   const logoStyles = `${styles.logo} ${variantStyle}`
-  const props = {
-    className: linkStyles,
-    target: '_blank',
-    href,
-  }
-  if (index >= items) return null
 
-  function MouseOver({ target }) {
+  function onMouseOver({ target }) {
     const { wiggle } = animate
     wiggle({ target })
   }
 
+  const props = {
+    style: { backgroundImage },
+    className: linkStyles,
+    target: '_blank',
+    onMouseOver,
+    href,
+  }
+
+  if (index >= items) return null
+
   return (
-    <a {...props} style={{ backgroundImage }} onMouseOver={MouseOver}>
+    <a {...props}>
       <span className={overlayStyles}>
         <RiExternalLinkLine className={logoStyles} />
       </span>
