@@ -6,7 +6,6 @@ import { useEffect, useRef } from 'react'
 import { studio } from 'scripts'
 
 export function Track({ track, handleTrackChange, activePlaylist, active, variant, dark = false, animate = false }) {
-  if (!track) return null
   const containerRef = useRef(null)
   const activeTrack = activePlaylist && track.id === active.id
   const activeStyles = activeTrack ? styles.active : ''

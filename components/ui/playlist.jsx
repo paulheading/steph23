@@ -18,7 +18,7 @@ export function Playlist({ data, active, handleSetActive, variant, toggle, openI
     active.playing ? playerRef.current.play() : playerRef.current.pause()
   }, [active, activePlaylist])
 
-  function updateProgress() {
+  function onTimeUpdate() {
     if (!playerRef.current) return
     const duration = playerRef.current.duration
     const time = playerRef.current.currentTime
@@ -64,12 +64,12 @@ export function Playlist({ data, active, handleSetActive, variant, toggle, openI
   }
 
   const audioProps = {
-    ref: playerRef,
     src: active && active.src,
-    onTimeUpdate: updateProgress,
+    ref: playerRef,
+    onTimeUpdate,
   }
 
-  function track(track, index) {
+  function Tracks(track, index) {
     const props = {
       ...trackProps,
       track,
@@ -82,7 +82,7 @@ export function Playlist({ data, active, handleSetActive, variant, toggle, openI
       <audio {...audioProps}></audio>
       {toggle && <Toggle {...toggleProps} />}
       <Main {...mainProps} />
-      {playlist.tracks.map(track)}
+      {playlist.tracks.map(Tracks)}
     </div>
   )
 }

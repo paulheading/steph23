@@ -17,7 +17,7 @@ export function Main({ activePlaylist, playerRef, active, handleSetActive, main,
     else handleSetActive({ ...main, playing: true })
   }
 
-  function updateProgress(e) {
+  function onClick(e) {
     if (!playerRef.current || !barRef.current || !progressRef.current) return
     if (!active.playing) return
     const width = barRef.current.clientWidth
@@ -29,7 +29,7 @@ export function Main({ activePlaylist, playerRef, active, handleSetActive, main,
     handleSetActive({ ...active, progress })
   }
 
-  function styleWidth() {
+  function style() {
     if (!activePlaylist) return
     return { width: `${active.progress}%` }
   }
@@ -45,14 +45,14 @@ export function Main({ activePlaylist, playerRef, active, handleSetActive, main,
   }
 
   const barProps = {
-    onClick: updateProgress,
     className: styles.bar,
     ref: barRef,
+    onClick,
   }
 
   const progressProps = {
     className: styles.progress,
-    style: styleWidth(),
+    style: style(),
     ref: progressRef,
   }
 
@@ -70,9 +70,9 @@ export function Main({ activePlaylist, playerRef, active, handleSetActive, main,
         <Button {...buttonProps} />
         <div className={styles.title_wrap}>
           <div className={styles.title}>{activePlaylist ? active.title : main.title}</div>
-          {/* <button {...barProps}>
+          <button {...barProps}>
             <div {...progressProps}></div>
-          </button> */}
+          </button>
         </div>
         <a {...linkProps}>
           <MdOutlineFileDownload className={styles.MdOutlineFileDownload} />

@@ -23,4 +23,6 @@ const ImageWrap = forwardRef(({ children, width = 320, className, variant, borde
   )
 })
 
+ImageWrap.displayName = 'ImageWrap'
+
 export { ImageWrap }

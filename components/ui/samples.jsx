@@ -66,4 +66,6 @@ const Samples = forwardRef(({ data, variant = 'green', dark = false, active, set
   )
 })
 
+Samples.displayName = 'Samples'
+
 export { Samples }

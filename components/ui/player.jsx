@@ -57,4 +57,6 @@ const Player = forwardRef(({ data, active, handleSetActive, variant, standalone,
   )
 })
 
+Player.displayName = 'Player'
+
 export { Player }

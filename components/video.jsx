@@ -21,11 +21,11 @@ export function Video({ src, title, className }) {
     title,
   }
 
-  useEffect(() => {
-    if (!ref) return
-    const { wiggle } = studio
-    wiggle({ target: ref.current })
-  }, [ref])
+  // useEffect(() => {
+  //   if (!ref) return
+  //   const { wiggle } = studio
+  //   wiggle({ target: ref.current })
+  // }, [ref])
 
   return (
     <div {...containerProps}>
