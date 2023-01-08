@@ -1,15 +1,18 @@
-import { radioDrama as data } from 'data/demos'
+import { radioDrama } from 'data/demos'
 import { Title } from 'components'
-import Layout from 'components/layouts/demos'
+import DemosLayout from 'components/layouts/demos'
 import { demos } from 'data/seo'
 
-export default function RadioDrama() {
-  const props = {
+function RadioDrama() {
+  const { videos, audio } = radioDrama
+  const layoutProps = {
     head: demos.radioDrama,
-    data,
+    videos,
+    audio,
   }
+
   return (
-    <Layout {...props}>
+    <DemosLayout {...layoutProps}>
       <Title>Radio Drama</Title>
       <p>Whether you&apos;re casting a drama, children&apos;s series or science fiction podcast, I&apos;d love to go on a collaborative journey with you and your production.</p>
       <p>
@@ -17,6 +20,8 @@ export default function RadioDrama() {
         skilled in breaking down scripts and diving into a character&apos;s emotional journey.
       </p>
       <p>I will bring the perfect balance of improvisational skill and creative versatility to give your production the spark it needs. Get in touch and request an audition now.</p>
-    </Layout>
+    </DemosLayout>
   )
 }
+
+export default RadioDrama

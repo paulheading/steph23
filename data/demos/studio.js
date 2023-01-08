@@ -9,19 +9,21 @@ const extras = {
 const path = (title) => `/demos/studio/${title}.mp3`
 
 let studio = {
-  title: 'Studio',
-  id,
-  main,
-  tracks: [
-    {
-      title: `Sample`,
-      src: path('stephanie-cannon-home-studio-raw-sample-narrator-voiceover-voice-actor-v-o'),
-      ...extras,
-    },
-  ],
+  audio: {
+    title: 'Studio',
+    id,
+    main,
+    tracks: [
+      {
+        title: `Sample`,
+        src: path('stephanie-cannon-home-studio-raw-sample-narrator-voiceover-voice-actor-v-o'),
+        ...extras,
+      },
+    ],
+  },
 }
 
-studio.tracks = mapIndexIDs(studio.tracks)
-studio.main = studio.tracks[0]
+studio.audio.tracks = mapIndexIDs(studio.audio.tracks)
+studio.audio.main = studio.audio.tracks[0]
 
 export default studio

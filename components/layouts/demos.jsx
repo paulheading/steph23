@@ -1,51 +1,44 @@
 import styles from 'styles/components/layouts/demos.module.scss'
-import { attachVariant } from 'scripts'
-import { useState } from 'react'
-import { Split, Video } from 'components'
-import Page from 'components/page/demos'
+import { Page, Container, Wrap, Split, VideoWrap } from 'components'
 import { Playlist } from 'components/ui'
-import { Title } from 'components'
+import { useState } from 'react'
 
-export default function DemosLayout({ head, data, children }) {
-  const [active, setActive] = useState(data.main)
+function DemosLayout({ children, audio, videos, head }) {
+  const [active, setActive] = useState(audio.main)
   const handleSetActive = (track) => setActive(track)
   const variant = 'red'
+
+  const pageProps = {
+    footer: variant,
+    menu: variant,
+    head,
+  }
+
+  const containerProps = {
+    top: true,
+    variant,
+  }
+
   const playlistProps = {
     handleSetActive,
+    data: audio,
     variant,
     active,
-    data,
   }
-  const { videos } = data
-
-  function WrapVideo(props) {
-    const captionStyles = `${styles.caption} ${attachVariant(variant, styles)}`
-
-    const titleProps = {
-      className: captionStyles,
-      margin: false,
-      small: true,
-    }
-
-    return (
-      <div className={styles.wrap_video}>
-        <Video {...props} />
-        <div className={styles.wrap_caption}>
-          <Title {...titleProps}>{props.caption}</Title>
-        </div>
-      </div>
-    )
-  }
-
-  const CountVideos = () => (videos.length > 1 ? videos.map((props, index) => <WrapVideo key={'video' + index} {...props} />) : <WrapVideo {...videos[0]} />)
 
   return (
-    <Page head={head}>
-      <Split>
-        <div className={styles.copy}>{children}</div>
-        <Playlist {...playlistProps} />
-      </Split>
-      {videos && <CountVideos />}
+    <Page {...pageProps}>
+      <Container {...containerProps}>
+        <Wrap>
+          <Split>
+            <div className={styles.copy}>{children}</div>
+            <Playlist {...playlistProps} />
+          </Split>
+          {videos && videos.map((props, index) => <VideoWrap key={'video' + index} {...props} />)}
+        </Wrap>
+      </Container>
     </Page>
   )
 }
+
+export default DemosLayout

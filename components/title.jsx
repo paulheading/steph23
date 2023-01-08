@@ -1,6 +1,6 @@
 import styles from 'styles/components/title.module.scss'
 
-export function Title({ id, className, children, small = false, margin = true }) {
+function Title({ id, className, children, small = false, margin = true }) {
   const marginClass = margin ? styles.margin : ''
   const customClass = className ? className : ''
   const smallClass = small ? styles.small : ''
@@ -15,3 +15,5 @@ export function Title({ id, className, children, small = false, margin = true })
     </h2>
   )
 }
+
+export { Title }

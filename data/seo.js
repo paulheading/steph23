@@ -35,7 +35,7 @@ export const demos = {
     keywords: `Corporate, Narration, Explainer, Narrator, Company, Voice, B2B, Business, B2C, Customer, American, Transatlantic`,
     desc: `I have a smooth, warm and engaging American voice perfect for corporate narration and explainer videos.  Listen to my samples and request a custom demo from your copy.`,
   },
-  documentaries: {
+  documentary: {
     title: `TV / Film Documentary / Stephanie Cannon / American Narrator`,
     keywords: `Serious, Upbeat, Television, Film, Movie, Narration, Dramatic, Historical, Culture`,
     desc: `I am very skilled at lifting the words off the page for narration, whether it be something light, conversational, upbeat, or something more serious and truthful. Contact me for a custom demo voicing your TV or Film Documentary.`,
