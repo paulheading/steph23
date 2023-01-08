@@ -13,11 +13,8 @@ export function Playlist({ data, active, handleSetActive, variant, toggle, openI
   const customClass = className ? className : ''
   const containerClasses = `${styles.container} ${attachVariant(variant, styles)} ${customClass}`
 
-  console.log('playlist: ', data)
-
   useEffect(() => {
     if (!activePlaylist || !playerRef) return
-    console.log('player ref: ', playerRef.current)
     active.playing ? playerRef.current.play() : playerRef.current.pause()
   }, [active, activePlaylist])
 
