@@ -39,12 +39,12 @@ export default function Demos() {
   }
 
   function oddPlaylists(value) {
-    return all.map((data, index) => {
+    return all.map(({ audio }, index) => {
       const odd = index % 2
       if (value === odd) return
       const props = {
         ...playlistProps,
-        data,
+        data: audio,
       }
       return <Playlist key={`data${index}`} {...props} />
     })
