@@ -30,7 +30,6 @@ export function isRouteActive(href, route, parent = false) {
 }
 
 export const imageProps = {
-  placeholder: 'blur',
   height: 448,
   width: 320,
   alt: '',
