@@ -14,7 +14,7 @@ export function Favourites({ active, setActive }) {
   const props = useMemo(
     () => ({
       data: [favourites],
-      animate: true,
+      animate: false,
       setActive,
       active,
     }),

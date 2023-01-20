@@ -2,7 +2,6 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { CustomEase } from 'gsap/dist/CustomEase'
 import { CustomWiggle } from 'gsap/dist/CustomWiggle'
-import { query } from 'scripts'
 
 gsap.registerPlugin(ScrollTrigger, CustomEase, CustomWiggle)
 
@@ -25,13 +24,10 @@ studio.config = {
 studio.wiggle = (value) => {
   const { trigger, config } = studio
   const { target } = value
-  const { desktop } = query
 
-  desktop.up(() => {
-    gsap.to(target, {
-      scrollTrigger: trigger(value),
-      ...config,
-    })
+  gsap.to(target, {
+    scrollTrigger: trigger(value),
+    ...config,
   })
 }
 

@@ -21,18 +21,14 @@ intro.scroll = (target) => {
   const { reset, clear, trigger, duration, stagger } = intro
   const { desktop } = query
 
-  desktop.up(() => {
-    reset(target)
-    gsap.to(target, {
-      scrollTrigger: trigger(target),
-      opacity: 1,
-      duration,
-      stagger,
-      x: 0,
-    })
+  reset(target)
+  gsap.to(target, {
+    scrollTrigger: trigger(target),
+    opacity: 1,
+    duration,
+    stagger,
+    x: 0,
   })
-
-  desktop.down(() => clear(target))
 }
 
 export { intro }

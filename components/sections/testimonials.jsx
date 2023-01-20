@@ -71,19 +71,17 @@ function Testimonials() {
 
       desktop.down(() => clear(targetRef.current))
 
-      desktop.up(() => {
-        function start() {
-          nextRef.current.style.backgroundColor = '#341919'
-          nextRef.current.style.color = '#ffb866'
-        }
-        function end() {
-          if (quoteID === length) setQuoteID(0)
-          else setQuoteID((quoteID) => quoteID + 1)
-          nextRef.current.removeAttribute('style')
-        }
+      function start() {
+        nextRef.current.style.backgroundColor = '#341919'
+        nextRef.current.style.color = '#ffb866'
+      }
+      function end() {
+        if (quoteID === length) setQuoteID(0)
+        else setQuoteID((quoteID) => quoteID + 1)
+        nextRef.current.removeAttribute('style')
+      }
 
-        animateNext(targetRef.current, start, end)
-      })
+      animateNext(targetRef.current, start, end)
     }, 3000)
 
     return () => clearInterval(interval)

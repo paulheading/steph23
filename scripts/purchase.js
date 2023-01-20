@@ -8,10 +8,8 @@ purchase.wiggle = (value) => {
   const { target } = value
   const { desktop } = query
 
-  desktop.up(() => {
-    gsap.to(target, {
-      ...config,
-    })
+  gsap.to(target, {
+    ...config,
   })
 }
 
