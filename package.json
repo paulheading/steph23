@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "gsap": "file:libraries/gsap-bonus.tgz",
+    "gsap": "npm:@gsap/shockingly@^3.11.4",
     "html-react-parser": "^3.0.4",
     "modernizr": "^3.12.0",
     "next": "12.2.5",
