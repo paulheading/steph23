@@ -1,7 +1,7 @@
 export const home = {
   title: `Stephanie Cannon / Home page / Female Voiceover Artist`,
   keywords: `Voice Actor, Home Studio, American, London, Female, US`,
-  desc: `I’m a female American Voice Actor with a London home studio.  Listen to my voice reels and home studio sample and check out some of the testimonials from clients I currently record with.`,
+  desc: `I’m a female American Voice Actor with a London home studio. Listen to my voice reels and home studio sample and check out some of the testimonials from clients I currently record with.`,
 }
 
 export const demos = {
