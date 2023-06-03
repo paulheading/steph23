@@ -4,6 +4,13 @@ export const home = {
   desc: `I’m a female American Voice Actor with a London home studio. Listen to my voice reels and home studio sample and check out some of the testimonials from clients I currently record with.`,
 }
 
+export const twitter = {
+  handle: '@sparkthecannon',
+  title: home.title,
+  desc: home.desc,
+  image: 'https://sparkthecannon.com/twitter_image.jpg',
+}
+
 export const demos = {
   index: {
     title: `Voiceover Demos / Stephanie Cannon / Voice Actor`,
