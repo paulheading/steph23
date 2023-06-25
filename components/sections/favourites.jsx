@@ -23,9 +23,9 @@ export function Favourites({ active, setActive }) {
   )
 
   useEffect(() => {
-    const { wiggle } = studio
-    const { animate } = props
-    wiggle({ target: `.${animate}` })
+    // const { wiggle } = studio
+    // const { animate } = props
+    // wiggle({ target: `.${animate}` })
   }, [props])
 
   return (

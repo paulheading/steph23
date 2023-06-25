@@ -26,9 +26,9 @@ export function Samples({ data, variant, dark = false, active, setActive }) {
   )
 
   useEffect(() => {
-    const { wiggle } = studio
-    const { animate } = samplesProps
-    wiggle({ target: `.${animate}` })
+    // const { wiggle } = studio
+    // const { animate } = samplesProps
+    // wiggle({ target: `.${animate}` })
   }, [samplesProps])
 
   return (
