@@ -32,5 +32,4 @@ yarn-error.log*
 .vercel
 
 # ignore videos
-*.mp4
 *.mov
