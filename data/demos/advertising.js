@@ -1,4 +1,5 @@
 import { main, extra, mapIndexIDs } from 'data/playlist/setup'
+import vimeo from 'data/vimeo'
 
 const id = 0
 const extras = {
@@ -52,12 +53,12 @@ let advertising = {
   videos: [
     {
       title: '24 Hr Fitness Commercial',
-      src: '759504478?h=91268d4bde',
+      src: vimeo('759504478?h=91268d4bde'),
       caption: 'Cheerful, Conversational',
     },
     {
       title: 'Artfinder Commercial',
-      src: '759489225?h=f4780e652b',
+      src: vimeo('759489225?h=f4780e652b'),
       caption: 'Smooth, Hip, Enticing',
     },
   ],

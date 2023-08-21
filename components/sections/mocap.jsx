@@ -11,8 +11,8 @@ export function Mocap() {
     padding: false,
   }
   const videoProps = {
+    src: '/stephanie-cannon-motion-capture-reel-actor-female-performance-capture-artist.mp4',
     title: 'stephanie-cannon-motion-capture-reel-actor-female-performance-capture-artist',
-    src: '762181761?h=1a4e59750c',
     className: 'margin-top-3',
     id: 'video',
   }

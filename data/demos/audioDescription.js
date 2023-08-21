@@ -1,4 +1,5 @@
 import { main, extra, mapIndexIDs } from 'data/playlist/setup'
+import vimeo from 'data/vimeo'
 
 const id = 8
 const extras = {
@@ -27,7 +28,7 @@ let audioDescription = {
   videos: [
     {
       title: 'stephanie-cannon-us-audio-description-ad-drama-film-the-imitation-game-video',
-      src: '759506581?h=ab6d58ff2a',
+      src: vimeo('759506581?h=ab6d58ff2a'),
       caption: 'Drama, Non Fiction',
     },
   ],

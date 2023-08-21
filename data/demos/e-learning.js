@@ -1,4 +1,5 @@
 import { main, extra, mapIndexIDs } from 'data/playlist/setup'
+import vimeo from 'data/vimeo'
 
 const id = 2
 const extras = {
@@ -67,7 +68,7 @@ let eLearning = {
   videos: [
     {
       title: 'stephanie-cannon-us-e-learning-video-educational-theatre-secondary-school-high-school-digital-theatre',
-      src: '759551069?h=98e58eba98',
+      src: vimeo('759551069?h=98e58eba98'),
       caption: 'Friendly, Relatable',
     },
   ],
