@@ -5,16 +5,22 @@ export function VideoLocal({ id, src, className }) {
   const customID = { id: id ? id : null }
   const containerClass = `${styles.container} ${customClass}`
 
-  const props = {
+  const videoProps = {
+    controlsList: 'nodownload',
     controls: true,
     height: '720',
     width: '1280',
   }
 
+  const sourceProps = {
+    type: 'video/mp4',
+    src,
+  }
+
   return (
     <div {...customID} className={containerClass}>
-      <video {...props}>
-        <source src={src} type="video/mp4" />
+      <video {...videoProps}>
+        <source {...sourceProps} />
       </video>
     </div>
   )
