@@ -10,7 +10,8 @@
   overflow: hidden;
   width: 100%;
 
-  iframe {
+  iframe,
+  video {
     @include inset;
     position: absolute;
     height: 100%;
